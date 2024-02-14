@@ -1,4 +1,3 @@
-
 <p align="center">
   <img width='30%' src=".github/angular.svg" alt="Angular">
 </p>
