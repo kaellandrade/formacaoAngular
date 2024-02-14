@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Pensamento } from '../../../../enums/Pensamento';
-import { ModelosPensamentos } from '../../../../enums/ModelosPensamentos';
+import { Pensamento } from '../../../../interfaces/Pensamento';
+import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
 
 @Component({
   selector: 'app-pensamento',
@@ -10,17 +10,20 @@ import { ModelosPensamentos } from '../../../../enums/ModelosPensamentos';
 export class PensamentoComponent implements OnInit {
   private static readonly TAMANHO_MAXIMO_STRING = 256;
   @Input()
-  pensamento: Pensamento;
+  public pensamento: Pensamento;
 
   constructor() {
     this.pensamento = {
+      id: '0',
       conteudo: '',
       modelo: ModelosPensamentos.MODELO1,
       autoria: '',
     };
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    return;
+  }
 
   public larguraPensamento(): string {
     if (
