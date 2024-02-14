@@ -12,14 +12,14 @@
 
 ## Telas
 <figure>
-  <img style="border-radius:20px;" src="./.github/01_listar.png" alt="Tela de listagem" />
+  <img style="border-radius:20px;" src="../.github/01_listar.png" alt="Tela de listagem" />
   <figcaption>Listagem das citações</figcaption>
 </figure>
 <figure>
-  <img style="border-radius:20px;" src="./.github/02_cadastrar.png" alt="Cadastro de uma citação" />
+  <img style="border-radius:20px;" src="../.github/02_cadastrar.png" alt="Cadastro de uma citação" />
   <figcaption>Cadastro de uma citação</figcaption>
 </figure>
 <figure>
-  <img style="border-radius:20px;" src="./.github/03_editar.png" alt="Editando uma citação" />
+  <img style="border-radius:20px;" src="../.github/03_editar.png" alt="Editando uma citação" />
   <figcaption>Editando uma citação</figcaption>
 </figure>
