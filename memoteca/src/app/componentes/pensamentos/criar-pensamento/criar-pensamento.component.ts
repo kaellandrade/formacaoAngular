@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./criar-pensamento.component.scss'],
 })
 export class CriarPensamentoComponent implements OnInit {
+  public modeloscards = ModelosPensamentos;
+
   pensamento: Pensamento = {
     conteudo: '',
     autoria: '',
@@ -34,6 +36,5 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    return;
   }
 }
