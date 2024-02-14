@@ -1,9 +1,3 @@
-<p align="center">
-  <img width='30%' src=".github/angular.svg" alt="Angular">
-</p>
-
----
-
 ## Memoteca
 > CRUDE simples para iniciar meu aprendizado no framework Angular.
 
