@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PensamentoService } from '../pensamento.service';
 import { Pensamento } from '../../../../interfaces/Pensamento';
-import { Observable } from 'rxjs';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
@@ -25,7 +24,6 @@ export class ExcluirPensamentoComponent implements OnInit {
     const id: string = String(this.route.snapshot.paramMap.get('id'));
     this.service.buscarPorId(id).subscribe((pensamento: Pensamento) => {
       this.pensamento = pensamento;
-      console.log(pensamento)
     });
   }
 

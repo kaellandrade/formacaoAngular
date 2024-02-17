@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PensamentoService } from '../pensamento.service';
 import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
-import { Pensamento } from '../../../../interfaces/Pensamento';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -12,6 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CriarPensamentoComponent implements OnInit {
   public modeloscards = ModelosPensamentos;
+  public readonly LENGTH_AUTORIA = 3;
   formulario!: FormGroup;
 
   constructor(
@@ -22,11 +22,14 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento(): void {
-    this.service.criar(this.formulario.value).subscribe(() => {
-      this.router.navigate(['/listarPensamento']).then(r => {
-        alert('Pensamento criado com sucesso!');
+    console.log(this.formulario.get('autoria')?.errors);
+    if (this.formulario.valid) {
+      this.service.criar(this.formulario.value).subscribe(() => {
+        this.router.navigate(['/listarPensamento']).then(r => {
+          alert('Pensamento criado com sucesso!');
+        });
       });
-    });
+    }
   }
 
   cancelarPensamento(): void {
@@ -36,9 +39,25 @@ export class CriarPensamentoComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      conteudo: ['Formulário reativo'],
-      autoria: ['Linus Torvalds'],
+      conteudo: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      autoria: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(this.LENGTH_AUTORIA),
+        ]),
+      ],
       modelo: [ModelosPensamentos.MODELO1],
     });
+  }
+
+  public toogleBotao(): string {
+    return this.formulario.valid ? 'botao':'botao__desabilitado';
   }
 }

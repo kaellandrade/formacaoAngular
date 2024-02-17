@@ -10,6 +10,14 @@
       id="pensamento"
       formControlName="conteudo"
       placeholder="Digite um pensamento" />
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('conteudo')?.errors &&
+        formulario.get('conteudo')?.touched
+      ">
+      Pensamento é obrigatório!
+    </div>
     <label for="autoria">Autoria ou fonte</label>
     <input
       type="text"
@@ -17,6 +25,19 @@
       id="autoria"
       formControlName="autoria"
       placeholder="Digite um autoria ou fonte" />
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formulario.get('autoria')?.errors?.['required'] &&
+        formulario.get('autoria')?.touched
+      ">
+      Autoria é obrigatória!
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="formulario.get('autoria')?.errors?.['minlength']">
+      Autoria precisa ter no mínimo {{ LENGTH_AUTORIA }} caracteres
+    </div>
     <label>Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
@@ -86,7 +107,12 @@
       </div>
     </div>
     <div class="acoes">
-      <button type="button" (click)="criarPensamento()" class="botao">
+      <button
+        type="button"
+        (click)="criarPensamento()"
+        class="botao"
+        [disabled]="!formulario.valid"
+        [ngClass]="toogleBotao()">
         Salvar
       </button>
       <button type="button" (click)="cancelarPensamento()" class="botao">

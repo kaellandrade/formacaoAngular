@@ -12,4 +12,4 @@
       4. Injeção de dependências de props;
       5. E algumas diretivas básicas do Angular.
    2. [Angular 14: evoluindo a aplicação](/memoteca)
-      1. Formulários reativos com ReactiveFormsModule, FormGroup; 
+      1. Formulários reativos com ReactiveFormsModule, FormGroup;
