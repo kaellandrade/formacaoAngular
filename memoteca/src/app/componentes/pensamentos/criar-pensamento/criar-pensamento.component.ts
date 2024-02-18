@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../../../validators/CustomValidators';
 import { EnumsValidators } from '../../../validators/EnumsValidators';
+import { ValidatorEnums } from '../ValidatorEnums';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -12,8 +13,10 @@ import { EnumsValidators } from '../../../validators/EnumsValidators';
   styleUrls: ['./criar-pensamento.component.scss'],
 })
 export class CriarPensamentoComponent implements OnInit {
+  protected readonly I18n = ValidatorEnums;
   public modeloscards = ModelosPensamentos;
-  public readonly LENGTH_AUTORIA = 3;
+  protected readonly ValidatorEnums = ValidatorEnums;
+
   formulario: FormGroup;
 
   constructor(
@@ -25,7 +28,6 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento(): void {
-    console.log(this.formulario.get('autoria')?.errors);
     if (this.formulario.valid) {
       this.service.criar(this.formulario.value).subscribe(() => {
         this.router.navigate(['/listarPensamento']).then(r => {
@@ -45,15 +47,14 @@ export class CriarPensamentoComponent implements OnInit {
       conteudo: [
         '',
         Validators.compose([
-          Validators.required,
-          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+          CustomValidators.campoPreenchidoSoComEspacos(),
         ]),
       ],
       autoria: [
         '',
         Validators.compose([
           Validators.required,
-          Validators.minLength(this.LENGTH_AUTORIA),
+          Validators.minLength(ValidatorEnums.LENGTH_AUTORIA),
           CustomValidators.apenasMinusculas(),
         ]),
       ],
@@ -72,4 +73,5 @@ export class CriarPensamentoComponent implements OnInit {
     }
     return false;
   }
+
 }
