@@ -8,4 +8,14 @@ export class CustomValidators {
       return forbidden ? { [EnumsValidators.APENAS_MINUSCULAS]: { value: control.value } }:null;
     };
   }
+
+  public static campoPreenchidoSoComEspacos(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const forbiden: boolean = !/(.|\s)*\S(.|\s)*/.test(control.value);
+
+
+      return forbiden ? { [EnumsValidators.SEM_ESPACOS]: { value: control.value } }:null;
+
+    };
+  }
 }

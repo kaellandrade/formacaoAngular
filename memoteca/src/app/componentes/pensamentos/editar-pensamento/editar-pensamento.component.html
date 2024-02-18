@@ -2,33 +2,52 @@
   <header class="header">
     <h2>Edite o pensamento:</h2>
   </header>
-  <form>
-    <label for="pensamento">Pensamento</label>
+  <form [formGroup]="formularioEditar">
+    <label for="pensamento" class="required-label">Pensamento</label>
     <input
       type="textarea"
       class="input"
       id="pensamento"
-      name="pensamento"
       placeholder="Digite um pensamento"
-      [(ngModel)]="pensamento.conteudo" />
-    <label for="autoria">Autoria ou fonte</label>
+      formControlName="conteudo" />
+    <div
+      class="mensagem__erro"
+      *ngIf="formularioEditar.get('conteudo')?.errors">
+      {{ ValidatorEnums.MSG_CAMPO_OBRIGATORIO }}
+    </div>
+    <label for="autoria" class="required-label">Autoria ou fonte</label>
     <input
-      [(ngModel)]="pensamento.autoria"
+      formGroupName="autoria"
       type="text"
       class="input"
       id="autoria"
-      name="autoria"
+      formControlName="autoria"
       placeholder="Digite um autoria ou fonte" />
-    <label for="modelo">Selecione o modelo do card:</label>
+    <div
+      class="mensagem__erro"
+      *ngIf="
+        formularioEditar.get('autoria')?.errors?.['required'] &&
+        formularioEditar.get('autoria')?.touched
+      ">
+      {{ ValidatorEnums.MSG_CAMPO_OBRIGATORIO }}
+    </div>
+    <div
+      class="mensagem__erro"
+      *ngIf="formularioEditar.get('autoria')?.errors?.['minlength']">
+      {{ ValidatorEnums.MS_CAMPO_MIN_LENGTH }} {{ ValidatorEnums.LENGTH_AUTORIA }} caracteres
+    </div>
+    <div class="mensagem__erro" *ngIf="isValidValueAutoria()">
+      {{ ValidatorEnums.MSG_AUTORIA_EM_MINUSCULA }}
+    </div>
+    <label>Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
-        <label class="label-modelo" for="modelo1">
+        <label class="label-modelo" for="{{ modeloscards.MODELO1 }}">
           <input
-            value="modelo1"
+            value="{{ modeloscards.MODELO1 }}"
             type="radio"
-            name="modelo-card"
-            id="modelo1"
-            [(ngModel)]="pensamento.modelo" />
+            id="{{ modeloscards.MODELO1 }}"
+            formControlName="modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -36,25 +55,22 @@
         </label>
         Prévia:
         <div class="modelo modelo1 ff-roboto-mono">
-          <img
-            src="../../../../assets/imgs/modelo1.png"
-            alt="Aspas azuis" />
+          <img src="../../../../assets/imgs/modelo1.png" alt="Aspas azuis" />
           <p class="conteudo">
-            {{ pensamento.conteudo }}
+            {{ formularioEditar.get('conteudo')?.value }}
           </p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formularioEditar.get('autoria')?.value }}</b>
           </p>
         </div>
       </div>
       <div class="radio-modelo">
-        <label class="label-modelo" for="modelo2">
+        <label class="label-modelo" for="{{ modeloscards.MODELO2 }}">
           <input
             type="radio"
-            name="modelo-card"
-            id="modelo2"
-            value="modelo2"
-            [(ngModel)]="pensamento.modelo" />
+            id="{{ modeloscards.MODELO2 }}"
+            value="{{ modeloscards.MODELO2 }}"
+            formControlName="modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -65,20 +81,19 @@
           <img
             src="../../../../assets/imgs/modelo2.png"
             alt="Aspas azuis claro" />
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
+          <p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formularioEditar.get('autoria')?.value }}</b>
           </p>
         </div>
       </div>
       <div class="radio-modelo">
-        <label class="label-modelo" for="modelo3">
+        <label class="label-modelo" for="{{ modeloscards.MODELO3 }}">
           <input
             type="radio"
-            name="modelo-card"
-            id="modelo3"
-            value="modelo3"
-            [(ngModel)]="pensamento.modelo" />
+            id="{{ modeloscards.MODELO3 }}"
+            value="{{ modeloscards.MODELO3 }}"
+            formControlName="modelo" />
           <div class="custom-radio">
             <span></span>
           </div>
@@ -86,24 +101,24 @@
         </label>
         Prévia:
         <div class="modelo modelo3 ff-roboto-mono">
-          <img
-            src="../../../../assets/imgs/modelo3.png"
-            alt="Aspas verde" />
-          <p class="conteudo">{{ pensamento.conteudo }}</p>
+          <img src="../../../../assets/imgs/modelo3.png" alt="Aspas verde" />
+          <p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
           <p class="autoria">
-            <b>{{ pensamento.autoria }}</b>
+            <b>{{ formularioEditar.get('autoria')?.value }}</b>
           </p>
         </div>
       </div>
     </div>
     <div class="acoes">
-      <button type="button" (click)="editarPensamento()" class="botao">
+      <button
+        [disabled]="!formularioEditar.valid"
+        type="button"
+        (click)="editarPensamento()"
+        class="botao"
+        [ngClass]="toogleBotao()">
         Salvar
       </button>
-      <button
-        type="button"
-        (click)="cancelarEdicao()"
-        class="botao">
+      <button type="button" (click)="cancelarEdicao()" class="botao">
         Cancelar
       </button>
     </div>

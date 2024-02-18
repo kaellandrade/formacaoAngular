@@ -5,8 +5,13 @@
   padding: 0;
 }
 
-.ff-inter { font-family: 'Inter', sans-serif; }
-.ff-roboto-mono { font-family: 'Roboto Mono', monospace; }
+.ff-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.ff-roboto-mono {
+  font-family: 'Roboto Mono', monospace;
+}
 
 h1 {
   position: absolute;
@@ -54,24 +59,28 @@ h2 {
 
 @media (min-width: 576px) {
   .container {
-      width: 540px;
+	width: 540px;
   }
 }
+
 @media (min-width: 768px) {
   .container {
-      width: 720px;
+	width: 720px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
-      width: 960px;
+	width: 960px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
-      width: 1140px;
+	width: 1140px;
   }
 }
+
 .botao__desabilitado {
   background: #7A7F87;
   color: #FFFFFF;
@@ -83,14 +92,30 @@ h2 {
   border-radius: 10px;
   transition: 0.5s ease;
 }
+
 .required-label {
   display: flex;
   align-items: center;
-  &:after{
-    content: '*';
-    font-size: 1.2rem;
-    width: 1rem;
-    height: 1rem;
-    color: #800505;
+
+  &:after {
+	content: '*';
+	font-size: 1.2rem;
+	width: 1rem;
+	height: 1rem;
+	color: #800505;
   }
+}
+
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.botao__desabilitado {
+  margin: 70px 5px 5px;
+  width: 200px;
+  cursor: not-allowed;
 }
