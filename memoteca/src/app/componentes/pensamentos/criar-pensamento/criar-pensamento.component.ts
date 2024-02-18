@@ -3,6 +3,8 @@ import { PensamentoService } from '../pensamento.service';
 import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from '../../../validators/CustomValidators';
+import { EnumsValidators } from '../../../validators/EnumsValidators';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -12,13 +14,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CriarPensamentoComponent implements OnInit {
   public modeloscards = ModelosPensamentos;
   public readonly LENGTH_AUTORIA = 3;
-  formulario!: FormGroup;
+  formulario: FormGroup;
 
   constructor(
     private service: PensamentoService,
     private router: Router,
     private formBuilder: FormBuilder,
   ) {
+    this.formulario = new FormGroup({});
   }
 
   criarPensamento(): void {
@@ -51,6 +54,7 @@ export class CriarPensamentoComponent implements OnInit {
         Validators.compose([
           Validators.required,
           Validators.minLength(this.LENGTH_AUTORIA),
+          CustomValidators.apenasMinusculas(),
         ]),
       ],
       modelo: [ModelosPensamentos.MODELO1],
@@ -59,5 +63,13 @@ export class CriarPensamentoComponent implements OnInit {
 
   public toogleBotao(): string {
     return this.formulario.valid ? 'botao':'botao__desabilitado';
+  }
+
+  public isValidValueAutoria(): boolean {
+    const autoria = this.formulario.get('autoria');
+    if (autoria?.value) {
+      return Boolean(autoria?.errors?.[EnumsValidators.APENAS_MINUSCULAS] && this.formulario.get('autoria')?.touched);
+    }
+    return false;
   }
 }

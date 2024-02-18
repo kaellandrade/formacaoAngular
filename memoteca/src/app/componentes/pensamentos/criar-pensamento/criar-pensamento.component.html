@@ -3,7 +3,7 @@
     <h2>Adicione um <br />pensamento novo:</h2>
   </header>
   <form [formGroup]="formulario">
-    <label for="pensamento">Pensamento</label>
+    <label for="pensamento" class="required-label">Pensamento</label>
     <input
       type="textarea"
       class="input"
@@ -18,7 +18,7 @@
       ">
       Pensamento é obrigatório!
     </div>
-    <label for="autoria">Autoria ou fonte</label>
+    <label for="autoria" class="required-label">Autoria ou fonte</label>
     <input
       type="text"
       class="input"
@@ -37,6 +37,9 @@
       class="mensagem__erro"
       *ngIf="formulario.get('autoria')?.errors?.['minlength']">
       Autoria precisa ter no mínimo {{ LENGTH_AUTORIA }} caracteres
+    </div>
+    <div class="mensagem__erro" *ngIf="isValidValueAutoria()">
+      Autoria precisa ser em minúsculo
     </div>
     <label>Selecione o modelo do card:</label>
     <div class="container-radio">
