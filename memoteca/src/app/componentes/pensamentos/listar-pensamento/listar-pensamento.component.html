@@ -10,6 +10,9 @@
 			<app-pensamento [pensamento]="pensamento"></app-pensamento>
 		</div>
 	</div>
+	<app-botao-carregar-mais
+		(click)="carregarMaisPensamentos()"
+		[haMaisPensamentos]="next"></app-botao-carregar-mais>
 </section>
 <ng-template #semPensamentos>
 	<div class="ff-inter sem-pensamentos">

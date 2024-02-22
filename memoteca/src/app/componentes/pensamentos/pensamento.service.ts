@@ -24,8 +24,6 @@ export class PensamentoService {
 			.set('_page', pagina)
 			.set('_per_page', ITENS_POR_PAGINA);
 
-		console.log(params.toString());
-
 		return this.http.get<PensamentoRequestShape>(`${this.API}/pensamentos`, {
 			params,
 		});

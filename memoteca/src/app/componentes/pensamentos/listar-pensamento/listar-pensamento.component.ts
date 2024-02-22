@@ -9,21 +9,33 @@ import { PensamentoRequestShape } from 'src/interfaces/PensamentoRequestShape';
 	styleUrls: ['./listar-pensamento.component.scss'],
 })
 export class ListarPensamentoComponent implements OnInit {
-	listaPensamentos: ReadonlyArray<Pensamento> = [];
+	listaPensamentos: Array<Pensamento> = [];
 	totalPensamentos: number = 0;
 	paginaAtual: number = 1;
+	next: boolean = false;
 
 	constructor(private service: PensamentoService) {}
 
 	/**
 	 * Ciclo de vida do componente.
 	 */
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		this.service
 			.listar(this.paginaAtual)
 			.subscribe((listaPensamentos: PensamentoRequestShape) => {
 				this.totalPensamentos = listaPensamentos.items;
 				this.listaPensamentos = listaPensamentos.data;
+				this.next = Boolean(listaPensamentos.next);
+			});
+	}
+
+	public carregarMaisPensamentos(): void {
+		this.service
+			.listar(++this.paginaAtual)
+			.subscribe((listaPensamentos: PensamentoRequestShape) => {
+				this.totalPensamentos = listaPensamentos.items;
+				this.listaPensamentos.push(...listaPensamentos.data);
+				this.next = Boolean(listaPensamentos.next);
 			});
 	}
 }
