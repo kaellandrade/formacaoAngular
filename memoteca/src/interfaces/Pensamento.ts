@@ -5,4 +5,5 @@ export interface Pensamento {
 	conteudo: string;
 	autoria: string;
 	modelo: ModelosPensamentos;
+	favorito: boolean;
 }
