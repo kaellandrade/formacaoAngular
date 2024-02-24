@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Pensamento } from '../../../interfaces/Pensamento';
 import { Observable } from 'rxjs';
-import { PensamentoRequestShape } from 'src/interfaces/PensamentoRequestShape';
 
 /**
  * Utilizando a injeção de dependência
@@ -18,14 +17,19 @@ export class PensamentoService {
 
 	constructor(private http: HttpClient) {}
 
-	public listar(pagina: number): Observable<PensamentoRequestShape> {
+	public listar(
+		pagina: number,
+		busca: string
+	): Observable<HttpResponse<Pensamento[]>> {
 		const ITENS_POR_PAGINA = 6;
 		let params = new HttpParams()
 			.set('_page', pagina)
-			.set('_per_page', ITENS_POR_PAGINA);
+			.set('_limit', ITENS_POR_PAGINA)
+			.set('q', busca);
 
-		return this.http.get<PensamentoRequestShape>(`${this.API}/pensamentos`, {
+		return this.http.get<Pensamento[]>(`${this.API}/pensamentos`, {
 			params,
+			observe: 'response',
 		});
 	}
 
