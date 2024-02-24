@@ -3,5 +3,7 @@
 </div>
 
 <ng-template #semmaisPensamentos>
-	<p class="mensagem-center ff-inter">Não há mais pensamentos para exibir</p>
+	<p *ngIf="totalPensamentos" class="mensagem-center ff-inter">
+		Não há mais pensamentos para exibir
+	</p>
 </ng-template>

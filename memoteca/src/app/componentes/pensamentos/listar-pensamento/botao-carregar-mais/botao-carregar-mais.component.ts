@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BotaoCarregarMaisComponent implements OnInit {
 	@Input()
 	haMaisPensamentos: boolean = false;
+	@Input()
+	totalPensamentos: number = 0;
 	constructor() {}
 
 	ngOnInit(): void {}
