@@ -12,6 +12,8 @@ export class PensamentoComponent implements OnInit {
 	private static readonly TAMANHO_MAXIMO_STRING = 256;
 	@Input()
 	public pensamento: Pensamento;
+	@Input()
+	public listaFavoritos: Pensamento[] = [];
 
 	constructor(private service: PensamentoService) {
 		this.pensamento = {
@@ -37,7 +39,7 @@ export class PensamentoComponent implements OnInit {
 		return 'pensamento-p';
 	}
 
-	toggleFavoritar() {
+	public toggleFavoritar(): void {
 		let pensamento: Pensamento = {
 			...this.pensamento,
 			favorito: !this.pensamento.favorito,
@@ -47,6 +49,10 @@ export class PensamentoComponent implements OnInit {
 			if (pensamentoAtualizado.favorito === pensamento.favorito) {
 				// Foi atualizado com sucesso!
 				this.pensamento.favorito = pensamentoAtualizado.favorito;
+				this.listaFavoritos.splice(
+					this.listaFavoritos.indexOf(this.pensamento),
+					1
+				);
 			}
 		});
 	}

@@ -15,6 +15,8 @@ export class ListarPensamentoComponent implements OnInit {
 	public totalPensamentos: number = 0;
 	public next: boolean = false;
 	public filtro: string = '';
+	public apenasFavoritos: boolean = false;
+	public listaFavoritos: Pensamento[] = [];
 
 	constructor(private service: PensamentoService) {}
 
@@ -28,7 +30,7 @@ export class ListarPensamentoComponent implements OnInit {
 	public carregarMaisPensamentos(): void {
 		if (this.next) {
 			this.service
-				.listar(++this.paginaAtual, this.filtro.trim())
+				.listar(++this.paginaAtual, this.filtro.trim(), this.apenasFavoritos)
 				.subscribe((response: HttpResponse<Pensamento[]>) => {
 					if (response.body) {
 						this.totalPensamentos = this.listaPensamentos.length;
@@ -42,7 +44,7 @@ export class ListarPensamentoComponent implements OnInit {
 	public filtrarPensamentos(): void {
 		if (this.filtro.trim().length >= this.TAMANHO_MINIMO_PALAVRA_BUSCA) {
 			this.service
-				.listar(1, this.filtro.trim())
+				.listar(1, this.filtro.trim(), this.apenasFavoritos)
 				.subscribe((response: HttpResponse<Pensamento[]>) => {
 					if (response.body) {
 						this.listaPensamentos = response.body;
@@ -66,13 +68,33 @@ export class ListarPensamentoComponent implements OnInit {
 
 	private carregarTodosPensamentos(): void {
 		this.service
-			.listar(1, '')
+			.listar(1, this.filtro, this.apenasFavoritos)
 			.subscribe((response: HttpResponse<Pensamento[]>) => {
 				if (response.body) {
 					this.listaPensamentos = response.body;
 					this.totalPensamentos = this.listaPensamentos.length;
 					this.next = this.hasNext(response.headers);
+					if (this.apenasFavoritos) {
+						this.listaFavoritos = response.body;
+					}
 				}
 			});
+	}
+
+	public filtrarPensamentosFavoritos() {
+		this.paginaAtual = 1;
+		this.carregarTodosPensamentos();
+	}
+	public getTitulo(): string {
+		if (this.filtro.length && this.apenasFavoritos) {
+			return `Busca por '${this.filtro}' favoritados`;
+		}
+		if (this.apenasFavoritos) {
+			return 'Apenas favoritos';
+		}
+		if (this.filtro.length) {
+			return `Busca por '${this.filtro}'`;
+		}
+		return 'Todos os pensamentos';
 	}
 }

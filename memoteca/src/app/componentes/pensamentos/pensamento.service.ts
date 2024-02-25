@@ -19,13 +19,18 @@ export class PensamentoService {
 
 	public listar(
 		pagina: number,
-		busca: string
+		busca: string,
+		favoritos: boolean
 	): Observable<HttpResponse<Pensamento[]>> {
 		const ITENS_POR_PAGINA = 6;
 		let params = new HttpParams()
 			.set('_page', pagina)
 			.set('_limit', ITENS_POR_PAGINA)
 			.set('q', busca);
+
+		if (favoritos) {
+			params = params.set('favorito', favoritos);
+		}
 
 		return this.http.get<Pensamento[]>(`${this.API}/pensamentos`, {
 			params,
