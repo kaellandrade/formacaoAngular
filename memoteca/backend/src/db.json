@@ -5,56 +5,42 @@
       "modelo": "modelo2",
       "autoria": "harold abelson",
       "id": "b8d5",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "Qualquer tolo pode escrever um código que um computador pode entender. Bons programadores escrevem códigos que os humanos podem entender.",
       "modelo": "modelo3",
       "autoria": "martin fowler",
       "id": "6a0b",
-      "favorito": false
-    },
-    {
-      "conteudo": "A verdade só pode ser encontrada em um lugar: o código.",
-      "modelo": "modelo1",
-      "autoria": "robert c. martin",
-      "id": "9d2f",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "Dê a um homem um programa, frustre-o por um dia. Ensine um homem a programar, frustre-o por toda a vida.",
       "modelo": "modelo2",
       "autoria": "muhammad waseem",
       "id": "5c3d",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "A melhor coisa sobre um booleano é que mesmo se você estiver errado, você só está errado por um bit.",
       "modelo": "modelo3",
       "autoria": "anonymous",
       "id": "8e1f",
-      "favorito": false
-    },
-    {
-      "conteudo": "Sem requisitos ou design, programar é a arte de adicionar bugs a um arquivo de texto vazio.",
-      "modelo": "modelo1",
-      "autoria": "louis srygley",
-      "id": "7b2a",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "Antes que o software possa ser reutilizável, ele primeiro tem que ser utilizável.",
       "modelo": "modelo2",
       "autoria": "ralph johnson",
       "id": "6c3b",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "O melhor método para acelerar um computador é aquele que o acelera em 9,8 m/s2.",
       "modelo": "modelo3",
       "autoria": "anonymous",
       "id": "5d4c",
-      "favorito": false
+      "favorito": true
     },
     {
       "conteudo": "Acho que a Microsoft nomeou .Net para que não aparecesse em uma listagem de diretórios Unix.",
@@ -89,7 +75,7 @@
       "modelo": "modelo2",
       "autoria": "harold abelson",
       "id": "0i9h",
-      "favorito": true
+      "favorito": false
     },
     {
       "conteudo": "Qualquer tolo pode escrever um código que um computador pode entender. Bons programadores escrevem códigos que os humanos podem entender.",
@@ -131,7 +117,7 @@
       "modelo": "modelo2",
       "autoria": "ralph johnson",
       "id": "o65n",
-      "favorito": true
+      "favorito": false
     }
   ]
 }
