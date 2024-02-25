@@ -28,4 +28,4 @@
 
 ## Evoluindo a aplicação 02
 
-[![Watch the video](../.github/04_favoritos.png)](../.github/demo_memoteca.mp4)
+![Aplicação em execução](../.github/demo_memoteca.gif)
