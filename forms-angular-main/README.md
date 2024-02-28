@@ -32,24 +32,24 @@ Execute `ng generate component component-name` para gerar um novo componente. Ta
   - É síncrono,
   - [Artigo Alura](https://www.alura.com.br/artigos/como-aplicar-validacao-formularios-reativos-angular)
 
-  - Exemplo de ambos
+- Exemplo de ambos
 
-    [Formulário 1 (Exemplo app cadastro): Formulário Template-Driven](./src/app/cadastro/cadastro.component.html)
+  [Formulário 1 (Exemplo app cadastro): Formulário Template-Driven](./src/app/cadastro/cadastro.component.html)
 
-    Este é um exemplo de um formulário Template-Driven. Neste tipo de formulário, a lógica é baseada no template, não na classe do componente. Aqui estão alguns pontos-chave:
+  Este é um exemplo de um formulário Template-Driven. Neste tipo de formulário, a lógica é baseada no template, não na classe do componente. Aqui estão alguns pontos-chave:
 
-    - `#f="ngForm"`: Isso cria uma referência local para o formulário.
-    - `(ngSubmit)="cadastrar(f)"`: Isso liga o evento de submissão do formulário à função `cadastrar()`, passando o formulário como argumento.
-    - `ngModel`: Isso cria uma ligação bidirecional entre o campo do formulário e a propriedade do componente.
-    - `required` e `minlength`: São validadores que garantem que o campo é preenchido e tem um comprimento mínimo.
+  - `#f="ngForm"`: Isso cria uma referência local para o formulário.
+  - `(ngSubmit)="cadastrar(f)"`: Isso liga o evento de submissão do formulário à função `cadastrar()`, passando o formulário como argumento.
+  - `ngModel`: Isso cria uma ligação bidirecional entre o campo do formulário e a propriedade do componente.
+  - `required` e `minlength`: São validadores que garantem que o campo é preenchido e tem um comprimento mínimo.
 
-    [Formulário 2 (Exemplo Memoteca app): Formulário Reativo](../memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.html)
+  [Formulário 2 (Exemplo Memoteca app): Formulário Reativo](../memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.html)
 
-    Este é um exemplo de um formulário Reativo. Neste tipo de formulário, a lógica é baseada na classe do componente. Aqui estão alguns pontos-chave:
+  Este é um exemplo de um formulário Reativo. Neste tipo de formulário, a lógica é baseada na classe do componente. Aqui estão alguns pontos-chave:
 
-    - `[formGroup]="formulario"`: Isso associa o formulário HTML ao FormGroup `formulario` definido na classe do componente.
-    - `formControlName="autoria"`: Isso liga o campo de entrada ao FormControl chamado `autoria` dentro do FormGroup.
+  - `[formGroup]="formulario"`: Isso associa o formulário HTML ao FormGroup `formulario` definido na classe do componente.
+  - `formControlName="autoria"`: Isso liga o campo de entrada ao FormControl chamado `autoria` dentro do FormGroup.
 
-    Em resumo, os formulários Template-Driven são úteis para cenários simples e os formulários Reativos oferecem mais flexibilidade e são mais adequados para cenários complexos.
+  Em resumo, os formulários Template-Driven são úteis para cenários simples e os formulários Reativos oferecem mais flexibilidade e são mais adequados para cenários complexos.
 
   </details>
