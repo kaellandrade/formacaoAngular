@@ -1,27 +1,54 @@
-# FormsReativos
+# Executando o projeto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
+## Requisitos
+
+- Node;
+- Angular
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Execute `ng serve` para rodar o serve do Angular. Vá para `http://localhost:4200/`.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng generate component component-name` para gerar um novo componente. Também pode utilizar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+<details>
+  <summary>Anotações </summary>
+  Basicamente o Angular possui duas formas de trabalhar com formulário e validá-los, são:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Template Drive](https://angular.io/guide/forms#building-a-template-driven-form);
 
-## Running unit tests
+  - Todo implementado no template do componente;
+  - Necessário o módulo `FormsModule`;
+  - É assíncrono;
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Data Driven ou Reactive Forms
+  - Lógica fica do lado do componente;
+  - Utiliza o `ReactiveFormsModule`;
+  - É síncrono,
+  - [Artigo Alura](https://www.alura.com.br/artigos/como-aplicar-validacao-formularios-reativos-angular)
+- Sobre forms
+  Claro, vou explicar a diferença entre esses dois formulários no Angular.
 
-## Running end-to-end tests
+[Formulário 1 (Exemplo app cadastro): Formulário Template-Driven](./src/app/cadastro/cadastro.component.html)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Este é um exemplo de um formulário Template-Driven. Neste tipo de formulário, a lógica é baseada no template, não na classe do componente. Aqui estão alguns pontos-chave:
 
-## Further help
+- `#f="ngForm"`: Isso cria uma referência local para o formulário.
+- `(ngSubmit)="cadastrar(f)"`: Isso liga o evento de submissão do formulário à função `cadastrar()`, passando o formulário como argumento.
+- `ngModel`: Isso cria uma ligação bidirecional entre o campo do formulário e a propriedade do componente.
+- `required` e `minlength`: São validadores que garantem que o campo é preenchido e tem um comprimento mínimo.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[Formulário 2 (Exemplo Memoteca app): Formulário Reativo](../memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.html)
+
+Este é um exemplo de um formulário Reativo. Neste tipo de formulário, a lógica é baseada na classe do componente. Aqui estão alguns pontos-chave:
+
+- `[formGroup]="formulario"`: Isso associa o formulário HTML ao FormGroup `formulario` definido na classe do componente.
+- `formControlName="autoria"`: Isso liga o campo de entrada ao FormControl chamado `autoria` dentro do FormGroup.
+
+Em resumo, os formulários Template-Driven são úteis para cenários simples e os formulários Reativos oferecem mais flexibilidade e são mais adequados para cenários complexos.
+
+  </details>
