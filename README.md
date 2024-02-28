@@ -13,4 +13,4 @@
       5. E algumas diretivas básicas do Angular.
    2. [Angular 14: evoluindo a aplicação](/memoteca)
       1. Formulários reativos com ReactiveFormsModule, FormGroup;
-      2. [Formulários orientados a templates](/forms-angular-main/)
+   3. [Formulários orientados a templates](/forms-angular-main/)
