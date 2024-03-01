@@ -60,16 +60,16 @@
         </div>
       </div>
       <div class="formulario__campo">
-        <label class="campo__etiqueta" for="telefone">Contato</label>
-        <input
-          name="telefone"
-          id="telefone"
-          type="tel"
-          placeholder="(XX) XXXXX-XXXX"
-          class="campo__escrita"
-          ngModel
-        />
-      </div>
+		<label class="campo__etiqueta" for="telefone">Contato</label>
+		<input name="telefone" id="telefone" type="tel" placeholder="(XX) XXXXX-XXXX" class="campo__escrita" ngModel
+		  #telefone="ngModel" required pattern="(\(?\d{2}\)?\s?)(\d{5}\-?\d{4})" />
+		<small class="erro__texto" *ngIf="telefone?.errors?.['required'] && telefone?.touched">
+		  Campo telefone obrigatório.
+		</small>
+		<small class="erro__texto" *ngIf="telefone?.errors?.['pattern']">
+		  Campo telefone deve ter DDD com 2 digitos e 9 digitos.
+		</small>
+	  </div>
     </div>
     <div class="formulario__campo">
       <label class="campo__etiqueta" for="email">E-mail</label>
