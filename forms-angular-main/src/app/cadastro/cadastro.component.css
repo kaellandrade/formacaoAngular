@@ -78,3 +78,13 @@
   border-color: red;
   color: red;
 }
+
+.required::after {
+  content: "*";
+  color: red;
+}
+
+.btn_invalido {
+  background-color: rgba(128, 128, 128, 0.363);
+  cursor: not-allowed;
+}
