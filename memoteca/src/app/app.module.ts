@@ -15,19 +15,25 @@ import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pens
 import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CabecalhoComponent,
-    RodapeComponent,
-    CriarPensamentoComponent,
-    ListarPensamentoComponent,
-    PensamentoComponent,
-    ExcluirPensamentoComponent,
-    EditarPensamentoComponent,
-    BotaoCarregarMaisComponent,
-  ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
-  providers: [],
-  bootstrap: [AppComponent],
+	declarations: [
+		AppComponent,
+		CabecalhoComponent,
+		RodapeComponent,
+		CriarPensamentoComponent,
+		ListarPensamentoComponent,
+		PensamentoComponent,
+		ExcluirPensamentoComponent,
+		EditarPensamentoComponent,
+		BotaoCarregarMaisComponent,
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		HttpClientModule,
+		ReactiveFormsModule,
+	],
+	providers: [],
+	bootstrap: [AppComponent],
 })
 export class AppModule {}
