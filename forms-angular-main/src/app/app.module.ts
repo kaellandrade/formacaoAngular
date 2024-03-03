@@ -9,18 +9,23 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
 import { SucessoCadastroComponent } from "./sucesso-cadastro/sucesso-cadastro.component";
 import { MensagemComponent } from "./components/mensagem/mensagem.component";
+import { MaiorIdadeDirective } from "./directives/maior-idade.directive";
+import { HttpClientModule } from "@angular/common/http";
+import { ValidandoCepDirective } from './directives/validando-cep.directive';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		HeaderComponent,
-		FooterComponent,
-		CadastroComponent,
-		SucessoCadastroComponent,
-		MensagemComponent
-	],
-	imports: [BrowserModule, AppRoutingModule, FormsModule],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    CadastroComponent,
+    SucessoCadastroComponent,
+    MensagemComponent,
+    MaiorIdadeDirective,
+    ValidandoCepDirective,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
