@@ -9,7 +9,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Execute `ng serve` para rodar o serve do Angular. Vá para `http://localhost:4200/`.
+Execute `npm start` para rodar o serve do Angular. Aplicação será iniciada em `http://localhost:4200/`.
 
 ## Code scaffolding
 
@@ -168,3 +168,7 @@ Desse modo, criei uma diretiva de atributos para alterar a aparência de um elem
 Para saber mais sobre as diretivas veja a documentação do [Angular](https://angular.dev/guide/directives#built-in-attribute-directives)
 
 </details>
+
+## Telas
+
+![Tela](../.github/form-teplate/aplicacao.png)
