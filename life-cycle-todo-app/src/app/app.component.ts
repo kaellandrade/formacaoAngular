@@ -8,7 +8,6 @@ import { ListaDeCompraService } from './service/lista-de-compra.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'app-lista-de-compras';
   listaCompra!: Item[];
 
   constructor(private listaSercice: ListaDeCompraService) {}

@@ -1,4 +1,16 @@
-<form class="add-item">
-  <input type="text" name="item" placeholder="Digite o item que deseja adicionar">
-  <button type="submit">Salvar item</button>
+<form #addForm="ngForm" class="add-item" (ngSubmit)="adicionarItem(addForm)">
+  <input
+    type="text"
+    name="item"
+    placeholder="Digite o item que deseja adicionar"
+    [(ngModel)]="valorItem"
+    required="true"
+  />
+  <button
+    [disabled]="addForm.form.invalid"
+    [ngClass]="addForm.form.invalid ? 'disabled' : ''"
+    type="submit"
+  >
+    Salvar item
+  </button>
 </form>
