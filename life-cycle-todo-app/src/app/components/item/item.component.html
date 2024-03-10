@@ -10,4 +10,4 @@
   <fa-icon class="icon delete-icon" [icon]="faTrash" ></fa-icon>
   <fa-icon class="icon edit-icon" (click)="editarItem()" [icon]="faPen" ></fa-icon>
 </div>
-<small class="date">{{ item.data }}</small>
+<small class="date">{{ item.data }} {{item.editado ? '(Editado)' : ''}}</small>
