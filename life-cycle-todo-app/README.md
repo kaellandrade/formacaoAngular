@@ -56,6 +56,38 @@ Verifique a relação dos componentes na hora de editar um _todo_: `item.compone
 Podemos vincular eventos de classe da seguinte forma:
 aplica a classe `line-through` quando `item.comprado` for `true` `[class.line-through]="item.comprado"`
 
+## DoCheck
+
+- Chamado quando todas as alterações do componente além das props de entrada;
+- Detecta alterações dos componentes filhos também;
+- Usar com parcimônia, pois pode causar problemas de performance.
+
+## OnDestroy
+
+> O hook OnDestroy é chamado quando o componente é destruído pelo Angular. Aqui,devemos cancelar a chamada HTTP em andamento, para evitar problemas de memória (**Memory Leak**) ou outras questões de performance.
+
+É muito utilizado para limpar os rastros de um componente, ou seja, para realizar lógicas de limpeza. Um exemplo de lógica de limpeza é cancelar assinatura de inscrições do Observable para liberar memória para evitar **Memory Leak** (Vazamento de memória).
+
+Um vazamento de memória (do Inglês memory leak) ocorre quando o programa não libera para o sistema operacional memória que não é mais utilizada. Um problema que surge diretamente do gerenciamento incorreto da alocação dinâmica.
+
+Isso é muito comum em programas de linguagem que não possui recursos de gerenciamento de memória automático, como C, por exemplo.
+
+## Sobre outros Hooks
+
+- `AfterViewInit`:
+  Este hook é acionado após a visualização do componente ser totalmente inicializada. É útil para realizar ações específicas relacionadas à visualização, como manipulações no DOM ou integrações com bibliotecas externas.
+
+- `AfterViewChecked`:
+  Ativado após cada verificação da visualização do componente, permitindo a execução de ações adicionais nesse momento específico do ciclo de vida.
+
+- `AfterContentInit`:
+  Executado após a inicialização do conteúdo do componente. É útil quando operações dependem do conteúdo projetado no componente.
+
+- `AfterContentChecked`:
+  Ativado após cada verificação do conteúdo do componente, proporcionando oportunidades para ações adicionais relacionadas ao conteúdo.
+
 </details>
 
 ## Telas
+
+![Todo](../.github/life-cycle/todo.png)
