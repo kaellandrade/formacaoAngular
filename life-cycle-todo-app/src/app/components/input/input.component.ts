@@ -38,20 +38,21 @@ export class InputComponent implements OnInit, OnChanges {
 		}
 		if (!this.editando) {
 			this.adicionarItem();
-			this.setupBtnSubmit();
+
 			return;
 		}
 		this.atualizarItem();
-		this.setupBtnSubmit();
 	}
 
 	private atualizarItem(): void {
 		this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
+		this.setupBtnSubmit();
 		this.limparCampo();
 	}
 	private adicionarItem(): void {
 		this.listaCompraService.adicionarItemLista(this.valorItem);
 		this.limparCampo();
+		this.setupBtnSubmit();
 	}
 
 	private limparCampo(): void {

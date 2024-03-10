@@ -1,36 +1,26 @@
 import { Item } from 'src/app/interfaces/iItem';
 import { Injectable } from '@angular/core';
+const KEY_LOCAL_STORAGE = 'ITENS';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ListaDeCompraService {
-	private listaDeCompra: Item[] = [
-		{
-			id: 1,
-			nome: 'Queijo prato',
-			data: 'Segunda-feira (31/10/2022) às 08:30',
-			comprado: false,
-			editado: false,
-		},
-		{
-			id: 2,
-			nome: 'Leite integral',
-			data: 'Segunda-feira (31/10/2022) às 08:30',
-			comprado: false,
-			editado: false,
-		},
-		{
-			id: 3,
-			nome: 'Mamão papaia',
-			data: 'Segunda-feira (31/10/2022) às 08:30',
-			comprado: true,
-			editado: false,
-		},
-	];
+	private listaDeCompra: Item[] = [];
 
 	constructor() {
-		console.log('Instanciando dependências necessárias para o serviço.');
+		this.listaDeCompra = JSON.parse(
+			localStorage.getItem(KEY_LOCAL_STORAGE) || '[]'
+		).map((item: any): Item => {
+			return {
+				comprado: Boolean(item['comprado']),
+				data: new Date(item['data']),
+				editado: Boolean(item['editado']),
+				nome: item['nome'],
+				dataEdicao: item['dataEdicao'] ? new Date(item['dataEdicao']) : null,
+				id: item['id'],
+			};
+		});
 	}
 
 	getListaDeCompra() {
@@ -53,12 +43,16 @@ export class ListaDeCompraService {
 					novoNome,
 					this.listaDeCompra[index].comprado,
 					true,
-					this.listaDeCompra[index].data,
-					new Date().toLocaleString('pt-BR')
+					new Date(this.listaDeCompra[index].data),
+					new Date()
 				);
 				break;
 			}
 		}
+	}
+
+	public persistirNoLocalStorage() {
+		localStorage.setItem(KEY_LOCAL_STORAGE, JSON.stringify(this.listaDeCompra));
 	}
 
 	private configurarTodo(
@@ -66,8 +60,8 @@ export class ListaDeCompraService {
 		nome: string,
 		comprado: boolean,
 		editado: boolean,
-		data: Date | string,
-		dataEdicao?: Date | string
+		data: Date,
+		dataEdicao?: Date
 	): Item {
 		return {
 			id,

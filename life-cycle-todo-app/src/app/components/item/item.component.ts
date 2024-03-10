@@ -20,10 +20,20 @@ export class ItemComponent implements OnInit, OnChanges {
 	@Output() emitindoItemParaEditar = new EventEmitter();
 	faPen = faPen;
 	faTrash = faTrash;
+	@Input()
+	optionsDate: Intl.DateTimeFormatOptions = {
+		year: 'numeric',
+		month: 'long',
+		weekday: 'long',
+		day: 'numeric',
+		hour: 'numeric',
+		minute: 'numeric',
+		second: 'numeric',
+	};
 
 	constructor() {}
 	ngOnChanges(changes: SimpleChanges): void {
-		// console.log('onChanges');
+		console.log('onChanges');
 	}
 
 	ngOnInit(): void {
@@ -32,6 +42,8 @@ export class ItemComponent implements OnInit, OnChanges {
 
 	editarItem(): void {
 		this.emitindoItemParaEditar.emit(this.item); // Emitindo uma informação
-		console.log('click!!');
+	}
+	toggleCheck() {
+		this.item.comprado = !this.item.comprado;
 	}
 }

@@ -1,8 +1,8 @@
 export interface Item {
 	id?: number | string;
 	nome: string;
-	data: Date | string;
+	data: Date;
 	comprado: boolean;
 	editado: boolean;
-	dataEdicao?: Date | string;
+	dataEdicao?: Date | null;
 }
