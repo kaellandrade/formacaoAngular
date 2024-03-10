@@ -11,19 +11,29 @@ export class AppComponent implements OnInit, DoCheck {
 	listaCompra!: Item[];
 	editItem!: Item;
 
-	constructor(private listaSercice: ListaDeCompraService) {}
+	constructor(private listaService: ListaDeCompraService) {}
 	ngDoCheck(): void {
 		console.log('ngDoCheck foi chamado!');
-		this.listaSercice.persistirNoLocalStorage();
+		this.listaService.persistirNoLocalStorage();
 	}
 
 	ngOnChanges(changes: SimpleChanges): void {
 		console.log('ok');
 	}
 	ngOnInit(): void {
-		this.listaCompra = this.listaSercice.getListaDeCompra();
+		this.listaCompra = this.listaService.getListaDeCompra();
 	}
 	editarItem(item: Item) {
 		this.editItem = item;
+	}
+
+	deleteItem(idItem: number) {
+		this.listaService.deletarItem(idItem);
+	}
+	apagarTudo() {
+		const resposta = confirm('Remover todos os itens ?');
+		if (resposta) {
+			this.listaService.deletarTodaLista();
+		}
 	}
 }

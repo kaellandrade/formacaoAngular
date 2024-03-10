@@ -6,6 +6,7 @@ import {
 	Output,
 	SimpleChanges,
 	EventEmitter,
+	OnDestroy,
 } from '@angular/core';
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Item } from 'src/app/interfaces/iItem';
@@ -15,11 +16,8 @@ import { Item } from 'src/app/interfaces/iItem';
 	templateUrl: './item.component.html',
 	styleUrls: ['./item.component.css'],
 })
-export class ItemComponent implements OnInit, OnChanges {
+export class ItemComponent implements OnInit, OnChanges, OnDestroy {
 	@Input() item!: Item;
-	@Output() emitindoItemParaEditar = new EventEmitter();
-	faPen = faPen;
-	faTrash = faTrash;
 	@Input()
 	optionsDate: Intl.DateTimeFormatOptions = {
 		year: 'numeric',
@@ -31,7 +29,23 @@ export class ItemComponent implements OnInit, OnChanges {
 		second: 'numeric',
 	};
 
+	@Output() emitindoItemParaEditar = new EventEmitter();
+	@Output() emitindoIdDelete = new EventEmitter();
+
+	faPen = faPen;
+	faTrash = faTrash;
+
 	constructor() {}
+
+	editarItem(): void {
+		this.emitindoItemParaEditar.emit(this.item); // Emitindo uma informação
+	}
+	toggleCheck() {
+		this.item.comprado = !this.item.comprado;
+	}
+	deletarItem() {
+		this.emitindoIdDelete.emit(this.item.id);
+	}
 	ngOnChanges(changes: SimpleChanges): void {
 		console.log('onChanges');
 	}
@@ -39,11 +53,7 @@ export class ItemComponent implements OnInit, OnChanges {
 	ngOnInit(): void {
 		// console.log('onInit');
 	}
-
-	editarItem(): void {
-		this.emitindoItemParaEditar.emit(this.item); // Emitindo uma informação
-	}
-	toggleCheck() {
-		this.item.comprado = !this.item.comprado;
+	ngOnDestroy(): void {
+		console.log('Lógica de limpeza...');
 	}
 }

@@ -12,7 +12,10 @@
 	>{{ item.nome }}</label
 >
 <div class="d-contents" *ngIf="!item.comprado">
-	<fa-icon class="icon delete-icon" [icon]="faTrash"></fa-icon>
+	<fa-icon
+		(click)="deletarItem()"
+		class="icon delete-icon"
+		[icon]="faTrash"></fa-icon>
 	<fa-icon
 		class="icon edit-icon"
 		(click)="editarItem()"

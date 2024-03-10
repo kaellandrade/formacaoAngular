@@ -51,6 +51,15 @@ export class ListaDeCompraService {
 		}
 	}
 
+	deletarItem(itemId: number) {
+		const index = this.listaDeCompra.findIndex(item => item.id === itemId);
+		this.listaDeCompra.splice(index, 1);
+	}
+
+	deletarTodaLista() {
+		this.listaDeCompra.splice(0);
+	}
+
 	public persistirNoLocalStorage() {
 		localStorage.setItem(KEY_LOCAL_STORAGE, JSON.stringify(this.listaDeCompra));
 	}

@@ -2,10 +2,16 @@
 	<app-input [editItem]="editItem"> </app-input>
 	<div class="container">
 		<div class="lista">
-			<h4 class="title-list">Lista de Compras</h4>
+			<div class="header-lista" *ngIf="this.listaCompra.length">
+				<h4 class="title-list">Lista de Compras</h4>
+				<button class="btn-header" (click)="apagarTudo()" type="button">
+					Apagar tudo
+				</button>
+			</div>
 			<div *ngFor="let item of listaCompra">
 				<app-item
 					(emitindoItemParaEditar)="editarItem($event)"
+					(emitindoIdDelete)="deleteItem($event)"
 					[item]="item"></app-item>
 			</div>
 			<small *ngIf="!listaCompra.length"
