@@ -1,28 +1,72 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+	Component,
+	Input,
+	OnChanges,
+	OnInit,
+	SimpleChanges,
+} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Item } from 'src/app/interfaces/iItem';
 import { ListaDeCompraService } from 'src/app/service/lista-de-compra.service';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
+	selector: 'app-input',
+	templateUrl: './input.component.html',
+	styleUrls: ['./input.component.css'],
 })
 export class InputComponent implements OnInit, OnChanges {
-  valorItem!: string;
-  disabled = true;
+	@Input() editItem!: Item;
+	@Input()
+	editando = false;
+	textoBtn = 'Salvar item';
 
-  constructor(private listaCompraService: ListaDeCompraService) {}
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('this.valorItem');
-  }
+	valorItem!: string;
+	disabled = true;
 
-  ngOnInit(): void {
-    console.log('onInit');
-  }
-  adicionarItem(form: NgForm) {
-    if (form.valid) {
-      console.log(this.valorItem);
-      this.listaCompraService.adicionarItemLista(this.valorItem);
-    }
-  }
+	constructor(private listaCompraService: ListaDeCompraService) {}
+	// Preparando minhas props
+	ngOnChanges(changes: SimpleChanges): void {
+		this.setupEdit(changes);
+	}
+
+	ngOnInit(): void {
+		// console.log('INPUT ngOnInit');
+	}
+	handleSubmit(form: NgForm) {
+		if (!form.valid) {
+			return;
+		}
+		if (!this.editando) {
+			this.adicionarItem();
+			this.setupBtnSubmit();
+			return;
+		}
+		this.atualizarItem();
+		this.setupBtnSubmit();
+	}
+
+	private atualizarItem(): void {
+		this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
+		this.limparCampo();
+	}
+	private adicionarItem(): void {
+		this.listaCompraService.adicionarItemLista(this.valorItem);
+		this.limparCampo();
+	}
+
+	private limparCampo(): void {
+		this.valorItem = '';
+	}
+	private setupEdit(changes: SimpleChanges): void {
+		if (!changes['editItem'].firstChange) {
+			this.editando = true;
+			this.textoBtn = 'Atualizar item';
+			this.valorItem = this.editItem?.nome;
+		}
+	}
+
+	private setupBtnSubmit(): void {
+		this.editando = false;
+		this.textoBtn = 'Salvar item';
+	}
 }

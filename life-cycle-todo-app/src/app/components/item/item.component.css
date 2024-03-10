@@ -28,7 +28,10 @@ small {
 .d-contents {
   display: contents;
 }
-
+.icon{
+	cursor: pointer;
+	padding: 2px;
+}
 .delete-icon {
   justify-self: center;
   align-self: center;
@@ -39,6 +42,7 @@ small {
   justify-self: center;
   align-self: center;
   grid-area: edit-icon;
+
 }
 
 .date {

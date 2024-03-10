@@ -1,4 +1,4 @@
-<form #addForm="ngForm" class="add-item" (ngSubmit)="adicionarItem(addForm)">
+<form #addForm="ngForm" class="add-item" (ngSubmit)="handleSubmit(addForm)">
   <input
     type="text"
     name="item"
@@ -11,6 +11,6 @@
     [ngClass]="addForm.form.invalid ? 'disabled' : ''"
     type="submit"
   >
-    Salvar item
+    {{ textoBtn }}
   </button>
 </form>
