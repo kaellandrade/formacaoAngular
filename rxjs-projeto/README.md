@@ -36,9 +36,17 @@ Coleção de valores ou uma coleção de eventos futuros.
 Ideia de uma coleção de callback, consegue ouvir os valores entregues, mas para isso precisa se escrever nos Observables.
 
 
+## Subscribre e Unsubscribe
+
+```Typescript
+	.subscribe({
+				next: retornoAPI => console.log(retornoAPI),
+				error: error => console.error(error), // Encerra o ciclo de vida do Observlable (complete não será chamado, coso exista o error)
+				complete: () => console.log('Observable completado!'),
+	});
+```
+O `subscribe` retorna um objeto do tipo `Subscription`que pode ser utilizado para desinscrição e liberação de recuros evitando *memory leak*
 
 </details>
 
 ## Telas
-
-![Todo](../.github/life-cycle/todo.png)

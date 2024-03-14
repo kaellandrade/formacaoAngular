@@ -1,10 +1,12 @@
 <section class="container">
 	<header>Que livro você procura?</header>
 	<div class="busca">
-		<input type="search" [(ngModel)]="campoBusca" />
-		<button (click)="buscarLivros()">
-			<img src="assets/imagens/icone-busca.png" alt="Lupa de cor roxa" />
-		</button>
+		<form #formBusca="ngForm" (submit)="buscarLivros()">
+			<input type="search" name="campoBusca" [(ngModel)]="campoBusca" />
+			<button type="submit">
+				<img src="assets/imagens/icone-busca.png" alt="Lupa de cor roxa" />
+			</button>
+		</form>
 	</div>
 	<p>Busque por assunto, autoria, nome...</p>
 	<div class="container-card" *ngIf="listaLivros?.length > 0; else telaInicial">
