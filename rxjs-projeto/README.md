@@ -47,6 +47,14 @@ Ideia de uma coleção de callback, consegue ouvir os valores entregues, mas par
 ```
 O `subscribe` retorna um objeto do tipo `Subscription`que pode ser utilizado para desinscrição e liberação de recuros evitando *memory leak*
 
+## Operadores RxJS
+
+`Pipe`- Função que serve para agrupar múltiplos operadores. Não modifica o observable anterior.
+
+`Tap` - Operador de serviços públicos. Usado para debugging. Não modifica o observable.
+
+`Map` - Operador de transformação. Transforma o observable de acordo com a função passada. Retorna um observable modificado.
+
 </details>
 
 ## Telas
