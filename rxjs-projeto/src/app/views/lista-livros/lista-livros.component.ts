@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Livro } from 'src/app/models/interfaces';
 import { LivroService } from 'src/app/service/livro.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { LivroService } from 'src/app/service/livro.service';
 	styleUrls: ['./lista-livros.component.css'],
 })
 export class ListaLivrosComponent implements OnDestroy {
-	listaLivros: [];
+	listaLivros: Livro[];
 	campoBusca: string = '';
 	subscription: Subscription;
 
@@ -17,13 +18,31 @@ export class ListaLivrosComponent implements OnDestroy {
 		this.subscription = this.serviceGoogleAPIBook
 			.buscar(this.campoBusca)
 			.subscribe({
-				next: retornoAPI => console.log(retornoAPI.totalItems),
-				error: error => console.error(error), // Encerra o clico de vida do Observlable
-				complete: () => console.log('Observable completado!'),
+				next: items => {
+					this.listaLivros = this.parseToLivros(items);
+				},
 			});
 	}
 
 	ngOnDestroy(): void {
 		this.subscription.unsubscribe();
+	}
+
+	private parseToLivros(items: any[]): Livro[] {
+		return items.reduce(
+			(acumulador: Livro[], atual: { [key: string]: any }) => {
+				return acumulador.concat({
+					title: atual['volumeInfo']?.title,
+					authors: atual['volumeInfo']?.authors,
+					publishedDate: atual['volumeInfo']?.publishedDate,
+					description: atual['volumeInfo']?.description,
+					thumbnail: atual['volumeInfo']['imageLinks'],
+					language: atual['volumeInfo']?.language,
+					categories: atual['volumeInfo']?.categories,
+					publisher: atual['volumeInfo']?.publisher,
+				});
+			},
+			[]
+		);
 	}
 }
