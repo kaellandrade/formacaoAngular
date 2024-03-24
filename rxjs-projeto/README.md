@@ -55,6 +55,41 @@ O `subscribe` retorna um objeto do tipo `Subscription`que pode ser utilizado par
 
 `Map` - Operador de transformação. Transforma o observable de acordo com a função passada. Retorna um observable modificado.
 
+
+## Pipes Angular
+
+Os pipes são formas de transformar valores. Por exemplo, para utilizar o pipe usamos o operado `|` em nosso template.
+No exemplo logo a baixo mostramos uma data formatada por meio do pipe `date`.
+`<p class="resultado">{{ livro.publishedDate | date: 'dd/MM/yyyy' }}</p>`
+Há diversos outros pipes prontos que podem ser consultado na doc do Angular. 
+Mas também podemos criar nossos próprios pipes! 
+
+## Criando nosso pipes
+A seguir estamos criando um pipe que dado uma listra de autores de determinado exemplar, será retornado apenas o primeiro autor.
+```Typescript
+// Criando o pipe autoria
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+	name: 'autoria',
+})
+export class AutoriaPipe implements PipeTransform {
+	transform(autoria: string[]): string {
+		if (autoria) {
+			return autoria[0];
+		}
+		return '';
+	}
+}
+```
+
+```HTML
+<!-- Utilizando pipe autoria-->
+<p class="resultado">{{ livro.authors | autoria }}</p>
+
+```
+Além disso podemos encadiar pipes, exemplo: `<p class="resultado">{{ livro.authors | autoria | slice: 0 : 2 }}</p>` estamos limitando o nome do autor apenas a dois char.
+
 </details>
 
 ## Telas
