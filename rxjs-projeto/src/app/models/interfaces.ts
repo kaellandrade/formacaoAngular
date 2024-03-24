@@ -6,9 +6,10 @@ export interface Livro {
 	description?: string;
 	thumbnail?: ImageLinks;
 	pageCount?: number;
-	language: string;
+	language: IdiomaLivro;
 	categories: string[];
 	publisher: string;
+	previewLink: string;
 }
 
 export interface ImageLinks {
@@ -23,4 +24,11 @@ export interface Item {
 export interface LivrosResultado {
 	items: Item[];
 	totalItems: number;
+}
+
+export enum IdiomaLivro {
+	PT = 'pt',
+	PT_BR = 'pt-BR',
+	EN = 'en',
+	ES = 'es',
 }

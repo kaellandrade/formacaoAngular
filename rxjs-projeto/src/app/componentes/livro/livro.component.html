@@ -1,5 +1,6 @@
 <div class="card">
 	<img
+		class="capa"
 		src="{{
 			livro.thumbnail?.thumbnail
 				? livro.thumbnail?.thumbnail
@@ -7,9 +8,16 @@
 		}}"
 		alt="Capa do livro" />
 	<div class="info-card">
+		<div class="flag-div">
+			<img
+				*ngIf="isCountrySuported"
+				src="assets/flags/{{ livro.language }}.svg"
+				alt="Bandeira país"
+				title="{{ livro.language }}" />
+		</div>
 		<p class="titulo">{{ livro.title | slice: 0 : 30 }}</p>
 		<p class="informacoes">Autoria:</p>
-		<p class="resultado">{{ livro.authors }}</p>
+		<p class="resultado">{{ livro.authors | autoria }}</p>
 		<p class="informacoes">Data de publicação:</p>
 		<p class="resultado">{{ livro.publishedDate | date: 'dd/MM/yyyy' }}</p>
 		<p class="informacoes">Editora:</p>

@@ -1,4 +1,4 @@
-import { ImageLinks, Item } from './interfaces';
+import { IdiomaLivro, ImageLinks, Item } from './interfaces';
 
 export class LivroVolumeInfo {
 	title?: string;
@@ -8,9 +8,10 @@ export class LivroVolumeInfo {
 	description?: string;
 	thumbnail?: ImageLinks;
 	pageCount?: number;
-	language: string;
+	language: IdiomaLivro;
 	categories: string[];
 	publisher: string;
+	previewLink: string;
 
 	constructor(item: Item) {
 		this.title = item.volumeInfo?.title;
@@ -21,5 +22,6 @@ export class LivroVolumeInfo {
 		this.language = item.volumeInfo?.language;
 		this.categories = item.volumeInfo?.categories;
 		this.publisher = item.volumeInfo?.publisher;
+		this.previewLink = item.volumeInfo?.previewLink;
 	}
 }
