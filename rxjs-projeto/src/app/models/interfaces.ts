@@ -2,7 +2,7 @@ export interface Livro {
 	title?: string;
 	subtitle?: string;
 	authors?: string[];
-	publishedDate?: String;
+	publishedDate?: Date;
 	description?: string;
 	thumbnail?: ImageLinks;
 	pageCount?: number;
