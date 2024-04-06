@@ -2,14 +2,20 @@
 	<header>Que livro você procura?</header>
 	<div class="busca">
 		<form #formBusca="ngForm" (submit)="buscarLivros()">
-			<input type="search" name="campoBusca" [(ngModel)]="campoBusca" />
+			<input type="search" name="campoBusca" [formControl]="campoBusca" />
 			<button type="submit">
 				<img src="assets/imagens/icone-busca.png" alt="Lupa de cor roxa" />
 			</button>
 		</form>
 	</div>
 	<p>Busque por assunto, autoria, nome...</p>
-	<div class="container-card" *ngIf="listaLivros?.length > 0; else telaInicial">
+	<div
+		class="container-card"
+		*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
+		<!-- 
+			Angular vai se inscrever nesse subscrive e quando for encerrado será feito o unsubscribe
+			além disso estamos criando uma variável listaLivros no proprio template, também poderia ficar lá no comp
+		-->
 		<div *ngFor="let livro of listaLivros">
 			<app-livro [livro]="livro"></app-livro>
 		</div>
@@ -17,7 +23,7 @@
 	<ng-template #telaInicial>
 		<div class="imagens">
 			<h1 class="titulo">
-				Busque o livro <br />
+				angular Busque o livro <br />
 				que quiser na <br />
 				nossa estante!
 			</h1>
