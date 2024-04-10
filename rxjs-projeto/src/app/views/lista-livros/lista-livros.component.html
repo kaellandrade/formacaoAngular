@@ -13,8 +13,12 @@
 		class="container-card"
 		*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
 		<!-- 
+			O pipe async é utilizado no angular para facilitar o uso de observables na aplicação.
+
 			Angular vai se inscrever nesse subscrive e quando for encerrado será feito o unsubscribe
 			além disso estamos criando uma variável listaLivros no proprio template, também poderia ficar lá no comp
+
+			O pipe async se inscreve em um Observable e retorna o último valor que emitiu. Quando um novo valor é emitido, o pipe async marca o componente a ser verificado quanto a alterações.
 		-->
 		<div *ngFor="let livro of listaLivros">
 			<app-livro [livro]="livro"></app-livro>
