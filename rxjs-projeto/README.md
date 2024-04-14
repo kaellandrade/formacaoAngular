@@ -153,6 +153,10 @@ Há diversos operadores RxJS que podemos utilizar, a baixo está alguns dos oper
 
   > Emite uma notificação da fonte Observável somente após um determinado intervalo de tempo ter passado sem outra emissão de fonte.
 
+- `catchError` -> para lidar com erros no fluxo dos observables
+
+  > Com o operador catchError, é possível capturar o erro que ocorreu, inserir uma lógica adicional para mostrar uma mensagem de erro para a pessoa usuária, por exemplo, e, utilizando o throwError, é possível retornar um novo observable.
+
 ### Busca type ahead
 
 Imagine que você deseje implementar uma busca **type ahead**, ou seja, igual acontece com os motores de busca, enquanto você digita a busca será realizada.
@@ -171,6 +175,8 @@ Aqui precisamos considerar algumas coisa:
 
 6. Não queremos que toda letra que usuário digite seja feita uma REQUEST;
 
+7. Tratar erros quando não for possível realizar a busca.
+
 Veja o exemplo da busca abaixo, onde cada linha comentada satisfaz os intens que mencionamos anteriormente:
 
 ```typescript
@@ -181,7 +187,12 @@ livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
 	distinctUntilChanged(), // evitando busca repetidas (item 2)
 	switchMap(valorDigitado => this.serviceGoogleAPIBook.buscar(valorDigitado)), // realiza request panas para o último item digitado (item 6)
 	tap(resp => console.log(resp)), // Depurando o fluxo (item 5)
-	map(items => items && this.parseToLivros(items)) // Aplicando um transformação nos dados retornado(item 4)
+	map(items => items && this.parseToLivros(items)), // Aplicando um transformação nos dados retornado(item 4)
+	catchError(() => {
+		// Trata o erro caso ocorra algum erro, exemplo sem internet. (item 7)
+		this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!';
+		return EMPTY; // callback de inscrição para quando não queremos utilizar o error.
+	})
 );
 ```
 

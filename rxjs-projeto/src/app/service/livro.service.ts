@@ -15,8 +15,6 @@ export class LivroService {
 		const params = new HttpParams().append('q', termoDigitado);
 		return this.http
 			.get<LivrosResultado>(this.API_GOOGLE, { params })
-			.pipe(map(resultado => resultado.items));
+			.pipe(map((resultado: LivrosResultado) => resultado.items));
 	}
 }
-// PIPE Agrupar diversos outros tipos de operadores
-// TAP utilizado pra debugar não modifica os dados, serve apenas para visualizá-los

@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {
+	EMPTY,
+	catchError,
 	debounceTime,
 	distinctUntilChanged,
 	filter,
 	map,
 	switchMap,
 	tap,
+	throwError,
 } from 'rxjs';
 import { LivroVolumeInfo } from 'src/app/models/LivroVolumeInfo';
 import { Item, Livro } from 'src/app/models/interfaces';
@@ -21,6 +24,7 @@ const DELAY_BUSCA = 500;
 })
 export class ListaLivrosComponent {
 	campoBusca = new FormControl();
+	mensagemErro = '';
 
 	constructor(private serviceGoogleAPIBook: LivroService) {}
 
@@ -30,7 +34,11 @@ export class ListaLivrosComponent {
 		distinctUntilChanged(),
 		switchMap(valorDigitado => this.serviceGoogleAPIBook.buscar(valorDigitado)),
 		tap(resp => console.log(resp)),
-		map(items => items && this.parseToLivros(items))
+		map((items: Item[]) => items && this.parseToLivros(items)),
+		catchError(() => {
+			this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!';
+			return EMPTY; // callback de inscrição para quando não queremos utilizar o error.
+		})
 	);
 
 	private parseToLivros(items: Item[]): Livro[] {
