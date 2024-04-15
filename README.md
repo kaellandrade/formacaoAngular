@@ -29,3 +29,7 @@
 
    1. [Angular: Ciclo de vida](/life-cycle-todo-app/)
    2. [Programação Reativa](https://www.youtube.com/watch?v=ifA-57jTk7Y)
+
+
+## TODO:
+- [ ] Tranformar esse repositório em um monorepo;

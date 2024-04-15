@@ -200,8 +200,10 @@ Nota: A ordem dos operadores agrupados dentro do `pipe(...)` IMPORTA!
 
 </details>
 
+## TODO:
+- [ ] Implementar paginação Google API;
+- [ ] Ajustar compoentes para o PrimeReact;
+- [ ] Ajustar responsividade com PrimeFlex.
+
 ## Telas
-
-```
-
-```
+...
