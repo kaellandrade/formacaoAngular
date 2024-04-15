@@ -201,6 +201,7 @@ Nota: A ordem dos operadores agrupados dentro do `pipe(...)` IMPORTA!
 </details>
 
 ## TODO (Adicional para praticar...):
+- [X] Configurar lint;
 - [ ] Tornar a aplicação responsiva com [PrimeFlex](https://primeflex.org/).
 - [ ] Ajustar compoentes para o [PrimeNG](https://primeng.org/);
 - [ ] Implementar paginação Google API;
