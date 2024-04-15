@@ -33,5 +33,8 @@
 
 3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
 
-#### TODO:
-- [ ] Configurar um monorepo para esses projetos;
+#### TODO (adicionais):
+
+- [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos;
+- [ ] Configuar [Cypress](https://www.cypress.io/);
+- [ ] Configurar git hook [Husky](https://github.com/typicode/husky).

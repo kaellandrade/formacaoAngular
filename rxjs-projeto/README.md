@@ -201,7 +201,7 @@ Nota: A ordem dos operadores agrupados dentro do `pipe(...)` IMPORTA!
 </details>
 
 ## TODO (Adicional para praticar...):
-- [ ] Ajustar responsividade com [PrimeFlex](https://primeflex.org/).
+- [ ] Tornar a aplicação responsiva com [PrimeFlex](https://primeflex.org/).
 - [ ] Ajustar compoentes para o [PrimeNG](https://primeng.org/);
 - [ ] Implementar paginação Google API;
 
