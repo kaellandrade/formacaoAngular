@@ -200,10 +200,10 @@ Nota: A ordem dos operadores agrupados dentro do `pipe(...)` IMPORTA!
 
 </details>
 
-## TODO:
+## TODO (Adicional para praticar...):
+- [ ] Ajustar responsividade com [PrimeFlex](https://primeflex.org/).
+- [ ] Ajustar compoentes para o [PrimeNG](https://primeng.org/);
 - [ ] Implementar paginação Google API;
-- [ ] Ajustar compoentes para o PrimeReact;
-- [ ] Ajustar responsividade com PrimeFlex.
 
 ## Telas
 ...
