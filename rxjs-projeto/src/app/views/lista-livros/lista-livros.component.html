@@ -1,42 +1,51 @@
-<section class="container">
-	<header>Que livro você procura?</header>
-	<div class="busca">
+<section class="grid px-3">
+	<header class="col-12 flex flex-column align-items-center">
+		<h3 class="text-gray-800">Que livro você procura?</h3>
 		<form #formBusca="ngForm">
-			<input type="search" name="campoBusca" [formControl]="campoBusca" />
-			<button type="submit">
-				<img src="assets/imagens/icone-busca.png" alt="Lupa de cor roxa" />
-			</button>
+			<span class="p-input-icon-right">
+				<i class="pi pi-search"></i>
+				<input
+					[formControl]="campoBusca"
+					type="text"
+					pInputText
+					class="p-inputtext-lg"
+					placeholder="Ex: O Hoobit" />
+			</span>
 		</form>
-	</div>
-	<p>Busque por assunto, autoria, nome...</p>
-	<div class="resultados mensagem-erro" *ngIf="mensagemErro">
-		{{ mensagemErro }}
-	</div>
-	<div class="resultados" *ngIf="totalDeLivros$ | async as totalDeLivros">
-		<b *ngIf="!totalDeLivros.totalItems; else totalEncontrados"
-			>Nenhum livro foi encontrado com esse termo.</b
+	</header>
+	<section class="col-12 flex flex-column align-items-center">
+		<b class="font-normal text-gray-900"
+			>Busque por assunto, autoria, nome...</b
 		>
-		<ng-template #totalEncontrados>
-			<b>{{ totalDeLivros.totalItems }}</b
-			>&emsp;livros encontrados
-		</ng-template>
-	</div>
-	<div
-		class="container-card"
-		*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
-		<div *ngFor="let livro of listaLivros">
-			<app-livro [livro]="livro"></app-livro>
+		<hr />
+		<div class="resultados mensagem-erro" *ngIf="mensagemErro">
+			{{ mensagemErro }}
 		</div>
-	</div>
+		<div class="resultados" *ngIf="totalDeLivros$ | async as totalDeLivros">
+			<b *ngIf="!totalDeLivros.totalItems; else totalEncontrados"
+				>Nenhum livro foi encontrado com esse termo.</b
+			>
+			<ng-template #totalEncontrados>
+				<b>{{ totalDeLivros.totalItems }}</b
+				>&emsp;livros encontrados
+			</ng-template>
+		</div>
+		<div
+			class="grid xl:px-8"
+			*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
+			<div class="col-12 lg:col-6 xl:col-4" *ngFor="let livro of listaLivros">
+				<app-livro [livro]="livro"></app-livro>
+			</div>
+		</div>
+	</section>
+
 	<ng-template #telaInicial>
-		<div class="imagens">
-			<h1 class="titulo">
-				Angular Busque o livro <br />
-				que quiser na <br />
-				nossa estante!
-			</h1>
+		<div>
+			<h2 class="subtitulo text-center">
+				Angular Busque o livro que quiser na nossa estante!
+			</h2>
 			<img
-				class="ilustracao"
+				class="w-auto"
 				src="../../assets/imagens/ilustracao-estante.png"
 				alt="Ilustração de uma pessoa em pé ao lado de uma estante com livros e plantas" />
 		</div>

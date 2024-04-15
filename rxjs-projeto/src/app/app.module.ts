@@ -1,3 +1,4 @@
+import { InputTextModule } from 'primeng/inputtext';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,8 +23,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 		LivroComponent,
 		ListaLivrosComponent,
 		ModalLivroComponent,
-  AutoriaPipe,
-  TruncatePipe,
+		AutoriaPipe,
+		TruncatePipe,
 	],
 	imports: [
 		BrowserModule,
@@ -32,6 +33,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 		FormsModule,
 		HttpClientModule,
 		ReactiveFormsModule,
+		InputTextModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

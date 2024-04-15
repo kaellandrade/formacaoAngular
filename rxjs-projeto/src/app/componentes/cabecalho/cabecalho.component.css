@@ -1,29 +1,13 @@
-header {
-  background-color: #050C42;
-  height: 96px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content:space-around;
-  font-family: 'Poppins', sans-serif;
+a {
+	text-decoration: none;
 }
-
-header a {
-  text-decoration: none;
-  color: #FFFFFF;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
-  margin-right: 1.5rem;
-  width: 79px;
-  height: 48px;
+header {
+	background-color: #050c42;
+	font-family: 'Poppins', sans-serif;
 }
 
 button {
-  background-color: #050C42;
-  cursor: pointer;
-  border: none;
+	background-color: #050c42;
+	cursor: pointer;
+	border: none;
 }
-
-

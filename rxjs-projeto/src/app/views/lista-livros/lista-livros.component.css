@@ -1,4 +1,4 @@
-section {
+/* section {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -117,7 +117,7 @@ section button {
 	margin-right: 64px;
 }
 
-.titulo {
-	margin-top: 72px;
-	margin-left: 64px;
+*/
+.subtitulo {
+	color: #6a61fa;
 }
