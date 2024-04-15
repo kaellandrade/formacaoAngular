@@ -11,10 +11,8 @@ export class LivroService {
 
 	constructor(private http: HttpClient) {}
 
-	public buscar(termoDigitado: string): Observable<Array<Item>> {
+	public buscar(termoDigitado: string): Observable<LivrosResultado> {
 		const params = new HttpParams().append('q', termoDigitado);
-		return this.http
-			.get<LivrosResultado>(this.API_GOOGLE, { params })
-			.pipe(map((resultado: LivrosResultado) => resultado.items));
+		return this.http.get<LivrosResultado>(this.API_GOOGLE, { params });
 	}
 }

@@ -12,6 +12,15 @@
 	<div class="resultados mensagem-erro" *ngIf="mensagemErro">
 		{{ mensagemErro }}
 	</div>
+	<div class="resultados" *ngIf="totalDeLivros$ | async as totalDeLivros">
+		<b *ngIf="!totalDeLivros.totalItems; else totalEncontrados"
+			>Nenhum livro foi encontrado com esse termo.</b
+		>
+		<ng-template #totalEncontrados>
+			<b>{{ totalDeLivros.totalItems }}</b
+			>&emsp;livros encontrados
+		</ng-template>
+	</div>
 	<div
 		class="container-card"
 		*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
@@ -22,7 +31,7 @@
 	<ng-template #telaInicial>
 		<div class="imagens">
 			<h1 class="titulo">
-				angular Busque o livro <br />
+				Angular Busque o livro <br />
 				que quiser na <br />
 				nossa estante!
 			</h1>

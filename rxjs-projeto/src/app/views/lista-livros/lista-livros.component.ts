@@ -7,12 +7,12 @@ import {
 	distinctUntilChanged,
 	filter,
 	map,
+	of,
+	share,
 	switchMap,
-	tap,
-	throwError,
 } from 'rxjs';
 import { LivroVolumeInfo } from 'src/app/models/LivroVolumeInfo';
-import { Item, Livro } from 'src/app/models/interfaces';
+import { Item, Livro, LivrosResultado } from 'src/app/models/interfaces';
 import { LivroService } from 'src/app/service/livro.service';
 
 const TAMANHO_MIN_BUSCA = 3;
@@ -25,16 +25,29 @@ const DELAY_BUSCA = 500;
 export class ListaLivrosComponent {
 	campoBusca = new FormControl();
 	mensagemErro = '';
+	livrosResutado: LivrosResultado;
 
 	constructor(private serviceGoogleAPIBook: LivroService) {}
 
-	livrosEncontrados$ = this.campoBusca.valueChanges.pipe(
+	comum$ = this.campoBusca.valueChanges.pipe(
 		debounceTime(DELAY_BUSCA),
-		filter((valorDigital: string) => valorDigital.length >= TAMANHO_MIN_BUSCA), // filtrando para buscar apenas com 3 ou mais char
+		filter((valorDigital: string) => valorDigital.length >= TAMANHO_MIN_BUSCA),
 		distinctUntilChanged(),
 		switchMap(valorDigitado => this.serviceGoogleAPIBook.buscar(valorDigitado)),
-		tap(resp => console.log(resp)),
-		map((items: Item[]) => items && this.parseToLivros(items)),
+		share()
+	);
+
+	totalDeLivros$ = this.comum$.pipe(
+		map((result: LivrosResultado) => (this.livrosResutado = result)),
+		catchError(erro => {
+			console.log(erro);
+			return of();
+		})
+	);
+
+	livrosEncontrados$ = this.comum$.pipe(
+		map((resultado: LivrosResultado) => resultado.items ?? []),
+		map((items: Item[]) => this.parseToLivros(items)),
 		catchError(() => {
 			this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!';
 			return EMPTY; // callback de inscrição para quando não queremos utilizar o error.
