@@ -31,6 +31,7 @@
    2. [Programação Reativa](https://www.youtube.com/watch?v=ifA-57jTk7Y)
    3. [RxJS e Angular: programando de forma reativa](/rxjs-projeto/)
 
+3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
 
 #### TODO:
 - [ ] Configurar um monorepo para esses projetos;
