@@ -19,20 +19,6 @@
 	border-radius: 8px 0px 0px 8px;
 }
 
-.info-card {
-	position: relative;
-	padding-top: 7px;
-	padding-bottom: 7px;
-	padding-left: 14px;
-	padding-right: 6px;
-	background: #ffffff;
-	border-radius: 0px 8px 8px 0px;
-	display: flex;
-	flex-direction: column;
-	min-width: 50%;
-	justify-content: space-evenly;
-	align-items: baseline;
-}
 .flag-div {
 	position: absolute;
 	bottom: 5px;

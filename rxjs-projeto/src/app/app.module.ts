@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoriaPipe } from './pipes/autoria.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
 	declarations: [
@@ -34,6 +37,9 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 		HttpClientModule,
 		ReactiveFormsModule,
 		InputTextModule,
+		CardModule,
+		ButtonModule,
+		DividerModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

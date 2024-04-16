@@ -1,12 +1,6 @@
 footer {
 	background-color: #050c42;
-	height: 83px;
-	width: 100%;
-	bottom: 0;
-	position: absolute;
 	color: #ffffff;
-	display: flex;
-	justify-content: center;
 	align-items: center;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
