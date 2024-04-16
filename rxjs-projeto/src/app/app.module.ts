@@ -17,6 +17,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
+import { DialogModule } from 'primeng/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
@@ -40,6 +42,8 @@ import { DividerModule } from 'primeng/divider';
 		CardModule,
 		ButtonModule,
 		DividerModule,
+		DialogModule,
+		BrowserAnimationsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

@@ -11,6 +11,10 @@ export class LivroComponent implements OnInit {
 	modalAberto: boolean;
 	@Input() isCountrySuported: boolean = false;
 
+	showBasicDialog(): void {
+		this.modalAberto = true;
+	}
+
 	ngOnInit(): void {
 		this.isCountrySuported = Object.values(IdiomaLivro).includes(
 			this.livro.language

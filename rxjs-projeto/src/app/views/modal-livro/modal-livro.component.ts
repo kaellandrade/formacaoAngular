@@ -12,7 +12,7 @@ export class ModalLivroComponent {
 	constructor() {}
 
 	@Input() livro: Livro;
-	statusModal: boolean = true;
+	@Input() statusModal: boolean = true;
 	@Output() mudouModal = new EventEmitter();
 
 	fecharModal(): void {
