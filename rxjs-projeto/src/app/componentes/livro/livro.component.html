@@ -1,6 +1,6 @@
 <p-card styleClass="p-card-shadow bg-gray-100">
 	<ng-template pTemplate="header">
-		<div class="flex justify-content-between p-2">
+		<div class="flex justify-content-between p-2 relative">
 			<img
 				class="w-5 border-round"
 				alt="Card"
@@ -31,6 +31,13 @@
 		{{ livro.description | truncate: 0 : 100 }}
 	</div>
 	<ng-template pTemplate="footer">
+		<div class="w-1 mb-2 mt-2 ml-2">
+			<img
+				*ngIf="isCountrySuported"
+				src="assets/flags/{{ livro.language }}.svg"
+				alt="Bandeira país"
+				title="{{ livro.language }}" />
+		</div>
 		<p-button
 			(onClick)="onModalChange(true)"
 			label="Mais detalhes"
