@@ -1,4 +1,13 @@
-# Executando o projeto
+# 📚 RxJS Buscador de Livos
+
+Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
+
+
+## Telas
+![Tela](../.github/rxjs-google-livros/books.png)
+![Tela](../.github/rxjs-google-livros/busca-livros.gif)
+
+## Executando o projeto
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
@@ -202,9 +211,7 @@ Nota: A ordem dos operadores agrupados dentro do `pipe(...)` IMPORTA!
 
 ## TODO (Adicional para praticar...):
 - [X] Configurar lint;
-- [ ] Tornar a aplicação responsiva com [PrimeFlex](https://primeflex.org/).
+- [X] Tornar a aplicação responsiva com [PrimeFlex](https://primeflex.org/).
+- [X] Ajustar compoentes para o [PrimeNG](https://primeng.org/);
 - [ ] Ajustar compoentes para o [PrimeNG](https://primeng.org/);
 - [ ] Implementar paginação Google API;
-
-## Telas
-...
