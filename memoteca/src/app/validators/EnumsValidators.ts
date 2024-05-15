@@ -1,5 +1,0 @@
-export enum EnumsValidators {
-  APENAS_MINUSCULAS = 'APENAS_MINUSCULAS',
-  SEM_ESPACOS = 'SEM_ESPACOS',
-
-}

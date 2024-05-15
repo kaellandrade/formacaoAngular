@@ -1,0 +1,1749 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.0.4",
+  "deps": {
+    "@angular/animations": "~17.3.0",
+    "@angular/common": "~17.3.0",
+    "@angular/compiler": "~17.3.0",
+    "@angular/core": "~17.3.0",
+    "@angular/forms": "~17.3.0",
+    "@angular/platform-browser": "~17.3.0",
+    "@angular/platform-browser-dynamic": "~17.3.0",
+    "@angular/router": "~17.3.0",
+    "@nx/angular": "19.0.4",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "~17.3.0",
+    "@angular-devkit/core": "~17.3.0",
+    "@angular-devkit/schematics": "~17.3.0",
+    "@angular-eslint/eslint-plugin": "~17.3.0",
+    "@angular-eslint/eslint-plugin-template": "~17.3.0",
+    "@angular-eslint/template-parser": "~17.3.0",
+    "@angular/cli": "~17.3.0",
+    "@angular/compiler-cli": "~17.3.0",
+    "@angular/language-service": "~17.3.0",
+    "@nx/devkit": "19.0.4",
+    "@nx/eslint": "19.0.4",
+    "@nx/eslint-plugin": "19.0.4",
+    "@nx/jest": "19.0.4",
+    "@nx/js": "19.0.4",
+    "@nx/playwright": "19.0.4",
+    "@nx/workspace": "19.0.4",
+    "@playwright/test": "^1.36.0",
+    "@schematics/angular": "~17.3.0",
+    "@swc-node/register": "~1.8.0",
+    "@swc/core": "~1.3.85",
+    "@swc/helpers": "~0.5.2",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-playwright": "^0.15.3",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jest-preset-angular": "~14.0.3",
+    "jsonc-eslint-parser": "^2.1.0",
+    "ng-packagr": "~17.3.0",
+    "nx": "19.0.4",
+    "postcss": "^8.4.5",
+    "postcss-url": "~10.1.3",
+    "prettier": "^2.6.2",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.4.2"
+  },
+  "pathMappings": {
+    "@formacaoangular/shared-ui": [
+      "libs/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [],
+    "projectFileMap": {
+      "shared-ui": [
+        {
+          "file": "libs/.eslintrc.json",
+          "hash": "6110129829557480356"
+        },
+        {
+          "file": "libs/README.md",
+          "hash": "16248885516767211022"
+        },
+        {
+          "file": "libs/jest.config.ts",
+          "hash": "7806812451111699864"
+        },
+        {
+          "file": "libs/ng-package.json",
+          "hash": "14501834970224371289"
+        },
+        {
+          "file": "libs/package.json",
+          "hash": "4913230462965105771",
+          "deps": [
+            "npm:tslib",
+            "npm:@angular/common",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/project.json",
+          "hash": "162133287333518104"
+        },
+        {
+          "file": "libs/src/index.ts",
+          "hash": "8066056137453414313"
+        },
+        {
+          "file": "libs/src/lib/shared-ui/shared-ui.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/src/lib/shared-ui/shared-ui.component.html",
+          "hash": "6195570130184266428"
+        },
+        {
+          "file": "libs/src/lib/shared-ui/shared-ui.component.spec.ts",
+          "hash": "6577538746703376072",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/src/lib/shared-ui/shared-ui.component.ts",
+          "hash": "17781068561562877549",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/tsconfig.json",
+          "hash": "4881022640630122902"
+        },
+        {
+          "file": "libs/tsconfig.lib.json",
+          "hash": "4766185256741444917"
+        },
+        {
+          "file": "libs/tsconfig.lib.prod.json",
+          "hash": "174503844014784742"
+        },
+        {
+          "file": "libs/tsconfig.spec.json",
+          "hash": "2129196202529263968"
+        }
+      ],
+      "formacaoangular": [
+        {
+          "file": ".eslintignore",
+          "hash": "7663861978715868291"
+        },
+        {
+          "file": ".eslintrc.json",
+          "hash": "18315524891129148814"
+        },
+        {
+          "file": ".github/01_listar.png",
+          "hash": "942730097070217893"
+        },
+        {
+          "file": ".github/02_cadastrar.png",
+          "hash": "4186607326354236120"
+        },
+        {
+          "file": ".github/03_editar.png",
+          "hash": "16512539986725822656"
+        },
+        {
+          "file": ".github/04_favoritos.png",
+          "hash": "12733593188712212299"
+        },
+        {
+          "file": ".github/angular.svg",
+          "hash": "11094059590178000679"
+        },
+        {
+          "file": ".github/demo_memoteca.gif",
+          "hash": "15460607637800986240"
+        },
+        {
+          "file": ".github/form-teplate/aplicacao.png",
+          "hash": "1870867062637554286"
+        },
+        {
+          "file": ".github/life-cycle/todo.png",
+          "hash": "13649949589135655225"
+        },
+        {
+          "file": ".github/rxjs-google-livros/books.png",
+          "hash": "14717893010269127076"
+        },
+        {
+          "file": ".github/rxjs-google-livros/busca-livros.gif",
+          "hash": "12362816861083092080"
+        },
+        {
+          "file": ".prettierignore",
+          "hash": "3395189204293871444"
+        },
+        {
+          "file": ".prettierrc",
+          "hash": "16267754514737964994"
+        },
+        {
+          "file": "LICENSE",
+          "hash": "9944129307024251591"
+        },
+        {
+          "file": "README.md",
+          "hash": "8219297112474846373"
+        },
+        {
+          "file": "apps/forms-angular-main/.gitignore",
+          "hash": "13044518069027839699"
+        },
+        {
+          "file": "apps/forms-angular-main/.vscode/settings.json",
+          "hash": "17072122453326406118"
+        },
+        {
+          "file": "apps/forms-angular-main/README.md",
+          "hash": "4804380971903351905"
+        },
+        {
+          "file": "apps/forms-angular-main/angular.json",
+          "hash": "4730699344256635797"
+        },
+        {
+          "file": "apps/forms-angular-main/karma.conf.js",
+          "hash": "1196825059236706667",
+          "deps": [
+            [
+              "npm:karma-jasmine",
+              "dynamic"
+            ],
+            [
+              "npm:karma-chrome-launcher",
+              "dynamic"
+            ],
+            [
+              "npm:karma-jasmine-html-reporter",
+              "dynamic"
+            ],
+            [
+              "npm:karma-coverage",
+              "dynamic"
+            ],
+            [
+              "npm:@angular-devkit/build-angular/plugins/karma",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/package-lock.json",
+          "hash": "15477594821468997386"
+        },
+        {
+          "file": "apps/forms-angular-main/package.json",
+          "hash": "17980096425237882291"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/app-routing.module.ts",
+          "hash": "17933755438164173265",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/app.component.css",
+          "hash": "14286940771794796348"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/app.component.html",
+          "hash": "4910183746923023116"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/app.component.ts",
+          "hash": "10553496991368116000",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/app.module.ts",
+          "hash": "8593791809548271045",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/forms",
+            "npm:@angular/common/http"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/cadastro/cadastro.component.css",
+          "hash": "9253220972992324095"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/cadastro/cadastro.component.html",
+          "hash": "6854377935899947087"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/cadastro/cadastro.component.ts",
+          "hash": "12346715964543257248",
+          "deps": [
+            "npm:@angular/router",
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/footer/footer.component.css",
+          "hash": "12398302268757688257"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/footer/footer.component.html",
+          "hash": "16931711508749799917"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/footer/footer.component.ts",
+          "hash": "1403894911610685264",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/header/header.component.css",
+          "hash": "14374141265889141719"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/header/header.component.html",
+          "hash": "8679286234756322230"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/header/header.component.ts",
+          "hash": "10681815320489781584",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/mensagem/mensagem.component.css",
+          "hash": "10085288183423582997"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/mensagem/mensagem.component.html",
+          "hash": "2660146435443995556"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/mensagem/mensagem.component.spec.ts",
+          "hash": "2498001705348455544",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/components/mensagem/mensagem.component.ts",
+          "hash": "12729961814743137990",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/directives/maior-idade.directive.spec.ts",
+          "hash": "17084718036384220962"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/directives/maior-idade.directive.ts",
+          "hash": "4281355128427767673",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/directives/validando-cep.directive.spec.ts",
+          "hash": "15760376452306165232"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/directives/validando-cep.directive.ts",
+          "hash": "17609522144128200005",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/interfaces/cep.ts",
+          "hash": "8271443001549184576"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/service/consulta-cep.service.spec.ts",
+          "hash": "15450795472362702593",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/service/consulta-cep.service.ts",
+          "hash": "8716350416828259643",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common/http",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/sucesso-cadastro/sucesso-cadastro.component.css",
+          "hash": "7940298373517653622"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/sucesso-cadastro/sucesso-cadastro.component.html",
+          "hash": "9733948041221641499"
+        },
+        {
+          "file": "apps/forms-angular-main/src/app/sucesso-cadastro/sucesso-cadastro.component.ts",
+          "hash": "4590117287255426644",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/ilustra-alura.svg",
+          "hash": "14449103448865982527"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/148038-livre-hand-drawn-stevia-vector-grátis-vetor.png",
+          "hash": "12196688879624891044"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Alura.svg",
+          "hash": "12371171805442058283"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/AluraEmpresas.svg",
+          "hash": "18001598898707402735"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/AluraLATAM.svg",
+          "hash": "11259021460645200960"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/AluraLingua.svg",
+          "hash": "16713099775776667836"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/AluraStart.svg",
+          "hash": "13328736028932486775"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Caelum.svg",
+          "hash": "9661964865578451378"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/CarreiraSemFronteira.svg",
+          "hash": "11582437488226057490"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/CasaDoCodigo.svg",
+          "hash": "11689966410737015094"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Compras.svg",
+          "hash": "8652419381070406936"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Encerramento-compra---Alura-Books_1.png",
+          "hash": "11596924980772729759"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Favoritos.svg",
+          "hash": "11289682821376883499"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/GUJ.svg",
+          "hash": "822516819617591858"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Hand-drawn-flower-collection-vector-Graphics-13590061-1-1-580x386.png",
+          "hash": "18260108651956598053"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/HipstersJobs.svg",
+          "hash": "8472164272048700171"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/HipstersTech.svg",
+          "hash": "14110892193118370488"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/LayersTech.svg",
+          "hash": "7946714890416055476"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/LikeABoss.svg",
+          "hash": "14728887508852626429"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Logo.svg",
+          "hash": "10355222062908976938"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Menu.svg",
+          "hash": "10251567862841740832"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/MusicDot.svg",
+          "hash": "10598090104592817616"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/PM3.svg",
+          "hash": "16636824494780344546"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/ScubaDev.svg",
+          "hash": "7428686455321353501"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/Usuario.svg",
+          "hash": "4165161506635920662"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/b08f39_2d02ecf7ae8946a489cef625dcc9df06_mv2.png",
+          "hash": "3527328247624722927"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/photo-1617909517054-64d4958be1c9.avif",
+          "hash": "9872211451705090506"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/rabbit-2403904_960_720.webp",
+          "hash": "3313099616962470050"
+        },
+        {
+          "file": "apps/forms-angular-main/src/assets/img/warning.png",
+          "hash": "2021034796429807838"
+        },
+        {
+          "file": "apps/forms-angular-main/src/environments/environment.prod.ts",
+          "hash": "5406836414239361753"
+        },
+        {
+          "file": "apps/forms-angular-main/src/environments/environment.ts",
+          "hash": "17458466784506237106"
+        },
+        {
+          "file": "apps/forms-angular-main/src/favicon.ico",
+          "hash": "3464744996580215640"
+        },
+        {
+          "file": "apps/forms-angular-main/src/index.html",
+          "hash": "408766177344186654"
+        },
+        {
+          "file": "apps/forms-angular-main/src/main.ts",
+          "hash": "10677612470474905821",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/polyfills.ts",
+          "hash": "2035846685621806592",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/src/styles.css",
+          "hash": "565583315074337551"
+        },
+        {
+          "file": "apps/forms-angular-main/src/test.ts",
+          "hash": "1590235246187698726",
+          "deps": [
+            "npm:zone.js/testing",
+            "npm:@angular/core/testing",
+            "npm:@angular/platform-browser-dynamic/testing"
+          ]
+        },
+        {
+          "file": "apps/forms-angular-main/tsconfig.app.json",
+          "hash": "9041030522571917449"
+        },
+        {
+          "file": "apps/forms-angular-main/tsconfig.json",
+          "hash": "9730383541929218026"
+        },
+        {
+          "file": "apps/forms-angular-main/tsconfig.spec.json",
+          "hash": "17198424518534092990"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/.editorconfig",
+          "hash": "6686520031028425313"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/.eslintrc.json",
+          "hash": "5625069447134890147"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/.gitignore",
+          "hash": "13044518069027839699"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/.prettierignore",
+          "hash": "1405511431251118388"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/.prettierrc.json",
+          "hash": "13140888496173443139"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/README.md",
+          "hash": "16510788239042714230"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/angular.json",
+          "hash": "10806166480869101364"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/karma.conf.js",
+          "hash": "7327921119812989039",
+          "deps": [
+            [
+              "npm:karma-jasmine",
+              "dynamic"
+            ],
+            [
+              "npm:karma-chrome-launcher",
+              "dynamic"
+            ],
+            [
+              "npm:karma-jasmine-html-reporter",
+              "dynamic"
+            ],
+            [
+              "npm:karma-coverage",
+              "dynamic"
+            ],
+            [
+              "npm:@angular-devkit/build-angular/plugins/karma",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/package-lock.json",
+          "hash": "18428614690204365595"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/package.json",
+          "hash": "2522245974945469372"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/app.component.css",
+          "hash": "454477330264655105"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/app.component.html",
+          "hash": "10976686888870592397"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/app.component.ts",
+          "hash": "5792853958545654012",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/app.module.ts",
+          "hash": "114170908585821219",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@fortawesome/angular-fontawesome",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/input/input.component.css",
+          "hash": "17120853008201064408"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/input/input.component.html",
+          "hash": "15712378690819214946"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/input/input.component.ts",
+          "hash": "4727665493494994509",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:src/app/interfaces/iItem",
+            "npm:src/app/service/lista-de-compra.service"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/item/item.component.css",
+          "hash": "4662286343978844675"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/item/item.component.html",
+          "hash": "13483634789676380314"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/components/item/item.component.ts",
+          "hash": "17533749702265580767",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@fortawesome/free-solid-svg-icons",
+            "npm:src/app/interfaces/iItem"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/interfaces/iItem.ts",
+          "hash": "15723324921505855089"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/app/service/lista-de-compra.service.ts",
+          "hash": "2384136387863398897",
+          "deps": [
+            "npm:src/app/interfaces/iItem",
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/assets/dados/lista-de-compra.json",
+          "hash": "13221792604703354991"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/environments/environment.prod.ts",
+          "hash": "5406836414239361753"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/environments/environment.ts",
+          "hash": "17458466784506237106"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/favicon.ico",
+          "hash": "3464744996580215640"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/index.html",
+          "hash": "12840161855978242750"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/main.ts",
+          "hash": "10677612470474905821",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/polyfills.ts",
+          "hash": "2035846685621806592",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/styles.css",
+          "hash": "9141438783700791106"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/src/test.ts",
+          "hash": "12412031923219697029",
+          "deps": [
+            "npm:zone.js/testing",
+            "npm:@angular/core/testing",
+            "npm:@angular/platform-browser-dynamic/testing"
+          ]
+        },
+        {
+          "file": "apps/life-cycle-todo-app/tsconfig.app.json",
+          "hash": "9041030522571917449"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/tsconfig.json",
+          "hash": "2850247428870254560"
+        },
+        {
+          "file": "apps/life-cycle-todo-app/tsconfig.spec.json",
+          "hash": "17198424518534092990"
+        },
+        {
+          "file": "apps/memoteca/.browserslistrc",
+          "hash": "17600754102500844387"
+        },
+        {
+          "file": "apps/memoteca/.editorconfig",
+          "hash": "9273522516124560293"
+        },
+        {
+          "file": "apps/memoteca/.eslintrc.json",
+          "hash": "5625069447134890147"
+        },
+        {
+          "file": "apps/memoteca/.gitignore",
+          "hash": "9229074697690903867"
+        },
+        {
+          "file": "apps/memoteca/.prettierignore",
+          "hash": "1405511431251118388"
+        },
+        {
+          "file": "apps/memoteca/.prettierrc.json",
+          "hash": "13140888496173443139"
+        },
+        {
+          "file": "apps/memoteca/README.md",
+          "hash": "13193873591225352597"
+        },
+        {
+          "file": "apps/memoteca/angular.json",
+          "hash": "10769329146307849681"
+        },
+        {
+          "file": "apps/memoteca/backend/src/db.json",
+          "hash": "3018703696244534510"
+        },
+        {
+          "file": "apps/memoteca/karma.conf.js",
+          "hash": "11419974640785617511",
+          "deps": [
+            [
+              "npm:karma-jasmine",
+              "dynamic"
+            ],
+            [
+              "npm:karma-chrome-launcher",
+              "dynamic"
+            ],
+            [
+              "npm:karma-jasmine-html-reporter",
+              "dynamic"
+            ],
+            [
+              "npm:karma-coverage",
+              "dynamic"
+            ],
+            [
+              "npm:@angular-devkit/build-angular/plugins/karma",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/memoteca/package.json",
+          "hash": "9027663703505681465"
+        },
+        {
+          "file": "apps/memoteca/src/app/_partials/_colors.scss",
+          "hash": "13736743733342321872"
+        },
+        {
+          "file": "apps/memoteca/src/app/app-routing.module.ts",
+          "hash": "13091603479843186089",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/app.component.html",
+          "hash": "3423029077857831466"
+        },
+        {
+          "file": "apps/memoteca/src/app/app.component.scss",
+          "hash": "10377896016622742870"
+        },
+        {
+          "file": "apps/memoteca/src/app/app.component.spec.ts",
+          "hash": "461118233907286475",
+          "deps": [
+            "npm:@angular/core/testing",
+            "npm:@angular/router/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/app.component.ts",
+          "hash": "17618478004707659993",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/app.module.ts",
+          "hash": "5394253588872553961",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/forms",
+            "npm:@angular/common/http"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/cabecalho/cabecalho.component.html",
+          "hash": "978117303911646587"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/cabecalho/cabecalho.component.scss",
+          "hash": "17690082423375604499"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/cabecalho/cabecalho.component.spec.ts",
+          "hash": "13502086896206958012",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/cabecalho/cabecalho.component.ts",
+          "hash": "5689424222494855708",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/ValidatorEnums.ts",
+          "hash": "17409433686557608290"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.html",
+          "hash": "10212527674256373266"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.scss",
+          "hash": "7907516315239752955"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.spec.ts",
+          "hash": "3057677344228539064",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/criar-pensamento/criar-pensamento.component.ts",
+          "hash": "11769315988479770594",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/editar-pensamento/editar-pensamento.component.html",
+          "hash": "14218738228100477494"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/editar-pensamento/editar-pensamento.component.scss",
+          "hash": "16435972881652871837"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/editar-pensamento/editar-pensamento.component.spec.ts",
+          "hash": "13525184838135209516",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/editar-pensamento/editar-pensamento.component.ts",
+          "hash": "17720252914841815166",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/excluir-pensamento/excluir-pensamento.component.html",
+          "hash": "8694067613013174820"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/excluir-pensamento/excluir-pensamento.component.scss",
+          "hash": "9830628084630024501"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/excluir-pensamento/excluir-pensamento.component.spec.ts",
+          "hash": "8384428105656018868",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/excluir-pensamento/excluir-pensamento.component.ts",
+          "hash": "11044865685868780296",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component.html",
+          "hash": "3752279106183759433"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component.scss",
+          "hash": "9951621202512828815"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component.spec.ts",
+          "hash": "8753388373868290633",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component.ts",
+          "hash": "10599820687807158112",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/listar-pensamento.component.html",
+          "hash": "1717775737742725717"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/listar-pensamento.component.scss",
+          "hash": "5123361065362362460"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/listar-pensamento.component.spec.ts",
+          "hash": "3780332985362290522",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/listar-pensamento/listar-pensamento.component.ts",
+          "hash": "14920900760539427106",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common/http"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento.service.spec.ts",
+          "hash": "4899097364138122285",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento.service.ts",
+          "hash": "13530502479771939426",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common/http",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento/pensamento.component.html",
+          "hash": "10669173318653824383"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento/pensamento.component.scss",
+          "hash": "11731861904277799888"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento/pensamento.component.spec.ts",
+          "hash": "12718626866216589556",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/pensamentos/pensamento/pensamento.component.ts",
+          "hash": "16710608163223001401",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/rodape/rodape.component.html",
+          "hash": "9712108887350612844"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/rodape/rodape.component.scss",
+          "hash": "16507538484377352898"
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/rodape/rodape.component.spec.ts",
+          "hash": "16571088734445943095",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/componentes/rodape/rodape.component.ts",
+          "hash": "16698884302267517136",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/validators/CustomValidators.ts",
+          "hash": "9386228922808288517",
+          "deps": [
+            "npm:@angular/forms"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/app/validators/EnumsValidators.ts",
+          "hash": "15388452528801668867"
+        },
+        {
+          "file": "apps/memoteca/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/background-completo.png",
+          "hash": "163758442370807711"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/computador-cabecalho.png",
+          "hash": "14570462456422019262"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/fundo-cabecalho.png",
+          "hash": "839384096038035152"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/fundo-rodape.png",
+          "hash": "6634394729150512060"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/icone-editar.png",
+          "hash": "15105832547913724622"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/icone-excluir.png",
+          "hash": "7184052151852553028"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/icone-favorito-ativo.png",
+          "hash": "5923146932141992872"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/icone-favorito-inativo.png",
+          "hash": "4366596354610007373"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/logo-alura.png",
+          "hash": "5929096008704202897"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/logo-memoteca.png",
+          "hash": "11320880759555119607"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/lupa.png",
+          "hash": "10862181943751695147"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/modelo1.png",
+          "hash": "9680457985823406124"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/modelo2.png",
+          "hash": "12345919898045280390"
+        },
+        {
+          "file": "apps/memoteca/src/assets/imgs/modelo3.png",
+          "hash": "6844932512799637571"
+        },
+        {
+          "file": "apps/memoteca/src/environments/environment.prod.ts",
+          "hash": "5406836414239361753"
+        },
+        {
+          "file": "apps/memoteca/src/environments/environment.ts",
+          "hash": "17458466784506237106"
+        },
+        {
+          "file": "apps/memoteca/src/favicon.ico",
+          "hash": "3464744996580215640"
+        },
+        {
+          "file": "apps/memoteca/src/index.html",
+          "hash": "14748244131203219193"
+        },
+        {
+          "file": "apps/memoteca/src/interfaces/ModelosPensamentos.ts",
+          "hash": "15688370928299050572"
+        },
+        {
+          "file": "apps/memoteca/src/interfaces/Pensamento.ts",
+          "hash": "17899248865365319723"
+        },
+        {
+          "file": "apps/memoteca/src/main.ts",
+          "hash": "12103997741456334456",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/polyfills.ts",
+          "hash": "2035846685621806592",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/memoteca/src/styles.scss",
+          "hash": "8031905109529921576"
+        },
+        {
+          "file": "apps/memoteca/src/test.ts",
+          "hash": "715821617531147605",
+          "deps": [
+            "npm:zone.js/testing",
+            "npm:@angular/core/testing",
+            "npm:@angular/platform-browser-dynamic/testing"
+          ]
+        },
+        {
+          "file": "apps/memoteca/tsconfig.app.json",
+          "hash": "9041030522571917449"
+        },
+        {
+          "file": "apps/memoteca/tsconfig.json",
+          "hash": "17366357360858102236"
+        },
+        {
+          "file": "apps/memoteca/tsconfig.spec.json",
+          "hash": "17198424518534092990"
+        },
+        {
+          "file": "apps/rxjs-projeto/.browserslistrc",
+          "hash": "17600754102500844387"
+        },
+        {
+          "file": "apps/rxjs-projeto/.editorconfig",
+          "hash": "6686520031028425313"
+        },
+        {
+          "file": "apps/rxjs-projeto/.eslintrc.json",
+          "hash": "17066530077045371220"
+        },
+        {
+          "file": "apps/rxjs-projeto/.gitignore",
+          "hash": "13044518069027839699"
+        },
+        {
+          "file": "apps/rxjs-projeto/.prettierignore",
+          "hash": "1405511431251118388"
+        },
+        {
+          "file": "apps/rxjs-projeto/.prettierrc.json",
+          "hash": "13140888496173443139"
+        },
+        {
+          "file": "apps/rxjs-projeto/.vscode/extensions.json",
+          "hash": "5331566439708925252"
+        },
+        {
+          "file": "apps/rxjs-projeto/.vscode/launch.json",
+          "hash": "4815948323043747099"
+        },
+        {
+          "file": "apps/rxjs-projeto/.vscode/tasks.json",
+          "hash": "5336636969995539451"
+        },
+        {
+          "file": "apps/rxjs-projeto/README.md",
+          "hash": "9404203532645377706"
+        },
+        {
+          "file": "apps/rxjs-projeto/angular.json",
+          "hash": "16339210386042017049"
+        },
+        {
+          "file": "apps/rxjs-projeto/karma.conf.js",
+          "hash": "3616295141384179730",
+          "deps": [
+            [
+              "npm:karma-jasmine",
+              "dynamic"
+            ],
+            [
+              "npm:karma-chrome-launcher",
+              "dynamic"
+            ],
+            [
+              "npm:karma-jasmine-html-reporter",
+              "dynamic"
+            ],
+            [
+              "npm:karma-coverage",
+              "dynamic"
+            ],
+            [
+              "npm:@angular-devkit/build-angular/plugins/karma",
+              "dynamic"
+            ],
+            [
+              "npm:path",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/package-lock.json",
+          "hash": "2530683316889142945"
+        },
+        {
+          "file": "apps/rxjs-projeto/package.json",
+          "hash": "10475660339176355329"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app-routing.module.ts",
+          "hash": "17797529122909165855",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app.component.html",
+          "hash": "2813161033448890336"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app.component.spec.ts",
+          "hash": "17265791114146264283",
+          "deps": [
+            "npm:@angular/core/testing",
+            "npm:@angular/router/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app.component.ts",
+          "hash": "17973280710170534016",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/app.module.ts",
+          "hash": "11157214025059120891",
+          "deps": [
+            "npm:primeng/inputtext",
+            "npm:@angular/router",
+            "npm:@angular/core",
+            "npm:@angular/platform-browser",
+            "npm:@angular/forms",
+            "npm:@angular/common/http",
+            "npm:primeng/card",
+            "npm:primeng/button",
+            "npm:primeng/divider",
+            "npm:primeng/dialog",
+            "npm:@angular/platform-browser/animations"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/cabecalho/cabecalho.component.css",
+          "hash": "21132980897957947"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/cabecalho/cabecalho.component.html",
+          "hash": "7824528393633554935"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/cabecalho/cabecalho.component.spec.ts",
+          "hash": "13502086896206958012",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/cabecalho/cabecalho.component.ts",
+          "hash": "10045793976734259968",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/livro/livro.component.css",
+          "hash": "8641406545418682145"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/livro/livro.component.html",
+          "hash": "14999507557248980894"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/livro/livro.component.spec.ts",
+          "hash": "3066327122334830553",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/livro/livro.component.ts",
+          "hash": "2792199007547976136",
+          "deps": [
+            "npm:@angular/core",
+            "npm:src/app/models/interfaces"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/rodape/rodape.component.css",
+          "hash": "13757037220432994526"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/rodape/rodape.component.html",
+          "hash": "1871529888361638850"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/rodape/rodape.component.spec.ts",
+          "hash": "16571088734445943095",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/componentes/rodape/rodape.component.ts",
+          "hash": "4449019811845671487",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/models/LivroVolumeInfo.ts",
+          "hash": "18360285753397837178"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/models/interfaces.ts",
+          "hash": "16170198349586977714"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/pipes/autoria.pipe.ts",
+          "hash": "10749058629424769833",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/pipes/truncate.pipe.ts",
+          "hash": "9901035122477192494",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/service/livro.service.spec.ts",
+          "hash": "16671459528798941294",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/service/livro.service.ts",
+          "hash": "10452859159404583988",
+          "deps": [
+            "npm:@angular/common/http",
+            "npm:@angular/core",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/lista-livros/lista-livros.component.css",
+          "hash": "6838288776733902253"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/lista-livros/lista-livros.component.html",
+          "hash": "606025525289991502"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/lista-livros/lista-livros.component.spec.ts",
+          "hash": "8005845232515179980",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/lista-livros/lista-livros.component.ts",
+          "hash": "6535674639227744711",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:rxjs",
+            "npm:src/app/models/LivroVolumeInfo",
+            "npm:src/app/models/interfaces",
+            "npm:src/app/service/livro.service"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/modal-livro/modal-livro.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/modal-livro/modal-livro.component.html",
+          "hash": "1856870910938631341"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/modal-livro/modal-livro.component.spec.ts",
+          "hash": "13137221159743708784",
+          "deps": [
+            "npm:@angular/core/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/app/views/modal-livro/modal-livro.component.ts",
+          "hash": "4739370116501502888",
+          "deps": [
+            "npm:@angular/core",
+            "npm:src/app/models/interfaces"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/flags/en.svg",
+          "hash": "3686645038875052616"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/flags/es.svg",
+          "hash": "13318658042409472251"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/flags/pt-BR.svg",
+          "hash": "15692182940806709065"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/flags/pt.svg",
+          "hash": "5516774933837793275"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/capa-indisponivel.png",
+          "hash": "4127240735393451843"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/favicon.png",
+          "hash": "1187740151009795275"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/icone-busca.png",
+          "hash": "1772604119069221424"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/ilustracao-estante.png",
+          "hash": "5931497309516340408"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/logo-google.png",
+          "hash": "890563974688456486"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/assets/imagens/logo.png",
+          "hash": "7256279296107869689"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/environments/environment.prod.ts",
+          "hash": "5406836414239361753"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/environments/environment.ts",
+          "hash": "17458466784506237106"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/favicon.ico",
+          "hash": "3464744996580215640"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/index.html",
+          "hash": "13344952021200895927"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/main.ts",
+          "hash": "12103997741456334456",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/platform-browser-dynamic"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/polyfills.ts",
+          "hash": "2035846685621806592",
+          "deps": [
+            "npm:zone.js"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/src/styles.css",
+          "hash": "12509412154875444646"
+        },
+        {
+          "file": "apps/rxjs-projeto/src/test.ts",
+          "hash": "715821617531147605",
+          "deps": [
+            "npm:zone.js/testing",
+            "npm:@angular/core/testing",
+            "npm:@angular/platform-browser-dynamic/testing"
+          ]
+        },
+        {
+          "file": "apps/rxjs-projeto/tsconfig.app.json",
+          "hash": "9041030522571917449"
+        },
+        {
+          "file": "apps/rxjs-projeto/tsconfig.json",
+          "hash": "12595708253960974321"
+        },
+        {
+          "file": "apps/rxjs-projeto/tsconfig.spec.json",
+          "hash": "17198424518534092990"
+        },
+        {
+          "file": "jest.config.ts",
+          "hash": "3494843969422251966",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "jest.preset.js",
+          "hash": "9430166341120122740",
+          "deps": [
+            "npm:@nx/jest"
+          ]
+        },
+        {
+          "file": "nx.json",
+          "hash": "14003302989697071848"
+        },
+        {
+          "file": "package-lock.json",
+          "hash": "7207239250822752753"
+        },
+        {
+          "file": "package.json",
+          "hash": "7718580646592320720",
+          "deps": [
+            "npm:@angular/animations",
+            "npm:@angular/common",
+            "npm:@angular/compiler",
+            "npm:@angular/core",
+            "npm:@angular/forms",
+            "npm:@angular/platform-browser",
+            "npm:@angular/platform-browser-dynamic",
+            "npm:@angular/router",
+            "npm:@nx/angular",
+            "npm:rxjs",
+            "npm:tslib",
+            "npm:zone.js",
+            "npm:@angular-devkit/build-angular",
+            "npm:@angular-devkit/core",
+            "npm:@angular-devkit/schematics",
+            "npm:@angular-eslint/eslint-plugin",
+            "npm:@angular-eslint/eslint-plugin-template",
+            "npm:@angular-eslint/template-parser",
+            "npm:@angular/cli",
+            "npm:@angular/compiler-cli",
+            "npm:@angular/language-service",
+            "npm:@nx/devkit",
+            "npm:@nx/eslint",
+            "npm:@nx/eslint-plugin",
+            "npm:@nx/jest",
+            "npm:@nx/js",
+            "npm:@nx/playwright",
+            "npm:@nx/workspace",
+            "npm:@playwright/test",
+            "npm:@schematics/angular",
+            "npm:@swc-node/register",
+            "npm:@swc/core",
+            "npm:@swc/helpers",
+            "npm:@types/jest",
+            "npm:@types/node",
+            "npm:@typescript-eslint/eslint-plugin",
+            "npm:@typescript-eslint/parser",
+            "npm:autoprefixer",
+            "npm:eslint",
+            "npm:eslint-config-prettier",
+            "npm:eslint-plugin-playwright",
+            "npm:jest",
+            "npm:jest-environment-jsdom",
+            "npm:jest-preset-angular",
+            "npm:jsonc-eslint-parser",
+            "npm:nx",
+            "npm:postcss",
+            "npm:prettier",
+            "npm:ts-jest",
+            "npm:ts-node",
+            "npm:typescript"
+          ]
+        },
+        {
+          "file": "tsconfig.base.json",
+          "hash": "12704742886003939338"
+        },
+        {
+          "file": ".nx/cache/project-graph.json",
+          "hash": "135914672971774389"
+        },
+        {
+          "file": ".nx/cache/parsed-lock-file.json",
+          "hash": "4581505681583328181"
+        },
+        {
+          "file": ".nx/cache/lockfile.hash",
+          "hash": "5495158901493964825"
+        },
+        {
+          "file": ".nx/cache/d/daemon.log",
+          "hash": "1673133398240783221"
+        },
+        {
+          "file": ".nx/cache/file-map.json",
+          "hash": "13804226566275401954"
+        },
+        {
+          "file": ".git/config",
+          "hash": "16351496320945018565"
+        }
+      ]
+    }
+  }
+}

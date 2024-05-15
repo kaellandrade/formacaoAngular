@@ -1,0 +1,16 @@
+<form #addForm="ngForm" class="add-item" (ngSubmit)="handleSubmit(addForm)">
+  <input
+    type="text"
+    name="item"
+    placeholder="Digite o item que deseja adicionar"
+    [(ngModel)]="valorItem"
+    required="true"
+  />
+  <button
+    [disabled]="addForm.form.invalid"
+    [ngClass]="addForm.form.invalid ? 'disabled' : ''"
+    type="submit"
+  >
+    {{ textoBtn }}
+  </button>
+</form>
