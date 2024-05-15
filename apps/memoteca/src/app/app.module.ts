@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
+import {SharedUiComponent} from '@formacao/shared-ui'
 
 @NgModule({
 	declarations: [
@@ -32,6 +33,7 @@ import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pen
 		FormsModule,
 		HttpClientModule,
 		ReactiveFormsModule,
+		SharedUiComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent],

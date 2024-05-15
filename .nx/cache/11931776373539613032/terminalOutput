@@ -1,0 +1,22 @@
+[34mBuilding Angular Package[39m
+[37m[39m
+[37m------------------------------------------------------------------------------[39m
+[37mBuilding entry point '@formacao/shared-ui'[39m
+[37m------------------------------------------------------------------------------[39m
+- Compiling with Angular sources in Ivy partial compilation mode.
+[32m✔[39m Compiling with Angular sources in Ivy partial compilation mode.
+[32m✔[39m Generating FESM bundles
+- Copying assets
+[32m✔[39m Copying assets
+- Writing package manifest
+[32m✔[39m Writing package manifest
+[32m✔[39m Built @formacao/shared-ui
+[32m[39m
+[32m------------------------------------------------------------------------------[39m
+[32mBuilt Angular Package[39m
+[32m - from: /home/micael/gihub/formacaoAngular/libs/shared-ui[39m
+[32m - to:   /home/micael/gihub/formacaoAngular/dist/libs/shared-ui[39m
+[32m------------------------------------------------------------------------------[39m
+[37m[37m[39m[37m[39m
+[37m[37mBuild at: [1m2024-05-15T20:49:40.923Z[22m - Time: [1m838[22mms[39m[37m[39m
+[37m[37m[39m[37m[39m
