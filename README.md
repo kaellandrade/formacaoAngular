@@ -2,7 +2,7 @@
   <img width='30%' src=".github/angular.svg" alt="Angular">
 </p>
 
-# Formação Angular
+# Formação Angular (MONOREPO)
 
 1. Explore as bases do Angular
 
