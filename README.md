@@ -8,12 +8,13 @@ Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/gett
 
 ## Setup
 - Instale as dependencias `npm install`;
+- Para ver todos os apps desse monorepo de forma gráfica utilize a ferrapenta grath do NX: `npx nx graph`;
 
 ## Rodando os apps
-- App Memoteca - `npx nx serve memoteca`;
-- Todo APP - `npx nx serve life-cycle`;
-- Forms reativos funcinalidades - `npx nx serve forms-reativos`;
-
+- Buscador de livros :book: - `npx nx serve buscante`;
+- App Memoteca :iphone: - `npx nx serve memoteca`;
+- Todo APP :white_check_mark: - `npx nx serve life-cycle`;
+- Forms reativos funcinalidades :arrows_clockwise: - `npx nx serve forms-reativos`;
 
 2. Explore as bases do Angular
 
