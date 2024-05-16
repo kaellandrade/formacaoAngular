@@ -10,11 +10,49 @@ Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/gett
 - Instale as dependencias `npm install`;
 - Para ver todos os apps desse monorepo de forma gráfica utilize a ferrapenta grath do NX: `npx nx graph`;
 
-## Rodando os apps
-- Buscador de livros :book: - `npx nx serve buscante`;
-- App Memoteca :iphone: - `npx nx serve memoteca`;
-- Todo APP :white_check_mark: - `npx nx serve life-cycle`;
-- Forms reativos funcinalidades :arrows_clockwise: - `npx nx serve forms-reativos`;
+## Apps
+
+### Buscador de Livos
+
+Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
+
+
+#### Telas
+![Tela](./.github/rxjs-google-livros/books.png)
+![Tela](./.github/rxjs-google-livros/busca-livros.gif)
+
+---
+
+### Memoteca
+
+CRUDE simples para iniciar meu aprendizado no framework Angular.
+
+#### Telas
+![Aplicação em execução](./.github/demo_memoteca.gif)
+
+---
+
+### TODO APP
+ App TODO simples para praticar os Hooks do Angular
+
+#### Telas
+![Todo](./.github/life-cycle/todo.png)
+
+---
+
+### Form reativo
+Explorando os forms reativos do Angular
+
+#### Telas
+![Tela](./.github/form-teplate/aplicacao.png)
+
+---
+
+## Rodando os Apps
+- [Buscador de Livos](#buscador-de-livos) :book: - `npx nx serve buscante`;
+- [App Memoteca](#memoteca) :iphone: - `npx nx serve memoteca`;
+- [Todo APP](#todo-app) :white_check_mark: - `npx nx serve life-cycle`;
+- [Forms reativos](#form-reativo) :arrows_clockwise: - `npx nx serve forms-reativos`;
 
 2. Explore as bases do Angular
 
