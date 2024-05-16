@@ -4,12 +4,12 @@
 
 # Formação Angular (MONOREPO)
 
-Para executar os APPS desse Monorepo iremos precisar do [NX](https://nx.dev/getting-started/intro);
+Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
 
 ## Setup
 - Instale as dependencias `npm install`;
 
-## Apps
+## Apps (Overview)
 
 ### Buscador de Livos
 
