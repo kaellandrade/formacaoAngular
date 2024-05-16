@@ -3,8 +3,19 @@
 </p>
 
 # Formação Angular (MONOREPO)
+1. Executando os projetos
+Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/getting-started/intro);
 
-1. Explore as bases do Angular
+## Setup
+- Instale as dependencias `npm install`;
+
+## Rodando os apps
+- App Memoteca - `npx nx serve memoteca`;
+- Todo APP - `npx nx serve life-cycle`;
+- Forms reativos funcinalidades - `npx nx serve forms-reativos`;
+
+
+2. Explore as bases do Angular
 
    Mergulhando no universo do Angular, começando pela criação de aplicações usando a poderosa ferramenta Angular CLI.
    Aprendendo sobre estrutura de componentes e explorando os conceitos fundamentais, tais como templates, diretivas, services e injeção de dependências.
@@ -21,7 +32,7 @@
       1. Formulários reativos com ReactiveFormsModule, FormGroup;
    3. [Formulários orientados a templates (Alura books)](/forms-angular-main/)
 
-2. Gerencie o ciclo de vida de componentes e fluxo de dados reativos com a biblioteca RxJS
+3. Gerencie o ciclo de vida de componentes e fluxo de dados reativos com a biblioteca RxJS
 
    Aperfeiçoe sua habilidade em controlar o comportamento dos componentes em várias fases de sua existência, desde a inicialização até a destruição, entendendo hooks do ciclo de vida como ngOnInit, ngOnChanges e ngOnDestroy.
 
@@ -31,7 +42,7 @@
    2. [Programação Reativa](https://www.youtube.com/watch?v=ifA-57jTk7Y)
    3. [RxJS e Angular: programando de forma reativa (Consumindo service do Google Books)](/rxjs-projeto/)
 
-3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
+4. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
 
 #### TODO (adicionais):
 
@@ -39,6 +50,6 @@
    - [ ] buscante
    - [ ] forms-reativos
    - [ ] memoteca
-
+lib-shared-ui
 - [ ] Configuar [Cypress](https://www.cypress.io/);
 - [ ] Configurar git hook [Husky](https://github.com/typicode/husky).

@@ -12,7 +12,6 @@ import { MensagemComponent } from './components/mensagem/mensagem.component';
 import { MaiorIdadeDirective } from './directives/maior-idade.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ValidandoCepDirective } from './directives/validando-cep.directive';
-import { SharedUiComponent } from '@formacao/shared-ui';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,7 @@ import { SharedUiComponent } from '@formacao/shared-ui';
     ValidandoCepDirective,
     
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, SharedUiComponent],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
