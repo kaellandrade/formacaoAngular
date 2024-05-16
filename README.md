@@ -3,12 +3,11 @@
 </p>
 
 # Formação Angular (MONOREPO)
-1. Executando os projetos
-Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/getting-started/intro);
+
+Para executar os APPS desse Monorepo iremos precisar do [NX](https://nx.dev/getting-started/intro);
 
 ## Setup
 - Instale as dependencias `npm install`;
-- Para ver todos os apps desse monorepo de forma gráfica utilize a ferrapenta grath do NX: `npx nx graph`;
 
 ## Apps
 
