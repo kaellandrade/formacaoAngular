@@ -53,7 +53,9 @@ Explorando os forms reativos do Angular
 - [Todo APP](#todo-app) :white_check_mark: - `npx nx serve life-cycle`;
 - [Forms reativos](#form-reativo) :arrows_clockwise: - `npx nx serve forms-reativos`;
 
-2. Explore as bases do Angular
+## Mais detalhes sobre essa formação da Alura (Guideline)
+
+1. Explore as bases do Angular
 
    Mergulhando no universo do Angular, começando pela criação de aplicações usando a poderosa ferramenta Angular CLI.
    Aprendendo sobre estrutura de componentes e explorando os conceitos fundamentais, tais como templates, diretivas, services e injeção de dependências.
@@ -70,7 +72,7 @@ Explorando os forms reativos do Angular
       1. Formulários reativos com ReactiveFormsModule, FormGroup;
    3. [Formulários orientados a templates (Alura books)](/forms-angular-main/)
 
-3. Gerencie o ciclo de vida de componentes e fluxo de dados reativos com a biblioteca RxJS
+2. Gerencie o ciclo de vida de componentes e fluxo de dados reativos com a biblioteca RxJS
 
    Aperfeiçoe sua habilidade em controlar o comportamento dos componentes em várias fases de sua existência, desde a inicialização até a destruição, entendendo hooks do ciclo de vida como ngOnInit, ngOnChanges e ngOnDestroy.
 
@@ -80,7 +82,9 @@ Explorando os forms reativos do Angular
    2. [Programação Reativa](https://www.youtube.com/watch?v=ifA-57jTk7Y)
    3. [RxJS e Angular: programando de forma reativa (Consumindo service do Google Books)](/rxjs-projeto/)
 
-4. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
+3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
+
+---
 
 #### TODO (adicionais):
 
