@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Livro } from 'src/app/models/interfaces';
+import { Livro } from '../../models/interfaces';
 
 const body = document.querySelector('body');
 

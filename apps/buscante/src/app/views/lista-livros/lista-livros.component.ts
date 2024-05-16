@@ -11,9 +11,10 @@ import {
 	share,
 	switchMap,
 } from 'rxjs';
-import { LivroVolumeInfo } from 'src/app/models/LivroVolumeInfo';
-import { Item, Livro, LivrosResultado } from 'src/app/models/interfaces';
-import { LivroService } from 'src/app/service/livro.service';
+import { Item, Livro, LivrosResultado } from '../../models/interfaces';
+import { LivroVolumeInfo} from '../../models/LivroVolumeInfo';
+import { LivroService } from '../../service/livro.service';
+
 
 const TAMANHO_MIN_BUSCA = 3;
 const DELAY_BUSCA = 500;
