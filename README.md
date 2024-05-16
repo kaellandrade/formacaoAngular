@@ -52,6 +52,6 @@ Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/gett
    - [ ] Memoteca
    - [ ] Todo app 
    - [ ] Forms-reativos
-lib-shared-ui
+
 - [ ] Configuar [Cypress](https://www.cypress.io/);
 - [ ] Configurar git hook [Husky](https://github.com/typicode/husky).
