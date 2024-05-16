@@ -1,0 +1,95 @@
+{
+  "name": "forms-reativos",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "apps/forms-reativos/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/forms-reativos",
+        "index": "apps/forms-reativos/src/index.html",
+        "main": "apps/forms-reativos/src/main.ts",
+        "polyfills": "apps/forms-reativos/src/polyfills.ts",
+        "tsConfig": "apps/forms-reativos/tsconfig.app.json",
+        "assets": [
+          "apps/forms-reativos/src/favicon.ico",
+          "apps/forms-reativos/src/assets"
+        ],
+        "styles": ["apps/forms-reativos/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/forms-reativos/src/environments/environment.ts",
+              "with": "apps/forms-reativos/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "forms-reativos:build:production"
+        },
+        "development": {
+          "browserTarget": "forms-reativos:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "forms-reativos:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/forms-reativos/src/test.ts",
+        "polyfills": "apps/forms-reativos/src/polyfills.ts",
+        "tsConfig": "apps/forms-reativos/tsconfig.spec.json",
+        "karmaConfig": "apps/forms-reativos/karma.conf.js",
+        "assets": [
+          "apps/forms-reativos/src/favicon.ico",
+          "apps/forms-reativos/src/assets"
+        ],
+        "styles": ["apps/forms-reativos/src/styles.css"],
+        "scripts": []
+      }
+    }
+  }
+}
