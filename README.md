@@ -35,6 +35,10 @@
 
 #### TODO (adicionais):
 
-- [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos;
+- [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
+   - [ ] buscante
+   - [ ] forms-reativos
+   - [ ] memoteca
+
 - [ ] Configuar [Cypress](https://www.cypress.io/);
 - [ ] Configurar git hook [Husky](https://github.com/typicode/husky).
