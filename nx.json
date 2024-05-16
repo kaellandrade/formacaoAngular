@@ -35,6 +35,11 @@
     },
     "start": {
       "dependsOn": ["^build"]
+    },
+    "@angular-devkit/build-angular:application": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["default", "^default"]
     }
   },
   "generators": {
@@ -44,6 +49,27 @@
     },
     "@nx/angular:component": {
       "style": "css"
+    },
+    "@nx/angular:application": {
+      "e2eTestRunner": "playwright",
+      "linter": "eslint",
+      "style": "css",
+      "unitTestRunner": "jest"
     }
-  }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "eslint:lint",
+        "extensions": ["ts", "tsx", "js", "jsx", "html", "vue"]
+      }
+    }
+  ]
 }

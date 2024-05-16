@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@formacao/shared-ui": [
+        "libs/shared-ui/src/index.ts"
+      ]
+    }
+  },
+  "extends": "../../../../libs/shared-ui/tsconfig.lib.prod.json"
+}
