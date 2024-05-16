@@ -19,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { DialogModule } from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedUiComponent } from '@formacao/shared-ui';
 
 @NgModule({
 	declarations: [
@@ -44,6 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		DividerModule,
 		DialogModule,
 		BrowserAnimationsModule,
+		SharedUiComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent],
