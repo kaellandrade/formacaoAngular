@@ -1,0 +1,95 @@
+{
+	"name": "life-cycle",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
+	"projectType": "application",
+	"generators": {
+		"@schematics/angular:application": {
+			"strict": true
+		}
+	},
+	"sourceRoot": "apps/life-cycle/src",
+	"prefix": "app",
+	"targets": {
+		"build": {
+			"executor": "@angular-devkit/build-angular:browser",
+			"options": {
+				"outputPath": "dist/apps/life-cycle",
+				"index": "apps/life-cycle/src/index.html",
+				"main": "apps/life-cycle/src/main.ts",
+				"polyfills": "apps/life-cycle/src/polyfills.ts",
+				"tsConfig": "apps/life-cycle/tsconfig.app.json",
+				"assets": [
+					"apps/life-cycle/src/favicon.ico",
+					"apps/life-cycle/src/assets"
+				],
+				"styles": ["apps/life-cycle/src/styles.css"],
+				"scripts": []
+			},
+			"configurations": {
+				"production": {
+					"budgets": [
+						{
+							"type": "initial",
+							"maximumWarning": "500kb",
+							"maximumError": "1mb"
+						},
+						{
+							"type": "anyComponentStyle",
+							"maximumWarning": "2kb",
+							"maximumError": "4kb"
+						}
+					],
+					"fileReplacements": [
+						{
+							"replace": "apps/life-cycle/src/environments/environment.ts",
+							"with": "apps/life-cycle/src/environments/environment.prod.ts"
+						}
+					],
+					"outputHashing": "all"
+				},
+				"development": {
+					"buildOptimizer": false,
+					"optimization": false,
+					"vendorChunk": true,
+					"extractLicenses": false,
+					"sourceMap": true,
+					"namedChunks": true
+				}
+			},
+			"defaultConfiguration": "production"
+		},
+		"serve": {
+			"executor": "@angular-devkit/build-angular:dev-server",
+			"configurations": {
+				"production": {
+					"browserTarget": "life-cycle:build:production"
+				},
+				"development": {
+					"browserTarget": "life-cycle:build:development"
+				}
+			},
+			"defaultConfiguration": "development"
+		},
+		"extract-i18n": {
+			"executor": "@angular-devkit/build-angular:extract-i18n",
+			"options": {
+				"browserTarget": "life-cycle:build"
+			}
+		},
+		"test": {
+			"executor": "@angular-devkit/build-angular:karma",
+			"options": {
+				"main": "apps/life-cycle/src/test.ts",
+				"polyfills": "apps/life-cycle/src/polyfills.ts",
+				"tsConfig": "apps/life-cycle/tsconfig.spec.json",
+				"karmaConfig": "apps/life-cycle/karma.conf.js",
+				"assets": [
+					"apps/life-cycle/src/favicon.ico",
+					"apps/life-cycle/src/assets"
+				],
+				"styles": ["apps/life-cycle/src/styles.css"],
+				"scripts": []
+			}
+		}
+	}
+}
