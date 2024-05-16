@@ -48,7 +48,7 @@ Para executar os APPS desse monorepo iremos precisar do [NX](https://nx.dev/gett
 #### TODO (adicionais):
 
 - [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
-   - [ ] Buscante
+   - [X] Buscante
    - [ ] Memoteca
    - [ ] Todo app 
    - [ ] Forms-reativos
