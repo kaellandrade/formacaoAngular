@@ -49,7 +49,7 @@ Explorando os forms reativos do Angular
 
 ## Rodando os Apps
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm buscante-app`;
-- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-ap`;
+- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 - [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
 
@@ -90,9 +90,9 @@ Explorando os forms reativos do Angular
 
 - [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
    - [X] Buscante
-   - [ ] Memoteca
+   - [X] Memoteca
    - [ ] Todo app 
    - [ ] Forms-reativos
-
+- [ ] Configurar estilos do PrimeNg para todos os APPS
 - [ ] Configuar [Cypress](https://www.cypress.io/);
 - [ ] Configurar git hook [Husky](https://github.com/typicode/husky).
