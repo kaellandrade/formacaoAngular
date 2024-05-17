@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
+import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
+import { CalendarModule } from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
@@ -32,6 +36,11 @@ import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pen
 		FormsModule,
 		HttpClientModule,
 		ReactiveFormsModule,
+		ButtonModule,
+		TooltipModule,
+		CalendarModule,
+		BrowserModule,
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],
