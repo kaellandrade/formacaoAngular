@@ -4,9 +4,9 @@
   "description": "<p align=\"center\">   <img width='30%' src=\".github/angular.svg\" alt=\"Angular\"> </p>",
   "scripts": {
     "memoteca-app": "concurrently \"npx nx run memoteca:serve -o  \" \"npx nx run memoteca:backend\"",
-    "buscante-app": "npx nx run buscante:serve -o",
-    "todo-app": "npx nx run life-cycle:serve -o",
-    "form-app": "npx nx run forms-reativos:serve -o"
+    "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
+    "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
+    "form-app": "npx nx@19.0.4 run forms-reativos:serve -o"
   },
   "keywords": [],
   "author": "",
