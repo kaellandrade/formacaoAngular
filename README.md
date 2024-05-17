@@ -91,8 +91,8 @@ Explorando os forms reativos do Angular
 - [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
    - [X] Buscante
    - [X] Memoteca
-   - [ ] Todo app 
-   - [ ] Forms-reativos
+   - [X] Todo app 
+   - [X] Forms-reativos
+- [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 - [ ] Configurar estilos do PrimeNg para todos os APPS
 - [ ] Configuar [Cypress](https://www.cypress.io/);
-- [ ] Configurar git hook [Husky](https://github.com/typicode/husky).
