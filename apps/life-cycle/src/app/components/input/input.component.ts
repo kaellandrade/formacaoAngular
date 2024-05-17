@@ -6,8 +6,8 @@ import {
 	SimpleChanges,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Item } from 'src/app/interfaces/iItem';
-import { ListaDeCompraService } from 'src/app/service/lista-de-compra.service';
+import { Item } from '../../interfaces/iItem';
+import { ListaDeCompraService } from '../../service/lista-de-compra.service';
 
 @Component({
 	selector: 'app-input',
