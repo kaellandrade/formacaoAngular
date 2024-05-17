@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "<p align=\"center\">   <img width='30%' src=\".github/angular.svg\" alt=\"Angular\"> </p>",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "memoteca-app": "concurrently \"npx nx run memoteca:serve -o  \" \"npx nx run memoteca:backend\"",
+    "buscante-app": "npx nx run buscante:serve -o",
+    "todo-app": "npx nx run life-cycle:serve -o",
+    "form-app": "npx nx run forms-reativos:serve -o"
   },
   "keywords": [],
   "author": "",
@@ -56,12 +59,14 @@
     "@typescript-eslint/eslint-plugin": "^7.3.0",
     "@typescript-eslint/parser": "^7.3.0",
     "autoprefixer": "^10.4.0",
+    "concurrently": "^8.2.2",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-playwright": "^0.15.3",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "jest-preset-angular": "~14.0.3",
+    "json-server": " 0.17.4",
     "jsonc-eslint-parser": "^2.1.0",
     "ng-packagr": "~17.3.0",
     "nx": "19.0.4",

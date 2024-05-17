@@ -95,6 +95,9 @@
 			"options": {
 				"lintFilePatterns": ["apps/memoteca/**/*.ts", "apps/memoteca/**/*.html"]
 			}
+		},
+		"backend": {
+			"command": "json-server --watch ./apps/memoteca/backend/db.json --port 5000"
 		}
 	}
 }

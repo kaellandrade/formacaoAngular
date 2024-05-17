@@ -48,10 +48,10 @@ Explorando os forms reativos do Angular
 ---
 
 ## Rodando os Apps
-- [Buscador de Livos](#buscador-de-livos) :book: - `npx nx serve buscante`;
-- [App Memoteca](#memoteca) :iphone: - `npx nx serve memoteca`;
-- [Todo APP](#todo-app) :white_check_mark: - `npx nx serve life-cycle`;
-- [Forms reativos](#form-reativo) :arrows_clockwise: - `npx nx serve forms-reativos`;
+- [Buscador de Livos](#buscador-de-livos) :book: - `npm buscante-app`;
+- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-ap`;
+- [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
+- [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
 
 ## Mais detalhes sobre essa formação da Alura (Guideline)
 
