@@ -1,26 +1,32 @@
 <div
-	class="pensamento {{ pensamento.modelo }} ff-roboto-mono"
-	[ngClass]="larguraPensamento()">
-	<img src="/assets/imgs/{{ pensamento.modelo }}.png" alt="Aspas coloridas" />
-	<p class="conteudo">{{ pensamento.conteudo }}</p>
-	<p class="autoria">
-		<b>{{ pensamento.autoria }}</b>
-	</p>
-	<div class="acoes">
-		<button
-			class="botao-editar"
-			routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
-			<img src="/assets/imgs/icone-editar.png" alt="Editar" />
-		</button>
-		<button
-			class="botao-excluir"
-			routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}">
-			<img src="/assets/imgs/icone-excluir.png" alt="Excluir" />
-		</button>
-		<button class="botao-excluir" (click)="toggleFavoritar()">
-			<img
-				src="/assets/imgs/icone-favorito-{{ getSrcFavoritoImgPath() }}.png"
-				alt="Icone favorito {{ getSrcFavoritoImgPath() }}" />
-		</button>
-	</div>
+  class="pensamento {{ pensamento.modelo }} ff-roboto-mono"
+  [ngClass]="larguraPensamento()">
+  <div class="aspas" [ngStyle]="{color:'var(--primary-500)'}"></div>
+  <div>
+    <p class="conteudo m-5">{{ pensamento.conteudo }}</p>
+    <p class="autoria m-5">
+      <b>{{ pensamento.autoria }}</b>
+    </p>
+  </div>
+  <div class="m-2 flex justify-content-around">
+    <p-button
+      rounded="true"
+      icon="pi pi-pen-to-square"
+      severity="warning"
+      routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
+    </p-button>
+    <p-button
+      rounded="true"
+      routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}"
+      icon="pi pi-trash"
+      severity="danger"
+    >
+    </p-button>
+    <p-button
+      rounded="true"
+      severity="success"
+      [icon]="getSrcFavoritoImgIcon()"
+      (click)="toggleFavoritar()">
+    </p-button>
+  </div>
 </div>

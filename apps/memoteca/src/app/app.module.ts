@@ -23,6 +23,7 @@ import { InputIconModule } from 'primeng/inputicon';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
+import { CardModule } from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     InputTextareaModule,
     InputTextModule,
     CheckboxModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -56,10 +56,10 @@ export class PensamentoComponent implements OnInit {
 			}
 		});
 	}
-	public getSrcFavoritoImgPath(): string {
+	public getSrcFavoritoImgIcon(): string {
 		if (this.pensamento.favorito) {
-			return 'ativo';
+			return 'pi pi-heart-fill';
 		}
-		return 'inativo';
+		return 'pi pi-heart';
 	}
 }
