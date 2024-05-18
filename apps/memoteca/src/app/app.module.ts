@@ -17,32 +17,43 @@ import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { RippleModule } from 'primeng/ripple';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
 @NgModule({
-	declarations: [
-		AppComponent,
-		CabecalhoComponent,
-		RodapeComponent,
-		CriarPensamentoComponent,
-		ListarPensamentoComponent,
-		PensamentoComponent,
-		ExcluirPensamentoComponent,
-		EditarPensamentoComponent,
-		BotaoCarregarMaisComponent,
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		FormsModule,
-		HttpClientModule,
-		ReactiveFormsModule,
-		ButtonModule,
-		TooltipModule,
-		CalendarModule,
-		BrowserModule,
-		BrowserAnimationsModule
-	],
-	providers: [],
-	bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    CabecalhoComponent,
+    RodapeComponent,
+    CriarPensamentoComponent,
+    ListarPensamentoComponent,
+    PensamentoComponent,
+    ExcluirPensamentoComponent,
+    EditarPensamentoComponent,
+    BotaoCarregarMaisComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    TooltipModule,
+    CalendarModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    RippleModule,
+    IconFieldModule,
+    InputIconModule,
+    InputTextareaModule,
+    InputTextModule,
+    CheckboxModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
