@@ -24,6 +24,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { CardModule } from 'primeng/card';
+import { NgOptimizedImage } from '@angular/common';
+import { ChipsModule } from 'primeng/chips';
+import { PanelModule } from 'primeng/panel';
+import { DividerModule } from 'primeng/divider';
+import { ButtonGroupModule } from 'primeng/buttongroup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +58,12 @@ import { CardModule } from 'primeng/card';
     InputTextareaModule,
     InputTextModule,
     CheckboxModule,
-    CardModule
+    CardModule,
+    NgOptimizedImage,
+    ChipsModule,
+    PanelModule,
+    DividerModule,
+    ButtonGroupModule
   ],
   providers: [],
   bootstrap: [AppComponent],

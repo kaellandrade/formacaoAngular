@@ -12,62 +12,9 @@
   margin-top: 15px;
 }
 
-.pensamento {
-  display: flex;
-  flex-direction: column;
-  background-color: #f0f0f0;
-  box-sizing: border-box;
-  border: 3px dotted var(--primary-200);
-  min-height: 360px;
-  justify-content: space-around;
-}
-
-.pensamento .conteudo {
-  color: var(--primary-800);
-  font-size: 1.2rem;
-  margin: 1rem auto;
-  word-wrap: break-word;
-}
-
-.pensamento .autoria {
-  word-wrap: break-word;
-  color: var(--primary-700);
-
-}
-
-.modelo1 {
-  box-shadow: 8px 8px 0px var(--primary-200);
-}
-
-.modelo2 {
-  box-shadow: 8px 8px 0px var(--primary-600);
-}
-
-.modelo3 {
-  box-shadow: 8px 8px 0px var(--primary-100);
-}
 
 .pensamento-g {
   width: 556px;
-}
-
-.aspas {
-  height: 35px;
-  position: relative;
-
-  &::before {
-    top: 0;
-    right: 5px;
-    position: absolute;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    content: "''";
-    font-size: 6rem;
-  }
-}
-
-.pensamento-p {
-  width: 262px;
 }
 
 @media screen and (max-width: 768px) {

@@ -20,6 +20,62 @@ h2 {
   margin: 1rem auto 2rem;
 }
 
+.aspas {
+  height: 35px;
+  position: relative;
+  &::before {
+    top: 0;
+    right: 5px;
+    position: absolute;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    content: "''";
+    font-size: 6rem;
+  }
+}
+
+.pensamento-p {
+  width: 262px;
+}
+
+.pensamento {
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  min-height: 360px;
+  justify-content: space-around;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.pensamento .conteudo {
+  color: var(--primary-800);
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.pensamento .autoria {
+  color: var(--surface-600);
+  padding-left: 0.5rem;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.modelo1 {
+  box-shadow: 8px 8px 0 var(--purple-100);
+  border: 3px dotted var(--purple-500);
+
+}
+
+.modelo2 {
+  box-shadow: 8px 8px 0 var(--red-100);
+  border: 3px dotted var(--red-500);
+}
+
+.modelo3 {
+  box-shadow: 8px 8px 0 var(--teal-100);
+  border: 3px dotted var(--teal-500);
+}
+
 /*
 .container {
   padding-right: 1rem;

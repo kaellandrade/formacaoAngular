@@ -74,4 +74,6 @@ export class CriarPensamentoComponent implements OnInit {
 		}
 		return false;
 	}
+
+  protected readonly addEventListener = addEventListener;
 }
