@@ -1,4 +1,5 @@
 <section>
+  <p-toast />
   <header class="header">
     <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">Adicione um pensamento novo:</h2>
   </header>
@@ -134,8 +135,8 @@
               type="button"
               (click)="criarPensamento()"
               [disabled]="!formulario.valid"
-              [ngClass]="toogleBotao()"/>
-            <p-button label="Cancelar" size="large" severity="danger" type="button" (click)="cancelarPensamento()"/>
+              [ngClass]="toogleBotao()" />
+            <p-button label="Cancelar" size="large" severity="danger" type="button" (click)="cancelarPensamento()" />
           </p-buttonGroup>
         </div>
       </div>
