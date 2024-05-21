@@ -48,7 +48,7 @@ Explorando os forms reativos do Angular
 ---
 
 ## Rodando os Apps
-- [Buscador de Livos](#buscador-de-livos) :book: - `npm buscante-app`;
+- [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 - [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
