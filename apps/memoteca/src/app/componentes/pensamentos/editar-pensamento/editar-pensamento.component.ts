@@ -19,6 +19,7 @@ import { ValidatorEnums } from '../ValidatorEnums';
 	styleUrls: ['./editar-pensamento.component.scss'],
 })
 export class EditarPensamentoComponent implements OnInit {
+	protected readonly I18n = ValidatorEnums;
 	formularioEditar: FormGroup;
 	public modeloscards = ModelosPensamentos;
 	protected readonly ValidatorEnums = ValidatorEnums;

@@ -29,6 +29,8 @@ import { ChipsModule } from 'primeng/chips';
 import { PanelModule } from 'primeng/panel';
 import { DividerModule } from 'primeng/divider';
 import { ButtonGroupModule } from 'primeng/buttongroup';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,9 +65,10 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
     ChipsModule,
     PanelModule,
     DividerModule,
-    ButtonGroupModule
+    ButtonGroupModule,
+    ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

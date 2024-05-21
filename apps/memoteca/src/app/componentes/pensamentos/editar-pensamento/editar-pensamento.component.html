@@ -1,127 +1,145 @@
-<section class="container editar-pensamentos ff-inter">
-	<header class="header">
-		<h2>Edite o pensamento:</h2>
-	</header>
-	<form [formGroup]="formularioEditar">
-		<label for="pensamento" class="required-label">Pensamento</label>
-		<input
-			type="textarea"
-			class="input"
-			id="pensamento"
-			placeholder="Digite um pensamento"
-			formControlName="conteudo" />
-		<div
-			class="mensagem__erro"
-			*ngIf="formularioEditar.get('conteudo')?.errors">
-			{{ ValidatorEnums.MSG_CAMPO_OBRIGATORIO }}
-		</div>
-		<label for="autoria" class="required-label">Autoria ou fonte</label>
-		<input
-			formGroupName="autoria"
-			type="text"
-			class="input"
-			id="autoria"
-			formControlName="autoria"
-			placeholder="Digite um autoria ou fonte" />
-		<div
-			class="mensagem__erro"
-			*ngIf="
+<section>
+  <p-toast />
+  <header class="header">
+    <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">Adicione um pensamento novo:</h2>
+  </header>
+  <form [formGroup]="formularioEditar">
+    <p-panel header="O que você está pensando ?">
+      <div class="grid nested-grid">
+        <div class="col-12 flex flex-column gap-2">
+          <label for="pensamento" class="required-label">Pensamento</label>
+          <textarea
+            rows="5"
+            cols="30"
+            pInputTextarea
+            id="pensamento"
+            formControlName="conteudo"
+            placeholder="Digite um pensamento"></textarea>
+          <div
+            class="mensagem__erro"
+            *ngIf="
+				formularioEditar.get('conteudo')?.errors &&
+				formularioEditar.get('conteudo')?.touched
+			">
+            Pensamento é obrigatório!
+          </div>
+        </div>
+        <p-divider class="col-12" />
+        <div class="col-12">
+          <div class="flex flex-column gap-2">
+            <label for="autoria" class="required-label">Autoria ou fonte</label>
+            <input
+              pInputText
+              type="text"
+              id="autoria"
+              formControlName="autoria"
+              placeholder="Digite um autoria ou fonte" />
+            <div
+              class="mensagem__erro"
+              *ngIf="
 				formularioEditar.get('autoria')?.errors?.['required'] &&
 				formularioEditar.get('autoria')?.touched
 			">
-			{{ ValidatorEnums.MSG_CAMPO_OBRIGATORIO }}
-		</div>
-		<div
-			class="mensagem__erro"
-			*ngIf="formularioEditar.get('autoria')?.errors?.['minlength']">
-			{{ ValidatorEnums.MS_CAMPO_MIN_LENGTH }}
-			{{ ValidatorEnums.LENGTH_AUTORIA }} caracteres
-		</div>
-		<div class="mensagem__erro" *ngIf="isValidValueAutoria()">
-			{{ ValidatorEnums.MSG_AUTORIA_EM_MINUSCULA }}
-		</div>
-		<label>Selecione o modelo do card:</label>
-		<div class="container-radio">
-			<div class="radio-modelo">
-				<label class="label-modelo" for="{{ modeloscards.MODELO1 }}">
-					<input
-						value="{{ modeloscards.MODELO1 }}"
-						type="radio"
-						id="{{ modeloscards.MODELO1 }}"
-						formControlName="modelo" />
-					<div class="custom-radio">
-						<span></span>
-					</div>
-					<span>Modelo 1</span>
-				</label>
-				Prévia:
-				<div class="modelo modelo1 ff-roboto-mono">
-					<img src="../../../../assets/imgs/modelo1.png" alt="Aspas azuis" />
-					<p class="conteudo">
-						{{ formularioEditar.get('conteudo')?.value }}
-					</p>
-					<p class="autoria">
-						<b>{{ formularioEditar.get('autoria')?.value }}</b>
-					</p>
-				</div>
-			</div>
-			<div class="radio-modelo">
-				<label class="label-modelo" for="{{ modeloscards.MODELO2 }}">
-					<input
-						type="radio"
-						id="{{ modeloscards.MODELO2 }}"
-						value="{{ modeloscards.MODELO2 }}"
-						formControlName="modelo" />
-					<div class="custom-radio">
-						<span></span>
-					</div>
-					<span>Modelo 2</span>
-				</label>
-				Prévia:
-				<div class="modelo modelo2 ff-roboto-mono">
-					<img
-						src="../../../../assets/imgs/modelo2.png"
-						alt="Aspas azuis claro" />
-					<p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
-					<p class="autoria">
-						<b>{{ formularioEditar.get('autoria')?.value }}</b>
-					</p>
-				</div>
-			</div>
-			<div class="radio-modelo">
-				<label class="label-modelo" for="{{ modeloscards.MODELO3 }}">
-					<input
-						type="radio"
-						id="{{ modeloscards.MODELO3 }}"
-						value="{{ modeloscards.MODELO3 }}"
-						formControlName="modelo" />
-					<div class="custom-radio">
-						<span></span>
-					</div>
-					<span>Modelo 3</span>
-				</label>
-				Prévia:
-				<div class="modelo modelo3 ff-roboto-mono">
-					<img src="../../../../assets/imgs/modelo3.png" alt="Aspas verde" />
-					<p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
-					<p class="autoria">
-						<b>{{ formularioEditar.get('autoria')?.value }}</b>
-					</p>
-				</div>
-			</div>
-		</div>
-		<div class="acoes">
-			<button
-				[disabled]="!formularioEditar.valid"
-				type="button"
-				(click)="editarPensamento()"
-				class="botao"
-				[ngClass]="toogleBotao()">
-				Salvar
-			</button>
-			<button type="button" (click)="cancelarEdicao()" class="botao">
-				Cancelar
-			</button>
-		</div>
-	</form>
+              {{ I18n.MSG_CAMPO_OBRIGATORIO }}
+            </div>
+            <div
+              class="mensagem__erro"
+              *ngIf="formularioEditar.get('autoria')?.errors?.['minlength']">
+              {{ I18n.MS_CAMPO_MIN_LENGTH }}
+              {{ ValidatorEnums.LENGTH_AUTORIA }} caracteres
+            </div>
+            <div class="mensagem__erro" *ngIf="isValidValueAutoria()">
+              {{ I18n.MSG_AUTORIA_EM_MINUSCULA }}
+            </div>
+          </div>
+        </div>
+        <p-divider class="col-12" />
+        <div class="col-12 flex flex-column gap-2">
+          <label>Selecione o modelo do card:</label>
+          <div class="mt-5 grid ">
+            <div class="col-12 md:col-4">
+              <div class="radio-modelo">
+                <label class="label-modelo" for="{{ modeloscards.MODELO1 }}">
+                  <input
+                    value="{{ modeloscards.MODELO1 }}"
+                    type="radio"
+                    formControlName="modelo"
+                    id="{{ modeloscards.MODELO1 }}" />
+                  <div class="custom-radio custom-radio-1">
+                    <span></span>
+                  </div>
+                  <span>Modelo 1</span>
+                </label>
+                <span class="block p-3">Veja a prévia 1</span>
+                <div pRipple class="pensamento modelo modelo1">
+                  <p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
+                  <blockquote class="autoria">
+                    <b>{{ formularioEditar.get('autoria')?.value }}</b>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 md:col-4">
+              <div class="radio-modelo">
+                <label class="label-modelo" for="{{ modeloscards.MODELO2 }}">
+                  <input
+                    type="radio"
+                    formControlName="modelo"
+                    id="{{ modeloscards.MODELO2 }}"
+                    value="{{ modeloscards.MODELO2 }}" />
+                  <div class="custom-radio custom-radio-2">
+                    <span></span>
+                  </div>
+                  <span>Modelo 2</span>
+                </label>
+                <span class="block p-3">Veja a prévia 2</span>
+                <div pRipple class="pensamento modelo modelo2">
+                  <p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
+                  <blockquote class="autoria">
+                    <b>{{ formularioEditar.get('autoria')?.value }}</b>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 md:col-4">
+              <div class="radio-modelo">
+                <label class="label-modelo" for="{{ modeloscards.MODELO3 }}">
+                  <input
+                    type="radio"
+                    formControlName="modelo"
+                    id="{{ modeloscards.MODELO3 }}"
+                    value="{{ modeloscards.MODELO3 }}" />
+                  <div class="custom-radio custom-radio-3">
+                    <span></span>
+                  </div>
+                  <span>Modelo 3</span>
+                </label>
+                <span class="block p-3">Veja a prévia 2</span>
+                <div pRipple class="pensamento modelo modelo3 ff-roboto-mono">
+                  <p class="conteudo">{{ formularioEditar.get('conteudo')?.value }}</p>
+                  <blockquote class="autoria">
+                    <b>{{ formularioEditar.get('autoria')?.value }}</b>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 flex justify-content-center">
+          <p-buttonGroup>
+            <p-button
+              label="Salvar"
+              size="large"
+              icon="pi pi-save"
+              severity="success"
+              type="button"
+              (click)="editarPensamento()"
+              [disabled]="!formularioEditar.valid"
+              [ngClass]="toogleBotao()" />
+            <p-button label="Cancelar" size="large" severity="danger" type="button" (click)="cancelarEdicao()" />
+          </p-buttonGroup>
+        </div>
+      </div>
+    </p-panel>
+  </form>
 </section>
