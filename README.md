@@ -2,7 +2,58 @@
   <img width='30%' src=".github/angular.svg" alt="Angular">
 </p>
 
-# Formação Angular
+# Formação Angular (MONOREPO)
+
+Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
+
+## Setup
+- Instale as dependencias `npm install`;
+
+## Apps (Overview)
+
+### Buscador de Livos
+
+Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
+
+
+#### Telas
+![Tela](./.github/rxjs-google-livros/books.png)
+![Tela](./.github/rxjs-google-livros/busca-livros.gif)
+
+---
+
+### Memoteca
+
+CRUDE simples para iniciar meu aprendizado no framework Angular.
+
+#### Telas
+![Aplicação em execução](./.github/demo_memoteca.gif)
+
+---
+
+### TODO APP
+ App TODO simples para praticar os Hooks do Angular
+
+#### Telas
+![Todo](./.github/life-cycle/todo.png)
+
+---
+
+### Form reativo
+Explorando os forms reativos do Angular
+
+#### Telas
+![Tela](./.github/form-teplate/aplicacao.png)
+
+---
+
+## Rodando os Apps
+- [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
+- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
+- [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
+- [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
+
+## Mais detalhes sobre essa formação da Alura (Guideline)
 
 1. Explore as bases do Angular
 
@@ -33,8 +84,15 @@
 
 3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
 
+---
+
 #### TODO (adicionais):
 
-- [ ] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos;
+- [X] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
+   - [X] Buscante
+   - [X] Memoteca
+   - [X] Todo app 
+   - [X] Forms-reativos
+- [ ] Configurar estilos do PrimeNg para todos os APPS
+- [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 - [ ] Configuar [Cypress](https://www.cypress.io/);
-- [ ] Configurar git hook [Husky](https://github.com/typicode/husky).

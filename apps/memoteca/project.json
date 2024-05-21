@@ -1,0 +1,109 @@
+{
+  "name": "memoteca",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    },
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "apps/memoteca/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/memoteca",
+        "index": "apps/memoteca/src/index.html",
+        "main": "apps/memoteca/src/main.ts",
+        "polyfills": "apps/memoteca/src/polyfills.ts",
+        "tsConfig": "apps/memoteca/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/memoteca/src/favicon.ico", "apps/memoteca/src/assets"],
+        "styles": [
+          "node_modules/primeflex/primeflex.css",
+          "node_modules/primeicons/primeicons.css",
+          "node_modules/primeng/resources/themes/md-light-deeppurple/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "apps/memoteca/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/memoteca/src/environments/environment.ts",
+              "with": "apps/memoteca/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "memoteca:build:production"
+        },
+        "development": {
+          "browserTarget": "memoteca:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "memoteca:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/memoteca/src/test.ts",
+        "polyfills": "apps/memoteca/src/polyfills.ts",
+        "tsConfig": "apps/memoteca/tsconfig.spec.json",
+        "karmaConfig": "apps/memoteca/karma.conf.js",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/memoteca/src/favicon.ico", "apps/memoteca/src/assets"],
+        "styles": ["apps/memoteca/src/styles.scss"],
+        "scripts": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["apps/memoteca/**/*.ts", "apps/memoteca/**/*.html"]
+      }
+    },
+    "backend": {
+      "command": "json-server --watch ./apps/memoteca/backend/db.json --port 5000"
+    }
+  }
+}

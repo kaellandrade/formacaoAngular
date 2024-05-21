@@ -1,0 +1,12 @@
+a {
+	text-decoration: none;
+}
+header {
+	font-family: 'Poppins', sans-serif;
+}
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+}

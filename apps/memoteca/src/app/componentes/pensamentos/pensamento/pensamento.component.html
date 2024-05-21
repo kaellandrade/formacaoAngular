@@ -1,0 +1,32 @@
+<div
+  class="pensamento {{ pensamento.modelo }} ff-roboto-mono"
+  [ngClass]="larguraPensamento()">
+  <div class="aspas" [ngStyle]="{color:'var(--primary-500)'}"></div>
+  <div>
+    <p class="conteudo m-5">{{ pensamento.conteudo }}</p>
+    <p class="autoria m-5">
+      <b>{{ pensamento.autoria }}</b>
+    </p>
+  </div>
+  <div class="m-2 flex justify-content-around">
+    <p-button
+      rounded="true"
+      icon="pi pi-pen-to-square"
+      severity="warning"
+      routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
+    </p-button>
+    <p-button
+      rounded="true"
+      routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}"
+      icon="pi pi-trash"
+      severity="danger"
+    >
+    </p-button>
+    <p-button
+      rounded="true"
+      severity="success"
+      [icon]="getSrcFavoritoImgIcon()"
+      (click)="toggleFavoritar()">
+    </p-button>
+  </div>
+</div>

@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.header {
+  margin: 1rem auto 2rem;
+}
+
+.aspas {
+  height: 35px;
+  position: relative;
+
+  &::before {
+    top: 0;
+    right: 5px;
+    position: absolute;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    content: "''";
+    font-size: 6rem;
+  }
+}
+
+.pensamento-p {
+  width: 262px;
+}
+
+.pensamento {
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  min-height: 360px;
+  justify-content: space-around;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.pensamento .conteudo {
+  color: var(--primary-800);
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.pensamento .autoria {
+  color: var(--surface-600);
+  padding-left: 0.5rem;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.modelo1 {
+  box-shadow: 8px 8px 0 var(--purple-100);
+  border: 3px dotted var(--purple-500);
+
+}
+
+.modelo2 {
+  box-shadow: 8px 8px 0 var(--red-100);
+  border: 3px dotted var(--red-500);
+}
+
+.modelo3 {
+  box-shadow: 8px 8px 0 var(--teal-100);
+  border: 3px dotted var(--teal-500);
+}
+
+
+.radio {
+  margin: 0;
+}
+
+.label-modelo {
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.radio-modelo label {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.custom-radio {
+  border: 1px solid var(--primary-100);
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+
+.custom-radio{
+  span {
+    transition: 0.5s ease;
+    color: var(--primary-400);
+  }
+}
+
+.custom-radio {
+  span {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background: transparent;
+    border-radius: 50%;
+  }
+}
+
+input[type='radio']:checked + .custom-radio-1 {
+  border-color: var(--purple-600);
+}
+
+input[type='radio']:checked + .custom-radio-2 {
+  border-color: var(--red-600);
+}
+
+input[type='radio']:checked + .custom-radio-3 {
+  border-color: var(--teal-600);
+
+}
+
+input[type='radio']:checked + .custom-radio-1 span {
+  background: var(--purple-500);
+}
+
+input[type='radio']:checked + .custom-radio-2 span {
+  background: var(--red-500);
+}
+
+input[type='radio']:checked + .custom-radio-3 span {
+  background: var(--teal-500);
+}

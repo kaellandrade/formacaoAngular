@@ -1,0 +1,31 @@
+<input
+	class="checkbox"
+	type="checkbox"
+	name="comprado"
+	[id]="'comprado -' + item.id"
+	[checked]="item.comprado"
+	(click)="toggleCheck()" />
+<label
+	[class.line-through]="item.comprado"
+	[for]="'comprado -' + item.id"
+	class="description"
+	>{{ item.nome }}</label
+>
+<div class="d-contents" *ngIf="!item.comprado">
+	<fa-icon
+		(click)="deletarItem()"
+		class="icon delete-icon"
+		[icon]="faTrash"></fa-icon>
+	<fa-icon
+		class="icon edit-icon"
+		(click)="editarItem()"
+		[icon]="faPen"></fa-icon>
+</div>
+<small class="date"
+	>{{
+		item.editado
+			? item.dataEdicao?.toLocaleDateString('pt-BR', optionsDate)
+			: item.data.toLocaleDateString('pt-BR', optionsDate)
+	}}
+	{{ item.editado ? '(Editado)' : '' }}</small
+>
