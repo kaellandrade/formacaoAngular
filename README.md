@@ -15,10 +15,7 @@ Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
 
 Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
 
-
-#### Telas
-![Tela](./.github/rxjs-google-livros/books.png)
-![Tela](./.github/rxjs-google-livros/busca-livros.gif)
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/7d6fba8d-8f19-4c54-b2ae-13709f1d9600
 
 ---
 
@@ -34,7 +31,6 @@ CRUDE simples para iniciar meu aprendizado no framework Angular.
 ### TODO APP
  App TODO simples para praticar os Hooks do Angular
 
-#### Telas
 ![Todo](./.github/life-cycle/todo.png)
 
 ---
@@ -42,7 +38,6 @@ CRUDE simples para iniciar meu aprendizado no framework Angular.
 ### Form reativo
 Explorando os forms reativos do Angular
 
-#### Telas
 ![Tela](./.github/form-teplate/aplicacao.png)
 
 ---
