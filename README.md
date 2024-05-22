@@ -13,7 +13,7 @@ Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
 
 ### Buscador de Livos
 
-Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
+Aplicação que utiliza a [API pública do Google](https://developers.google.com/books) busca de livros.
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/b22c98f4-73cc-4e67-9eb6-3b776ed124c4
 
