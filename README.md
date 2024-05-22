@@ -15,7 +15,8 @@ Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
 
 Aplicação que utliza a [API pública do Google](https://developers.google.com/books) busca de livros.
 
-https://github.com/kaellandrade/formacaoAngular/assets/51521476/7d6fba8d-8f19-4c54-b2ae-13709f1d9600
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/b22c98f4-73cc-4e67-9eb6-3b776ed124c4
+
 
 ---
 
