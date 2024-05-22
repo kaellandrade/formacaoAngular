@@ -3,8 +3,9 @@
 </p>
 
 # Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
-O intuito desse monorepo é manter todas as aplicações da formação Alura Angular em um único local e funcional.
-Apliquei diversas outras ferramentas que não fazem parte da formação da Alura, tais como:
+O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
+
+Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas te as quais eu tinha vontade de aprendê-las, tais como:
 
 [![nx](https://img.shields.io/badge/Nx-blue?style=flat-square&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 [![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=flat-square&logo=angular&logoColor=white)](https://primeng.org/)
@@ -13,17 +14,16 @@ Apliquei diversas outras ferramentas que não fazem parte da formação da Alura
 [![Husky](https://img.shields.io/badge/-HookHusky-white?style=flat-square&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
 [![Eslint](https://img.shields.io/badge/-HookHusky-black?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 
-## Setup
+## Setup :gear:
 - Instale as dependencias `npm install`;
 
-## Apps (Overview)
+## Apps (Overview) :movie_camera:
 
 ### Buscador de Livos
 
 Aplicação que utiliza a [API pública do Google](https://developers.google.com/books) busca de livros.
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/b22c98f4-73cc-4e67-9eb6-3b776ed124c4
-
 
 ---
 
@@ -43,13 +43,14 @@ Explorando os forms reativos do Angular
 
 ---
 
-## Rodando os Apps
+## Rodando os Apps :hammer_and_wrench:
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 - [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
 
-## Mais detalhes sobre essa formação da Alura (Guideline)
+<details>
+<summary>Mais detalhes sobre essa formação da Alura (Guideline)</summary>
 
 1. Explore as bases do Angular
 
@@ -79,11 +80,10 @@ Explorando os forms reativos do Angular
    3. [RxJS e Angular: programando de forma reativa (Consumindo service do Google Books)](/rxjs-projeto/)
 
 3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
+</details>
 
----
-
-#### TODO (adicionais):
-
+<details>
+<summary>TODO (adicionais) :white_check_mark:</summary>
 - [X] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
    - [X] Buscante
    - [X] Memoteca
@@ -92,3 +92,4 @@ Explorando os forms reativos do Angular
 - [ ] Configurar estilos do PrimeNg para todos os APPS
 - [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 - [ ] Configuar [Cypress](https://www.cypress.io/);
+</details>
