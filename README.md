@@ -2,9 +2,16 @@
   <img width='30%' src=".github/angular.svg" alt="Angular">
 </p>
 
-# Formação Angular (MONOREPO)
+# Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+O intuito desse monorepo é manter todas as aplicações da formação Alura Angular em um único local e funcional.
+Apliquei diversas outras ferramentas que não fazem parte da formação da Alura, tais como:
 
-Esse monorepo foi configurado com o [NX](https://nx.dev/getting-started/intro);
+[![nx](https://img.shields.io/badge/Nx-blue?style=flat-square&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+[![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=flat-square&logo=angular&logoColor=white)](https://primeng.org/)
+[![PrimeFlex](https://img.shields.io/badge/-PrimeFlex-white?style=flat-square&logo=angular&logoColor=00DA99)](https://primeflex.org/)
+[![Cypress](https://img.shields.io/badge/-Cypress-black?style=flat-square&logo=cypress&logoColor=00DA99)](https://www.cypress.io/)
+[![Husky](https://img.shields.io/badge/-HookHusky-white?style=flat-square&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
+[![Eslint](https://img.shields.io/badge/-HookHusky-black?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 
 ## Setup
 - Instale as dependencias `npm install`;
