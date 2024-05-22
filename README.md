@@ -24,22 +24,15 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/b22c98f4-73cc-4e
 
 CRUDE simples para iniciar meu aprendizado no framework Angular.
 
-#### Telas
-![Aplicação em execução](./.github/demo_memoteca.gif)
-
 ---
 
 ### TODO APP
  App TODO simples para praticar os Hooks do Angular
 
-![Todo](./.github/life-cycle/todo.png)
-
 ---
 
 ### Form reativo
 Explorando os forms reativos do Angular
-
-![Tela](./.github/form-teplate/aplicacao.png)
 
 ---
 
