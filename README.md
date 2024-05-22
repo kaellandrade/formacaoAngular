@@ -84,6 +84,7 @@ Explorando os forms reativos do Angular
 
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>
+
 - [X] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
    - [X] Buscante
    - [X] Memoteca
