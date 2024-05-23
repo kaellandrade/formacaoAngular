@@ -88,7 +88,7 @@ export class PensamentoComponent implements OnInit {
 
     showModalDeleteThought(id: string): void {
         this.confirmationService.confirm({
-            message: `Tem certeza que deseja remover o pensamento ${id} ?`,
+            message: `Tem certeza que deseja remover o pensamento <b>${this.pensamento.autoria}</b> ?`,
             header: 'Confirmar remoção',
             icon: 'pi pi-exclamation-triangle',
             acceptIcon: "none",
