@@ -1,5 +1,5 @@
 <div
-  class="pensamento {{ pensamento.modelo }} ff-roboto-mono"
+  class="pensamento {{ pensamento.modelo }}"
   [ngClass]="larguraPensamento()">
   <div class="aspas" [ngStyle]="{color:'var(--primary-500)'}"></div>
   <div>
@@ -17,7 +17,7 @@
     </p-button>
     <p-button
       rounded="true"
-      routerLink="/pensamentos/excluirPensamento/{{ pensamento.id }}"
+      (click)="showModalDeleteThought(pensamento.id)"
       icon="pi pi-trash"
       severity="danger"
     >
