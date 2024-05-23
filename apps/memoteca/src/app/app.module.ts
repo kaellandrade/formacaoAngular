@@ -10,7 +10,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
 import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensamento.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ExcluirPensamentoComponent } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento.component';
 import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
 import { ButtonModule } from 'primeng/button';
@@ -30,7 +29,9 @@ import { PanelModule } from 'primeng/panel';
 import { DividerModule } from 'primeng/divider';
 import { ButtonGroupModule } from 'primeng/buttongroup';
 import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ConfirmDialogModule} from "primeng/confirmdialog";
+import {SkeletonModule} from "primeng/skeleton";
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,36 +40,37 @@ import { MessageService } from 'primeng/api';
     CriarPensamentoComponent,
     ListarPensamentoComponent,
     PensamentoComponent,
-    ExcluirPensamentoComponent,
     EditarPensamentoComponent,
     BotaoCarregarMaisComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    ButtonModule,
-    TooltipModule,
-    CalendarModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    RippleModule,
-    IconFieldModule,
-    InputIconModule,
-    InputTextareaModule,
-    InputTextModule,
-    CheckboxModule,
-    CardModule,
-    NgOptimizedImage,
-    ChipsModule,
-    PanelModule,
-    DividerModule,
-    ButtonGroupModule,
-    ToastModule
-  ],
-  providers: [MessageService],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        TooltipModule,
+        CalendarModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        RippleModule,
+        IconFieldModule,
+        InputIconModule,
+        InputTextareaModule,
+        InputTextModule,
+        CheckboxModule,
+        CardModule,
+        NgOptimizedImage,
+        ChipsModule,
+        PanelModule,
+        DividerModule,
+        ButtonGroupModule,
+        ToastModule,
+        ConfirmDialogModule,
+        SkeletonModule
+    ],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
