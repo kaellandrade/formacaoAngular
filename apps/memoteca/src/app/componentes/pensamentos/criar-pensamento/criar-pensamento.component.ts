@@ -87,8 +87,8 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   private navegarParalistarPensamentos() {
-    setTimeout(() => {
-      this.router.navigate(['/listarPensamento']).then(r => true);
-    }, TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS);
+      setTimeout(() => {
+        this.router.navigate(['/listarPensamento']).then(r => true);
+      }, TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS);
   }
 }
