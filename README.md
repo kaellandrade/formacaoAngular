@@ -31,6 +31,9 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/b22c98f4-73cc-4e
 
 CRUDE simples para iniciar meu aprendizado no framework Angular.
 
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/f85e3e5a-c7d7-47f5-8674-70389fdf7241
+
+
 ---
 
 ### TODO APP
