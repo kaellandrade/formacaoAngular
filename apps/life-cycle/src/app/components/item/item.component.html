@@ -1,9 +1,10 @@
-<input
-	class="checkbox"
+<p-checkbox
+  class="checkbox"
 	type="checkbox"
 	name="comprado"
 	[id]="'comprado -' + item.id"
-	[checked]="item.comprado"
+	[binary]="true"
+  [ngModel]="item.comprado"
 	(click)="toggleCheck()" />
 <label
 	[class.line-through]="item.comprado"

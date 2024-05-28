@@ -1,14 +1,14 @@
-<form #addForm="ngForm" class="add-item" (ngSubmit)="handleSubmit(addForm)">
-	<input
-		type="text"
-		name="item"
-		placeholder="Digite o item que deseja adicionar"
-		[(ngModel)]="valorItem"
-		required="true" />
-	<button
-		[disabled]="addForm.form.invalid"
-		[ngClass]="addForm.form.invalid ? 'disabled' : ''"
-		type="submit">
-		{{ textoBtn }}
-	</button>
+<form #addForm="ngForm" class="flex flex-row flex-wrap justify-content-center mt-5 gap-3" (ngSubmit)="handleSubmit(addForm)">
+    <input
+      autofocus
+      pInputText
+      type="text"
+      name="item"
+      placeholder="Digite sua tarefa..."
+      [(ngModel)]="valorItem"
+      required="true"
+      class="w-15rem"
+    />
+    <p-button type="submit" severity="success" [label]="textoBtn" icon="pi pi-save" [disabled]="addForm.form.invalid"
+              [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
 </form>

@@ -18,7 +18,7 @@ export class InputComponent implements OnInit, OnChanges {
 	@Input() editItem!: Item;
 	@Input()
 	editando = false;
-	textoBtn = 'Salvar item';
+	textoBtn = 'Salvar';
 
 	valorItem!: string;
 	disabled = true;
@@ -68,6 +68,6 @@ export class InputComponent implements OnInit, OnChanges {
 
 	private setupBtnSubmit(): void {
 		this.editando = false;
-		this.textoBtn = 'Salvar item';
+		this.textoBtn = 'Salvar';
 	}
 }
