@@ -4,7 +4,6 @@ import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
 import { PensamentoService } from '../pensamento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators
@@ -24,7 +23,8 @@ export class EditarPensamentoComponent implements OnInit {
   formularioEditar: FormGroup;
   public modeloscards = ModelosPensamentos;
   protected readonly ValidatorEnums = ValidatorEnums;
-  TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS = 2_000;
+  private static readonly TIME_LIFE_MESSAGE = 3000;
+  public loading = false;
 
   constructor(
     private service: PensamentoService,
@@ -37,29 +37,30 @@ export class EditarPensamentoComponent implements OnInit {
   }
 
   editarPensamento(): void {
-    let pensamento: Pensamento = {
+    this.loading = true;
+    const pensamento: Pensamento = {
       conteudo: this.formularioEditar.get('conteudo')?.value,
       modelo: this.formularioEditar.get('modelo')?.value,
       autoria: this.formularioEditar.get('autoria')?.value,
       id: this.formularioEditar.get('id')?.value,
       favorito: this.formularioEditar.get('favorito')?.value
     };
-    this.service.editar(pensamento).subscribe(() => {
-      this.mostrarMensagemSucessoCadastro();
-      this.navegarParaTelaInicial();
-
+    this.service.editar(pensamento).pipe().subscribe({
+      next: () => {
+        this.mostrarMensagemSucessoEdicao();
+        this.navegarParaTelaInicial();
+      },
+      error: () => (this.loading = false)
     });
   }
 
   public cancelarEdicao(): void {
-    this.router.navigate(['/listarPensamento']).then(r => {
-    });
+    this.router.navigate(['/listarPensamento']).then(() => false);
   }
 
   public ngOnInit(): void {
     const id: string = String(this.route.snapshot.paramMap.get('id'));
 
-    // TODO: melhor colocar um modal indicando o loading dos dados.
     this.iniciarlizarFormulario({
       id: '',
       modelo: ModelosPensamentos.MODELO1,
@@ -95,7 +96,7 @@ export class EditarPensamentoComponent implements OnInit {
   }
 
   public toogleBotao(): string {
-    return this.formularioEditar.valid ? 'botao':'botao__desabilitado';
+    return this.formularioEditar.valid ? 'botao' : 'botao__desabilitado';
   }
 
   public isValidValueAutoria(): boolean {
@@ -106,19 +107,17 @@ export class EditarPensamentoComponent implements OnInit {
     return false;
   }
 
-  private mostrarMensagemSucessoCadastro() {
+  private mostrarMensagemSucessoEdicao() {
     this.messageService.add({
       severity: 'success',
       summary: 'Success',
-      detail: 'Pensamento editado com sucesso!'
+      detail: 'Pensamento editado com sucesso, redirecionando para tela inicial!'
     });
   }
 
   private navegarParaTelaInicial(): void {
     setTimeout(() => {
-      this.router.navigate(['/listarPensamento']).then(r => true);
-    }, this.TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS);
-
+      this.router.navigate(['/listarPensamento']).then(() => true);
+    }, EditarPensamentoComponent.TIME_LIFE_MESSAGE);
   }
-
 }

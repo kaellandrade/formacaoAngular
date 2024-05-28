@@ -8,19 +8,20 @@ import { EnumsValidators } from '../../../validators/EnumsValidators';
 import { ValidatorEnums } from '../ValidatorEnums';
 import { MessageService } from 'primeng/api';
 
-const TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS = 2_000;
 
 @Component({
   selector: 'app-criar-pensamento',
   templateUrl: './criar-pensamento.component.html',
-  styleUrls: ['./criar-pensamento.component.scss'],
+  styleUrls: ['./criar-pensamento.component.scss']
 })
 export class CriarPensamentoComponent implements OnInit {
   protected readonly I18n = ValidatorEnums;
   public modeloscards = ModelosPensamentos;
   protected readonly ValidatorEnums = ValidatorEnums;
+  private static readonly TIME_LIFE_MESSAGE = 3000;
 
   formulario: FormGroup;
+  isLoading = false;
 
   constructor(
     private service: PensamentoService,
@@ -32,17 +33,21 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   criarPensamento(): void {
+    this.isLoading = true;
     if (this.formulario.valid) {
       this.service.criar(this.formulario.value)
-        .subscribe(() => {
-          this.mostrarMensagemSucessoCadastro();
-          this.navegarParalistarPensamentos();
+        .subscribe({
+          next: () => {
+            this.navegarParalistarPensamentos();
+            this.mostrarMensagemSucessoCadastro();
+          },
+          error: () => (this.isLoading = false)
         });
     }
   }
 
   cancelarPensamento(): void {
-    this.router.navigate(['/listarPensamento']).then(r => {
+    this.router.navigate(['/listarPensamento']).then(() => {
     });
   }
 
@@ -83,12 +88,16 @@ export class CriarPensamentoComponent implements OnInit {
   protected readonly addEventListener = addEventListener;
 
   private mostrarMensagemSucessoCadastro() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Pensamento cadastrado com sucesso!' });
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Pensamento cadastrado com sucesso, redirecionando para tela inicial!'
+    });
   }
 
   private navegarParalistarPensamentos() {
-      setTimeout(() => {
-        this.router.navigate(['/listarPensamento']).then(r => true);
-      }, TEMPO_ESPERA_POS_CADASTRO_MILISSEGUNDOS);
+    setTimeout(() => {
+      this.router.navigate(['/listarPensamento']).then(() => true);
+    }, CriarPensamentoComponent.TIME_LIFE_MESSAGE);
   }
 }
