@@ -19,6 +19,10 @@ import { InputIconModule } from 'primeng/inputicon';
 import { ToolbarModule } from 'primeng/toolbar';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, InputComponent, ItemComponent],
@@ -35,8 +39,13 @@ import { StyleClassModule } from 'primeng/styleclass';
     IconFieldModule,
     InputIconModule,
     ToolbarModule,
-    RippleModule, StyleClassModule],
-  providers: [],
+    RippleModule,
+    StyleClassModule,
+    ConfirmDialogModule,
+    ToastModule,
+    BrowserAnimationsModule
+  ],
+  providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

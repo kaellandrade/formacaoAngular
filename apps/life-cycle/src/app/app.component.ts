@@ -1,7 +1,7 @@
 import { Component, DoCheck, ElementRef, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Item } from './interfaces/iItem';
 import { ListaDeCompraService } from './service/lista-de-compra.service';
-import { PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,9 @@ export class AppComponent implements OnInit, DoCheck {
 
   constructor(
     private listaService: ListaDeCompraService,
-    private primengConfig: PrimeNGConfig
+    private primengConfig: PrimeNGConfig,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
   ) {
   }
 
@@ -38,9 +40,21 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   apagarTudo() {
-    const resposta = confirm('Remover todos os itens ?');
-    if (resposta) {
-      this.listaService.deletarTodaLista();
-    }
+    this.confirmationService.confirm({
+      message: `Deseja realmente deletar <b>${this.listaCompra.length} itens</b> ?`,
+      header: 'Deletar tudo',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      acceptButtonStyleClass: 'p-button-danger',
+      rejectLabel: 'Não',
+      accept: () => {
+        this.listaService.deletarTodaLista();
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Tudo certo!',
+          detail: 'Todas suas tarefas foram deletadas!'
+        });
+      }
+    });
   }
 }

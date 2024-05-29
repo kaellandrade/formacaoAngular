@@ -4,7 +4,6 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Item } from '../../interfaces/iItem';
 
 @Component({
@@ -28,12 +27,8 @@ export class ItemComponent {
   @Output() emitindoItemParaEditar = new EventEmitter();
   @Output() emitindoIdDelete = new EventEmitter();
 
-  faPen = faPen;
-  faTrash = faTrash;
-
-
   editarItem(): void {
-    this.emitindoItemParaEditar.emit(this.item); // Emitindo uma informação
+    this.emitindoItemParaEditar.emit(this.item);
   }
 
   toggleCheck() {
