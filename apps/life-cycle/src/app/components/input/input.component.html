@@ -1,14 +1,21 @@
-<form #addForm="ngForm" class="flex flex-row flex-wrap justify-content-center mt-5 gap-3" (ngSubmit)="handleSubmit(addForm)">
-    <input
-      autofocus
-      pInputText
-      type="text"
-      name="item"
-      placeholder="Digite sua tarefa..."
-      [(ngModel)]="valorItem"
-      required="true"
-      class="w-15rem"
-    />
-    <p-button type="submit" severity="success" [label]="textoBtn" icon="pi pi-save" [disabled]="addForm.form.invalid"
+<form #addForm="ngForm" class="flex flex-row flex-wrap justify-content-center mt-5 gap-3"
+      (ngSubmit)="handleSubmit(addForm)">
+  <p-toolbar
+    styleClass="shadow-2"
+    [style]="{'background-image': 'linear-gradient(to right, var(--gray-100), var(--primary-50))' }">
+
+    <p-iconField iconPosition="left">
+      <p-inputIcon styleClass="pi pi-check" />
+      <input #inputTarefa
+             pInputText
+             type="text"
+             name="item"
+             placeholder="Digite sua tarefa..."
+             [(ngModel)]="valorItem"
+             required="true"
+             class="w-18rem" />
+    </p-iconField>
+    <p-button type="submit"  [label]="textoBtn" icon="pi pi-save" [disabled]="addForm.form.invalid"
               [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
+  </p-toolbar>
 </form>

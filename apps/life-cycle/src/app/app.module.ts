@@ -14,10 +14,28 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { DividerModule } from 'primeng/divider';
 import { CheckboxModule } from 'primeng/checkbox';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RippleModule } from 'primeng/ripple';
+import { StyleClassModule } from 'primeng/styleclass';
 
 @NgModule({
   declarations: [AppComponent, InputComponent, ItemComponent],
-  imports: [BrowserModule, FontAwesomeModule, FormsModule, InputTextModule, ButtonModule, CardModule, InputGroupAddonModule, InputGroupModule, DividerModule, CheckboxModule],
+  imports: [BrowserModule,
+    FontAwesomeModule,
+    FormsModule,
+    InputTextModule,
+    ButtonModule,
+    CardModule,
+    InputGroupAddonModule,
+    InputGroupModule,
+    DividerModule,
+    CheckboxModule,
+    IconFieldModule,
+    InputIconModule,
+    ToolbarModule,
+    RippleModule, StyleClassModule],
   providers: [],
   bootstrap: [AppComponent]
 })

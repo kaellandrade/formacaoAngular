@@ -11,11 +11,14 @@
         <p-divider />
         <h4 class="title-list">Sua lista atual</h4>
       </div>
-      <div *ngFor="let item of listaCompra">
-        <app-item
-          (emitindoItemParaEditar)="editarItem($event)"
-          (emitindoIdDelete)="deleteItem($event)"
-          [item]="item"></app-item>
+      <div class="flex flex-column gap-2">
+        <p-card [style]="item.comprado ? {'background':'var(--green-50)'} : {'background':'var(--red-50)'} "
+                class="relative" *ngFor="let item of listaCompra">
+          <app-item
+            (emitindoItemParaEditar)="editarItem($event)"
+            (emitindoIdDelete)="deleteItem($event)"
+            [item]="item"></app-item>
+        </p-card>
       </div>
       <div class="flex flex-row flex-wrap justify-content-center mt-5 gap-3" *ngIf="this.listaCompra.length">
         <p-button icon="pi pi-trash" severity="danger" label="Apagar tudo" class="btn-header" (click)="apagarTudo()"
