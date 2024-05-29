@@ -13,9 +13,13 @@
              placeholder="Digite sua tarefa..."
              [(ngModel)]="valorItem"
              required="true"
-             class="w-18rem" />
+             />
     </p-iconField>
-    <p-button type="submit"  [label]="textoBtn" icon="pi pi-save" [disabled]="addForm.form.invalid"
+    <p-button type="submit" [severity]="editando? 'primary' :'success'" [label]="textoBtn" icon="pi pi-save"
+              [disabled]="addForm.form.invalid"
+              [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
+
+    <p-button severity="warning" *ngIf="editando" (click)="abortEdit()" label="Cancelar" icon="pi pi-times"
               [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
   </p-toolbar>
 </form>

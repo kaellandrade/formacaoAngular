@@ -2,7 +2,7 @@ import {
   Component,
   Input,
   Output,
-  EventEmitter,
+  EventEmitter
 } from '@angular/core';
 import { Item } from '../../interfaces/iItem';
 
@@ -26,13 +26,19 @@ export class ItemComponent {
 
   @Output() emitindoItemParaEditar = new EventEmitter();
   @Output() emitindoIdDelete = new EventEmitter();
+  @Input() editItem: Item;
+  @Input() readOnly!: boolean;
+  @Output() bloquearItens = new EventEmitter();
 
   editarItem(): void {
     this.emitindoItemParaEditar.emit(this.item);
+    this.bloquearItens.emit();
   }
 
-  toggleCheck() {
-    this.item.comprado = !this.item.comprado;
+  toggleCheck(readOnly: boolean) {
+    if (!readOnly) {
+      this.item.comprado = !this.item.comprado;
+    }
   }
 
   deletarItem() {

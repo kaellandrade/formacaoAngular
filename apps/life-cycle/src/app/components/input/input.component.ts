@@ -1,9 +1,9 @@
 import {
   AfterViewInit,
-  Component, ElementRef,
+  Component, ElementRef, EventEmitter,
   Input,
   OnChanges,
-  OnInit,
+  OnInit, Output,
   SimpleChanges, ViewChild
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -15,15 +15,15 @@ import { ListaDeCompraService } from '../../service/lista-de-compra.service';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.css']
 })
-export class InputComponent implements OnInit, OnChanges, AfterViewInit {
+export class InputComponent implements OnChanges, AfterViewInit {
   @ViewChild('inputTarefa') inputTarefa: ElementRef;
   @Input() editItem!: Item;
-  @Input()
   editando = false;
   textoBtn = 'Salvar';
 
   valorItem!: string;
   disabled = true;
+  @Output() desbloquear = new EventEmitter();
 
   constructor(private listaCompraService: ListaDeCompraService) {
   }
@@ -34,9 +34,6 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.setupEdit(changes);
-  }
-
-  ngOnInit(): void {
   }
 
   handleSubmit(form: NgForm) {
@@ -55,6 +52,7 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit {
     this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
     this.setupBtnSubmit();
     this.limparCampo();
+    this.focusInput();
   }
 
   private adicionarItem(): void {
@@ -71,7 +69,7 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit {
   private setupEdit(changes: SimpleChanges): void {
     if (!changes['editItem'].firstChange) {
       this.editando = true;
-      this.textoBtn = 'Atualizar item';
+      this.textoBtn = 'Atualizar';
       this.valorItem = this.editItem?.nome;
     }
   }
@@ -84,6 +82,13 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit {
 
   public focusInput(): void {
     this.inputTarefa.nativeElement.focus();
+  }
+
+  public abortEdit(): void {
+    this.editando = false;
+    this.limparCampo();
+    this.textoBtn = 'Salvar';
+    this.desbloquear.emit()
   }
 
 }

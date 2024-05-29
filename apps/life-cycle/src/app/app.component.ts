@@ -1,4 +1,4 @@
-import { Component, DoCheck, ElementRef, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, DoCheck, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Item } from './interfaces/iItem';
 import { ListaDeCompraService } from './service/lista-de-compra.service';
 import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
@@ -11,6 +11,7 @@ import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api'
 export class AppComponent implements OnInit, DoCheck {
   listaCompra!: Item[];
   editItem!: Item;
+  @Input() readOnly = false;
 
 
   constructor(
@@ -22,7 +23,6 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   ngDoCheck(): void {
-    console.log('ngDoCheck foi chamado!');
     this.listaService.persistirNoLocalStorage();
   }
 
@@ -32,8 +32,17 @@ export class AppComponent implements OnInit, DoCheck {
   }
 
   editarItem(item: Item) {
-    this.editItem = item;
+    this.editItem = { ...item };
   }
+
+  desbloquear(){
+    this.readOnly = false;
+  }
+
+  bloquearItens() {
+    this.readOnly = true;
+  }
+
 
   deleteItem(idItem: number) {
     this.listaService.deletarItem(idItem);

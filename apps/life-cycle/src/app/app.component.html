@@ -6,7 +6,8 @@
       <img src="../assets/imgs/todo-logo.svg" class="w-full h-full" alt="">
     </div>
     <div class="col-12 md:col-8 md:col-offset-2">
-      <app-input [editItem]="editItem"></app-input>
+
+      <app-input (desbloquear)="desbloquear()" [editItem]="editItem"></app-input>
     </div>
     <div class="col-12 col-12 md:col-8 md:col-offset-2 lg:col-4 lg:col-offset-4 ">
       <div class="header-lista" *ngIf="this.listaCompra.length">
@@ -19,6 +20,9 @@
           <app-item
             (emitindoItemParaEditar)="editarItem($event)"
             (emitindoIdDelete)="deleteItem($event)"
+            [editItem]=editItem
+            [readOnly]="readOnly"
+            (bloquearItens)="bloquearItens()"
             [item]="item"></app-item>
         </p-card>
       </div>
