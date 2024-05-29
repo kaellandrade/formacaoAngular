@@ -23,6 +23,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @NgModule({
   declarations: [AppComponent, InputComponent, ItemComponent],
@@ -43,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     StyleClassModule,
     ConfirmDialogModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, ScrollPanelModule, ScrollTopModule
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]

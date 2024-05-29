@@ -2,8 +2,8 @@
   <p-toast />
   <p-confirmDialog />
   <div class="grid">
-    <div class="col-4 col-offset-4 md:col-2 md:col-offset-5 my-3">
-      <img src="../assets/imgs/todo-logo.svg" class="w-full h-full" alt="">
+    <div class="col-4 col-offset-4 md:col-2 md:col-offset-5 my-3 flex justify-content-center">
+      <img src="../assets/imgs/todo-logo.svg" class="w-full h-full lg:w-8rem" alt="">
     </div>
     <div class="col-12 md:col-8 md:col-offset-2">
 
@@ -14,18 +14,26 @@
         <p-divider />
         <h4 class="title-list">Sua lista atual</h4>
       </div>
-      <div class="flex flex-column gap-2">
-        <p-card [style]="item.comprado ? {'background':'var(--green-50)'} : {'background':'var(--red-50)'} "
-                class="relative" *ngFor="let item of listaCompra">
-          <app-item
-            (emitindoItemParaEditar)="editarItem($event)"
-            (emitindoIdDelete)="deleteItem($event)"
-            [editItem]=editItem
-            [readOnly]="readOnly"
-            (bloquearItens)="bloquearItens()"
-            [item]="item"></app-item>
-        </p-card>
-      </div>
+      <p-toolbar *ngIf="this.listaCompra.length" styleClass="shadow-2" [style]="{'background-image': 'linear-gradient(to right, var(--gray-100), var(--primary-50))', 'justify-content':'center', flex:1 }">
+        <div class="w-full">
+            <p-scrollPanel [style]="{ width: '100%', height: '350px' }">
+              <p-card styleClass="mt-2" [style]="item.comprado ? {'background':'var(--green-50)'} : {'background':'var(--red-50)'}"
+                      *ngFor="let item of listaCompra">
+                <app-item
+                  (emitindoItemParaEditar)="editarItem($event)"
+                  (emitindoIdDelete)="deleteItem($event)"
+                  [editItem]=editItem
+                  [readOnly]="readOnly"
+                  (bloquearItens)="bloquearItens()"
+                  [item]="item"></app-item>
+              </p-card>
+              <p-scrollTop
+                target="parent"
+                [threshold]="100"
+                icon="pi pi-arrow-up" />
+            </p-scrollPanel>
+          </div>
+      </p-toolbar>
       <div class="flex flex-row flex-wrap justify-content-center mt-5 gap-3" *ngIf="this.listaCompra.length">
         <p-button icon="pi pi-trash" severity="danger" label="Apagar tudo" class="btn-header" (click)="apagarTudo()"
                   type="button" />
