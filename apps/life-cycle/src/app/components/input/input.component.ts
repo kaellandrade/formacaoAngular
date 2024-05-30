@@ -53,6 +53,7 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.setupBtnSubmit();
     this.limparCampo();
     this.focusInput();
+    this.desbloquear.emit()
   }
 
   private adicionarItem(): void {

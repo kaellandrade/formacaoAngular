@@ -25,6 +25,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { BlockUIModule } from 'primeng/blockui';
 
 @NgModule({
   declarations: [AppComponent, InputComponent, ItemComponent],
@@ -45,7 +46,10 @@ import { ScrollTopModule } from 'primeng/scrolltop';
     StyleClassModule,
     ConfirmDialogModule,
     ToastModule,
-    BrowserAnimationsModule, ScrollPanelModule, ScrollTopModule
+    BrowserAnimationsModule,
+    ScrollPanelModule,
+    ScrollTopModule,
+    BlockUIModule
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]
