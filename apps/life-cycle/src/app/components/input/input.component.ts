@@ -9,6 +9,7 @@ import {
 import { NgForm } from '@angular/forms';
 import { Item } from '../../interfaces/iItem';
 import { ListaDeCompraService } from '../../service/lista-de-compra.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-input',
@@ -25,7 +26,10 @@ export class InputComponent implements OnChanges, AfterViewInit {
   disabled = true;
   @Output() desbloquear = new EventEmitter();
 
-  constructor(private listaCompraService: ListaDeCompraService) {
+  constructor(
+    private listaCompraService: ListaDeCompraService,
+    private messageService: MessageService
+  ) {
   }
 
   ngAfterViewInit() {
@@ -50,10 +54,16 @@ export class InputComponent implements OnChanges, AfterViewInit {
 
   private atualizarItem(): void {
     this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Tudo certo!',
+      detail: 'Tarefa foi editada!'
+    });
+
     this.setupBtnSubmit();
     this.limparCampo();
     this.focusInput();
-    this.desbloquear.emit()
+    this.desbloquear.emit();
   }
 
   private adicionarItem(): void {
@@ -61,6 +71,11 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.limparCampo();
     this.setupBtnSubmit();
     this.focusInput();
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Tudo certo!',
+      detail: 'Tarefa foi cadastrada!'
+    });
   }
 
   private limparCampo(): void {
@@ -89,7 +104,7 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.editando = false;
     this.limparCampo();
     this.textoBtn = 'Salvar';
-    this.desbloquear.emit()
+    this.desbloquear.emit();
   }
 
 }

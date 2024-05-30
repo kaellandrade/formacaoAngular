@@ -45,7 +45,22 @@ export class AppComponent implements OnInit, DoCheck {
 
 
   deleteItem(idItem: number) {
-    this.listaService.deletarItem(idItem);
+    this.confirmationService.confirm({
+      message: `Deseja realmente deletar a tarefa</b> ?`,
+      header: 'Deletar tarefa',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      acceptButtonStyleClass: 'p-button-danger',
+      rejectLabel: 'Não',
+      accept: () => {
+        this.listaService.deletarItem(idItem);
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Tudo certo!',
+          detail: 'Tarefa foi deletada!'
+        });
+      }
+    });
   }
 
   apagarTudo() {
