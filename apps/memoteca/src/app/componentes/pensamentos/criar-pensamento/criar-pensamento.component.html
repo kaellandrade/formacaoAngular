@@ -3,7 +3,7 @@
   <header class="header">
     <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">Adicione um pensamento novo:</h2>
   </header>
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" data-cy="form-add-pensamento">
     <p-panel header="O que você está pensando ?">
       <div class="grid nested-grid">
         <div class="col-12 flex flex-column gap-2">
