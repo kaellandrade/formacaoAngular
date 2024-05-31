@@ -90,7 +90,7 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
    - [X] Memoteca
    - [X] Todo app 
    - [X] Forms-reativos
-- [ ] Configurar estilos do PrimeNg para todos os APPS
-- [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
+- [X] Configurar estilos do PrimeNg para todos os APPS
 - [ ] Configuar [Cypress](https://www.cypress.io/);
+- [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 </details>
