@@ -37,7 +37,12 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/f85e3e5a-c7d7-47
 ---
 
 ### TODO APP
- App TODO simples para praticar os Hooks do Angular
+
+App TODO simples para praticar os Hooks do Angular
+
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f2a-89ed-429fad3822ab
+
+
 
 ---
 
