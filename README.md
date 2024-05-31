@@ -42,20 +42,12 @@ App TODO simples para praticar os Hooks do Angular
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f2a-89ed-429fad3822ab
 
-
-
----
-
-### Form reativo
-Explorando os forms reativos do Angular
-
 ---
 
 ## Rodando os Apps :hammer_and_wrench:
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
-- [Forms reativos](#form-reativo) :arrows_clockwise: - `npm run form-app`;
 
 <details>
 <summary>Mais detalhes sobre essa formação da Alura (Guideline)</summary>
