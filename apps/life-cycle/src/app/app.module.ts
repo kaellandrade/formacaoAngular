@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { BlockUIModule } from 'primeng/blockui';
+import { ButtonGroupModule } from 'primeng/buttongroup';
 
 @NgModule({
   declarations: [AppComponent, InputComponent, ItemComponent],
@@ -49,7 +50,7 @@ import { BlockUIModule } from 'primeng/blockui';
     BrowserAnimationsModule,
     ScrollPanelModule,
     ScrollTopModule,
-    BlockUIModule
+    BlockUIModule, ButtonGroupModule
   ],
   providers: [ConfirmationService, MessageService],
   bootstrap: [AppComponent]
