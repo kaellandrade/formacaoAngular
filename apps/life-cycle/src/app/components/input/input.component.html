@@ -1,14 +1,29 @@
-<form #addForm="ngForm" class="add-item" (ngSubmit)="handleSubmit(addForm)">
-	<input
-		type="text"
-		name="item"
-		placeholder="Digite o item que deseja adicionar"
-		[(ngModel)]="valorItem"
-		required="true" />
-	<button
-		[disabled]="addForm.form.invalid"
-		[ngClass]="addForm.form.invalid ? 'disabled' : ''"
-		type="submit">
-		{{ textoBtn }}
-	</button>
+<form #addForm="ngForm" class="flex flex-row flex-wrap justify-content-center mt-5 gap-3"
+      (ngSubmit)="handleSubmit(addForm)">
+  <p-toolbar
+    styleClass="shadow-2 justify-content-center"
+    [style]="{'background-image': 'linear-gradient(to right, var(--gray-100), var(--primary-50))' }"
+  >
+    <p-iconField iconPosition="left">
+      <p-inputIcon styleClass="pi pi-check" />
+      <input #inputTarefa
+             pInputText
+             type="text"
+             name="item"
+             placeholder="Digite sua tarefa..."
+             [(ngModel)]="valorItem"
+             required="true"
+      />
+    </p-iconField>
+    <p-buttonGroup>
+      <p-button size="small" type="submit" [severity]="editando? 'primary' :'success'" [label]="textoBtn"
+                icon="pi pi-save"
+                [disabled]="addForm.form.invalid"
+                [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
+
+      <p-button size="small" severity="warning" *ngIf="editando" (click)="abortEdit()" label="Cancelar"
+                icon="pi pi-times"
+                [ngClass]="addForm.form.invalid ? 'disabled' : ''" />
+    </p-buttonGroup>
+  </p-toolbar>
 </form>

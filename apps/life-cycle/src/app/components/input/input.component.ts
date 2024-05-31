@@ -1,73 +1,110 @@
 import {
-	Component,
-	Input,
-	OnChanges,
-	OnInit,
-	SimpleChanges,
+  AfterViewInit,
+  Component, ElementRef, EventEmitter,
+  Input,
+  OnChanges,
+  OnInit, Output,
+  SimpleChanges, ViewChild
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Item } from '../../interfaces/iItem';
 import { ListaDeCompraService } from '../../service/lista-de-compra.service';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
-	selector: 'app-input',
-	templateUrl: './input.component.html',
-	styleUrls: ['./input.component.css'],
+  selector: 'app-input',
+  templateUrl: './input.component.html',
+  styleUrls: ['./input.component.css']
 })
-export class InputComponent implements OnInit, OnChanges {
-	@Input() editItem!: Item;
-	@Input()
-	editando = false;
-	textoBtn = 'Salvar item';
+export class InputComponent implements OnChanges, AfterViewInit {
+  @ViewChild('inputTarefa') inputTarefa: ElementRef;
+  @Input() editItem!: Item;
+  editando = false;
+  textoBtn = 'Salvar';
 
-	valorItem!: string;
-	disabled = true;
+  valorItem!: string;
+  disabled = true;
+  @Output() desbloquear = new EventEmitter();
 
-	constructor(private listaCompraService: ListaDeCompraService) {}
-	// Preparando minhas props
-	ngOnChanges(changes: SimpleChanges): void {
-		this.setupEdit(changes);
-	}
+  constructor(
+    private listaCompraService: ListaDeCompraService,
+    private messageService: MessageService
+  ) {
+  }
 
-	ngOnInit(): void {
-		// console.log('INPUT ngOnInit');
-	}
-	handleSubmit(form: NgForm) {
-		if (!form.valid) {
-			return;
-		}
-		if (!this.editando) {
-			this.adicionarItem();
+  ngAfterViewInit() {
+    this.focusInput();
+  }
 
-			return;
-		}
-		this.atualizarItem();
-	}
+  ngOnChanges(changes: SimpleChanges): void {
+    this.setupEdit(changes);
+  }
 
-	private atualizarItem(): void {
-		this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
-		this.setupBtnSubmit();
-		this.limparCampo();
-	}
-	private adicionarItem(): void {
-		this.listaCompraService.adicionarItemLista(this.valorItem);
-		this.limparCampo();
-		this.setupBtnSubmit();
-	}
+  handleSubmit(form: NgForm) {
+    if (!form.valid) {
+      return;
+    }
+    if (!this.editando) {
+      this.adicionarItem();
 
-	private limparCampo(): void {
-		this.valorItem = '';
-	}
-	private setupEdit(changes: SimpleChanges): void {
-		if (!changes['editItem'].firstChange) {
-			this.editando = true;
-			this.textoBtn = 'Atualizar item';
-			this.valorItem = this.editItem?.nome;
-		}
-	}
+      return;
+    }
+    this.atualizarItem();
+  }
 
-	private setupBtnSubmit(): void {
-		this.editando = false;
-		this.textoBtn = 'Salvar item';
-	}
+  private atualizarItem(): void {
+    this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
+    this.messageService.add({
+      severity: 'info',
+      summary: 'Tudo certo!',
+      detail: 'Tarefa foi editada!'
+    });
+
+    this.setupBtnSubmit();
+    this.limparCampo();
+    this.focusInput();
+    this.desbloquear.emit();
+  }
+
+  private adicionarItem(): void {
+    this.listaCompraService.adicionarItemLista(this.valorItem);
+    this.limparCampo();
+    this.setupBtnSubmit();
+    this.focusInput();
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Tudo certo!',
+      detail: 'Tarefa foi cadastrada!'
+    });
+  }
+
+  private limparCampo(): void {
+    this.valorItem = '';
+  }
+
+  private setupEdit(changes: SimpleChanges): void {
+    if (!changes['editItem'].firstChange) {
+      this.editando = true;
+      this.textoBtn = 'Atualizar';
+      this.valorItem = this.editItem?.nome;
+    }
+  }
+
+  private setupBtnSubmit(): void {
+    this.editando = false;
+    this.textoBtn = 'Salvar';
+  }
+
+
+  public focusInput(): void {
+    this.inputTarefa.nativeElement.focus();
+  }
+
+  public abortEdit(): void {
+    this.editando = false;
+    this.limparCampo();
+    this.textoBtn = 'Salvar';
+    this.desbloquear.emit();
+  }
+
 }

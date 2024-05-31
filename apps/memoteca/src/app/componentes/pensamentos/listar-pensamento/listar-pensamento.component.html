@@ -1,59 +1,90 @@
 <section>
-  <header>
-    <div class="grid grid-nogutter">
-      <div class="col-12 mt-4 flex justify-content-center">
-        <p-iconField class="w-26rem" iconPosition="right">
-          <p-inputIcon styleClass="pi pi-search" />
-          <input
-            [style]="{ width: '100%' }"
-            type="search"
-            pInputText
-            placeholder="O que você procura ?"
-            [(ngModel)]="filtro"
-            (ngModelChange)="filtrarPensamentos()"
-          />
-        </p-iconField>
-      </div>
-      <div class="col-12">
-        <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">
-          {{ getTitulo() }}
-        </h2>
-      </div>
-      <div class="col-12 mt-4 flex justify-content-center">
-        <p-button
-          label="Adicionar pensamento"
-          icon="pi pi-plus"
-          size="large"
-          routerLink="/criarPensamento"
-        />
-      </div>
-      <div class="col-12 mt-4 flex justify-content-center">
-        <p-checkbox
-          label="Apenas favoritos"
-          [(ngModel)]="apenasFavoritos"
-          [binary]="true"
-          inputId="favorito"
-          (ngModelChange)="filtrarPensamentosFavoritos()"
-        />
-      </div>
+    <p-toast/>
+    <p-confirmDialog/>
+    <header>
+        <div class="grid grid-nogutter">
+            <div class="col-12 mt-4 flex justify-content-center">
+                <p-iconField class="w-26rem" iconPosition="right">
+                    <p-inputIcon styleClass="pi pi-search"/>
+                    <input
+                            [style]="{ width: '100%' }"
+                            type="search"
+                            pInputText
+                            placeholder="O que você procura ?"
+                            [(ngModel)]="filtro"
+                            (ngModelChange)="filtrarPensamentos()"
+                    />
+                </p-iconField>
+            </div>
+            <div class="col-12">
+                <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">
+                    {{ getTitulo() }}
+                </h2>
+            </div>
+            <div class="col-12 mt-4 flex justify-content-center">
+                <p-button
+                        label="Adicionar pensamento"
+                        icon="pi pi-plus"
+                        size="large"
+                        routerLink="/criarPensamento"
+                />
+            </div>
+            <div class="col-12 mt-4 flex justify-content-center">
+                <p-checkbox
+                        label="Apenas favoritos"
+                        [(ngModel)]="apenasFavoritos"
+                        [binary]="true"
+                        inputId="favorito"
+                        (ngModelChange)="filtrarPensamentosFavoritos()"
+                />
+            </div>
+        </div>
+    </header>
+    <div class="mural" *ngIf="totalPensamentos && !isLoading; else semPensamentos">
+        <div *ngFor="let pensamento of listaPensamentos">
+            <app-pensamento
+                    (atualizarPensamento)="atualizarPensamento()"
+                    [pensamento]="pensamento"
+                    [listaFavoritos]="listaFavoritos"
+            ></app-pensamento>
+        </div>
     </div>
-  </header>
-  <div class="mural" *ngIf="totalPensamentos; else semPensamentos">
-    <div *ngFor="let pensamento of listaPensamentos">
-      <app-pensamento
-        [pensamento]="pensamento"
-        [listaFavoritos]="listaFavoritos"
-      ></app-pensamento>
+    <div class="mural" *ngIf="isLoading">
+        <div *ngFor="let item of [1,2,3,4]">
+            <ng-container [ngTemplateOutlet]="skeletonPensamento"></ng-container>
+        </div>
     </div>
-  </div>
-  <app-botao-carregar-mais
-    (click)="carregarMaisPensamentos()"
-    [haMaisPensamentos]="next"
-    [totalPensamentos]="totalPensamentos"
-  ></app-botao-carregar-mais>
+    <app-botao-carregar-mais
+            *ngIf="!isLoading"
+            (click)="carregarMaisPensamentos()"
+            [haMaisPensamentos]="next"
+            [totalPensamentos]="totalPensamentos"
+    ></app-botao-carregar-mais>
+    <p-skeleton  class="flex justify-content-center mb-2" *ngIf="isLoading" width="15rem" height="3rem"/>
 </section>
 <ng-template #semPensamentos>
-  <div class="ff-inter sem-pensamentos">
-    <p>Ainda não há pensamentos cadastrados!</p>
-  </div>
+    <div class="ff-inter sem-pensamentos">
+        <p>Ainda não há pensamentos cadastrados!</p>
+    </div>
+</ng-template>
+
+
+<ng-template #skeletonPensamento>
+
+    <div class="pensamento flex flex-column justify-content-between border-round border-1 surface-border p-4 w-15rem">
+        <div class="flex flex-column gap-3 mt-5">
+            <p-skeleton width="100%" height="1rem"/>
+            <p-skeleton width="75%" height="1rem"/>
+            <p-skeleton width="50%" height="1rem"/>
+            <p-skeleton width="25%" height="1rem"/>
+            <p-skeleton width="100%" height="1rem"/>
+        </div>
+
+        <div class="flex justify-content-around gap-3">
+            <p-skeleton shape="circle" size="3rem"/>
+            <p-skeleton shape="circle" size="3rem"/>
+            <p-skeleton shape="circle" size="3rem"/>
+        </div>
+    </div>
+
 </ng-template>

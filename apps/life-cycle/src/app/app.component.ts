@@ -1,39 +1,84 @@
-import { Component, DoCheck, OnInit, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { Item } from './interfaces/iItem';
 import { ListaDeCompraService } from './service/lista-de-compra.service';
+import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css'],
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, DoCheck {
-	listaCompra!: Item[];
-	editItem!: Item;
+  listaCompra!: Item[];
+  editItem!: Item;
+  @Input() readOnly = false;
 
-	constructor(private listaService: ListaDeCompraService) {}
-	ngDoCheck(): void {
-		console.log('ngDoCheck foi chamado!');
-		this.listaService.persistirNoLocalStorage();
-	}
 
-	ngOnChanges(changes: SimpleChanges): void {
-		console.log('ok');
-	}
-	ngOnInit(): void {
-		this.listaCompra = this.listaService.getListaDeCompra();
-	}
-	editarItem(item: Item) {
-		this.editItem = item;
-	}
+  constructor(
+    private listaService: ListaDeCompraService,
+    private primengConfig: PrimeNGConfig,
+    private confirmationService: ConfirmationService,
+    private messageService: MessageService
+  ) {
+  }
 
-	deleteItem(idItem: number) {
-		this.listaService.deletarItem(idItem);
-	}
-	apagarTudo() {
-		const resposta = confirm('Remover todos os itens ?');
-		if (resposta) {
-			this.listaService.deletarTodaLista();
-		}
-	}
+  ngDoCheck(): void {
+    this.listaService.persistirNoLocalStorage();
+  }
+
+  ngOnInit(): void {
+    this.listaCompra = this.listaService.getListaDeCompra();
+    this.primengConfig.ripple = true;
+  }
+
+  editarItem(item: Item) {
+    this.editItem = { ...item };
+  }
+
+  desbloquear(){
+    this.readOnly = false;
+  }
+
+  bloquearItens() {
+    this.readOnly = true;
+  }
+
+
+  deleteItem(idItem: number) {
+    this.confirmationService.confirm({
+      message: `Deseja realmente deletar a tarefa</b> ?`,
+      header: 'Deletar tarefa',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      acceptButtonStyleClass: 'p-button-danger',
+      rejectLabel: 'Não',
+      accept: () => {
+        this.listaService.deletarItem(idItem);
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Tudo certo!',
+          detail: 'Tarefa foi deletada!'
+        });
+      }
+    });
+  }
+
+  apagarTudo() {
+    this.confirmationService.confirm({
+      message: `Deseja realmente deletar <b>${this.listaCompra.length} itens</b> ?`,
+      header: 'Deletar tudo',
+      icon: 'pi pi-exclamation-triangle',
+      acceptLabel: 'Sim',
+      acceptButtonStyleClass: 'p-button-danger',
+      rejectLabel: 'Não',
+      accept: () => {
+        this.listaService.deletarTodaLista();
+        this.messageService.add({
+          severity: 'info',
+          summary: 'Tudo certo!',
+          detail: 'Todas suas tarefas foram deletadas!'
+        });
+      }
+    });
+  }
 }

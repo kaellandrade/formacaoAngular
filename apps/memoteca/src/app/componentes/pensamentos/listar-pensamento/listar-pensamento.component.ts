@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Pensamento } from '../../../../interfaces/Pensamento';
 import { PensamentoService } from '../pensamento.service';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-listar-pensamento',
   templateUrl: './listar-pensamento.component.html',
-  styleUrls: ['./listar-pensamento.component.scss'],
+  styleUrls: ['./listar-pensamento.component.scss', '../pensamento/pensamento.component.scss']
 })
 export class ListarPensamentoComponent implements OnInit {
   private paginaAtual = 1;
@@ -17,8 +18,12 @@ export class ListarPensamentoComponent implements OnInit {
   public filtro = '';
   public apenasFavoritos = false;
   public listaFavoritos: Pensamento[] = [];
+  public isLoading = false;
 
-  constructor(private service: PensamentoService) {}
+  constructor(
+    private service: PensamentoService
+  ) {
+  }
 
   /**
    * Ciclo de vida do componente.
@@ -29,8 +34,10 @@ export class ListarPensamentoComponent implements OnInit {
 
   public carregarMaisPensamentos(): void {
     if (this.next) {
+      this.isLoading = true;
       this.service
         .listar(++this.paginaAtual, this.filtro.trim(), this.apenasFavoritos)
+        .pipe(finalize(() => (this.isLoading = false)))
         .subscribe((response: HttpResponse<Pensamento[]>) => {
           if (response.body) {
             this.totalPensamentos = this.listaPensamentos.length;
@@ -67,8 +74,10 @@ export class ListarPensamentoComponent implements OnInit {
   }
 
   private carregarTodosPensamentos(): void {
+    this.isLoading = true;
     this.service
       .listar(1, this.filtro, this.apenasFavoritos)
+      .pipe(finalize(() => (this.isLoading = false)))
       .subscribe((response: HttpResponse<Pensamento[]>) => {
         if (response.body) {
           this.listaPensamentos = response.body;
@@ -81,10 +90,16 @@ export class ListarPensamentoComponent implements OnInit {
       });
   }
 
+  public atualizarPensamento(): void {
+    console.log('ok');
+    this.carregarTodosPensamentos();
+  }
+
   public filtrarPensamentosFavoritos() {
     this.paginaAtual = 1;
     this.carregarTodosPensamentos();
   }
+
   public getTitulo(): string {
     if (this.filtro.length && this.apenasFavoritos) {
       return `Busca por '${this.filtro}' favoritados`;

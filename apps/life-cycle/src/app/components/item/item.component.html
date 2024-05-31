@@ -1,31 +1,34 @@
-<input
-	class="checkbox"
-	type="checkbox"
-	name="comprado"
-	[id]="'comprado -' + item.id"
-	[checked]="item.comprado"
-	(click)="toggleCheck()" />
-<label
-	[class.line-through]="item.comprado"
-	[for]="'comprado -' + item.id"
-	class="description"
-	>{{ item.nome }}</label
->
-<div class="d-contents" *ngIf="!item.comprado">
-	<fa-icon
-		(click)="deletarItem()"
-		class="icon delete-icon"
-		[icon]="faTrash"></fa-icon>
-	<fa-icon
-		class="icon edit-icon"
-		(click)="editarItem()"
-		[icon]="faPen"></fa-icon>
+<div class="flex flex-row justify-content-between">
+  <div class="flex flex-column justify-content-center">
+    <div class="flex flex-row">
+      <p-checkbox
+        [disabled]="readOnly"
+        styleClass="mr-2"
+        type="checkbox"
+        name="comprado"
+        [binary]="true"
+        [ngModel]="item.comprado"
+        (click)="toggleCheck(readOnly)" />
+      <label
+        [class.line-through]="item.comprado"
+        class="description"
+      >{{ item.nome }}</label
+      >
+    </div>
+  </div>
+  <div class="flex flex-row gap-2 p-2">
+    <p-button [disabled]="item.comprado || readOnly" (click)="editarItem()" rounded="true" icon="pi pi-pencil"
+              severity="warning" />
+    <p-button [disabled]="item.comprado || readOnly" (click)="deletarItem()" rounded="true" icon="pi pi-trash"
+              severity="danger" />
+  </div>
 </div>
+<p-divider type="dashed" />
 <small class="date"
-	>{{
-		item.editado
-			? item.dataEdicao?.toLocaleDateString('pt-BR', optionsDate)
-			: item.data.toLocaleDateString('pt-BR', optionsDate)
-	}}
-	{{ item.editado ? '(Editado)' : '' }}</small
+>{{
+    item.editado
+      ? item.dataEdicao?.toLocaleDateString('pt-BR', optionsDate)
+      : item.data.toLocaleDateString('pt-BR', optionsDate)
+  }}
+  {{ item.editado ? '(Editado)' : '' }}</small
 >
