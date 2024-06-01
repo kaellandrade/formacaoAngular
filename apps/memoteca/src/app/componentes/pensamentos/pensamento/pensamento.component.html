@@ -13,6 +13,7 @@
       rounded="true"
       icon="pi pi-pen-to-square"
       severity="warning"
+      [attr.data-cy]="'id-edit-'+pensamento.id"
       routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
     </p-button>
     <p-button

@@ -14,22 +14,43 @@
 declare namespace Cypress {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Chainable<Subject> {
-    login(email: string, password: string): void;
+    mockarBuscarPensamentos(): void;
+
+    mockarDeletarPensamento(): void;
+
+    mockarEditarPensamento(): void;
   }
 }
 
-// -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => {
-  console.log('Custom command example: Login', email, password);
-});
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+const mockarBuscarPensamentos = () => {
+  cy.intercept('GET', '**/pensamentos*', {
+    fixture: 'pensamentos-busca',
+    headers: {
+      'Access-Control-Expose-Headers': 'X-Total-Count, Link',
+      'Link': `<http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="first", <http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="prev", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="next", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="last"`
+    }
+  }).as('buscarPensamentos');
+};
+
+Cypress.Commands.add('mockarBuscarPensamentos', mockarBuscarPensamentos);
+
+const mockarDeletarPensamento = () => {
+  cy.intercept('DELETE', '**/pensamentos/**', {
+    fixture: 'pensamento'
+  });
+};
+
+Cypress.Commands.add('mockarDeletarPensamento', mockarDeletarPensamento);
+
+const mockarEditarPensamento = () => {
+  cy.intercept('PUT', '**/pensamentos/**', {
+    fixture: 'pensamento'
+  });
+
+  cy.intercept('GET', '**/pensamentos/**', {
+    fixture: 'pensamento'
+  });
+
+};
+
+Cypress.Commands.add('mockarEditarPensamento', mockarEditarPensamento);
