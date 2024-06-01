@@ -35,10 +35,6 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/f85e3e5a-c7d7-47
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/be29d826-69fd-45a0-9171-9497f4bf7120
 
-
-
-
-
 ---
 
 ### TODO APP
@@ -55,7 +51,8 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 
 ## Rodando os testes e2e de cada projeto com o Cypress: 
-[App Memoteca](#memoteca) :iphone: - `npm run memoteca-e2e`;
+- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-e2e`;
+- [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-e2e`;
 
 <details>
 <summary>Mais detalhes sobre essa formação da Alura (Guideline)</summary>
