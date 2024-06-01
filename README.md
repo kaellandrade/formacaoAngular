@@ -33,6 +33,9 @@ CRUDE simples para iniciar meu aprendizado no framework Angular.
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/f85e3e5a-c7d7-47f5-8674-70389fdf7241
 
+[e2e_app_memoteca.webm](https://github.com/kaellandrade/formacaoAngular/assets/51521476/bae0ba6c-13d6-41f5-aea8-6827883e15ac)
+
+
 
 ---
 
