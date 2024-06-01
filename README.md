@@ -49,7 +49,7 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 
-## Rodando os testes e2e de cada projeto: E:two:E
+## Rodando os testes e2e de cada projeto: E :two: E
 [App Memoteca](#memoteca) :iphone: - `npm run memoteca-e2e`;
 
 <details>
