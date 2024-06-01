@@ -5,8 +5,7 @@
 # Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
 
-Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas te as quais eu tinha vontade de aprendê-las, tais como:
-
+Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas as quais tinha vontade de aprendê-las, tais como:
 [![nx](https://img.shields.io/badge/Nx-blue?style=flat-square&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 [![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=flat-square&logo=angular&logoColor=white)](https://primeng.org/)
 [![PrimeFlex](https://img.shields.io/badge/-PrimeFlex-white?style=flat-square&logo=angular&logoColor=00DA99)](https://primeflex.org/)
