@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "<p align=\"center\">   <img width='30%' src=\".github/angular.svg\" alt=\"Angular\"> </p>",
   "scripts": {
-    "memoteca-app": "concurrently \"npx nx run memoteca:serve -o  \" \"npx nx run memoteca:backend\"",
-    "memoteca-e2e": "concurrently \"npx nx run memoteca:open-cypress  \" \"npx nx run memoteca:serve\"",
+    "memoteca-app": "concurrently \"npx nx@19.0.4 run memoteca:serve -o  \" \"npx nx@19.0.4 run memoteca:backend\"",
+    "memoteca-e2e": "concurrently \"npx nx@19.0.4 run memoteca:open-cypress  \" \"npx nx@19.0.4 run memoteca:serve\"",
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
+    "buscante-e2e": "concurrently \"npx nx@19.0.4 run buscante:open-cypress  \" \"npx nx@19.0.4 run buscante:serve\"",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o"
   },
