@@ -18,7 +18,7 @@ declare namespace Cypress {
 
     mockarDeletarPensamento(): void;
 
-    mockarEditarPensamento(): void;
+    mockarEditarCadastrarExluirPensamento(): void;
   }
 }
 
@@ -42,7 +42,7 @@ const mockarDeletarPensamento = () => {
 
 Cypress.Commands.add('mockarDeletarPensamento', mockarDeletarPensamento);
 
-const mockarEditarPensamento = () => {
+const mockarEditarCadastrarExluirPensamento = () => {
   cy.intercept('PUT', '**/pensamentos/**', {
     fixture: 'pensamento'
   });
@@ -51,6 +51,10 @@ const mockarEditarPensamento = () => {
     fixture: 'pensamento'
   });
 
+  cy.intercept('POST', '**/pensamentos', {
+    fixture: 'pensamento'
+  });
+
 };
 
-Cypress.Commands.add('mockarEditarPensamento', mockarEditarPensamento);
+Cypress.Commands.add('mockarEditarCadastrarExluirPensamento', mockarEditarCadastrarExluirPensamento);

@@ -4,7 +4,7 @@
   "description": "<p align=\"center\">   <img width='30%' src=\".github/angular.svg\" alt=\"Angular\"> </p>",
   "scripts": {
     "memoteca-app": "concurrently \"npx nx run memoteca:serve -o  \" \"npx nx run memoteca:backend\"",
-    "memoteca-e2e": "concurrently \"npx nx run memoteca:open-cypress  \" \"npx nx run memoteca:backend \" \"npx nx run memoteca:serve\"",
+    "memoteca-e2e": "concurrently \"npx nx run memoteca:open-cypress  \" \"npx nx run memoteca:serve\"",
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o"

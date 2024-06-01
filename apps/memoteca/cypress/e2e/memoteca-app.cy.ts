@@ -1,9 +1,31 @@
+const preencherForm = () => {
+  cy.get('[data-cy="label-pensamento"]').click();
+  cy.focused().clear();
+  cy.focused().type('Nunca confie em tradução automática de documentação');
+
+  cy.get('[data-cy="label-autor"]').click();
+  cy.focused().clear();
+  cy.focused().type('micael andrade');
+
+  cy.get('[data-cy="modelo1"]').click();
+  cy.get('[data-cy="modelo2"]').click();
+  cy.get('[data-cy="modelo3"]').click();
+
+  cy.get('[data-cy="btn-salvar"]').click();
+};
+
 describe('memoteca', () => {
   beforeEach(() => {
     cy.mockarBuscarPensamentos();
     cy.mockarDeletarPensamento();
-    cy.mockarEditarPensamento();
+    cy.mockarEditarCadastrarExluirPensamento();
     cy.visit('http://localhost:4200/listarPensamento');
+  });
+
+  it('Deve cadastrar um pensamento', () => {
+    cy.get('[data-cy="adicionar-pensamento"]').click();
+    preencherForm();
+    cy.contains('Pensamento cadastrado com sucesso, redirecionando para tela inicial!');
   });
 
   it('Deve exibir a tela de listagem dos pensamentos', () => {
@@ -33,20 +55,7 @@ describe('memoteca', () => {
 
   it('Deve editar um pensamento', () => {
     cy.get('[data-cy="id-edit-b8d5"]').click();
-    cy.get('[data-cy="label-pensamento"]').click();
-    cy.focused().clear();
-    cy.focused().type('Nunca confie em tradução automática de documentação');
-
-    cy.get('[data-cy="label-autor"]').click();
-    cy.focused().clear();
-    cy.focused().type('micael andrade');
-
-    cy.get('[data-cy="modelo1"]').click();
-    cy.get('[data-cy="modelo2"]').click();
-    cy.get('[data-cy="modelo3"]').click();
-
-    cy.get('[data-cy="btn-salvar"]').click();
-
+    preencherForm();
     cy.contains('Pensamento editado com sucesso, redirecionando para tela inicial!');
   });
 });
