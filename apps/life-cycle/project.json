@@ -2,13 +2,13 @@
   "name": "life-cycle",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
+  "sourceRoot": "apps/life-cycle/src",
+  "prefix": "app",
   "generators": {
     "@schematics/angular:application": {
       "strict": true
     }
   },
-  "sourceRoot": "apps/life-cycle/src",
-  "prefix": "app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
@@ -93,9 +93,7 @@
           "apps/life-cycle/src/favicon.ico",
           "apps/life-cycle/src/assets"
         ],
-        "styles": [
-          "apps/life-cycle/src/styles.css"
-        ],
+        "styles": ["apps/life-cycle/src/styles.css"],
         "scripts": []
       }
     }

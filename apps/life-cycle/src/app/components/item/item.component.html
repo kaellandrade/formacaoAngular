@@ -2,6 +2,7 @@
   <div class="flex flex-column justify-content-center">
     <div class="flex flex-row">
       <p-checkbox
+        [attr.data-cy]="item.id"
         [disabled]="readOnly"
         styleClass="mr-2"
         type="checkbox"
@@ -17,9 +18,9 @@
     </div>
   </div>
   <div class="flex flex-row gap-2 p-2">
-    <p-button [disabled]="item.comprado || readOnly" (click)="editarItem()" rounded="true" icon="pi pi-pencil"
+    <p-button [attr.data-cy]="'action-btn-edit-'+item.id" [disabled]="item.comprado || readOnly" (click)="editarItem()" rounded="true" icon="pi pi-pencil"
               severity="warning" />
-    <p-button [disabled]="item.comprado || readOnly" (click)="deletarItem()" rounded="true" icon="pi pi-trash"
+    <p-button [attr.data-cy]="'action-btn-trash-'+item.id" [disabled]="item.comprado || readOnly" (click)="deletarItem()" rounded="true" icon="pi pi-trash"
               severity="danger" />
   </div>
 </div>

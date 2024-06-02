@@ -8,6 +8,7 @@
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
     "buscante-e2e": "concurrently \"npx nx@19.0.4 run buscante:open-cypress  \" \"npx nx@19.0.4 run buscante:serve\"",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
+    "todo-app-e2e": "concurrently \"npx nx@19.0.4 run life-cycle:open-cypress \" \"npx nx@19.0.4 run life-cycle:serve\"",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o"
   },
   "keywords": [],

@@ -37,7 +37,7 @@
         </div>
       </p-toolbar>
       <div class="flex flex-row flex-wrap justify-content-center mt-5 gap-3" *ngIf="this.listaCompra.length">
-        <p-button [disabled]="readOnly" icon="pi pi-trash" severity="danger" label="Apagar tudo" class="btn-header" (click)="apagarTudo()"
+        <p-button data-cy="bt-apagar-tudo" [disabled]="readOnly" icon="pi pi-trash" severity="danger" label="Apagar tudo" class="btn-header" (click)="apagarTudo()"
                   type="button" />
       </div>
       <p-card
