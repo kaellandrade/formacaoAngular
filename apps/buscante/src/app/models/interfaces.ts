@@ -4,7 +4,7 @@ export interface Livro {
 	authors?: string[];
 	publishedDate?: Date;
 	description?: string;
-	thumbnail?: ImageLinks;
+	imageLinks?: ImageLinks;
 	pageCount?: number;
 	language: IdiomaLivro;
 	categories: string[];

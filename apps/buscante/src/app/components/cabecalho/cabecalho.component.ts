@@ -12,6 +12,6 @@ export class CabecalhoComponent {
 	irParaTelaInicial(): void {
 		this.router.routeReuseStrategy.shouldReuseRoute = (): boolean => false;
 		this.router.onSameUrlNavigation = 'reload';
-		this.router.navigate([this.router.url]);
+		this.router.navigate([this.router.url]).then(() => true);
 	}
 }

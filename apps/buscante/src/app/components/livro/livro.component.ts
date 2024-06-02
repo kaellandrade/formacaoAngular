@@ -1,28 +1,30 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { IdiomaLivro, Livro } from '../../models/interfaces';
 
 @Component({
-	selector: 'app-livro',
-	templateUrl: './livro.component.html',
-	styleUrls: ['./livro.component.css'],
+  selector: 'app-livro',
+  templateUrl: './livro.component.html',
+  styleUrls: ['./livro.component.css']
 })
 export class LivroComponent implements OnInit {
-	@Input() livro: Livro;
-	modalAberto: boolean;
-	@Input() isCountrySuported: boolean = false;
-	@Input() index!: number;
+  @Input() livro: Livro;
+  @Input() isCountrySuported = false;
+  @Input() index!: number;
 
-	showBasicDialog(): void {
-		this.modalAberto = true;
-	}
+  modalAberto: boolean;
 
-	ngOnInit(): void {
-		this.isCountrySuported = Object.values(IdiomaLivro).includes(
-			this.livro.language
-		);
-	}
+  showBasicDialog(): void {
+    this.modalAberto = true;
+  }
 
-	onModalChange(evento: boolean): void {
-		this.modalAberto = evento;
-	}
+  ngOnInit(): void {
+    this.isCountrySuported = Object.values(IdiomaLivro).includes(
+      this.livro.language
+    );
+  }
+
+  onModalChange(evento: boolean): void {
+    this.modalAberto = evento;
+  }
 }

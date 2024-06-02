@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Livro } from '../../models/interfaces';
 
 const body = document.querySelector('body');
@@ -9,10 +10,9 @@ const body = document.querySelector('body');
 	styleUrls: ['./modal-livro.component.css'],
 })
 export class ModalLivroComponent {
-	constructor() {}
 
 	@Input() livro: Livro;
-	@Input() statusModal: boolean = true;
+	@Input() statusModal = true;
 	@Output() mudouModal = new EventEmitter();
 
 	fecharModal(): void {
@@ -22,7 +22,7 @@ export class ModalLivroComponent {
 	}
 
 	esconderScroll(): void {
-		if (this.statusModal == true) {
+		if (this.statusModal) {
 			body.style.overflow = 'hidden';
 		}
 	}

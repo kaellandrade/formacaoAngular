@@ -1,35 +1,34 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import {
-	EMPTY,
-	catchError,
-	debounceTime,
-	distinctUntilChanged,
-	filter,
-	map,
-	of,
-	share,
-	switchMap,
+  catchError,
+  debounceTime,
+  distinctUntilChanged,
+  EMPTY,
+  filter,
+  map,
+  of,
+  share,
+  switchMap
 } from 'rxjs';
+
 import { Item, Livro, LivrosResultado } from '../../models/interfaces';
-import { LivroVolumeInfo} from '../../models/LivroVolumeInfo';
+import { LivroVolumeInfo } from '../../models/LivroVolumeInfo';
 import { LivroService } from '../../service/livro.service';
 
 
 const TAMANHO_MIN_BUSCA = 3;
 const DELAY_BUSCA = 500;
+
 @Component({
-	selector: 'app-lista-livros',
-	templateUrl: './lista-livros.component.html',
-	styleUrls: ['./lista-livros.component.css'],
+  selector: 'app-lista-livros',
+  templateUrl: './lista-livros.component.html',
+  styleUrls: ['./lista-livros.component.css']
 })
 export class ListaLivrosComponent {
 	campoBusca = new FormControl();
 	mensagemErro = '';
 	livrosResutado: LivrosResultado;
-
-	constructor(private serviceGoogleAPIBook: LivroService) {}
-
 	comum$ = this.campoBusca.valueChanges.pipe(
 		debounceTime(DELAY_BUSCA),
 		filter((valorDigital: string) => valorDigital.length >= TAMANHO_MIN_BUSCA),
@@ -39,9 +38,11 @@ export class ListaLivrosComponent {
 	);
 
 	totalDeLivros$ = this.comum$.pipe(
-		map((result: LivrosResultado) => (this.livrosResutado = result)),
+		map((result: LivrosResultado) => {
+			this.livrosResutado = result;
+		}),
 		catchError(erro => {
-			console.log(erro);
+			console.warn(erro);
 			return of();
 		})
 	);
@@ -55,9 +56,11 @@ export class ListaLivrosComponent {
 		})
 	);
 
+	constructor(private serviceGoogleAPIBook: LivroService) {}
+
 	private parseToLivros(items: Item[]): Livro[] {
 		return items.reduce((acumulador: Livro[], atual: Item) => {
-			let livro: Livro = new LivroVolumeInfo(atual);
+			const livro: Livro = new LivroVolumeInfo(atual);
 			return acumulador.concat(livro);
 		}, []);
 	}

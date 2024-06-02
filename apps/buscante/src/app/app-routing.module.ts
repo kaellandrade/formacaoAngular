@@ -1,6 +1,7 @@
-import { ListaLivrosComponent } from './views/lista-livros/lista-livros.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { ListaLivrosComponent } from './views/lista-livros/lista-livros.component';
 
 const routes: Routes = [
 	{
@@ -18,4 +19,5 @@ const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
 })
+
 export class AppRoutingModule {}
