@@ -6,12 +6,13 @@
 O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
 
 Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas as quais tinha vontade de aprendê-las, tais como:
-[![nx](https://img.shields.io/badge/Nx-blue?style=flat-square&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
-[![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=flat-square&logo=angular&logoColor=white)](https://primeng.org/)
-[![PrimeFlex](https://img.shields.io/badge/-PrimeFlex-white?style=flat-square&logo=angular&logoColor=00DA99)](https://primeflex.org/)
-[![Cypress](https://img.shields.io/badge/-Cypress-black?style=flat-square&logo=cypress&logoColor=00DA99)](https://www.cypress.io/)
-[![Husky](https://img.shields.io/badge/-HookHusky-white?style=flat-square&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
-[![Eslint](https://img.shields.io/badge/-HookHusky-black?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
+
+[![nx](https://img.shields.io/badge/Nx-blue?style=for-the-badge&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+[![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=for-the-badge&logo=angular&logoColor=white)](https://primeng.org/)
+[![PrimeFlex](https://img.shields.io/badge/-PrimeFlex-white?style=for-the-badge&logo=angular&logoColor=00DA99)](https://primeflex.org/)
+[![Cypress](https://img.shields.io/badge/-Cypress-black?style=for-the-badge&logo=cypress&logoColor=00DA99)](https://www.cypress.io/)
+[![Husky](https://img.shields.io/badge/-HookHusky-white?style=for-the-badge&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
+[![Eslint](https://img.shields.io/badge/-HookHusky-black?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 
 ## Setup :gear:
 - Instale as dependencias `npm install`;
