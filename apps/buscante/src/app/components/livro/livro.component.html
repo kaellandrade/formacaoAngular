@@ -1,52 +1,53 @@
 <p-card styleClass="p-card-shadow bg-primary-50">
-	<ng-template pTemplate="header">
-		<div class="flex justify-content-between p-2 relative">
-			<img
-				class="w-5 border-round"
-				alt="Card"
-				src="{{
+  <ng-template pTemplate="header">
+    <div class="flex justify-content-between p-2 relative">
+      <img
+        class="w-5 border-round"
+        alt="Card"
+        src="{{
 					livro.thumbnail?.thumbnail
 						? livro.thumbnail?.thumbnail
 						: 'assets/imagens/capa-indisponivel.png'
 				}}" />
-			<div class="flex-grow-1 px-3">
-				<h3 class="m-0 text-gray-800">{{ livro.title | slice: 0 : 30 }}</h3>
-				<h6 class="m-0 text-gray-600 mt-2">{{ livro.authors | autoria }}</h6>
-				<p-divider type="dashed"></p-divider>
-				<div>
-					<span>Data de publicação: </span>
-					<strong>{{ livro.publishedDate | date: 'dd/MM/yyyy' }}</strong>
-				</div>
-				<div class="mt-2">
-					<span>Editora: </span>
-					<strong>{{
-						(livro.publisher | slice: 0 : 30) ?? 'Não identificado'
-					}}</strong>
-				</div>
-			</div>
-		</div>
-		<p-divider type="dashed"></p-divider>
-	</ng-template>
-	<div>
-		{{ livro.description | truncate: 0 : 100 }}
-	</div>
-	<ng-template pTemplate="footer">
-		<div class="w-1 mb-2 mt-2 ml-2">
-			<img
-				*ngIf="isCountrySuported"
-				src="assets/flags/{{ livro.language }}.svg"
-				alt="Bandeira país"
-				title="{{ livro.language }}" />
-		</div>
-		<p-button
-			(onClick)="onModalChange(true)"
-			label="Mais detalhes"
-			icon="pi pi-info-circle"
-			[style]="{ 'margin-left': '.5em', width: '100%' }"></p-button>
-	</ng-template>
+      <div class="flex-grow-1 px-3">
+        <h3 class="m-0 text-gray-800">{{ livro.title | slice: 0 : 30 }}</h3>
+        <h6 class="m-0 text-gray-600 mt-2">{{ livro.authors | autoria }}</h6>
+        <p-divider type="dashed"></p-divider>
+        <div>
+          <span>Data de publicação: </span>
+          <strong>{{ livro.publishedDate | date: 'dd/MM/yyyy' }}</strong>
+        </div>
+        <div class="mt-2">
+          <span>Editora: </span>
+          <strong>{{
+              (livro.publisher | slice: 0 : 30) ?? 'Não identificado'
+            }}</strong>
+        </div>
+      </div>
+    </div>
+    <p-divider type="dashed"></p-divider>
+  </ng-template>
+  <div>
+    {{ livro.description | truncate: 0 : 100 }}
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="w-1 mb-2 mt-2 ml-2">
+      <img
+        *ngIf="isCountrySuported"
+        src="assets/flags/{{ livro.language }}.svg"
+        alt="Bandeira país"
+        title="{{ livro.language }}" />
+    </div>
+    <p-button
+      [attr.data-cy]="'btn-book'+index"
+      (onClick)="onModalChange(true)"
+      label="Mais detalhes"
+      icon="pi pi-info-circle"
+      [style]="{ 'margin-left': '.5em', width: '100%' }"></p-button>
+  </ng-template>
 </p-card>
 <div *ngIf="modalAberto">
-	<app-modal-livro
-		[livro]="livro"
-		(mudouModal)="onModalChange($event)"></app-modal-livro>
+  <app-modal-livro
+    [livro]="livro"
+    (mudouModal)="onModalChange($event)"></app-modal-livro>
 </div>

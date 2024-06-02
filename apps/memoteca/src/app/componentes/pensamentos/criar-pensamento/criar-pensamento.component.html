@@ -3,11 +3,11 @@
   <header class="header">
     <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">Adicione um pensamento novo:</h2>
   </header>
-  <form [formGroup]="formulario">
+  <form [formGroup]="formulario" data-cy="form-add-pensamento">
     <p-panel header="O que você está pensando ?">
       <div class="grid nested-grid">
         <div class="col-12 flex flex-column gap-2">
-          <label for="pensamento" class="required-label">Pensamento</label>
+          <label data-cy="label-pensamento"  for="pensamento" class="required-label">Pensamento</label>
           <textarea
             rows="5"
             cols="30"
@@ -27,7 +27,7 @@
         <p-divider class="col-12" />
         <div class="col-12">
           <div class="flex flex-column gap-2">
-            <label for="autoria" class="required-label">Autoria ou fonte</label>
+            <label data-cy="label-autor"  for="autoria" class="required-label">Autoria ou fonte</label>
             <input
               pInputText
               type="text"
@@ -59,7 +59,7 @@
           <div class="mt-5 grid ">
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label class="label-modelo" for="{{ modeloscards.MODELO1 }}">
+                <label [attr.data-cy]="modeloscards.MODELO1" class="label-modelo" for="{{ modeloscards.MODELO1 }}">
                   <input
                     value="{{ modeloscards.MODELO1 }}"
                     type="radio"
@@ -81,7 +81,7 @@
             </div>
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label class="label-modelo" for="{{ modeloscards.MODELO2 }}">
+                <label [attr.data-cy]="modeloscards.MODELO2" class="label-modelo" for="{{ modeloscards.MODELO2 }}">
                   <input
                     type="radio"
                     formControlName="modelo"
@@ -103,7 +103,7 @@
             </div>
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label class="label-modelo" for="{{ modeloscards.MODELO3 }}">
+                <label [attr.data-cy]="modeloscards.MODELO3" class="label-modelo" for="{{ modeloscards.MODELO3 }}">
                   <input
                     type="radio"
                     formControlName="modelo"
@@ -128,6 +128,7 @@
         <div class="col-12 flex justify-content-center">
           <p-buttonGroup>
             <p-button
+              [attr.data-cy]="'btn-salvar'"
               [loading]="isLoading"
               label="Salvar"
               size="large"

@@ -1,0 +1,44 @@
+[
+  {
+    "conteudo": "Os programas devem ser escritos para as pessoas lerem, e apenas incidentalmente para as máquinas executarem.",
+    "modelo": "modelo2",
+    "autoria": "harold abelson",
+    "id": "b8d5",
+    "favorito": true
+  },
+  {
+    "conteudo": "Qualquer tolo pode escrever um código que um computador pode entender. Bons programadores escrevem códigos que os humanos podem entender.",
+    "modelo": "modelo3",
+    "autoria": "martin fowler",
+    "id": "6a0b",
+    "favorito": false
+  },
+  {
+    "conteudo": "Dê a um homem um programa, frustre-o por um dia. Ensine um homem a programar, frustre-o por toda a vida.",
+    "modelo": "modelo2",
+    "autoria": "muhammad waseem",
+    "id": "5c3d",
+    "favorito": false
+  },
+  {
+    "conteudo": "A melhor coisa sobre um booleano é que mesmo se você estiver errado, você só está errado por um bit.",
+    "modelo": "modelo3",
+    "autoria": "anonymous",
+    "id": "8e1f",
+    "favorito": false
+  },
+  {
+    "conteudo": "Antes que o software possa ser reutilizável, ele primeiro tem que ser utilizável.",
+    "modelo": "modelo2",
+    "autoria": "ralph johnson",
+    "id": "6c3b",
+    "favorito": false
+  },
+  {
+    "conteudo": "O melhor método para acelerar um computador é aquele que o acelera em 9,8 m/s2.",
+    "modelo": "modelo3",
+    "autoria": "anonymous",
+    "id": "5d4c",
+    "favorito": false
+  }
+]

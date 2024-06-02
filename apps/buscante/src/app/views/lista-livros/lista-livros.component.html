@@ -4,6 +4,7 @@
 			<span class="p-input-icon-right">
 				<i class="pi pi-search"></i>
 				<input
+          data-cy="input-search"
 					[formControl]="campoBusca"
 					type="text"
 					pInputText
@@ -34,8 +35,8 @@
 			*ngIf="livrosEncontrados$ | async as listaLivros; else telaInicial">
 			<div
 				class="col-12 md:col-6 lg:col-6 xl:col-4"
-				*ngFor="let livro of listaLivros">
-				<app-livro [livro]="livro"></app-livro>
+				*ngFor="let livro of listaLivros ; index as i">
+				<app-livro [index]="i" [attr.data-cy]="'livro-'+i" [livro]="livro"></app-livro>
 			</div>
 		</div>
 	</section>

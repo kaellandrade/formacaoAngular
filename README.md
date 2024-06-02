@@ -5,8 +5,7 @@
 # Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
 
-Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas te as quais eu tinha vontade de aprendê-las, tais como:
-
+Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas as quais tinha vontade de aprendê-las, tais como:
 [![nx](https://img.shields.io/badge/Nx-blue?style=flat-square&logo=nx&logoColor=white)](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 [![PrimeNG](https://img.shields.io/badge/-PrimeNG-3B82F6?style=flat-square&logo=angular&logoColor=white)](https://primeng.org/)
 [![PrimeFlex](https://img.shields.io/badge/-PrimeFlex-white?style=flat-square&logo=angular&logoColor=00DA99)](https://primeflex.org/)
@@ -33,6 +32,7 @@ CRUDE simples para iniciar meu aprendizado no framework Angular.
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/f85e3e5a-c7d7-47f5-8674-70389fdf7241
 
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/be29d826-69fd-45a0-9171-9497f4bf7120
 
 ---
 
@@ -48,6 +48,11 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
+
+## Rodando os testes e2e de cada projeto com o Cypress: 
+- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-e2e`;
+- [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-e2e`;
+- [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app-e2e`;
 
 <details>
 <summary>Mais detalhes sobre essa formação da Alura (Guideline)</summary>
@@ -91,6 +96,6 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
    - [X] Todo app 
    - [X] Forms-reativos
 - [X] Configurar estilos do PrimeNg para todos os APPS
-- [ ] Configuar [Cypress](https://www.cypress.io/);
+- [X] Configurar [Cypress](https://www.cypress.io/);
 - [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 </details>

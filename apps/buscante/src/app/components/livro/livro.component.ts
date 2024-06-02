@@ -10,6 +10,7 @@ export class LivroComponent implements OnInit {
 	@Input() livro: Livro;
 	modalAberto: boolean;
 	@Input() isCountrySuported: boolean = false;
+	@Input() index!: number;
 
 	showBasicDialog(): void {
 		this.modalAberto = true;
