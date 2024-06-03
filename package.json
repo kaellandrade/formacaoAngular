@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "<p align=\"center\">   <img width='30%' src=\".github/angular.svg\" alt=\"Angular\"> </p>",
   "lint-staged": {
-    "*.ts": "npx eslint --fix"
+    "*.ts": "npx eslint"
   },
   "scripts": {
     "memoteca-app": "concurrently \"npx nx@19.0.4 run memoteca:serve -o  \" \"npx nx@19.0.4 run memoteca:backend\"",
