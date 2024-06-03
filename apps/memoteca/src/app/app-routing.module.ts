@@ -1,33 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
-import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
-import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 
-// Configurando minhas rotas
+import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
+import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
+import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
+
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'listarPensamento',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'criarPensamento',
-    component: CriarPensamentoComponent
+    component: CriarPensamentoComponent,
   },
   {
     path: 'listarPensamento',
-    component: ListarPensamentoComponent
+    component: ListarPensamentoComponent,
   },
   {
     path: 'pensamentos/editarPensamento/:id',
-    component: EditarPensamentoComponent
-  }
+    component: EditarPensamentoComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

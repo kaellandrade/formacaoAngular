@@ -1,5 +1,5 @@
 {
-  "extends": ["../../.eslintrc.json"],
+  "extends": ["plugin:cypress/recommended", "../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -13,7 +13,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "",
             "style": "camelCase"
           }
         ],
@@ -30,6 +30,10 @@
     {
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
+      "rules": {}
+    },
+    {
+      "files": ["*.cy.{ts,js,tsx,jsx}", "cypress/**/*.{ts,js,tsx,jsx}"],
       "rules": {}
     }
   ]

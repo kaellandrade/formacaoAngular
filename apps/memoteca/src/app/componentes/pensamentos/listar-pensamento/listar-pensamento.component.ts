@@ -1,17 +1,19 @@
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { finalize } from 'rxjs';
+
 import { Pensamento } from '../../../../interfaces/Pensamento';
 import { PensamentoService } from '../pensamento.service';
-import { HttpHeaders, HttpResponse } from '@angular/common/http';
-import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-listar-pensamento',
   templateUrl: './listar-pensamento.component.html',
-  styleUrls: ['./listar-pensamento.component.scss', '../pensamento/pensamento.component.scss']
+  styleUrls: [
+    './listar-pensamento.component.scss',
+    '../pensamento/pensamento.component.scss',
+  ],
 })
 export class ListarPensamentoComponent implements OnInit {
-  private paginaAtual = 1;
-  private readonly TAMANHO_MINIMO_PALAVRA_BUSCA = 4;
   public listaPensamentos: Array<Pensamento> = [];
   public totalPensamentos = 0;
   public next = false;
@@ -20,16 +22,38 @@ export class ListarPensamentoComponent implements OnInit {
   public listaFavoritos: Pensamento[] = [];
   public isLoading = false;
 
-  constructor(
-    private service: PensamentoService
-  ) {
-  }
+  private paginaAtual = 1;
+  private readonly TAMANHO_MINIMO_PALAVRA_BUSCA = 4;
+
+  constructor(private service: PensamentoService) {}
 
   /**
    * Ciclo de vida do componente.
    */
   public ngOnInit(): void {
     this.carregarTodosPensamentos();
+  }
+
+  public atualizarPensamento(): void {
+    this.carregarTodosPensamentos();
+  }
+
+  public filtrarPensamentosFavoritos() {
+    this.paginaAtual = 1;
+    this.carregarTodosPensamentos();
+  }
+
+  public getTitulo(): string {
+    if (this.filtro.length && this.apenasFavoritos) {
+      return `Busca por '${this.filtro}' favoritados`;
+    }
+    if (this.apenasFavoritos) {
+      return 'Apenas favoritos';
+    }
+    if (this.filtro.length) {
+      return `Busca por '${this.filtro}'`;
+    }
+    return 'Todos os pensamentos';
   }
 
   public carregarMaisPensamentos(): void {
@@ -88,28 +112,5 @@ export class ListarPensamentoComponent implements OnInit {
           }
         }
       });
-  }
-
-  public atualizarPensamento(): void {
-    console.log('ok');
-    this.carregarTodosPensamentos();
-  }
-
-  public filtrarPensamentosFavoritos() {
-    this.paginaAtual = 1;
-    this.carregarTodosPensamentos();
-  }
-
-  public getTitulo(): string {
-    if (this.filtro.length && this.apenasFavoritos) {
-      return `Busca por '${this.filtro}' favoritados`;
-    }
-    if (this.apenasFavoritos) {
-      return 'Apenas favoritos';
-    }
-    if (this.filtro.length) {
-      return `Busca por '${this.filtro}'`;
-    }
-    return 'Todos os pensamentos';
   }
 }

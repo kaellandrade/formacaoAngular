@@ -17,8 +17,6 @@ import {
   ],
 })
 export class MaiorIdadeDirective implements Validator {
-  constructor() {}
-
   validate(control: AbstractControl): ValidationErrors | null {
     const dataDeNascimento = <string>control.value;
     const ano = new Date(dataDeNascimento).getFullYear();

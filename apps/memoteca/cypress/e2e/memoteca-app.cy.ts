@@ -25,14 +25,20 @@ describe('memoteca', () => {
   it('Deve cadastrar um pensamento', () => {
     cy.get('[data-cy="adicionar-pensamento"]').click();
     preencherForm();
-    cy.contains('Pensamento cadastrado com sucesso, redirecionando para tela inicial!');
+    cy.contains(
+      'Pensamento cadastrado com sucesso, redirecionando para tela inicial!',
+    );
   });
 
   it('Deve exibir a tela de listagem dos pensamentos', () => {
-    cy.contains('Guarde trechos de músicas, citações de livros pensamentos e suas melhores ideias');
+    cy.contains(
+      'Guarde trechos de músicas, citações de livros pensamentos e suas melhores ideias',
+    );
   });
   it('Deve realizar a busca de um pesamento', () => {
-    cy.get('[data-cy="input-busca"]').type('Antes que o software possa ser reutilizável, {enter}');
+    cy.get('[data-cy="input-busca"]').type(
+      'Antes que o software possa ser reutilizável, {enter}',
+    );
     cy.get('[data-cy="check-favoritos"]').click();
   });
 
@@ -56,6 +62,8 @@ describe('memoteca', () => {
   it('Deve editar um pensamento', () => {
     cy.get('[data-cy="id-edit-b8d5"]').click();
     preencherForm();
-    cy.contains('Pensamento editado com sucesso, redirecionando para tela inicial!');
+    cy.contains(
+      'Pensamento editado com sucesso, redirecionando para tela inicial!',
+    );
   });
 });

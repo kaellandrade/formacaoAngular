@@ -86,6 +86,12 @@
         "styles": ["apps/buscante/src/styles.css"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["apps/buscante/**/*.ts", "apps/buscante/**/*.html"]
+      }
     }
   }
 }

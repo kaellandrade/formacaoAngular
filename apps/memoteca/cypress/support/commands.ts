@@ -27,8 +27,8 @@ const mockarBuscarPensamentos = () => {
     fixture: 'pensamentos-busca',
     headers: {
       'Access-Control-Expose-Headers': 'X-Total-Count, Link',
-      'Link': `<http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="first", <http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="prev", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="next", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="last"`
-    }
+      Link: `<http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="first", <http://localhost:5000/pensamentos?_page=1&_limit=6&q=>; rel="prev", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="next", <http://localhost:5000/pensamentos?_page=3&_limit=6&q=>; rel="last"`,
+    },
   }).as('buscarPensamentos');
 };
 
@@ -36,7 +36,7 @@ Cypress.Commands.add('mockarBuscarPensamentos', mockarBuscarPensamentos);
 
 const mockarDeletarPensamento = () => {
   cy.intercept('DELETE', '**/pensamentos/**', {
-    fixture: 'pensamento'
+    fixture: 'pensamento',
   });
 };
 
@@ -44,17 +44,19 @@ Cypress.Commands.add('mockarDeletarPensamento', mockarDeletarPensamento);
 
 const mockarEditarCadastrarExluirPensamento = () => {
   cy.intercept('PUT', '**/pensamentos/**', {
-    fixture: 'pensamento'
+    fixture: 'pensamento',
   });
 
   cy.intercept('GET', '**/pensamentos/**', {
-    fixture: 'pensamento'
+    fixture: 'pensamento',
   });
 
   cy.intercept('POST', '**/pensamentos', {
-    fixture: 'pensamento'
+    fixture: 'pensamento',
   });
-
 };
 
-Cypress.Commands.add('mockarEditarCadastrarExluirPensamento', mockarEditarCadastrarExluirPensamento);
+Cypress.Commands.add(
+  'mockarEditarCadastrarExluirPensamento',
+  mockarEditarCadastrarExluirPensamento,
+);

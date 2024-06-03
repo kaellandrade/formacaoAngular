@@ -1,37 +1,37 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
-import { RodapeComponent } from './componentes/rodape/rodape.component';
-import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
-import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensamento.component';
+import { NgOptimizedImage } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
-import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
-import { ButtonModule } from 'primeng/button';
-import { TooltipModule } from 'primeng/tooltip';
-import { CalendarModule } from 'primeng/calendar';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RippleModule } from 'primeng/ripple';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { ButtonGroupModule } from 'primeng/buttongroup';
+import { CalendarModule } from 'primeng/calendar';
+import { CardModule } from 'primeng/card';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ChipsModule } from 'primeng/chips';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DividerModule } from 'primeng/divider';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
-import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
-import { CheckboxModule } from 'primeng/checkbox';
-import { CardModule } from 'primeng/card';
-import { NgOptimizedImage } from '@angular/common';
-import { ChipsModule } from 'primeng/chips';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 import { PanelModule } from 'primeng/panel';
-import { DividerModule } from 'primeng/divider';
-import { ButtonGroupModule } from 'primeng/buttongroup';
+import { RippleModule } from 'primeng/ripple';
+import { SkeletonModule } from 'primeng/skeleton';
 import { ToastModule } from 'primeng/toast';
-import {ConfirmationService, MessageService} from 'primeng/api';
-import {ConfirmDialogModule} from "primeng/confirmdialog";
-import {SkeletonModule} from "primeng/skeleton";
+import { TooltipModule } from 'primeng/tooltip';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
+import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensamento/criar-pensamento.component';
+import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
+import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pensamento/botao-carregar-mais/botao-carregar-mais.component';
+import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
+import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensamento.component';
+import { RodapeComponent } from './componentes/rodape/rodape.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,34 +43,34 @@ import {SkeletonModule} from "primeng/skeleton";
     EditarPensamentoComponent,
     BotaoCarregarMaisComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        ButtonModule,
-        TooltipModule,
-        CalendarModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        RippleModule,
-        IconFieldModule,
-        InputIconModule,
-        InputTextareaModule,
-        InputTextModule,
-        CheckboxModule,
-        CardModule,
-        NgOptimizedImage,
-        ChipsModule,
-        PanelModule,
-        DividerModule,
-        ButtonGroupModule,
-        ToastModule,
-        ConfirmDialogModule,
-        SkeletonModule
-    ],
-  providers: [MessageService,ConfirmationService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    TooltipModule,
+    CalendarModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    RippleModule,
+    IconFieldModule,
+    InputIconModule,
+    InputTextareaModule,
+    InputTextModule,
+    CheckboxModule,
+    CardModule,
+    NgOptimizedImage,
+    ChipsModule,
+    PanelModule,
+    DividerModule,
+    ButtonGroupModule,
+    ToastModule,
+    ConfirmDialogModule,
+    SkeletonModule,
+  ],
+  providers: [MessageService, ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

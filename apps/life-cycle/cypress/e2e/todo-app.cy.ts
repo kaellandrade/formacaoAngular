@@ -1,12 +1,11 @@
 const cadastrarTask = () => {
   cy.get('[data-cy="input-task"]').as('inputTask');
   cy.get('@inputTask').type('Estudar Estudar JS/TS {enter}');
-
 };
 
 describe('TODO-APP', () => {
   beforeEach(() => {
-    cy.viewport(1280, 720)
+    cy.viewport(1280, 720);
     cy.visit('http://localhost:4200/');
   });
   it('Deve garantir a tela de listagem das task vazias', () => {
@@ -45,6 +44,5 @@ describe('TODO-APP', () => {
     cy.get('[data-cy="bt-apagar-tudo"]').click();
     cy.get('.p-dialog-footer > .p-button-danger').click();
     cy.contains('Todas suas tarefas foram deletadas!');
-
   });
 });

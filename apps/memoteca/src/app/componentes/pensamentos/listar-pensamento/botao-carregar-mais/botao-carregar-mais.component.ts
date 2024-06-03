@@ -1,18 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-botao-carregar-mais',
   templateUrl: './botao-carregar-mais.component.html',
-  styleUrls: ['./botao-carregar-mais.component.scss']
+  styleUrls: ['./botao-carregar-mais.component.scss'],
 })
-export class BotaoCarregarMaisComponent implements OnInit {
+export class BotaoCarregarMaisComponent {
+  @Input()
+  haMaisPensamentos = false;
 
   @Input()
-  haMaisPensamentos: boolean = false;
-
-  @Input()
-  totalPensamentos: number = 0;
-
-  ngOnInit(): void {
-  }
+  totalPensamentos = 0;
 }

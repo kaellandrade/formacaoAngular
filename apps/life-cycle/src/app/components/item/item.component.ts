@@ -1,15 +1,11 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { Item } from '../../interfaces/iItem';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent {
   @Input() item!: Item;
@@ -21,7 +17,7 @@ export class ItemComponent {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-    second: 'numeric'
+    second: 'numeric',
   };
 
   @Output() emitindoItemParaEditar = new EventEmitter();

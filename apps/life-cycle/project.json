@@ -96,6 +96,15 @@
         "styles": ["apps/life-cycle/src/styles.css"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/life-cycle/**/*.ts",
+          "apps/life-cycle/**/*.html"
+        ]
+      }
     }
   }
 }

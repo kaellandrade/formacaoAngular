@@ -90,6 +90,15 @@
         "styles": ["apps/forms-reativos/src/styles.css"],
         "scripts": []
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/forms-reativos/**/*.ts",
+          "apps/forms-reativos/**/*.html"
+        ]
+      }
     }
   }
 }
