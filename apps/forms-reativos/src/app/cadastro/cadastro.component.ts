@@ -1,8 +1,9 @@
-import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ConsultaCepService } from '../service/consulta-cep.service';
+import { Router } from '@angular/router';
+
 import { Cep } from '../interfaces/cep';
+import { ConsultaCepService } from '../service/consulta-cep.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -27,13 +28,11 @@ export class CadastroComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private serviceConsultarCep: ConsultaCepService
+    private serviceConsultarCep: ConsultaCepService,
   ) {}
 
-  public ngOnInit(): void {}
-
   public cadastrar(form: NgForm): void {
-    console.log(form.controls);
+    console.warn(form.controls);
     if (form.valid) {
       this.router.navigate(['./sucesso']);
       return;

@@ -1,7 +1,8 @@
-import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { SucessoCadastroComponent } from './sucesso-cadastro/sucesso-cadastro.component';
 
 const routes: Routes = [
   {

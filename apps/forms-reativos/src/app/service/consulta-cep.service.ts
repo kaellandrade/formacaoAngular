@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cep } from '../interfaces/cep';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+
+import { Cep } from '../interfaces/cep';
 @Injectable({
   providedIn: 'root',
 })

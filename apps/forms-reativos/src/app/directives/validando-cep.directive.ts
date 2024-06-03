@@ -5,9 +5,10 @@ import {
   NG_ASYNC_VALIDATORS,
   ValidationErrors,
 } from '@angular/forms';
-import { Observable, map } from 'rxjs';
-import { ConsultaCepService } from '../service/consulta-cep.service';
+import { map, Observable } from 'rxjs';
+
 import { Cep } from '../interfaces/cep';
+import { ConsultaCepService } from '../service/consulta-cep.service';
 
 @Directive({
   selector: '[validandorCep]',
@@ -23,7 +24,7 @@ export class ValidandoCepDirective implements AsyncValidator {
   constructor(private serviceCep: ConsultaCepService) {}
 
   validate(
-    control: AbstractControl
+    control: AbstractControl,
   ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     const cep = control.value;
 
@@ -31,8 +32,8 @@ export class ValidandoCepDirective implements AsyncValidator {
       .consultarCep(cep)
       .pipe(
         map((resultado: Cep) =>
-          resultado.erro ? { validandorCep: true } : null
-        )
+          resultado.erro ? { validandorCep: true } : null,
+        ),
       );
   }
 }
