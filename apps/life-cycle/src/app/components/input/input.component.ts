@@ -1,36 +1,39 @@
 import {
   AfterViewInit,
-  Component, ElementRef, EventEmitter,
+  Component,
+  ElementRef,
+  EventEmitter,
   Input,
   OnChanges,
-  OnInit, Output,
-  SimpleChanges, ViewChild
+  Output,
+  SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MessageService } from 'primeng/api';
+
 import { Item } from '../../interfaces/iItem';
 import { ListaDeCompraService } from '../../service/lista-de-compra.service';
-import { ConfirmationService, MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css'],
 })
 export class InputComponent implements OnChanges, AfterViewInit {
   @ViewChild('inputTarefa') inputTarefa: ElementRef;
+  @Output() desbloquear = new EventEmitter();
   @Input() editItem!: Item;
   editando = false;
   textoBtn = 'Salvar';
 
   valorItem!: string;
   disabled = true;
-  @Output() desbloquear = new EventEmitter();
 
   constructor(
     private listaCompraService: ListaDeCompraService,
-    private messageService: MessageService
-  ) {
-  }
+    private messageService: MessageService,
+  ) {}
 
   ngAfterViewInit() {
     this.focusInput();
@@ -52,12 +55,23 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.atualizarItem();
   }
 
+  public focusInput(): void {
+    this.inputTarefa.nativeElement.focus();
+  }
+
+  public abortEdit(): void {
+    this.editando = false;
+    this.limparCampo();
+    this.textoBtn = 'Salvar';
+    this.desbloquear.emit();
+  }
+
   private atualizarItem(): void {
     this.listaCompraService.atualizarItemInLoco(this.editItem, this.valorItem);
     this.messageService.add({
       severity: 'info',
       summary: 'Tudo certo!',
-      detail: 'Tarefa foi editada!'
+      detail: 'Tarefa foi editada!',
     });
 
     this.setupBtnSubmit();
@@ -74,7 +88,7 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.messageService.add({
       severity: 'success',
       summary: 'Tudo certo!',
-      detail: 'Tarefa foi cadastrada!'
+      detail: 'Tarefa foi cadastrada!',
     });
   }
 
@@ -94,17 +108,4 @@ export class InputComponent implements OnChanges, AfterViewInit {
     this.editando = false;
     this.textoBtn = 'Salvar';
   }
-
-
-  public focusInput(): void {
-    this.inputTarefa.nativeElement.focus();
-  }
-
-  public abortEdit(): void {
-    this.editando = false;
-    this.limparCampo();
-    this.textoBtn = 'Salvar';
-    this.desbloquear.emit();
-  }
-
 }
