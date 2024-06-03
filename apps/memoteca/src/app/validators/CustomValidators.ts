@@ -7,7 +7,11 @@ export class CustomValidators {
     return (control: AbstractControl): { [key: string]: unknown } | null => {
       const forbidden = !/^[a-z \d\W]+$/.test(control.value);
       return forbidden
-        ? { [EnumsValidators.APENAS_MINUSCULAS]: { value: control.value } }
+        ? {
+            [EnumsValidators.APENAS_MINUSCULAS]: {
+              value: control.value,
+            },
+          }
         : null;
     };
   }
