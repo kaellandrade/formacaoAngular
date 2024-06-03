@@ -5,7 +5,6 @@ import { CriarPensamentoComponent } from './componentes/pensamentos/criar-pensam
 import { EditarPensamentoComponent } from './componentes/pensamentos/editar-pensamento/editar-pensamento.component';
 import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
 
-// Configurando minhas rotas
 const routes: Routes = [
   {
     path: '',
