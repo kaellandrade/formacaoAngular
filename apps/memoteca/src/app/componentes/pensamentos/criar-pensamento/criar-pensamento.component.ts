@@ -1,33 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { PensamentoService } from '../pensamento.service';
-import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
-import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CustomValidators } from '../../../validators/CustomValidators';
-import { EnumsValidators } from '../../../validators/EnumsValidators';
-import { ValidatorEnums } from '../ValidatorEnums';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
+import { ModelosPensamentos } from '../../../../interfaces/ModelosPensamentos';
+import { CustomValidators } from '../../../validators/CustomValidators';
+import { EnumsValidators } from '../../../validators/EnumsValidators';
+import { PensamentoService } from '../pensamento.service';
+import { ValidatorEnums } from '../ValidatorEnums';
 
 @Component({
   selector: 'app-criar-pensamento',
   templateUrl: './criar-pensamento.component.html',
-  styleUrls: ['./criar-pensamento.component.scss']
+  styleUrls: ['./criar-pensamento.component.scss'],
 })
 export class CriarPensamentoComponent implements OnInit {
-  protected readonly I18n = ValidatorEnums;
-  public modeloscards = ModelosPensamentos;
-  protected readonly ValidatorEnums = ValidatorEnums;
   private static readonly TIME_LIFE_MESSAGE = 3000;
-
+  public modeloscards = ModelosPensamentos;
   formulario: FormGroup;
   isLoading = false;
+
+  protected readonly addEventListener = addEventListener;
+  protected readonly I18n = ValidatorEnums;
+  protected readonly ValidatorEnums = ValidatorEnums;
 
   constructor(
     private service: PensamentoService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private messageService: MessageService
+    private messageService: MessageService,
   ) {
     this.formulario = new FormGroup({});
   }
@@ -35,38 +36,36 @@ export class CriarPensamentoComponent implements OnInit {
   criarPensamento(): void {
     this.isLoading = true;
     if (this.formulario.valid) {
-      this.service.criar(this.formulario.value)
-        .subscribe({
-          next: () => {
-            this.navegarParalistarPensamentos();
-            this.mostrarMensagemSucessoCadastro();
-          },
-          error: () => (this.isLoading = false)
-        });
+      this.service.criar(this.formulario.value).subscribe({
+        next: () => {
+          this.navegarParalistarPensamentos();
+          this.mostrarMensagemSucessoCadastro();
+        },
+        error: () => (this.isLoading = false),
+      });
     }
   }
 
   cancelarPensamento(): void {
-    this.router.navigate(['/listarPensamento']).then(() => {
-    });
+    this.router.navigate(['/listarPensamento']).then(() => true);
   }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       conteudo: [
         '',
-        Validators.compose([CustomValidators.campoPreenchidoSoComEspacos()])
+        Validators.compose([CustomValidators.campoPreenchidoSoComEspacos()]),
       ],
       autoria: [
         '',
         Validators.compose([
           Validators.required,
           Validators.minLength(ValidatorEnums.LENGTH_AUTORIA),
-          CustomValidators.apenasMinusculas()
-        ])
+          CustomValidators.apenasMinusculas(),
+        ]),
       ],
       modelo: [ModelosPensamentos.MODELO1],
-      favorito: false
+      favorito: false,
     });
   }
 
@@ -79,19 +78,18 @@ export class CriarPensamentoComponent implements OnInit {
     if (autoria?.value) {
       return Boolean(
         autoria?.errors?.[EnumsValidators.APENAS_MINUSCULAS] &&
-        this.formulario.get('autoria')?.touched
+          this.formulario.get('autoria')?.touched,
       );
     }
     return false;
   }
 
-  protected readonly addEventListener = addEventListener;
-
   private mostrarMensagemSucessoCadastro() {
     this.messageService.add({
       severity: 'success',
       summary: 'Success',
-      detail: 'Pensamento cadastrado com sucesso, redirecionando para tela inicial!'
+      detail:
+        'Pensamento cadastrado com sucesso, redirecionando para tela inicial!',
     });
   }
 
