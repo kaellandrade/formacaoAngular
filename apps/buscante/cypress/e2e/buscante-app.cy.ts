@@ -4,7 +4,7 @@ describe('buscante', () => {
     cy.visit('http://localhost:4200/lista-livros');
   });
 
-  it('Deve realizar a busca de um livro Ex: \'PYTHON\'', () => {
+  it("Deve realizar a busca de um livro Ex: 'PYTHON'", () => {
     cy.get('[data-cy="input-search"]').click();
     cy.focused().type('python');
     cy.contains('529 livros encontrados');

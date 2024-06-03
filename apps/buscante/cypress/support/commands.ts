@@ -18,9 +18,9 @@ declare namespace Cypress {
   }
 }
 
-const mockarBuscaLivro = () =>{
+const mockarBuscaLivro = () => {
   cy.intercept('GET', 'https://www.googleapis.com/**', {
-    fixture:'google-response'
-  })
-}
-Cypress.Commands.add('mockarBuscaLivro',mockarBuscaLivro);
+    fixture: 'google-response',
+  });
+};
+Cypress.Commands.add('mockarBuscaLivro', mockarBuscaLivro);

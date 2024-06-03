@@ -5,7 +5,7 @@ import { IdiomaLivro, Livro } from '../../models/interfaces';
 @Component({
   selector: 'app-livro',
   templateUrl: './livro.component.html',
-  styleUrls: ['./livro.component.css']
+  styleUrls: ['./livro.component.css'],
 })
 export class LivroComponent implements OnInit {
   @Input() livro: Livro;
@@ -20,7 +20,7 @@ export class LivroComponent implements OnInit {
 
   ngOnInit(): void {
     this.isCountrySuported = Object.values(IdiomaLivro).includes(
-      this.livro.language
+      this.livro.language,
     );
   }
 
