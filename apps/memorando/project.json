@@ -86,6 +86,9 @@
         "staticFilePath": "dist/apps/memorando/browser",
         "spa": true
       }
+    },
+    "backend": {
+      "command": "json-server --watch ./apps/memorando/backend/db.json --port 3333"
     }
   }
 }

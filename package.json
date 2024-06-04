@@ -8,7 +8,7 @@
   "scripts": {
     "memoteca-app": "concurrently \"npx nx@19.0.4 run memoteca:serve -o  \" \"npx nx@19.0.4 run memoteca:backend\"",
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
-    "memorando-app": "npx nx@19.0.4 run memorando:serve -o",
+    "memorando-app": "concurrently \"npx nx@19.0.4 run memorando:serve -o  \" \"npx nx@19.0.4 run memorando:backend\"",
     "memoteca-e2e": "npx nx@19.0.4 open-cypress memoteca-e2e",
     "memorando-e2e": "npx nx@19.0.4 open-cypress memorando-e2e",
     "todo-app-e2e": "npx nx@19.0.4 open-cypress life-cycle-e2e",
