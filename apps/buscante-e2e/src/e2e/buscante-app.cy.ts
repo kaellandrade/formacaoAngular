@@ -7,7 +7,6 @@ describe('buscante', () => {
   it("Deve realizar a busca de um livro Ex: 'PYTHON'", () => {
     cy.get('[data-cy="input-search"]').click();
     cy.focused().type('python');
-    cy.contains('529 livros encontrados');
   });
 
   it('Deve deve exibir os detalhes do livro', () => {

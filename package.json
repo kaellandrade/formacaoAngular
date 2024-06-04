@@ -7,11 +7,11 @@
   },
   "scripts": {
     "memoteca-app": "concurrently \"npx nx@19.0.4 run memoteca:serve -o  \" \"npx nx@19.0.4 run memoteca:backend\"",
-    "memoteca-e2e": "concurrently \"npx nx@19.0.4 run memoteca:open-cypress  \" \"npx nx@19.0.4 run memoteca:serve\"",
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
-    "buscante-e2e": "concurrently \"npx nx@19.0.4 run buscante:open-cypress  \" \"npx nx@19.0.4 run buscante:serve\"",
+    "memoteca-e2e": "npx nx@19.0.4 open-cypress memoteca-e2e",
+    "todo-app-e2e": "npx nx@19.0.4 open-cypress life-cycle-e2e",
+    "buscante-e2e": "npx nx@19.0.4 open-cypress0 buscante-e2e",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
-    "todo-app-e2e": "concurrently \"npx nx@19.0.4 run life-cycle:open-cypress \" \"npx nx@19.0.4 run life-cycle:serve\"",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o",
     "prepare": "husky",
     "lint": "npx nx@19.0.4  run-many --target=lint --all"
