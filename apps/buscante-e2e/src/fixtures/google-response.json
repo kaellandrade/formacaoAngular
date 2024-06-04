@@ -10,9 +10,7 @@
       "volumeInfo": {
         "title": "Python para análise de dados",
         "subtitle": "Tratamento de dados com Pandas, NumPy e IPython",
-        "authors": [
-          "Wes McKinney"
-        ],
+        "authors": ["Wes McKinney"],
         "publisher": "Novatec Editora",
         "description": "Obtenha instruções completas para manipular, processar, limpar e extrair informações de conjuntos de dados em Python. Atualizada para Python 3.6, este guia prático está repleto de casos de estudo práticos que mostram como resolver um amplo conjunto de problemas de análise de dados de forma eficiente. Você conhecerá as versões mais recentes do pandas, da NumPy, do IPython e do Jupyter no processo. Escrito por Wes McKinney, criador do projeto Python pandas, este livro contém uma introdução prática e moderna às ferramentas de ciência de dados em Python. É ideal para analistas, para quem Python é uma novidade, e para programadores Python iniciantes nas áreas de ciência de dados e processamento científico. Os arquivos de dados e os materiais relacionados ao livro estão disponíveis no GitHub. utilize o shell IPython e o Jupyter Notebook para processamentos exploratórios; conheça os recursos básicos e avançados da NumPy (Numerical Python); comece a trabalhar com ferramentas de análise de dados da biblioteca pandas; utilize ferramentas flexíveis para carregar, limpar, transformar, combinar e reformatar dados; crie visualizações informativas com a matplotlib; aplique o recurso groupby do pandas para processar e sintetizar conjuntos de dados; analise e manipule dados de séries temporais regulares e irregulares; aprenda a resolver problemas de análise de dados do mundo real com exemplos completos e detalhados.",
         "industryIdentifiers": [
@@ -31,9 +29,7 @@
         },
         "pageCount": 43,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
         "contentVersion": "preview-1.0.0",
@@ -84,9 +80,7 @@
       "volumeInfo": {
         "title": "Python para Análise de Dados - 3ª edição",
         "subtitle": "Tratamento de Dados com pandas, NumPy & Jupyter",
-        "authors": [
-          "Wes McKinney"
-        ],
+        "authors": ["Wes McKinney"],
         "publisher": "Novatec Editora",
         "publishedDate": "2023-03-20",
         "description": "Adquira o manual definitivo para manipulação, processamento, limpeza e extração de informações de conjuntos de dados em Python. Atualizada para Python 3.10 e pandas 1.4, a terceira edição deste guia dinâmico vem com estudos de casos práticos que mostram como resolver um amplo conjunto de problemas de análise de dados de maneira eficaz. Durante o processo, você conhecerá as últimas versões do pandas, NumPy e Jupyter. Escrito por Wes McKinney, o criador do projeto pandas, este livro é uma introdução prática e moderna às ferramentas de ciência de dados em Python. Ele é ideal para analistas iniciantes em Python e para programadores Python iniciantes em ciência de dados e computação científica. Arquivos de dados e materiais relacionados estão disponíveis no GitHub. • Use o Jupyter Notebook e o shell IPython para computação exploratória. • Aprenda recursos básicos e avançados do NumPy. • Comece a usar as ferramentas de análise de dados da biblioteca pandas. • Use ferramentas flexíveis para carregar, limpar, transformar, mesclar e reformatar dados. • Crie visualizações informativas com o matplotlib. • Aplique o recurso groupBy do pandas para detalhar e resumir conjuntos de dados. • Analise e manipule dados de séries temporais regulares e irregulares. • Aprenda a resolver problemas de análise de dados do mundo real com exemplos completos e detalhados. “Com esta nova edição, Wes atualizou seu livro para assegurar que ele permaneça sendo o recurso preferencial para tudo o que estiver relacionado à análise de dados com Python e pandas. É um livro altamente recomendável.” —Paul Barry Palestrante e autor do livro Use a cabeça! Python",
@@ -106,9 +100,7 @@
         },
         "pageCount": 41,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
         "contentVersion": "0.0.1.0.preview.0",
@@ -158,9 +150,7 @@
       "volumeInfo": {
         "title": "Python e mercado financeiro",
         "subtitle": "Programação para estudantes, investidores e analistas",
-        "authors": [
-          "Marco Antonio Leonel Caetano"
-        ],
+        "authors": ["Marco Antonio Leonel Caetano"],
         "publisher": "Editora Blucher",
         "publishedDate": "2021-05-24",
         "description": "Esta obra não está relacionada apenas com o ensino de uma linguagem, no caso, Python. Ela tem foco no aprendizado de algoritmos voltados para o mercado financeiro. As aplicações são dispostas no livro com a utilização de dados reais das bolsas de valores e de produtos financeiros, que são tratados usando ferramentas nas áreas de finanças, matemática, estatística, ciência da computação e ciência dos dados. O texto se divide em duas partes, sendo a primeira composta de capítulos que representam uma evolução, da instalação do ambiente de programação do Anaconda-Spyder até problemas relacionados com array, functions e DataFrames. As principais bibliotecas do Python são usadas para automatizar cálculos de tendência de mercado, risco, value at risk, otimização de carteiras e simulação de Monte Carlo. Os capítulos são contemplados com exemplos e exercícios, todos com soluções. A segunda parte do livro apresenta problemas mais avançados e reais, relacionados ao mercado de títulos, derivativos, ações e demais produtos financeiros, construindo soluções com as bibliotecas mais avançadas do Python. Também fazem parte dos capítulos introdutórios QR Codes que levam a vídeos do próprio autor explicando os exemplos de cada seção, disponíveis em seu canal no YouTube.",
@@ -180,9 +170,7 @@
         },
         "pageCount": 532,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "preview-1.0.0",
@@ -255,9 +243,7 @@
       "volumeInfo": {
         "title": "Python",
         "subtitle": "Escreva seus primeiros programas",
-        "authors": [
-          "Felipe Cruz"
-        ],
+        "authors": ["Felipe Cruz"],
         "publisher": "Editora Casa do Código",
         "publishedDate": "2015-09-11",
         "description": "Existe um movimento na comunidade de programação que diz que você deve aprender uma nova linguagem por ano. Isso faz com que você estude novos conceitos e práticas, melhorando a forma como você trabalha no dia a dia. Mas qual será a sua próxima linguagem? Python é a principal linguagem de programação utilizada no Google e repleta de funcionalidades interessantes. Neste livro, Felipe Cruz vai introduzi-lo ao Python 3, a versão mais atual, mostrando seu funcionamento, sintaxe, manipulação de arquivos, tratamento de exceções, estruturas de dados, a biblioteca padrão e tudo o que você precisa saber para começar a programar nessa linguagem.",
@@ -277,9 +263,7 @@
         },
         "pageCount": 286,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "0.8.8.0.preview.3",
@@ -353,9 +337,7 @@
       "selfLink": "https://www.googleapis.com/books/v1/volumes/4XMjEAAAQBAJ",
       "volumeInfo": {
         "title": "Introdução à programação em Python",
-        "authors": [
-          "Sérgio Furgeri"
-        ],
+        "authors": ["Sérgio Furgeri"],
         "publisher": "Editora Senac São Paulo",
         "publishedDate": "2021-03-12",
         "description": "A Série Universitária foi desenvolvida pelo Senac São Paulo com o intuito de preparar profissionais para o mercado de trabalho. Os títulos abrangem diversas áreas, abordando desde conhecimentos teóricos e práticos adequados às exigências profissionais até a formação ética e sólida. Introdução à programação em Python apresenta aspectos fundamentais da linguagem Python e é indicado para iniciantes ou profissionais em programação de computadores. Para facilitar a compreensão dos conteúdos e aprimorar o desenvolvimento da lógica, o livro descreve a sintaxe usada em Python juntamente com sua representação em fluxogramas. Os principais temas abordados são: estruturas condicionais e de repetição, funções, módulos, listas, acesso a arquivos, orientação a objetos e manipulação do banco de dados SQLite usando interface gráfica. O objetivo é proporcionar um panorama geral de uma das linguagens de programação mais usadas do mercado. Ao final, espera-se que o leitor absorva conhecimentos suficientes para desenvolver programas de pequena e média complexidade, encontrando neste livro uma oportunidade de aprimoramento e atualização profissional.",
@@ -375,9 +357,7 @@
         },
         "pageCount": 163,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "0.1.1.0.preview.3",
@@ -452,9 +432,7 @@
       "volumeInfo": {
         "title": "Python para Ciência de Dados",
         "subtitle": "Uma introdução prática",
-        "authors": [
-          "Yuli Vasiliev"
-        ],
+        "authors": ["Yuli Vasiliev"],
         "publisher": "Novatec Editora",
         "publishedDate": "2023-05-02",
         "description": "Python Para Ciência de Dados é o guia perfeito para programadores, pois elenca as melhores maneiras de se utilizar o Python em aplicações orientadas a dados. Repleto de exemplos práticos, este livro oferece um amplo tour pelas habilidades do Python para obter, transformar e analisar dados. Os leitores conhecerão as robustas estruturas built-in de dados do Python e seu ecossistema poderoso de bibliotecas open source de ciência de dados, incluindo NumPy, pandas, scikit-learn e matplotlib. Como prática, há exemplos de como carregar dados em diversos formatos; streamlining, agrupamento e agregação de conjuntos de dados; e como criar visualizações como gráficos e mapas. Exemplos detalhados ilustram como criar aplicações de dados do mundo cotidiano, incluindo como fornecer dados geográficos a um app de serviço de táxi, análise de regra de associação de dados de transação para identificar itens comumente comprados juntos e um modelo de aprendizado de máquina para predizer tendências do mercado de ações. Cada capítulo apresenta exercícios que incentivam o leitor a testar as técnicas por conta própria. Você aprenderá a: • Manipular estruturas de dados com eficiência, como listas, dicionários, arrays do NumPy e DataFrames do pandas. • Mover dados de e para bancos de dados relacionais e NoSQL. • Obter insights acionáveis sobre os dados por meio de agregação, visualização e outros métodos de análise. • Trabalhar com texto simples, dados de GPS, dados de séries temporais, arquivos JSON e CSV e muitos outros tipos e formatos de dados. • Usar o aprendizado de máquina para tarefas de processamento de linguagem natural, como análise de sentimento. Com o Python para Ciência de Dados, você praticará técnicas modernas de processamento de dados para uso imediato em áreas como gerenciamento de negócios, marketing e finanças. Descubra o poder da linguagem de programação Python.",
@@ -474,9 +452,7 @@
         },
         "pageCount": 284,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "0.1.1.0.preview.3",
@@ -551,10 +527,7 @@
       "volumeInfo": {
         "title": "Programação de redes com Python",
         "subtitle": "Guia abrangente de programação e gerenciamento de redes com Python 3",
-        "authors": [
-          "Brandon Rhodes",
-          "John Goerzen"
-        ],
+        "authors": ["Brandon Rhodes", "John Goerzen"],
         "publisher": "Novatec Editora",
         "publishedDate": "2018-10-09",
         "description": "Programação de redes com Python Programação de redes com Python aborda todos os tópicos clássicos de redes, inclusive protocolos de rede, dados e erros de rede, email, arquitetura de servidores, aplicativos HTTP e web, mais as atualizações de Python 3. Alguns dos novos tópicos desta edição são: •Extensa abordagem do suporte atualizado ao SSL em Python 3. •Como criar seu próprio loop de I/O assíncrono. •Visão geral do framework \"asyncio\" que vem com Python 3.4. •Como o framework web Flask conecta URLs ao código Python. •Como os scripts e a falsificação de solicitações entre sites podem ser usados no ataque a seu site e como se proteger deles. •Como um framework web full-stack como o Django pode automatizar o trajeto de ida e volta entre seu banco de dados e a tela. •Abordagem atualizada das camadas de protocolos de rede e das codificações de dados. Se você é um programador Python que precisa ter uma boa compreensão de como usar a linguagem para tarefas e aplicativos relacionados a redes, este livro é para você. De desenvolvedores de aplicativos web a integradores e administradores de sistemas – Programação de redes com Python, tem tudo de que precisam saber.",
@@ -574,9 +547,7 @@
         },
         "pageCount": 624,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "1.6.5.0.preview.2",
@@ -650,9 +621,7 @@
       "volumeInfo": {
         "title": "Python para Análise de Dados - 3a edição",
         "subtitle": "Tratamento de Dados com pandas, NumPy & Jupyter",
-        "authors": [
-          "Wes McKinney"
-        ],
+        "authors": ["Wes McKinney"],
         "publisher": "Novatec Editora",
         "publishedDate": "2023-03-17",
         "description": "Adquira o manual definitivo para manipulação, processamento, limpeza e extração de informações de conjuntos de dados em Python. Atualizada para Python 3.10 e pandas 1.4, a terceira edição deste guia dinâmico vem com estudos de casos práticos que mostram como resolver um amplo conjunto de problemas de análise de dados de maneira eficaz. Durante o processo, você conhecerá as últimas versões do pandas, NumPy e Jupyter. Escrito por Wes McKinney, o criador do projeto pandas, este livro é uma introdução prática e moderna às ferramentas de ciência de dados em Python. Ele é ideal para analistas iniciantes em Python e para programadores Python iniciantes em ciência de dados e computação científica. Arquivos de dados e materiais relacionados estão disponíveis no GitHub. • Use o Jupyter Notebook e o shell IPython para computação exploratória. • Aprenda recursos básicos e avançados do NumPy. • Comece a usar as ferramentas de análise de dados da biblioteca pandas. • Use ferramentas flexíveis para carregar, limpar, transformar, mesclar e reformatar dados. • Crie visualizações informativas com o matplotlib. • Aplique o recurso groupBy do pandas para detalhar e resumir conjuntos de dados. • Analise e manipule dados de séries temporais regulares e irregulares. • Aprenda a resolver problemas de análise de dados do mundo real com exemplos completos e detalhados. \"Com esta nova edição, Wes atualizou seu livro para assegurar que ele permaneça sendo o recurso preferencial para tudo o que estiver relacionado à análise de dados com Python e pandas. É um livro altamente recomendável.\" —Paul Barry Palestrante e autor do livro Use a cabeça! Python",
@@ -672,9 +641,7 @@
         },
         "pageCount": 536,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": true,
         "contentVersion": "0.2.2.0.preview.3",
@@ -748,9 +715,7 @@
       "selfLink": "https://www.googleapis.com/books/v1/volumes/YAqwDwAAQBAJ",
       "volumeInfo": {
         "title": "Problemas Clássicos de Ciência da Computação com Python",
-        "authors": [
-          "David Kopec"
-        ],
+        "authors": ["David Kopec"],
         "publisher": "Novatec Editora",
         "publishedDate": "2019-09-17",
         "description": "Problemas de ciência da computação aparentemente novos ou ímpares muitas vezes têm raízes em algoritmos clássicos, nas técnicas de programação e em princípios de engenharia. E as abordagens clássicas ainda são a melhor forma de solucioná-los! Compreender essas técnicas em Python faz com que o seu potencial para o sucesso se expanda nas áreas de desenvolvimento web, manipulação de dados, aprendizado de máquina e em outras áreas. Problemas Clássicos de Ciência da Computação com Python permite aprimorar suas habilidades na resolução de problemas de ciência da computação usando Python, com cenários, exercícios e algoritmos consagrados pelo tempo. Você enfrentará dezenas de desafios de programação, os quais variam de tarefas simples como algoritmos de busca binária a clustering de dados usando k-means. Em particular, você apreciará a sensação de satisfação ao resolver problemas que conectam a ciência da computação com questões reais associadas a aplicativos, dados e desempenho, e até mesmo com o sucesso em sua próxima entrevista de emprego! O que o livro contém: ● algoritmos de busca; ● técnicas comuns para grafos; ● redes neurais; ● algoritmos genéticos; ● busca competitiva; ● uso de dicas de tipo em todos os códigos.",
@@ -770,9 +735,7 @@
         },
         "pageCount": 31,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
         "contentVersion": "0.0.1.0.preview.0",
@@ -822,9 +785,7 @@
       "volumeInfo": {
         "title": "Programming in Python 3",
         "subtitle": "A Complete Introduction to the Python Language",
-        "authors": [
-          "Mark Summerfield"
-        ],
+        "authors": ["Mark Summerfield"],
         "publisher": "Addison-Wesley Professional",
         "publishedDate": "2010",
         "description": "Now fully updated, this edition brings together all the knowledge needed to write programs, use any library, and even create new library modules. The book teaches every aspect of the Python 3 language and covers all the built-in functionality.",
@@ -844,9 +805,7 @@
         },
         "pageCount": 648,
         "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
+        "categories": ["Computers"],
         "averageRating": 5,
         "ratingsCount": 1,
         "maturityRating": "NOT_MATURE",

@@ -1,0 +1,10 @@
+{
+  "name": "memoteca-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/memoteca-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["memoteca"],
+  "// targets": "to see all targets run: nx show project memoteca-e2e --web",
+  "targets": {}
+}
