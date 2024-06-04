@@ -3,6 +3,7 @@
 </p>
 
 # Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
+
 O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
 
 Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas as quais tinha vontade de aprendê-las, tais como:
@@ -15,6 +16,7 @@ Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formaç
 [![Eslint](https://img.shields.io/badge/-HookHusky-black?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 
 ## Setup :gear:
+
 - Instale as dependencias `npm install`;
 
 ## Apps (Overview) :movie_camera:
@@ -46,11 +48,13 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 ---
 
 ## Rodando os Apps :hammer_and_wrench:
+
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
 
-## Rodando os testes e2e de cada projeto com o Cypress: 
+## Rodando os testes e2e de cada projeto com o Cypress:
+
 - [App Memoteca](#memoteca) :iphone: - `npm run memoteca-e2e`;
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-e2e`;
 - [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app-e2e`;
@@ -86,17 +90,20 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
    3. RxJS e Angular: programando de forma reativa
 
 3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
-</details>
+   Aqui, você mergulhará no mundo das animações e interações envolventes para aprimorar significativamente a experiência de uso em aplicações Angular. Este passo não só ensinará técnicas de animação, mas também fornecerá insights sobre como gerenciar efetivamente o estado dos componentes para otimizar o desempenho e garantir a estabilidade da sua aplicação.
+
+   1. [A importância do motion design na experiência do usuário - Artigo](https://www.alura.com.br/artigos/importancia-motion-design-experiencia-usuario)
+   </details>
 
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>
 
-- [X] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
-   - [X] Buscante
-   - [X] Memoteca
-   - [X] Todo app 
-   - [X] Forms-reativos
-- [X] Configurar estilos do PrimeNg para todos os APPS
-- [X] Configurar [Cypress](https://www.cypress.io/);
-- [ ] Configurar git hook husky [Husky](https://github.com/typicode/husky).
+- [x] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
+  - [x] Buscante
+  - [x] Memoteca
+  - [x] Todo app
+  - [x] Forms-reativos
+- [x] Configurar estilos do PrimeNg para todos os APPS
+- [x] Configurar [Cypress](https://www.cypress.io/);
+- [x] Configurar git hook husky [Husky](https://github.com/typicode/husky).
 </details>
