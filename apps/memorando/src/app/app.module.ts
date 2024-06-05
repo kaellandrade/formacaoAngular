@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { CabecalhoComponent } from '../../components/cabecalho/Cabecalho.component';
@@ -25,6 +26,7 @@ import { AppRouteReuseStrategy } from './app-route-reuse-strategy';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes, { onSameUrlNavigation: 'reload' }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: AppRouteReuseStrategy }],
