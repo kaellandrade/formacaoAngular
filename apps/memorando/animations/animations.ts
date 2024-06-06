@@ -76,3 +76,42 @@ export const checkStateTrigger = trigger('markedState', [
   ),
   transition('notMarked  <=> marked', [animate(300)]),
 ]);
+
+export const showCardTrigger = trigger('showCard', [
+  transition(':enter', [
+    style({
+      transform: 'scale(0)',
+    }),
+    animate(
+      300,
+      style({
+        opacity: 1,
+        transform: 'scale(1)',
+      }),
+    ),
+  ]),
+  transition(':leave', [
+    animate(
+      300,
+      style({
+        transform: 'scale(0)',
+      }),
+    ),
+  ]),
+]);
+
+export const checkRemoveTrigger = trigger('removeState', [
+  state(
+    'show',
+    style({
+      transform: 'scale(1)',
+    }),
+  ),
+  state(
+    'hidden',
+    style({
+      transform: 'scale(0)',
+    }),
+  ),
+  transition('show  => hidden', [animate(300)]),
+]);

@@ -70,6 +70,7 @@
   <div *ngIf="listaTarefas.length > 0; else semTarefas">
     @for (tarefa of listaTarefas; track $index) {
       <div
+        [@removeState]="removeClick === tarefa.id ? 'hidden' : 'show'"
         class="lista-tarefas card-{{ tarefa.categoria }}"
         (mouseover)="indexTarefa = $index"
         [@highlightedState]="indexTarefa === $index ? 'highlighted' : 'default'"

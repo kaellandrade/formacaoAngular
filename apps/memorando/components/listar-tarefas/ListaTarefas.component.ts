@@ -3,8 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {
+  checkRemoveTrigger,
   checkStateTrigger,
   highlightedStateTrigger,
+  showCardTrigger,
   showStateTrigger,
 } from '../../animations/animations';
 import { Tarefa } from '../../interface/tarefa';
@@ -14,7 +16,13 @@ import { TarefaService } from '../../service/tarefa.service';
   selector: 'app-lista-tarefas',
   templateUrl: './ListaTarefas.component.html',
   styleUrl: './ListaTarefas.component.scss',
-  animations: [highlightedStateTrigger, showStateTrigger, checkStateTrigger],
+  animations: [
+    highlightedStateTrigger,
+    showStateTrigger,
+    checkStateTrigger,
+    showCardTrigger,
+    checkRemoveTrigger,
+  ],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];
@@ -22,6 +30,7 @@ export class ListaTarefasComponent implements OnInit {
   categoria = '';
   validado = false;
   indexTarefa = -1;
+  removeClick = -1;
 
   formulario: FormGroup = this.fomBuilder.group({
     id: [0],
@@ -72,7 +81,10 @@ export class ListaTarefasComponent implements OnInit {
   excluirTarefa(id: number) {
     if (id) {
       this.service.excluir(id).subscribe({
-        complete: () => this.recarregarComponente(),
+        complete: () => {
+          this.removeClick = id;
+          this.recarregarComponente();
+        },
       });
     }
   }
@@ -92,7 +104,9 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   recarregarComponente() {
-    this.router.navigate(['/listaTarefas']);
+    setTimeout(() => {
+      this.router.navigate(['/listaTarefas']);
+    }, 300);
   }
 
   atualizarComponente() {
