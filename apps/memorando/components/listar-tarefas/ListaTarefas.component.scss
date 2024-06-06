@@ -232,11 +232,15 @@ input:focus {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid #6c757d;
+  opacity: 0.8;
+  border: 1px solid #6c757d81;
+
+  transition: 0.3s;
 }
 
 .status-tarefa button:hover {
-  border-color: #84d39b;
+  border-color: 1px solid #84d39b;
+  opacity: 1;
 }
 
 .prioridade-tarefa {
@@ -296,13 +300,8 @@ input:focus {
   box-sizing: border-box;
 }
 
-.icone-unchecked {
-  background: transparent;
-}
-
-.icone-checked {
-  background-image: url('/assets/icones/check-Feito.png');
-  border: none !important;
+.btn-check {
+  background-repeat: no-repeat;
 }
 
 .categoria-Casa {

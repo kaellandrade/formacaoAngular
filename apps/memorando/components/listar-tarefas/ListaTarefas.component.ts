@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { highlightedStateTrigger } from '../../animations/animations';
+import {
+  checkStateTrigger,
+  highlightedStateTrigger,
+  showStateTrigger,
+} from '../../animations/animations';
 import { Tarefa } from '../../interface/tarefa';
 import { TarefaService } from '../../service/tarefa.service';
 
@@ -10,7 +14,7 @@ import { TarefaService } from '../../service/tarefa.service';
   selector: 'app-lista-tarefas',
   templateUrl: './ListaTarefas.component.html',
   styleUrl: './ListaTarefas.component.scss',
-  animations: [highlightedStateTrigger],
+  animations: [highlightedStateTrigger, showStateTrigger, checkStateTrigger],
 })
 export class ListaTarefasComponent implements OnInit {
   listaTarefas: Tarefa[] = [];

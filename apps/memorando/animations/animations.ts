@@ -31,3 +31,48 @@ export const highlightedStateTrigger = trigger('highlightedState', [
     animate(200),
   ]),
 ]);
+
+/* Utilizando coringa(wildcard) para elementos que ainda não foram anexados ao DOM... */
+export const showStateTrigger = trigger('showState', [
+  transition(':enter', [
+    style({
+      opacity: 0,
+    }),
+    animate(
+      300,
+      style({
+        opacity: 1,
+      }),
+    ),
+  ]),
+  transition(':leave', [
+    animate(
+      300,
+      style({
+        opacity: 0,
+      }),
+    ),
+  ]),
+]);
+
+export const checkStateTrigger = trigger('markedState', [
+  state(
+    'notMarked',
+    style({
+      background: 'transparent',
+      'background-size': '0%',
+      'background-position': 'center',
+      'box-shadow': '0px 0px 0px 0px rgba(0,0,0,0.00)',
+    }),
+  ),
+  state(
+    'marked',
+    style({
+      'background-image': "url('/assets/icones/check-Feito.png')",
+      'background-size': '100%',
+      'background-position': 'center',
+      'box-shadow': '0px 0px 0px 5px rgba(0,0,0,0.06)',
+    }),
+  ),
+  transition('notMarked  <=> marked', [animate(300)]),
+]);

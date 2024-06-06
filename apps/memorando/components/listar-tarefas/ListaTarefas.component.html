@@ -3,6 +3,7 @@
     <button (click)="mostrarOuEsconderFormulario()">Criar nova tarefa</button>
   </div>
   <form
+    [@showState]
     class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto"
@@ -67,49 +68,63 @@
     />
   </div>
   <div *ngIf="listaTarefas.length > 0; else semTarefas">
-    <div
-      class="lista-tarefas card-{{ tarefa.categoria }}"
-      *ngFor="let tarefa of listaTarefas; let i = index"
-      (mouseover)="indexTarefa = i"
-      [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'"
-    >
-      <div class="info-card">
-        <p class="categoria-tarefa categoria-{{ tarefa.categoria }}">
-          <img
-            src="assets/icones/{{ tarefa.categoria }}.png"
-            alt="Ícone de {{ tarefa.categoria }}"
-          />
-          {{ tarefa.categoria }}
-        </p>
-        <p class="prioridade-tarefa prioridade-{{ tarefa.prioridade }}">
-          {{ tarefa.prioridade }}
-        </p>
-        <p class="status-tarefa">
-          <button
-            [ngClass]="
-              tarefa.statusFinalizado ? 'icone-checked' : 'icone-unchecked'
-            "
-            (click)="finalizarTarefa(tarefa.id)"
-          ></button>
-        </p>
-      </div>
-      <div class="conteudo">
-        <p
-          class="card-descricao ff-prompt
-            card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}"
-        >
-          {{ tarefa.descricao }}
-        </p>
-        <div class="botoes-card">
-          <button class="botao-editar" (click)="carregarParaEditar(tarefa.id)">
-            <img src="assets/icones/icone-editar.png" alt="Ícone de editar" />
-          </button>
-          <button (click)="excluirTarefa(tarefa.id)" class="botao-deletar">
-            <img src="assets/icones/icone-excluir.png" alt="Ícone de excluir" />
-          </button>
+    @for (tarefa of listaTarefas; track $index) {
+      <div
+        class="lista-tarefas card-{{ tarefa.categoria }}"
+        (mouseover)="indexTarefa = $index"
+        [@highlightedState]="indexTarefa === $index ? 'highlighted' : 'default'"
+      >
+        <div class="info-card">
+          <p class="categoria-tarefa categoria-{{ tarefa.categoria }}">
+            <img
+              src="assets/icones/{{ tarefa.categoria }}.png"
+              alt="Ícone de {{ tarefa.categoria }}"
+            />
+            {{ tarefa.categoria }}
+          </p>
+          <p class="prioridade-tarefa prioridade-{{ tarefa.prioridade }}">
+            {{ tarefa.prioridade }}
+          </p>
+          <p class="status-tarefa">
+            <button
+              [title]="
+                tarefa.statusFinalizado ? 'Desmarcar tarefa' : 'Marcar tarefa'
+              "
+              class="btn-check"
+              [@markedState]="tarefa.statusFinalizado ? 'marked' : 'notMarked'"
+              (click)="finalizarTarefa(tarefa.id)"
+            ></button>
+          </p>
+        </div>
+        <div class="conteudo">
+          <p
+            class="card-descricao ff-prompt
+              card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}"
+          >
+            {{ tarefa.descricao }}
+          </p>
+          <div class="botoes-card">
+            <button
+              class="botao-editar"
+              (click)="carregarParaEditar(tarefa.id)"
+              title="Editar tarefa"
+            >
+              <img src="assets/icones/icone-editar.png" alt="Ícone de editar" />
+            </button>
+            <button
+              (click)="excluirTarefa(tarefa.id)"
+              class="botao-deletar"
+              title="Apagar tarefa"
+            >
+              <img
+                src="assets/icones/icone-excluir.png"
+                alt="Ícone de excluir"
+              />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    }
   </div>
 </section>
 <ng-template #semTarefas>
