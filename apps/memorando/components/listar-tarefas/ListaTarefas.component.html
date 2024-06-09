@@ -1,6 +1,8 @@
 <section class="criar-tarefa">
   <div class="botao-criar">
-    <button (click)="mostrarOuEsconderFormulario()">Criar nova tarefa</button>
+    <button data-cy="criar-task" (click)="mostrarOuEsconderFormulario()">
+      Criar nova tarefa
+    </button>
   </div>
   <form
     [@showState]
@@ -10,6 +12,7 @@
   >
     <label for="descricao">Descrição da tarefa</label>
     <input
+      data-cy="input-task"
       required
       type="text"
       formControlName="descricao"
@@ -20,6 +23,7 @@
     </app-mensagem>
     <label for="prioridade">Prioridade</label>
     <select
+      data-cy="select-prioridade"
       required
       formControlName="prioridade"
       [ngClass]="campoValidado('prioridade')"
@@ -33,6 +37,7 @@
     </app-mensagem>
     <label for="categoria">Categoria</label>
     <select
+      data-cy="select-categoria"
       required
       formControlName="categoria"
       [ngClass]="campoValidado('categoria')"
@@ -48,12 +53,17 @@
       <button
         (click)="salvarTarefa()"
         class="botao-form"
+        data-cy="btn-salvar"
         [ngClass]="habilitarBotao()"
         [disabled]="!formulario.valid"
       >
         Salvar
       </button>
-      <button (click)="cancelar()" class="botao-form botao-cancelar">
+      <button
+        data-cy="bt-cancelar"
+        (click)="cancelar()"
+        class="botao-form botao-cancelar"
+      >
         Cancelar
       </button>
     </div>
@@ -91,6 +101,7 @@
           </p>
           <p class="status-tarefa">
             <button
+              [attr.data-cy]="'btn-marcar-' + tarefa.id"
               [title]="
                 tarefa.statusFinalizado ? 'Desmarcar tarefa' : 'Marcar tarefa'
               "
@@ -119,6 +130,7 @@
               (click)="excluirTarefa(tarefa.id)"
               class="botao-deletar"
               title="Apagar tarefa"
+              [attr.data-cy]="'btn-apagar-' + tarefa.id"
             >
               <img
                 src="assets/icones/icone-excluir.png"

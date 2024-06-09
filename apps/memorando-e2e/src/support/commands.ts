@@ -14,23 +14,35 @@
 declare namespace Cypress {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Chainable<Subject> {
-    login(email: string, password: string): void;
+    mockarBuscarTarefa(): void;
+    mockarDeletarTarefa(): void;
+    mockarEditarTarefa(): void;
+    mockarCadastrarTarefa(): void;
   }
 }
 
-// -- This is a parent command --
-Cypress.Commands.add('login', (email, password) => {
-  // eslint-disable-next-line no-console
-  consoles.log('Custom command example: Login', email, password);
-});
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+const mockarBuscarTarefa = () => {
+  cy.intercept('GET', '**/memorando-back*', {
+    fixture: 'memorias',
+  }).as('mockarBuscarMemorias');
+};
+
+Cypress.Commands.add('mockarBuscarTarefa', mockarBuscarTarefa);
+
+const mockarDeletarTarefa = () => {
+  cy.intercept('DELETE', '**/memorando-back/**', {}).as('mockarDeletarTarefa');
+};
+
+Cypress.Commands.add('mockarDeletarTarefa', mockarDeletarTarefa);
+
+const mockarEditarTarefa = () => {
+  cy.intercept('PUT', '**/memorando-back/**', {}).as('mockarEditarTarefa');
+};
+
+Cypress.Commands.add('mockarEditarTarefa', mockarEditarTarefa);
+
+const mockarCadastrarTarefa = () => {
+  cy.intercept('POST', '**/memorando-back*', {}).as('mockarCadastrarTarefa');
+};
+
+Cypress.Commands.add('mockarCadastrarTarefa', mockarCadastrarTarefa);
