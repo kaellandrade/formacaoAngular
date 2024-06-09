@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {
   checkRemoveTrigger,
   checkStateTrigger,
+  highlightedStateEditTrigger,
   highlightedStateTrigger,
   showCardTrigger,
   showStateTrigger,
@@ -22,6 +23,7 @@ import { TarefaService } from '../../service/tarefa.service';
     checkStateTrigger,
     showCardTrigger,
     checkRemoveTrigger,
+    highlightedStateEditTrigger,
   ],
 })
 export class ListaTarefasComponent implements OnInit {
@@ -31,6 +33,7 @@ export class ListaTarefasComponent implements OnInit {
   validado = false;
   indexTarefa = -1;
   removeClick = -1;
+  editClick = -1;
 
   formulario: FormGroup = this.fomBuilder.group({
     id: [0],
@@ -68,7 +71,10 @@ export class ListaTarefasComponent implements OnInit {
 
   editarTarefa() {
     this.service.editar(this.formulario.value).subscribe({
-      complete: () => this.atualizarComponente(),
+      complete: () => {
+        this.editClick = this.formulario.value.id;
+        this.atualizarComponente();
+      },
     });
   }
 

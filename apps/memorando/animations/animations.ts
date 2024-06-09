@@ -115,3 +115,27 @@ export const checkRemoveTrigger = trigger('removeState', [
   ),
   transition('show  => hidden', [animate(300)]),
 ]);
+
+export const highlightedStateEditTrigger = trigger('highlightedEditState', [
+  state(
+    'default',
+    style({
+      border: '3px solid #B2B6FF',
+    }),
+  ),
+  state(
+    'highlightedEdited',
+    style({
+      border: '2px solid #B2B6FF',
+    }),
+  ),
+  transition('default => highlightedEdited', [
+    animate(
+      '200ms ease-out',
+      style({
+        transform: 'scale(1.02)',
+      }),
+    ),
+    animate(200),
+  ]),
+]);

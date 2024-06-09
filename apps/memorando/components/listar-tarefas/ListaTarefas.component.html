@@ -74,6 +74,9 @@
         class="lista-tarefas card-{{ tarefa.categoria }}"
         (mouseover)="indexTarefa = $index"
         [@highlightedState]="indexTarefa === $index ? 'highlighted' : 'default'"
+        [@highlightedEditState]="
+          tarefa.id === editClick ? 'default' : 'highlightedEdited'
+        "
       >
         <div class="info-card">
           <p class="categoria-tarefa categoria-{{ tarefa.categoria }}">
