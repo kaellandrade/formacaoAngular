@@ -1,5 +1,8 @@
 import {
   animate,
+  group,
+  keyframes,
+  query,
   state,
   style,
   transition,
@@ -137,5 +140,104 @@ export const highlightedStateEditTrigger = trigger('highlightedEditState', [
       }),
     ),
     animate(200),
+  ]),
+]);
+
+export const filterTrigger = trigger('filterAnimation', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    animate(
+      '400ms cubic-bezier(0.33, 1, 0.68, 1)',
+      keyframes([
+        style({
+          opacity: 0,
+          transform: 'scale(0)',
+          offset: 0,
+        }),
+        style({
+          opacity: 0.5,
+          transform: 'scale(0.5)',
+          offset: 0,
+        }),
+        style({
+          opacity: 1,
+          transform: 'scale(1)',
+          offset: 1,
+        }),
+      ]),
+    ),
+  ]),
+  transition(':leave', [
+    animate(
+      '400ms cubic-bezier(0.33, 1, 0.68, 1)',
+      keyframes([
+        style({
+          opacity: 1,
+          transform: 'scale(1)',
+          offset: 0,
+        }),
+        style({
+          opacity: 0.5,
+          transform: 'scale(0.5)',
+          offset: 0,
+        }),
+        style({
+          opacity: 0,
+          transform: 'scale(0)',
+          offset: 1,
+        }),
+      ]),
+    ),
+  ]),
+]);
+
+export const formButtonTrigger = trigger('formButton', [
+  transition('invalid => valid', [
+    query('#botao-salvar', [
+      group([
+        animate(
+          200,
+          style({
+            backgroundColor: '#63B77C',
+          }),
+        ),
+        animate(
+          100,
+          style({
+            transform: 'scale(1.1)',
+          }),
+        ),
+      ]),
+      animate(
+        200,
+        style({
+          transform: 'scale(1)',
+        }),
+      ),
+    ]),
+  ]),
+  transition('valid => invalid', [
+    query('#botao-salvar', [
+      group([
+        animate(
+          200,
+          style({
+            backgroundColor: '#6C757D',
+          }),
+        ),
+        animate(
+          100,
+          style({
+            transform: 'scale(1.1)',
+          }),
+        ),
+      ]),
+      animate(
+        200,
+        style({
+          transform: 'scale(1)',
+        }),
+      ),
+    ]),
   ]),
 ]);

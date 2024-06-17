@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import {
   checkRemoveTrigger,
   checkStateTrigger,
+  filterTrigger,
+  formButtonTrigger,
   highlightedStateEditTrigger,
   highlightedStateTrigger,
   showCardTrigger,
@@ -24,6 +26,8 @@ import { TarefaService } from '../../service/tarefa.service';
     showCardTrigger,
     checkRemoveTrigger,
     highlightedStateEditTrigger,
+    filterTrigger,
+    formButtonTrigger,
   ],
 })
 export class ListaTarefasComponent implements OnInit {
