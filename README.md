@@ -107,5 +107,6 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
   - [x] Forms-reativos
 - [x] Configurar estilos do PrimeNg para todos os APPS
 - [x] Configurar [Cypress](https://www.cypress.io/);
-- [x] Configurar git hook husky [Husky](https://github.com/typicode/husky).
+- [x] Configurar git hook husky [Husky](https://github.com/typicode/husky);
+- [ ] Configurar JEST e testes unitários (alguns).
 </details>

@@ -77,8 +77,18 @@
       alt="Ilustração de um ambiente com mesa, computador, quadro e um vaso com planta"
     />
   </div>
-  <div *ngIf="listaTarefas.length > 0; else semTarefas">
-    @for (tarefa of listaTarefas; track $index) {
+  <div class="busca">
+    <p class="ff-prompt">Procurando o que fazer ?</p>
+    <input
+      (keyup)="filtrarTarefasPorDescricao(campoBusca)"
+      [(ngModel)]="campoBusca"
+      type="search"
+      id="campo-busca"
+      placeholder="Busque por uma tarefa"
+    />
+  </div>
+  <div *ngIf="tarefasFiltradas.length > 0; else semTarefas">
+    @for (tarefa of tarefasFiltradas; track $index) {
       <div
         [@removeState]="removeClick === tarefa.id ? 'hidden' : 'show'"
         class="lista-tarefas card-{{ tarefa.categoria }}"

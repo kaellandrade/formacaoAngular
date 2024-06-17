@@ -1,3 +1,31 @@
+.busca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-top: 40px;
+
+  p {
+    color: #6c757d;
+    font-size: 16px;
+    margin-right: 32px;
+  }
+
+  input {
+    border: 1px solid #6c757d;
+    border-radius: 8px;
+    font-family: 'Prompt';
+    font-size: 12px;
+    height: 40px;
+    width: 200px;
+    padding-left: 12px;
+
+    &::placeholder {
+      color: #6c757d;
+    }
+  }
+}
+
 .lista-tarefas {
   display: flex;
   flex-direction: column;
