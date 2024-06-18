@@ -5,6 +5,7 @@
     </button>
   </div>
   <form
+    [@shakeAnimation]="formulario.value"
     [@formButton]="formulario.valid ? 'valid' : 'invalid'"
     @showState
     class="formulario ff-prompt"
@@ -120,7 +121,7 @@
               "
               class="btn-check"
               [@markedState]="tarefa.statusFinalizado ? 'marked' : 'notMarked'"
-              (click)="finalizarTarefa(tarefa.id)"
+              (click)="finalizarTarefa(tarefa)"
             ></button>
           </p>
         </div>
@@ -140,7 +141,7 @@
               <img src="assets/icones/icone-editar.png" alt="Ícone de editar" />
             </button>
             <button
-              (click)="excluirTarefa(tarefa.id)"
+              (click)="excluirTarefa(tarefa)"
               class="botao-deletar"
               title="Apagar tarefa"
               [attr.data-cy]="'btn-apagar-' + tarefa.id"

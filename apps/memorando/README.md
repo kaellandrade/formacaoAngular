@@ -33,3 +33,5 @@ Veja um exemplo de ambos:
     ]),
   ]),
 ```
+
+Pode acontecer de o Angular lançar erros ao tentar Animar um elemento que ainda não foi renderizado na DOM. Para isso podemos utiliza o `{optional:true}`.
