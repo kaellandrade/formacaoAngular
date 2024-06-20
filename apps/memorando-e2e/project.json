@@ -1,0 +1,10 @@
+{
+  "name": "memorando-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/memorando-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["memorando"],
+  "// targets": "to see all targets run: nx show project memorando-e2e --web",
+  "targets": {}
+}

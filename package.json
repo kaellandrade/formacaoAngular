@@ -8,7 +8,9 @@
   "scripts": {
     "memoteca-app": "concurrently \"npx nx@19.0.4 run memoteca:serve -o  \" \"npx nx@19.0.4 run memoteca:backend\"",
     "buscante-app": "npx nx@19.0.4 run buscante:serve -o",
+    "memorando-app": "concurrently \"npx nx@19.0.4 run memorando:serve -o  \" \"npx nx@19.0.4 run memorando:backend\"",
     "memoteca-e2e": "npx nx@19.0.4 open-cypress memoteca-e2e",
+    "memorando-e2e": "npx nx@19.0.4 open-cypress memorando-e2e",
     "todo-app-e2e": "npx nx@19.0.4 open-cypress life-cycle-e2e",
     "buscante-e2e": "npx nx@19.0.4 open-cypress0 buscante-e2e",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
@@ -57,6 +59,7 @@
     "@nx/jest": "19.0.4",
     "@nx/js": "19.0.4",
     "@nx/playwright": "19.0.4",
+    "@nx/web": "19.0.4",
     "@nx/workspace": "19.0.4",
     "@playwright/test": "^1.36.0",
     "@schematics/angular": "~17.3.0",
