@@ -51,3 +51,8 @@ O BehavioSubject precisa de um valor inicial em sua instanciação. Retornando a
 > Se você precisar de mais emissões históricas, considere `ReplaySubject`
 
 > E se você não precisa de nenhum histórico, um `Subject` pode ser o que você está procurando.
+
+## Desabilitando animações
+
+Há momentos que desabilitar animações fazem sentido, por exemplo na hora de realizar os testes de integração da aplicação.
+Para isso o Angular disponibiliza um module chamado `NoopAnimationsModule`, basta importá-lo e pronto. Suas animações estão desabilitadas.
