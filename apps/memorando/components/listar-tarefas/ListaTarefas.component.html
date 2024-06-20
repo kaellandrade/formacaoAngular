@@ -90,7 +90,7 @@
       placeholder="Busque por uma tarefa"
     />
   </div>
-  <div *ngIf="tarefasFiltradas.length > 0; else semTarefas">
+  <div @listState *ngIf="tarefasFiltradas.length > 0; else semTarefas">
     @for (tarefa of tarefasFiltradas; track $index) {
       <div
         @filterAnimation
@@ -158,7 +158,8 @@
   </div>
 </section>
 <ng-template #semTarefas>
-  <p @showState class="ng-template ff-prompt">
+  <p @showMsg class="ng-template ff-prompt">
     Olá! Ainda não há tarefas por aqui! :)
   </p>
 </ng-template>
+a

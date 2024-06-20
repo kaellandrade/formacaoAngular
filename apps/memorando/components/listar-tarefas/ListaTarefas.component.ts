@@ -9,8 +9,10 @@ import {
   formButtonTrigger,
   highlightedStateEditTrigger,
   highlightedStateTrigger,
+  listStateTrigger,
   shakeTrigger,
   showCardTrigger,
+  showMsgTrigger,
   showStateTrigger,
 } from '../../animations/animations';
 import { Tarefa } from '../../interface/tarefa';
@@ -30,6 +32,8 @@ import { TarefaService } from '../../service/tarefa.service';
     filterTrigger,
     formButtonTrigger,
     shakeTrigger,
+    listStateTrigger,
+    showMsgTrigger,
   ],
 })
 export class ListaTarefasComponent implements OnInit {
