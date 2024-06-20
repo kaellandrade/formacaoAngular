@@ -101,6 +101,8 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>
 
+## Configurar
+
 - [x] Configurar um [Monorepo NX](https://nx.dev/concepts/more-concepts/why-monorepos) para esses projetos (configurar projetos);
   - [x] Buscante
   - [x] Memoteca
@@ -109,6 +111,9 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 - [x] Configurar estilos do PrimeNg para todos os APPS
 - [x] Configurar [Cypress](https://www.cypress.io/);
 - [x] Configurar git hook husky [Husky](https://github.com/typicode/husky);
-- [ ] Animar outros projetos
 - [ ] Configurar JEST e testes unitários (alguns).
+
+## Desafios opcionais
+
+- [ ] Animar outros projetos
 </details>
