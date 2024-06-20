@@ -94,8 +94,9 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
 
    1. [A importância do motion design na experiência do usuário - Artigo](https://www.alura.com.br/artigos/importancia-motion-design-experiencia-usuario)
    </details>
-   2. Angular: torne sua aplicação interativa e personalizada com animações 3.[Como o Motion Design pode contribuir para a UX/UI](https://www.alura.com.br/artigos/como-motion-design-pode-contribuir-uxui)
-   3. Angular: aprimore suas técnicas de animação e crie interfaces ainda mais atraentes
+   2. Angular: torne sua aplicação interativa e personalizada com animações
+   3. [Como o Motion Design pode contribuir para a UX/UI](https://www.alura.com.br/artigos/como-motion-design-pode-contribuir-uxui)
+   4. Angular: aprimore suas técnicas de animação e crie interfaces ainda mais atraentes
 
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>
