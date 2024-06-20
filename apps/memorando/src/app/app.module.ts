@@ -2,7 +2,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 
 import { CabecalhoComponent } from '../../components/cabecalho/Cabecalho.component';
@@ -27,6 +30,7 @@ import { appRoutes } from './app.routes';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
+    // NoopAnimationsModule,
   ],
   bootstrap: [AppComponent],
 })
