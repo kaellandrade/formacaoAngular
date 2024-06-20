@@ -93,10 +93,10 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
    Aqui, você mergulhará no mundo das animações e interações envolventes para aprimorar significativamente a experiência de uso em aplicações Angular. Este passo não só ensinará técnicas de animação, mas também fornecerá insights sobre como gerenciar efetivamente o estado dos componentes para otimizar o desempenho e garantir a estabilidade da sua aplicação.
 
    1. [A importância do motion design na experiência do usuário - Artigo](https://www.alura.com.br/artigos/importancia-motion-design-experiencia-usuario)
-   </details>
    2. Angular: torne sua aplicação interativa e personalizada com animações
    3. [Como o Motion Design pode contribuir para a UX/UI](https://www.alura.com.br/artigos/como-motion-design-pode-contribuir-uxui)
    4. Angular: aprimore suas técnicas de animação e crie interfaces ainda mais atraentes
+   </details>
 
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>
