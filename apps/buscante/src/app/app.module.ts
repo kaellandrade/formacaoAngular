@@ -15,11 +15,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { LivroComponent } from './components/livro/livro.component';
+import { ModalLivroComponent } from './components/modal-livro/modal-livro.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { ListaLivrosComponent } from './pages/lista-livros/lista-livros.component';
 import { AutoriaPipe } from './pipes/autoria.pipe';
 import { TruncatePipe } from './pipes/truncate.pipe';
-import { ListaLivrosComponent } from './views/lista-livros/lista-livros.component';
-import { ModalLivroComponent } from './views/modal-livro/modal-livro.component';
 
 @NgModule({
   declarations: [
