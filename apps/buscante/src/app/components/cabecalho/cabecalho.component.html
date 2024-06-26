@@ -1,26 +1,19 @@
 <header
-  [ngStyle]="{backgroundColor:'var(--primary-color)'}"
-	class="grid p-2 flex flex-row justify-content-center align-content-around">
-	<button class="col-4" (click)="irParaTelaInicial()">
-		<img
-			class="w-12 md:w-3 border-round"
-      [ngStyle]="{backgroundColor:'white'}"
-			src="assets/imagens/logo.png"
-			alt="Logo da aplicação Buscante" />
-	</button>
-	<div
-		class="col-8 flex justify-content-around uppercase align-items-center font-bold gap-5 md:justify-content-end">
-		<a
-			href="https://kaellandrade.github.io/cael/"
-			target="_blank"
-			class="text-white"
-			>Sobre</a
-		>
-		<a
-			class="text-white"
-			href="https://www.linkedin.com/in/micael-andrade-784523220/"
-			target="_blank"
-			>Contato</a
-		>
-	</div>
+  [ngStyle]="{ backgroundColor: 'var(--primary-color)' }"
+  class="grid p-2 flex flex-row justify-content-center align-content-around"
+>
+  <a class="col-4" routerLink="/">
+    <img
+      class="w-12 md:w-3 border-round"
+      [ngStyle]="{ backgroundColor: 'white' }"
+      src="assets/imagens/logo.png"
+      alt="Logo da aplicação Buscante"
+    />
+  </a>
+  <div
+    class="col-8 flex justify-content-around uppercase align-items-center font-bold gap-5 md:justify-content-end"
+  >
+    <a routerLink="/sobre" class="text-white">Sobre</a>
+    <a class="text-white" routerLink="/contato">Contato</a>
+  </div>
 </header>
