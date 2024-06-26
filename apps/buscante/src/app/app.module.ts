@@ -24,7 +24,6 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 @NgModule({
   declarations: [
     AppComponent,
-    CabecalhoComponent,
     RodapeComponent,
     LivroComponent,
     ListaLivrosComponent,
@@ -46,6 +45,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     DialogModule,
     BrowserAnimationsModule,
     SharedUiComponent,
+    CabecalhoComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
