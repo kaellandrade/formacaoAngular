@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-import { Livro } from '../../models/interfaces';
+import { LivroVolumeInfo } from '../../models/LivroVolumeInfo';
 
 const body = document.querySelector('body');
 
@@ -10,7 +10,7 @@ const body = document.querySelector('body');
   styleUrls: ['./modal-livro.component.css'],
 })
 export class ModalLivroComponent {
-  @Input() livro: Livro;
+  @Input() livro: LivroVolumeInfo;
   @Input() statusModal = true;
   @Output() mudouModal = new EventEmitter();
 
