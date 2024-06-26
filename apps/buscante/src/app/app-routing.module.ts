@@ -7,21 +7,24 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'lista-livros',
-    pathMatch: 'full',
-  },
-  {
     path: 'lista-livros',
     component: ListaLivrosComponent,
+    title: 'Lista de livros',
   },
   {
     path: 'sobre',
     component: SobreComponent,
+    title: 'Mais informações - Buscante',
   },
   {
     path: 'contato',
     component: ContatoComponent,
+    title: 'Fale conosco - Buscante',
+  },
+  {
+    path: '',
+    redirectTo: 'lista-livros',
+    pathMatch: 'full',
   },
 ];
 
