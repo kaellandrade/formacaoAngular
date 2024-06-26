@@ -2,7 +2,12 @@
   [ngStyle]="{ backgroundColor: 'var(--primary-color)' }"
   class="grid p-2 flex flex-row justify-content-center align-content-around"
 >
-  <a class="col-4" routerLink="/">
+  <a
+    class="col-4"
+    routerLink="/lista-livros"
+    ariaCurrentWhenActive="page"
+    aria-label="Página inicial"
+  >
     <img
       class="w-12 md:w-3 border-round"
       [ngStyle]="{ backgroundColor: 'white' }"
@@ -13,7 +18,21 @@
   <div
     class="col-8 flex justify-content-around uppercase align-items-center font-bold gap-5 md:justify-content-end"
   >
-    <a routerLink="/sobre" class="text-white">Sobre</a>
-    <a class="text-white" routerLink="/contato">Contato</a>
+    <a
+      routerLink="/sobre"
+      class="text-white"
+      routerLinkActive="active-page"
+      ariaCurrentWhenActive="page"
+      aria-label="Nossos serviços"
+      >Sobre</a
+    >
+    <a
+      class="text-white"
+      routerLink="/contato"
+      routerLinkActive="active-page"
+      ariaCurrentWhenActive="page"
+      aria-label="Entre em contato"
+      >Contato</a
+    >
   </div>
 </header>
