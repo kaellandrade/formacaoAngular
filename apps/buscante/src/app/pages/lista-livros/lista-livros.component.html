@@ -20,7 +20,7 @@
       >Busque por assunto, autoria, nome...</b
     >
     <hr />
-    <div class="resultados mensagem-erro" *ngIf="mensagemErro">
+    <div role="alert" class="resultados mensagem-erro" *ngIf="mensagemErro">
       {{ mensagemErro }}
     </div>
     <div class="resultados" *ngIf="totalDeLivros$ | async as totalDeLivros">

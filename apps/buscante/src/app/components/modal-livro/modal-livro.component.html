@@ -51,6 +51,7 @@
   <p-divider type="dashed"></p-divider>
   <ng-template pTemplate="footer">
     <p-button
+      [ariaLabel]="'Ler prévia do livro' + livro.title"
       iconPos="right"
       icon="pi pi-book"
       (click)="lerPrevia()"
