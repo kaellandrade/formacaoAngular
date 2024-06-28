@@ -24,7 +24,7 @@ Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formaç
 
 ### Buscador de Livos
 
-Aplicação que utiliza a [API pública do Google](https://developers.google.com/books) busca de livros.
+Aplicação que utiliza a [API pública do Google](https://developers.google.com/books) para busca de livros.
 
 Aqui apliquei técnicas de [FRP(Functional reactive programming)](https://en.wikipedia.org/wiki/Functional_reactive_programming) e como utilizar a lib [RXJS](https://rxjs.dev/) para trabalhar com [streams](https://en.wikipedia.org/wiki/Data_stream) de dados com [observables](https://rxjs.dev/guide/observable) e como combinar observables com os [operadores do RxJS](https://rxjs.dev/api/operators).
 
