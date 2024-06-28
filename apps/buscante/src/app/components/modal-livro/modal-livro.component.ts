@@ -2,8 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { LivroVolumeInfo } from '../../models/LivroVolumeInfo';
 
-const body = document.querySelector('body');
-
 @Component({
   selector: 'app-modal-livro',
   templateUrl: './modal-livro.component.html',
@@ -17,13 +15,6 @@ export class ModalLivroComponent {
   fecharModal(): void {
     this.statusModal = false;
     this.mudouModal.emit(this.statusModal);
-    body.style.overflow = 'scroll';
-  }
-
-  esconderScroll(): void {
-    if (this.statusModal) {
-      body.style.overflow = 'hidden';
-    }
   }
 
   lerPrevia(): void {

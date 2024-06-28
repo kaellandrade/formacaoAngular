@@ -169,7 +169,7 @@ textarea::placeholder {
   border: 1px solid red;
 }
 
-.contato-botoes .botao-enviar:disabled {
+.contato-botoes .botao-enviardisabled {
   background-color: #ccc;
   color: #666;
   cursor: not-allowed;
