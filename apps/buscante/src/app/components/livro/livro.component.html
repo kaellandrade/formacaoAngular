@@ -5,12 +5,18 @@
         class="w-5 border-round"
         alt="Card"
         src="{{
-					livro.thumbnail?.thumbnail
-						? livro.thumbnail?.thumbnail
-						: 'assets/imagens/capa-indisponivel.png'
-				}}" />
-      <div class="flex-grow-1 px-3">
-        <h3 class="m-0 text-gray-800">{{ livro.title | slice: 0 : 30 }}</h3>
+          livro.thumbnail?.thumbnail
+            ? livro.thumbnail?.thumbnail
+            : 'assets/imagens/capa-indisponivel.png'
+        }}"
+      />
+      <section class="flex-grow-1 px-3" role="region">
+        <h3
+          [attr.aria-label]="'Titulo do livro' + livro.title"
+          class="m-0 text-gray-800"
+        >
+          {{ livro.title | slice: 0 : 30 }}
+        </h3>
         <h6 class="m-0 text-gray-600 mt-2">{{ livro.authors | autoria }}</h6>
         <p-divider type="dashed"></p-divider>
         <div>
@@ -20,10 +26,10 @@
         <div class="mt-2">
           <span>Editora: </span>
           <strong>{{
-              (livro.publisher | slice: 0 : 30) ?? 'Não identificado'
-            }}</strong>
+            (livro.publisher | slice: 0 : 30) ?? 'Não identificado'
+          }}</strong>
         </div>
-      </div>
+      </section>
     </div>
     <p-divider type="dashed"></p-divider>
   </ng-template>
@@ -36,18 +42,20 @@
         *ngIf="isCountrySuported"
         src="assets/flags/{{ livro.language }}.svg"
         alt="Bandeira país"
-        title="{{ livro.language }}" />
+        title="{{ livro.language }}"
+      />
     </div>
     <p-button
-      [attr.data-cy]="'btn-book'+index"
+      [attr.data-cy]="'btn-book' + index"
       (onClick)="onModalChange(true)"
       label="Mais detalhes"
       icon="pi pi-info-circle"
-      [style]="{ 'margin-left': '.5em', width: '100%' }"></p-button>
+      [style]="{ 'margin-left': '.5em', width: '100%' }"
+    ></p-button>
   </ng-template>
 </p-card>
-<div *ngIf="modalAberto">
-  <app-modal-livro
-    [livro]="livro"
-    (mudouModal)="onModalChange($event)"></app-modal-livro>
-</div>
+<app-modal-livro
+  [visivel]="modalAberto"
+  [livro]="livro"
+  (closeModal)="onModalChange($event)"
+></app-modal-livro>

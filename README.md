@@ -89,14 +89,22 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/fd632ff7-a7a8-4f
    2. [Programação Reativa](https://www.youtube.com/watch?v=ifA-57jTk7Y)
    3. RxJS e Angular: programando de forma reativa
 
-3. Melhore a experiência do usuário com animações e interações atrativas no Angular(em andamento...)
+3. Melhore a experiência do usuário com animações e interações atrativas no Angular
    Aqui, você mergulhará no mundo das animações e interações envolventes para aprimorar significativamente a experiência de uso em aplicações Angular. Este passo não só ensinará técnicas de animação, mas também fornecerá insights sobre como gerenciar efetivamente o estado dos componentes para otimizar o desempenho e garantir a estabilidade da sua aplicação.
 
    1. [A importância do motion design na experiência do usuário - Artigo](https://www.alura.com.br/artigos/importancia-motion-design-experiencia-usuario)
    2. Angular: torne sua aplicação interativa e personalizada com animações
    3. [Como o Motion Design pode contribuir para a UX/UI](https://www.alura.com.br/artigos/como-motion-design-pode-contribuir-uxui)
    4. Angular: aprimore suas técnicas de animação e crie interfaces ainda mais atraentes
-   </details>
+
+4. Acessibilidade no Angular: aprimorando formulários, modais e rotas
+   Neste último passo você aprenderá como melhorar a acessibilidade de uma aplicação utilizando o framework Angular. Serão abordadas melhorias na acessibilidade em aspectos como a navegação entre as rotas da aplicação, formulários, gerenciamento de foco e fornecimento de feedback auditivo às interações dos usuários. O curso propõe desafios para que você aplique os conhecimentos adquiridos.
+
+   1. [Fronteiras do Front-end | EP 08: Tour sobre Acessibilidade na web](https://cursos.alura.com.br/extra/alura-mais/fronteiras-do-front-end-ep-08-tour-sobre-acessibilidade-na-web-c124)
+   2. [Acessibilidade web – Hipsters #21](https://www.hipsters.tech/acessibilidade-web-hipsters-21/)
+   3. Acessibilidade no Angular: aprimorando formulários, modais e rotas
+
+</details>
 
 <details>
 <summary>TODO (adicionais) :white_check_mark:</summary>

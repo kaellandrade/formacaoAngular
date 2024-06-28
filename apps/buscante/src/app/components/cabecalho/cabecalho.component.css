@@ -1,12 +1,16 @@
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 header {
-	font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 button {
-	cursor: pointer;
-	border: none;
-	background: none;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+header .active-page {
+  border-bottom: 1px solid #36337c;
 }

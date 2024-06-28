@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 
 import { IdiomaLivro, Livro } from '../../models/interfaces';
 
@@ -12,11 +12,7 @@ export class LivroComponent implements OnInit {
   @Input() isCountrySuported = false;
   @Input() index!: number;
 
-  modalAberto: boolean;
-
-  showBasicDialog(): void {
-    this.modalAberto = true;
-  }
+  modalAberto = false;
 
   ngOnInit(): void {
     this.isCountrySuported = Object.values(IdiomaLivro).includes(
