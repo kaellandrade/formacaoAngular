@@ -14,7 +14,7 @@ Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formaç
 [![Cypress](https://img.shields.io/badge/-Cypress-black?style=for-the-badge&logo=cypress&logoColor=00DA99)](https://www.cypress.io/)
 [![Husky](https://img.shields.io/badge/-HookHusky-white?style=for-the-badge&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
 [![Eslint](https://img.shields.io/badge/-HookHusky-blue?style=for-the-badge&logo=git&logoColor=white)](https://eslint.org/)
-[![Eslint](https://img.shields.io/badge/-jestJS-white?style=for-the-badge&logo=jest&logoColor=red)](https://jestjs.io/pt-BR/)
+[![Jest](https://img.shields.io/badge/-jestJS-white?style=for-the-badge&logo=jest&logoColor=red)](https://jestjs.io/pt-BR/)
 
 ## Setup :gear:
 
