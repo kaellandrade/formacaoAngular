@@ -9,12 +9,12 @@ import { LivroVolumeInfo } from '../../models/LivroVolumeInfo';
 })
 export class ModalLivroComponent {
   @Input() livro: LivroVolumeInfo;
-  @Input() statusModal = true;
-  @Output() mudouModal = new EventEmitter();
+  @Input() visivel = false;
+  @Output() closeModal = new EventEmitter<boolean>();
 
   fecharModal(): void {
-    this.statusModal = false;
-    this.mudouModal.emit(this.statusModal);
+    this.visivel = false;
+    this.closeModal.emit(this.visivel);
   }
 
   lerPrevia(): void {

@@ -54,9 +54,8 @@
     ></p-button>
   </ng-template>
 </p-card>
-<div *ngIf="modalAberto">
-  <app-modal-livro
-    [livro]="livro"
-    (mudouModal)="onModalChange($event)"
-  ></app-modal-livro>
-</div>
+<app-modal-livro
+  [visivel]="modalAberto"
+  [livro]="livro"
+  (closeModal)="onModalChange($event)"
+></app-modal-livro>
