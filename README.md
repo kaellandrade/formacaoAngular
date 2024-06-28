@@ -48,7 +48,9 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/be29d826-69fd-45
 
 App de lista de tarefas simples para aplicar o conceito de [animações com Angular.](https://angular.dev/guide/animations)
 
-Video AQUI
+https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f2b-a190-9743edeec21f
+
+
 
 ---
 
