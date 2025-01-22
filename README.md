@@ -50,8 +50,6 @@ App de lista de tarefas simples para aplicar o conceito de [animações com Angu
 
 https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f2b-a190-9743edeec21f
 
-
-
 ---
 
 ## Rodando os Apps :hammer_and_wrench:

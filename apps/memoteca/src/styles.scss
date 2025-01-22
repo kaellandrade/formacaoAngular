@@ -29,7 +29,7 @@ h2 {
     right: 5px;
     position: absolute;
     align-items: center;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     content: "''";
     font-size: 6rem;
   }
@@ -64,7 +64,6 @@ h2 {
 .modelo1 {
   box-shadow: 8px 8px 0 var(--purple-100);
   border: 3px dotted var(--purple-500);
-
 }
 
 .modelo2 {
@@ -76,7 +75,6 @@ h2 {
   box-shadow: 8px 8px 0 var(--teal-100);
   border: 3px dotted var(--teal-500);
 }
-
 
 .radio {
   margin: 0;
@@ -105,7 +103,7 @@ input[type='radio'] {
   border-radius: 50%;
 }
 
-.custom-radio{
+.custom-radio {
   span {
     transition: 0.5s ease;
     color: var(--primary-400);
@@ -132,7 +130,6 @@ input[type='radio']:checked + .custom-radio-2 {
 
 input[type='radio']:checked + .custom-radio-3 {
   border-color: var(--teal-600);
-
 }
 
 input[type='radio']:checked + .custom-radio-1 span {

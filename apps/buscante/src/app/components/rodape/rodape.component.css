@@ -1,12 +1,12 @@
 footer {
-	color: #ffffff;
-	align-items: center;
-	font-family: 'Poppins', sans-serif;
-	font-weight: 400;
+  color: #ffffff;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 span {
-	margin-right: 0.5rem;
-	margin-top: 0.75rem;
-	font-size: 36px;
+  margin-right: 0.5rem;
+  margin-top: 0.75rem;
+  font-size: 36px;
 }
