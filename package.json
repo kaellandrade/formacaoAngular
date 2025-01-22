@@ -15,6 +15,7 @@
     "buscante-e2e": "npx nx@19.0.4 open-cypress0 buscante-e2e",
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o",
+    "zoop-store": "npx nx@19.0.4 run trabalhando-com-tests-unit:serve",
     "prepare": "husky",
     "lint": "npx nx@19.0.4  run-many --target=lint --all"
   },
@@ -40,7 +41,10 @@
     "primeng": "^17.16.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.3"
+    "zone.js": "~0.14.3",
+    "@angular/cdk": "~17.1.0",
+    "@angular/material": "~17.1.0",
+    "ngx-infinite-scroll": "^17.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~17.3.0",
@@ -94,7 +98,14 @@
     "pretty-quick": "^4.0.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.2",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0"
   },
   "workspaces": [
     "./apps/*",
