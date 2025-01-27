@@ -4,12 +4,17 @@ import { By } from '@angular/platform-browser';
 import { Product } from '../../../types/product.inteface';
 import { CardComponent } from './card.component';
 
-describe('CardComponent', () => {
+fdescribe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
 
+  /**
+   * TestBed módulo onde iremos passar as configurações para tal component.
+   * Iremos passar todo contexto para um determinado componente para testá-lo.
+   */
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      // add configurações... (bem parecido com o que fazemos no Angular)
       imports: [CardComponent],
     }).compileComponents();
 
