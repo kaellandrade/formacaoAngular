@@ -5,12 +5,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { BannerComponent } from '../../shared/components/banner/banner.component';
-import { ManageRoutingModule } from './manage-products-routing.module';
-import { ManageProductsComponent } from './manage-products.component';
-import { ProductsService } from '../../shared/services/products/products.service';
-import { ProductsApiService } from '../../shared/services/products/products-api.service';
 import { CardComponent } from '../../shared/components/card/card.component';
 import { SearchComponent } from '../../shared/components/search/search.component';
+import { ProductsService } from '../../shared/services/products/products.service';
+import { ProductsApiService } from '../../shared/services/products/products-api.service';
+import { ManageProductsComponent } from './manage-products.component';
+import { ManageRoutingModule } from './manage-products-routing.module';
 
 const COMPONENTS = [BannerComponent, CardComponent, SearchComponent];
 

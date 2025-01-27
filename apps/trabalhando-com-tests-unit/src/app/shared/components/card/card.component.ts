@@ -1,8 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 import { Product } from '../../../types/product.inteface';
-import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-card',
@@ -18,8 +18,10 @@ export class CardComponent {
   @Input()
   isManagable = false;
 
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onDelete = new EventEmitter<Product | null>();
 
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onEdit = new EventEmitter<Product | null>();
 
   onDeleteClick(): void {

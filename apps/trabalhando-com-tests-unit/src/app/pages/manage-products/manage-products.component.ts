@@ -23,7 +23,7 @@ export class ManageProductsComponent {
 
     dialogRef
       .afterClosed()
-      .subscribe((result) =>
+      .subscribe(() =>
         this.products.update(this.productsService.fetchAllProductsCreated()),
       );
   }
@@ -57,7 +57,7 @@ export class ManageProductsComponent {
 
     dialogRef
       .afterClosed()
-      .subscribe((result) =>
+      .subscribe(() =>
         this.products.update(this.productsService.fetchAllProductsCreated()),
       );
   }
