@@ -17,7 +17,6 @@ import { CreateProductComponent } from './create-product.component';
 import { CreateProductService } from './services/create-product.service';
 import { CreateProductApiService } from './services/create-product-api.service';
 
-// TODO: rever esses mocks
 class MockCreateProductApiService {
   getAllCategories(): Observable<string[]> {
     return of([
@@ -38,9 +37,14 @@ const productMock: Product = {
   image: BASE64_IMAGE,
 };
 
+const dialogRefMock = {
+  close: jasmine.createSpy('close'),
+};
+
 describe('CreateProductComponent', () => {
   let component: CreateProductComponent;
   let fixture: ComponentFixture<CreateProductComponent>;
+  let createProductService: CreateProductService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -61,7 +65,7 @@ describe('CreateProductComponent', () => {
         CreateProductApiService,
         {
           provide: MatDialogRef,
-          useValue: {},
+          useValue: dialogRefMock,
         },
         {
           provide: MAT_DIALOG_DATA,
@@ -81,6 +85,7 @@ describe('CreateProductComponent', () => {
       },
     });
 
+    createProductService = TestBed.inject(CreateProductService);
     fixture = TestBed.createComponent(CreateProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -102,7 +107,34 @@ describe('CreateProductComponent', () => {
     });
   });
 
-  fit('should be check th form is filled in with the product information', () => {
-    expect(component.formGroup.get('id')?.value).toEqual(productMock.id);
+  it('should be check th form is filled in with the product information', () => {
+    const { formGroup } = component;
+    expect(formGroup.get('id')?.value).toEqual(productMock.id);
+    expect(formGroup.get('title')?.value).toEqual(productMock.title);
+    expect(formGroup.get('description')?.value).toEqual(
+      productMock.description,
+    );
+    expect(formGroup.get('category')?.value).toEqual(productMock.category);
+    expect(formGroup.get('price')?.value).toEqual(productMock.price);
+  });
+
+  it('should be called close method when clicked btn cancelar', () => {
+    component.onCancelClick();
+    expect(dialogRefMock.close).toHaveBeenCalled();
+  });
+
+  it('should must call the createProductService save method when submitting the form', () => {
+    spyOn(createProductService, 'save').and.returnValue(Promise.resolve());
+    const evento = {
+      target: {
+        files: [new File([''], 'imagem.jpeg', { type: 'image/jpeg' })],
+      },
+    };
+    component.onImageSelected(evento);
+    component.onSubmitForm();
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(createProductService.save).toHaveBeenCalled();
+    });
   });
 });
