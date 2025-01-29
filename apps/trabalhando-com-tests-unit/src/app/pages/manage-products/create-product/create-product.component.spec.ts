@@ -11,6 +11,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Observable, of } from 'rxjs';
 
+import { BASE64_IMAGE } from '../../../shared/mocks/base64-image-mock';
+import { Product } from '../../../types/product.inteface';
 import { CreateProductComponent } from './create-product.component';
 import { CreateProductService } from './services/create-product.service';
 import { CreateProductApiService } from './services/create-product-api.service';
@@ -26,6 +28,15 @@ class MockCreateProductApiService {
     ]);
   }
 }
+
+const productMock: Product = {
+  id: 1,
+  title: 'Produto',
+  description: 'Descrição',
+  category: 'Categoria',
+  price: '10',
+  image: BASE64_IMAGE,
+};
 
 describe('CreateProductComponent', () => {
   let component: CreateProductComponent;
@@ -54,7 +65,7 @@ describe('CreateProductComponent', () => {
         },
         {
           provide: MAT_DIALOG_DATA,
-          useValue: null,
+          useValue: productMock,
         },
       ],
     }).compileComponents();
@@ -79,7 +90,7 @@ describe('CreateProductComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should be listing categories', () => {
+  it('should be listing categories', () => {
     const categories = [
       'electronics',
       'jewelery',
@@ -89,5 +100,9 @@ describe('CreateProductComponent', () => {
     component.categories$.subscribe((result) => {
       expect(categories).toEqual(result);
     });
+  });
+
+  fit('should be check th form is filled in with the product information', () => {
+    expect(component.formGroup.get('id')?.value).toEqual(productMock.id);
   });
 });
