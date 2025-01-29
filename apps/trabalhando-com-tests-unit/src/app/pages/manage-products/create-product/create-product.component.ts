@@ -8,16 +8,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { CreateProductApiService } from './services/create-product-api.service';
-
 import { Observable } from 'rxjs';
+
 import { Product } from '../../../types/product.inteface';
 import { CreateProductService } from './services/create-product.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { CreateProductApiService } from './services/create-product-api.service';
 
 const MODULES = [
   CommonModule,

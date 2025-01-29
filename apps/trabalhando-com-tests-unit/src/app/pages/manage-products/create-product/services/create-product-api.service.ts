@@ -8,7 +8,6 @@ import { Product } from '../../../../types/product.inteface';
 @Injectable()
 export class CreateProductApiService {
   constructor(private http: HttpClient) {}
-
   getAllCategories(): Observable<string[]> {
     return this.http.get<string[]>(`${environment.apiUrl}/products/categories`);
   }
