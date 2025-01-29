@@ -20,3 +20,11 @@
 > manipular diretamente o estado da aplicação.
 
 ---
+
+### Atividades
+
+### Criar os testes
+
+- [] `search-products.component.spec.ts`
+- [] `manage-products.component.spec.ts`
+- [] `app.component.spec.ts`
