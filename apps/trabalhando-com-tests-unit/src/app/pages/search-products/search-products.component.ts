@@ -23,7 +23,6 @@ const COMPONENTS = [BannerComponent, SearchComponent, CardComponent];
 })
 export class SearchProductsComponent implements OnInit {
   products = this.productsService.products;
-
   constructor(private productsService: ProductsService) {}
 
   ngOnInit(): void {

@@ -25,6 +25,6 @@
 
 ### Criar os testes
 
-- [] `search-products.component.spec.ts`
+- [-] `search-products.component.spec.ts`
 - [] `manage-products.component.spec.ts`
 - [] `app.component.spec.ts`

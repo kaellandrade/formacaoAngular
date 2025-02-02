@@ -1,14 +1,14 @@
 import {
   DestroyRef,
-  Injectable,
-  WritableSignal,
   inject,
+  Injectable,
   signal,
+  WritableSignal,
 } from '@angular/core';
 
-import { ProductsApiService } from './products-api.service';
 import { Product } from '../../../types/product.inteface';
 import { StorageService } from '../storage/storage.service';
+import { ProductsApiService } from './products-api.service';
 
 @Injectable()
 export class ProductsService {
