@@ -1,66 +1,73 @@
-import { signal } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { of } from 'rxjs';
 
 import { ProductsService } from '../../shared/services/products/products.service';
+import { ProductsApiService } from '../../shared/services/products/products-api.service';
 import { Product } from '../../types/product.inteface';
 import { SearchProductsComponent } from './search-products.component';
 
-fdescribe('SearchProductsComponent', () => {
-  /*
+describe('SearchProductsComponent', () => {
   let component: SearchProductsComponent;
   let fixture: ComponentFixture<SearchProductsComponent>;
-  let mockProductsService: jasmine.SpyObj<ProductsService>;
+  let productsService: ProductsService;
+  let productsApiService: ProductsApiService;
+
+  const mockProducts: Product[] = [
+    {
+      id: 1,
+      title: 'Product 1',
+      price: '10',
+      category: 'Category 1',
+      description: 'Description 1',
+      image: 'image1.jpg',
+    },
+    {
+      id: 2,
+      title: 'Product 2',
+      price: '20',
+      category: 'Category 2',
+      description: 'Description 2',
+      image: 'image2.jpg',
+    },
+  ];
 
   beforeEach(async () => {
-    mockProductsService = jasmine.createSpyObj('ProductsService', [
-      'fetchAllProducts',
-      'find',
-    ]);
-    (mockProductsService as any).products = signal<Product[]>([
-      {
-        id: 2,
-        title: 'Mens Casual Premium Slim Fit T-Shirts ',
-        price: '22.3',
-        description:
-          'Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.',
-        category: "men's clothing",
-        image:
-          'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg',
-      },
-    ]);
-
     await TestBed.configureTestingModule({
-      imports: [SearchProductsComponent, BrowserAnimationsModule],
-      providers: [{ provide: ProductsService, useValue: mockProductsService }],
+      imports: [HttpClientTestingModule, SearchProductsComponent],
+      providers: [ProductsService, ProductsApiService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SearchProductsComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    productsService = TestBed.inject(ProductsService);
+    productsApiService = TestBed.inject(ProductsApiService);
+
+    spyOn(productsApiService, 'getAllProducts').and.returnValue(
+      of(mockProducts),
+    );
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should fetch initial products on init', () => {
-    expect(mockProductsService.fetchAllProducts).toHaveBeenCalledOnceWith(5);
+
+  fit('should fetch products on init', () => {
+    spyOn(productsService, 'fetchAllProducts').and.callThrough();
+    component.ngOnInit();
+    fixture.whenStable().then(() => {
+      expect(productsService.fetchAllProducts).toHaveBeenCalledWith(5);
+      expect(component.products().length).toBe(1); // Assuming mockProducts are returned
+    });
   });
 
-  it('should call fetchAllProducts on scroll', () => {
-    component.onScroll();
-    expect(mockProductsService.fetchAllProducts).toHaveBeenCalledWith(10);
-  });
+  it('should filter products based on search text', () => {
+    component.products.set(mockProducts); // Set initial products
+    component.onSearchText('Product 1');
+    expect(component.products().length).toBe(1);
+    expect(component.products()[0].title).toBe('Product 1');
 
-  it('should reset products and fetch initial products when search text is empty', () => {
     component.onSearchText('');
-    expect(mockProductsService.currentItemPerPage).toBe(0);
-    expect(mockProductsService.fetchAllProducts).toHaveBeenCalledWith(5);
+    expect(component.products().length).toBe(2); // Should reset to all products
   });
-
-  it('should call find method when search text is provided', () => {
-    component.onSearchText('Product A');
-    expect(mockProductsService.find).toHaveBeenCalledWith('Product A');
-  });
- */
 });
