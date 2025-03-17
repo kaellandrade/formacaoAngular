@@ -2,12 +2,13 @@
   <mat-form-field appearance="fill">
     <mat-label>Digite aqui o produto que você busca</mat-label>
     <input
+      data-testid="search-input"
       matInput
       type="text"
       maxlength="20"
       (input)="onInputChange($event)"
     />
-    <button mat-button matSuffix>
+    <button data-testid="search-btn" mat-button matSuffix>
       <mat-icon>search</mat-icon>
     </button>
   </mat-form-field>
