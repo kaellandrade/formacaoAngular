@@ -8,6 +8,7 @@ import { Product } from '../../../types/product.inteface';
 @Injectable()
 export class ProductsApiService {
   constructor(private http: HttpClient) {}
+
   getAllProducts(itemPerPage: number): Observable<Product[]> {
     return this.http.get<Product[]>(
       `${environment.apiUrl}/products?limit=${itemPerPage}`,
