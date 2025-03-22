@@ -107,7 +107,7 @@ describe('CreateProductComponent', () => {
     });
   });
 
-  it('should be check th form is filled in with the product information', () => {
+  it('should be check then form is filled in with the product information', () => {
     const { formGroup } = component;
     expect(formGroup.get('id')?.value).toEqual(productMock.id);
     expect(formGroup.get('title')?.value).toEqual(productMock.title);
