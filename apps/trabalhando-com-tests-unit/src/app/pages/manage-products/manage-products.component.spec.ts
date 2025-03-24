@@ -86,4 +86,20 @@ describe('ManageProductsComponent', () => {
       expect(component.products()).toEqual(mockSignal());
     });
   });
+
+  it('should be search products with empty string', () => {
+    const spy = spyOn(component, 'onSearchText').and.callThrough();
+    component.onSearchText('');
+    fixture.detectChanges();
+
+    expect(spy).toHaveBeenCalledWith('');
+  });
+
+  it('should be search products with string', () => {
+    const spy = spyOn(component, 'onSearchText').and.callThrough();
+    component.onSearchText('Sapato Nike Air 1020');
+    fixture.detectChanges();
+
+    expect(spy).toHaveBeenCalledWith('Sapato Nike Air 1020');
+  });
 });
