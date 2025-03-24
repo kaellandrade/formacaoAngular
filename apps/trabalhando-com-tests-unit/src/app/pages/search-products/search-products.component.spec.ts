@@ -7,7 +7,7 @@ import { ProductsApiService } from '../../shared/services/products/products-api.
 import { Product } from '../../types/product.inteface';
 import { SearchProductsComponent } from './search-products.component';
 
-fdescribe('SearchProductsComponent', () => {
+describe('SearchProductsComponent', () => {
   let component: SearchProductsComponent;
   let fixture: ComponentFixture<SearchProductsComponent>;
   let productsService: ProductsService;

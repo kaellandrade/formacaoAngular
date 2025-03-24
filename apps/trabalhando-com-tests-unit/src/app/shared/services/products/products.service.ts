@@ -28,9 +28,11 @@ export class ProductsService {
 
   find(text: string): void {
     this.products.update((oldProducts) =>
-      oldProducts.filter((product: Product) =>
-        product.title.toLowerCase().includes(text.toLowerCase()),
-      ),
+      oldProducts
+        .flat()
+        .filter((product: Product) =>
+          product.title?.toLowerCase().includes(text.toLowerCase()),
+        ),
     );
   }
 

@@ -1,4 +1,5 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { WritableSignal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Observable, of } from 'rxjs';
 
@@ -79,5 +80,37 @@ describe('ProductsService', () => {
 
     expect(product1).toEqual(product1Storage);
     expect(product2).toEqual(product2Storage);
+  });
+  it('should must find some product', () => {
+    service.find('Produto C');
+
+    const products = service.products().flat();
+    const [findProduct] = products;
+
+    expect(products.length).toBe(1);
+    expect(findProduct.title).toBe('Produto C');
+  });
+
+  it('should must check sessionStorage', () => {
+    const signalProductsSession: WritableSignal<Array<Product>> =
+      service.fetchAllProductsCreated();
+    expect(signalProductsSession().flat()).toEqual(productStorage);
+  });
+
+  it('should must get all products', () => {
+    service.fetchAllProducts(10);
+
+    expect(service.products().length).toBe(3);
+  });
+
+  it('should must delete product', () => {
+    spyOn(sessionStorage, 'remove');
+    const initialProsuctsLength = sessionStorage.getAll().length;
+
+    service.delete(productStorage[0]);
+    expect(sessionStorage.remove).toHaveBeenCalledTimes(1);
+    expect(sessionStorage.getAll().length).toBeLessThanOrEqual(
+      initialProsuctsLength,
+    );
   });
 });
