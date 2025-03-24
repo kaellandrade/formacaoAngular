@@ -81,7 +81,7 @@
       "executor": "@nx/eslint:lint"
     },
     "test": {
-      "executor": "@angular-devkit/build-angular:karma",
+      "executor": "@nx/jest:jest",
       "options": {
         "polyfills": ["zone.js", "zone.js/testing"],
         "tsConfig": "apps/trabalhando-com-tests-unit/tsconfig.spec.json",
@@ -95,7 +95,7 @@
           "apps/trabalhando-com-tests-unit/src/styles.scss"
         ],
         "scripts": [],
-        "karmaConfig": "apps/trabalhando-com-tests-unit/karma.conf.js"
+        "jestConfig": "apps/trabalhando-com-tests-unit/jest.config.ts"
       }
     },
     "serve-static": {
