@@ -9,24 +9,35 @@
         name="comprado"
         [binary]="true"
         [ngModel]="item.comprado"
-        (click)="toggleCheck(readOnly)" />
-      <label
-        [class.line-through]="item.comprado"
-        class="description"
-      >{{ item.nome }}</label
-      >
+        (click)="toggleCheck(readOnly)"
+      />
+      <label [class.line-through]="item.comprado" class="description">{{
+        item.nome
+      }}</label>
     </div>
   </div>
   <div class="flex flex-row gap-2 p-2">
-    <p-button [attr.data-cy]="'action-btn-edit-'+item.id" [disabled]="item.comprado || readOnly" (click)="editarItem()" rounded="true" icon="pi pi-pencil"
-              severity="warning" />
-    <p-button [attr.data-cy]="'action-btn-trash-'+item.id" [disabled]="item.comprado || readOnly" (click)="deletarItem()" rounded="true" icon="pi pi-trash"
-              severity="danger" />
+    <p-button
+      [attr.data-cy]="'action-btn-edit-' + item.id"
+      [disabled]="item.comprado || readOnly"
+      (click)="editarItem()"
+      rounded="true"
+      icon="pi pi-pencil"
+      severity="warning"
+    />
+    <p-button
+      [attr.data-cy]="'action-btn-trash-' + item.id"
+      [disabled]="item.comprado || readOnly"
+      (click)="deletarItem()"
+      rounded="true"
+      icon="pi pi-trash"
+      severity="danger"
+    />
   </div>
 </div>
 <p-divider type="dashed" />
 <small class="date"
->{{
+  >{{
     item.editado
       ? item.dataEdicao?.toLocaleDateString('pt-BR', optionsDate)
       : item.data.toLocaleDateString('pt-BR', optionsDate)

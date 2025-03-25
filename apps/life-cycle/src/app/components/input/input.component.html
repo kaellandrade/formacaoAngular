@@ -1,34 +1,50 @@
-<form #addForm="ngForm" (ngSubmit)="handleSubmit(addForm)"
-      class="flex flex-row flex-wrap justify-content-center mt-5 gap-3">
+<form
+  #addForm="ngForm"
+  (ngSubmit)="handleSubmit(addForm)"
+  class="flex flex-row flex-wrap justify-content-center mt-5 gap-3"
+>
   <p-toolbar
-    [style]="{'background-image': 'linear-gradient(to right, var(--gray-100), var(--primary-50))' }"
+    [style]="{
+      'background-image':
+        'linear-gradient(to right, var(--gray-100), var(--primary-50))',
+    }"
     styleClass="shadow-2 justify-content-center"
   >
     <p-iconField iconPosition="left">
       <p-inputIcon styleClass="pi pi-check" />
-      <input #inputTarefa
-             [(ngModel)]="valorItem"
-             data-cy="input-task"
-             name="item"
-             pInputText
-             placeholder="Digite sua tarefa..."
-             required="true"
-             type="text"
+      <input
+        #inputTarefa
+        [(ngModel)]="valorItem"
+        data-cy="input-task"
+        name="item"
+        pInputText
+        placeholder="Digite sua tarefa..."
+        required="true"
+        type="text"
       />
     </p-iconField>
     <p-buttonGroup>
-      <p-button [disabled]="addForm.form.invalid" [label]="textoBtn" [ngClass]="addForm.form.invalid ? 'disabled' : ''"
-                [severity]="editando? 'primary' :'success'"
-                data-cy="submit-btn"
-                icon="pi pi-save"
-                size="small"
-                type="submit" />
+      <p-button
+        [disabled]="addForm.form.invalid"
+        [label]="textoBtn"
+        [ngClass]="addForm.form.invalid ? 'disabled' : ''"
+        [severity]="editando ? 'primary' : 'success'"
+        data-cy="submit-btn"
+        icon="pi pi-save"
+        size="small"
+        type="submit"
+      />
 
-      <p-button (click)="abortEdit()" *ngIf="editando" [ngClass]="addForm.form.invalid ? 'disabled' : ''"
-                data-cy="submit-cancel" icon="pi pi-times"
-                label="Cancelar"
-                severity="warning"
-                size="small" />
+      <p-button
+        (click)="abortEdit()"
+        *ngIf="editando"
+        [ngClass]="addForm.form.invalid ? 'disabled' : ''"
+        data-cy="submit-cancel"
+        icon="pi pi-times"
+        label="Cancelar"
+        severity="warning"
+        size="small"
+      />
     </p-buttonGroup>
   </p-toolbar>
 </form>

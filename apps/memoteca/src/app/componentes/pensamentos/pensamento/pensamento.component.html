@@ -1,7 +1,5 @@
-<div
-  class="pensamento {{ pensamento.modelo }}"
-  [ngClass]="larguraPensamento()">
-  <div class="aspas" [ngStyle]="{color:'var(--primary-500)'}"></div>
+<div class="pensamento {{ pensamento.modelo }}" [ngClass]="larguraPensamento()">
+  <div class="aspas" [ngStyle]="{ color: 'var(--primary-500)' }"></div>
   <div>
     <p class="conteudo m-5">{{ pensamento.conteudo }}</p>
     <p class="autoria m-5">
@@ -13,11 +11,12 @@
       rounded="true"
       icon="pi pi-pen-to-square"
       severity="warning"
-      [attr.data-cy]="'id-edit-'+pensamento.id"
-      routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}">
+      [attr.data-cy]="'id-edit-' + pensamento.id"
+      routerLink="/pensamentos/editarPensamento/{{ pensamento.id }}"
+    >
     </p-button>
     <p-button
-      [attr.data-cy]="'id-trash-'+pensamento.id"
+      [attr.data-cy]="'id-trash-' + pensamento.id"
       rounded="true"
       (click)="showModalDeleteThought(pensamento.id)"
       icon="pi pi-trash"
@@ -25,11 +24,12 @@
     >
     </p-button>
     <p-button
-      [attr.data-cy]="'id-favorite-'+pensamento.id"
+      [attr.data-cy]="'id-favorite-' + pensamento.id"
       rounded="true"
       severity="success"
       [icon]="getSrcFavoritoImgIcon()"
-      (click)="toggleFavoritar()">
+      (click)="toggleFavoritar()"
+    >
     </p-button>
   </div>
 </div>

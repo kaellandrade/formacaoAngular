@@ -1,50 +1,64 @@
 <section>
   <p-toast />
   <header class="header">
-    <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">Adicione um pensamento novo:</h2>
+    <h2 [ngStyle]="{ color: 'var(--primary-700)' }" class="primary-400">
+      Adicione um pensamento novo:
+    </h2>
   </header>
   <form [formGroup]="formulario" data-cy="form-add-pensamento">
     <p-panel header="O que você está pensando ?">
       <div class="grid nested-grid">
         <div class="col-12 flex flex-column gap-2">
-          <label data-cy="label-pensamento"  for="pensamento" class="required-label">Pensamento</label>
+          <label
+            data-cy="label-pensamento"
+            for="pensamento"
+            class="required-label"
+            >Pensamento</label
+          >
           <textarea
             rows="5"
             cols="30"
             pInputTextarea
             id="pensamento"
             formControlName="conteudo"
-            placeholder="Digite um pensamento"></textarea>
+            placeholder="Digite um pensamento"
+          ></textarea>
           <div
             class="mensagem__erro"
             *ngIf="
-				formulario.get('conteudo')?.errors &&
-				formulario.get('conteudo')?.touched
-			">
+              formulario.get('conteudo')?.errors &&
+              formulario.get('conteudo')?.touched
+            "
+          >
             Pensamento é obrigatório!
           </div>
         </div>
         <p-divider class="col-12" />
         <div class="col-12">
           <div class="flex flex-column gap-2">
-            <label data-cy="label-autor"  for="autoria" class="required-label">Autoria ou fonte</label>
+            <label data-cy="label-autor" for="autoria" class="required-label"
+              >Autoria ou fonte</label
+            >
             <input
               pInputText
               type="text"
               id="autoria"
               formControlName="autoria"
-              placeholder="Digite um autoria ou fonte" />
+              placeholder="Digite um autoria ou fonte"
+            />
             <div
               class="mensagem__erro"
               *ngIf="
-				formulario.get('autoria')?.errors?.['required'] &&
-				formulario.get('autoria')?.touched
-			">
+                formulario.get('autoria')?.errors?.['required'] &&
+                formulario.get('autoria')?.touched
+              "
+            >
               {{ I18n.MSG_CAMPO_OBRIGATORIO }}
             </div>
             <div
               class="mensagem__erro"
-              *ngIf="formulario.get('autoria')?.errors?.['minlength']">
+              *ngIf="formulario.get('autoria')?.errors?.['minlength']"
+            >
               {{ I18n.MS_CAMPO_MIN_LENGTH }}
               {{ ValidatorEnums.LENGTH_AUTORIA }} caracteres
             </div>
@@ -56,15 +70,20 @@
         <p-divider class="col-12" />
         <div class="col-12 flex flex-column gap-2">
           <label>Selecione o modelo do card:</label>
-          <div class="mt-5 grid ">
+          <div class="mt-5 grid">
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label [attr.data-cy]="modeloscards.MODELO1" class="label-modelo" for="{{ modeloscards.MODELO1 }}">
+                <label
+                  [attr.data-cy]="modeloscards.MODELO1"
+                  class="label-modelo"
+                  for="{{ modeloscards.MODELO1 }}"
+                >
                   <input
                     value="{{ modeloscards.MODELO1 }}"
                     type="radio"
                     formControlName="modelo"
-                    id="{{ modeloscards.MODELO1 }}" />
+                    id="{{ modeloscards.MODELO1 }}"
+                  />
                   <div class="custom-radio custom-radio-1">
                     <span></span>
                   </div>
@@ -72,7 +91,9 @@
                 </label>
                 <span class="block p-3">Veja a prévia 1</span>
                 <div pRipple class="pensamento modelo modelo1">
-                  <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                  <p class="conteudo">
+                    {{ formulario.get('conteudo')?.value }}
+                  </p>
                   <blockquote class="autoria">
                     <b>{{ formulario.get('autoria')?.value }}</b>
                   </blockquote>
@@ -81,12 +102,17 @@
             </div>
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label [attr.data-cy]="modeloscards.MODELO2" class="label-modelo" for="{{ modeloscards.MODELO2 }}">
+                <label
+                  [attr.data-cy]="modeloscards.MODELO2"
+                  class="label-modelo"
+                  for="{{ modeloscards.MODELO2 }}"
+                >
                   <input
                     type="radio"
                     formControlName="modelo"
                     id="{{ modeloscards.MODELO2 }}"
-                    value="{{ modeloscards.MODELO2 }}" />
+                    value="{{ modeloscards.MODELO2 }}"
+                  />
                   <div class="custom-radio custom-radio-2">
                     <span></span>
                   </div>
@@ -94,7 +120,9 @@
                 </label>
                 <span class="block p-3">Veja a prévia 2</span>
                 <div pRipple class="pensamento modelo modelo2">
-                  <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                  <p class="conteudo">
+                    {{ formulario.get('conteudo')?.value }}
+                  </p>
                   <blockquote class="autoria">
                     <b>{{ formulario.get('autoria')?.value }}</b>
                   </blockquote>
@@ -103,12 +131,17 @@
             </div>
             <div class="col-12 md:col-4">
               <div class="radio-modelo">
-                <label [attr.data-cy]="modeloscards.MODELO3" class="label-modelo" for="{{ modeloscards.MODELO3 }}">
+                <label
+                  [attr.data-cy]="modeloscards.MODELO3"
+                  class="label-modelo"
+                  for="{{ modeloscards.MODELO3 }}"
+                >
                   <input
                     type="radio"
                     formControlName="modelo"
                     id="{{ modeloscards.MODELO3 }}"
-                    value="{{ modeloscards.MODELO3 }}" />
+                    value="{{ modeloscards.MODELO3 }}"
+                  />
                   <div class="custom-radio custom-radio-3">
                     <span></span>
                   </div>
@@ -116,7 +149,9 @@
                 </label>
                 <span class="block p-3">Veja a prévia 2</span>
                 <div pRipple class="pensamento modelo modelo3 ff-roboto-mono">
-                  <p class="conteudo">{{ formulario.get('conteudo')?.value }}</p>
+                  <p class="conteudo">
+                    {{ formulario.get('conteudo')?.value }}
+                  </p>
                   <blockquote class="autoria">
                     <b>{{ formulario.get('autoria')?.value }}</b>
                   </blockquote>
@@ -137,8 +172,15 @@
               type="button"
               (click)="criarPensamento()"
               [disabled]="!formulario.valid"
-              [ngClass]="toogleBotao()" />
-            <p-button label="Cancelar" size="large" severity="danger" type="button" (click)="cancelarPensamento()" />
+              [ngClass]="toogleBotao()"
+            />
+            <p-button
+              label="Cancelar"
+              size="large"
+              severity="danger"
+              type="button"
+              (click)="cancelarPensamento()"
+            />
           </p-buttonGroup>
         </div>
       </div>
