@@ -4,3 +4,4 @@ node_modules
 .nx
 dist
 /apps/*/coverage/
+.idea
