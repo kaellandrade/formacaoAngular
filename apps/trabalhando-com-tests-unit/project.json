@@ -83,7 +83,6 @@
     "test": {
       "executor": "@nx/jest:jest",
       "options": {
-        "polyfills": ["zone.js", "zone.js/testing"],
         "tsConfig": "apps/trabalhando-com-tests-unit/tsconfig.spec.json",
         "inlineStyleLanguage": "scss",
         "assets": [

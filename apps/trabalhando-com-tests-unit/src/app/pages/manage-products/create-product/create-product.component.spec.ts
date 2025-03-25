@@ -38,7 +38,7 @@ const productMock: Product = {
 };
 
 const dialogRefMock = {
-  close: jasmine.createSpy('close'),
+  close: jest.fn(),
 };
 
 describe('CreateProductComponent', () => {
@@ -124,7 +124,7 @@ describe('CreateProductComponent', () => {
   });
 
   it('should must call the createProductService save method when submitting the form', () => {
-    spyOn(createProductService, 'save').and.returnValue(Promise.resolve());
+    jest.spyOn(createProductService, 'save').mockReturnValue(Promise.resolve());
     const evento = {
       target: {
         files: [new File([''], 'imagem.jpeg', { type: 'image/jpeg' })],

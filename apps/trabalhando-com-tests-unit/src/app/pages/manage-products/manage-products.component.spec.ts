@@ -79,16 +79,16 @@ describe('ManageProductsComponent', () => {
         description: 'Sapato muito bom para corredores profissionais!',
       },
     ]);
-    spyOn(productsService, 'fetchAllProductsCreated').and.returnValue(
-      mockSignal,
-    );
+    jest
+      .spyOn(productsService, 'fetchAllProductsCreated')
+      .mockReturnValue(mockSignal);
     fixture.whenStable().then(() => {
       expect(component.products()).toEqual(mockSignal());
     });
   });
 
   it('should be search products with empty string', () => {
-    const spy = spyOn(component, 'onSearchText').and.callThrough();
+    const spy = jest.spyOn(component, 'onSearchText');
     component.onSearchText('');
     fixture.detectChanges();
 
@@ -96,7 +96,7 @@ describe('ManageProductsComponent', () => {
   });
 
   it('should be search products with string', () => {
-    const spy = spyOn(component, 'onSearchText').and.callThrough();
+    const spy = jest.spyOn(component, 'onSearchText');
     component.onSearchText('Sapato Nike Air 1020');
     fixture.detectChanges();
 

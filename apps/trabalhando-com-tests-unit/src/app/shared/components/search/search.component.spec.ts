@@ -23,7 +23,7 @@ describe('SearchComponent', () => {
   });
 
   it('should be emitted event search', () => {
-    const spy = spyOn(component.searchText, 'emit');
+    const spy = jest.spyOn(component.searchText, 'emit');
     const inputElement = fixture.debugElement.query(
       By.css('[data-testid="search-input"]'),
     ).nativeElement as HTMLInputElement;

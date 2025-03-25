@@ -104,7 +104,7 @@ describe('ProductsService', () => {
   });
 
   it('should must delete product', () => {
-    spyOn(sessionStorage, 'remove');
+    jest.spyOn(sessionStorage, 'remove');
     const initialProsuctsLength = sessionStorage.getAll().length;
 
     service.delete(productStorage[0]);

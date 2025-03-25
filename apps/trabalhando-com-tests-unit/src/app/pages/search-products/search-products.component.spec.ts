@@ -43,9 +43,9 @@ describe('SearchProductsComponent', () => {
     productsService = TestBed.inject(ProductsService);
     productsApiService = TestBed.inject(ProductsApiService);
 
-    spyOn(productsApiService, 'getAllProducts').and.returnValue(
-      of(mockProducts),
-    );
+    jest
+      .spyOn(productsApiService, 'getAllProducts')
+      .mockReturnValue(of(mockProducts));
   });
 
   it('should create', () => {
@@ -53,7 +53,7 @@ describe('SearchProductsComponent', () => {
   });
 
   it('should fetch products on init', () => {
-    spyOn(productsService, 'fetchAllProducts').and.callThrough();
+    jest.spyOn(productsService, 'fetchAllProducts');
     component.ngOnInit();
     fixture.whenStable().then(() => {
       expect(productsService.fetchAllProducts).toHaveBeenCalledWith(5);
