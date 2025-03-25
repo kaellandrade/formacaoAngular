@@ -1,30 +1,9 @@
 ## Testes unitários com Angular.
 
-- Unitários
-  - Jest, Jasmine/Karma
-- Integração
-  - Jest, Jasmine/Karma
-- e2e
+> Angular: explorando testes de unidade e integração
 
-  - Cypress
-
-- [x] `TestBed `
-      Configura e inicializa o ambiente de testes unitários e prover
-      métodos para criar componentes e serviços dentro dos teste unitários
-
-- [x] `spy` (espião) Permite modificar método ou função num componente o service para
-      termos um resultado específico. Ex: Permite se uma função foi chamada em um dado momento.
-
-> Dump Componentes são components simples (burros) que não possuem lógica de négocio complexa.
-> Sendo assim, eles são responsáveis apenas por renderizar a interface do usuário de forma passiva, sem
-> manipular diretamente o estado da aplicação.
-
----
-
-### Atividades
-
-### Criar os testes
-
-- [-] `search-products.component.spec.ts`
-- [] `manage-products.component.spec.ts`
-- [] `app.component.spec.ts`
+- Identificar os componentes, módulos e serviços que precisam ser testados em um projeto Angular;
+- Desenvolver uma compreensão sólida dos conceitos fundamentais de teste, identificando o escopo de teste para cada componente;
+- Dominar a arte de criar testes para smart components, adquirindo as habilidades para identificar e configurar testes específicos para esse tipo de componente;
+- Proficiência na criação de testes para serviços, incluindo aqueles que consomem uma API;
+- Explorar outras ferramentas relevantes no cenário de mercado e desenvolverá a habilidade de configurar o Jest para depuração na aplicação.

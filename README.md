@@ -4,7 +4,7 @@
 
 # Formação Angular [Monorepo](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial)
 
-O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) em um único local e funcional.
+O intuito desse monorepo é manter todas as aplicações da [formação Alura Angular](https://cursos.alura.com.br/formacao-angular-14) e outros cursos referente ao framework em um único local e funcional.
 
 Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formação, mas as quais tinha vontade de aprendê-las, tais como:
 
@@ -15,6 +15,7 @@ Apliquei diversas outras ferramentas/tecnologias que não fazem parte da formaç
 [![Husky](https://img.shields.io/badge/-HookHusky-white?style=for-the-badge&logo=git&logoColor=00DA99)](https://typicode.github.io/husky/)
 [![Eslint](https://img.shields.io/badge/-HookHusky-blue?style=for-the-badge&logo=git&logoColor=white)](https://eslint.org/)
 [![Jest](https://img.shields.io/badge/-jestJS-white?style=for-the-badge&logo=jest&logoColor=red)](https://jestjs.io/pt-BR/)
+[![Jasmine](https://img.shields.io/badge/-Jasmine-white?style=for-the-badge&logo=jasmine&logoColor=red)](https://jasmine.github.io/index.html)
 
 ## Setup :gear:
 
@@ -44,7 +45,7 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/be29d826-69fd-45
 
 ---
 
-### Memorando TODO APP list
+### TODO APP list
 
 App de lista de tarefas simples para aplicar o conceito de [animações com Angular.](https://angular.dev/guide/animations)
 
@@ -52,12 +53,25 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f
 
 ---
 
+### Zoop Store
+
+Página simples apenas para praticar os conceitos de testes unitários com Angular. Aqui utilize o jasmine e depois realizei a migração para o JestJS.
+
+- Test de services;
+- Teste de dumb components;
+- Teste de smart components;
+- Teste de integração;
+- Migrando entre test runner Jasmine -> JestJS
+
+---
+
 ## Rodando os Apps :hammer_and_wrench:
 
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;
-- [App Memoteca](#memoteca) :iphone: - `npm run memoteca-app`;
-- [Memorando com animações](#memorando-app) :movie_camera: - `npm run memorando`
-- [Todo APP](#todo-app) :white_check_mark: - `npm run todo-app`;
+- [App Memoteca](#Memoteca) :iphone: - `npm run memoteca-app`;
+- [Memorando com animações](#Memorando-TODO-APP-list) :movie_camera: - `npm run memorando`
+- [Todo APP](#TODO-APP-list) :white_check_mark: - `npm run todo-app`;
+- [Zoop Store](#zoop-store) :white_check_mark: - `npm run zoop-store-test`;
 
 ## Rodando os testes e2e de cada projeto com o Cypress:
 
@@ -111,6 +125,8 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f
    2. [Acessibilidade web – Hipsters #21](https://www.hipsters.tech/acessibilidade-web-hipsters-21/)
    3. [Acessibilidade no Angular: aprimorando formulários, modais e rotas](https://cursos.alura.com.br/course/acessibilidade-angular-formularios-modais-rotas)
 
+5. [Angular: explorando testes de unidade e integração](https://cursos.alura.com.br/course/angular-explorando-testes-unidade-integracao)
+
 </details>
 
 <details>
@@ -126,7 +142,7 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f
 - [x] Configurar estilos do PrimeNg para todos os APPS;
 - [x] Configurar [Cypress](https://www.cypress.io/);
 - [x] Configurar git hook husky [Husky](https://github.com/typicode/husky);
-- [ ] Configurar JEST e testes unitários (alguns).
+- [x] Configurar JEST e testes unitários (alguns).
 
 ## Desafios opcionais
 
