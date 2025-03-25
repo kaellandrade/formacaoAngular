@@ -57,7 +57,7 @@ https://github.com/kaellandrade/formacaoAngular/assets/51521476/e0baf578-269d-4f
 
 Página simples apenas para praticar os conceitos de testes unitários com Angular. Aqui utilize o jasmine e depois realizei a migração para o JestJS.
 
-- Test de services;
+- Teste de services;
 - Teste de dumb components;
 - Teste de smart components;
 - Teste de integração;
