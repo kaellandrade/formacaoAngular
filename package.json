@@ -16,6 +16,7 @@
     "todo-app": "npx nx@19.0.4 run life-cycle:serve -o",
     "form-app": "npx nx@19.0.4 run forms-reativos:serve -o",
     "zoop-store": "npx nx@19.0.4 run trabalhando-com-tests-unit:serve",
+    "zoop-store-test": "npx nx@19.0.4 run trabalhando-com-tests-unit:test --coverage",
     "prepare": "husky",
     "lint": "npx nx@19.0.4  run-many --target=lint --all"
   },
