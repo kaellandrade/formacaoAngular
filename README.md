@@ -126,6 +126,7 @@ Página simples apenas para praticar os conceitos de testes unitários com Angul
    3. [Acessibilidade no Angular: aprimorando formulários, modais e rotas](https://cursos.alura.com.br/course/acessibilidade-angular-formularios-modais-rotas)
 
 5. [Angular: explorando testes de unidade e integração](https://cursos.alura.com.br/course/angular-explorando-testes-unidade-integracao)
+6. [Lab Signals](https://cursos.alura.com.br/course/angular-gerenciando-estado-signals/task/178124)
 
 </details>
 
