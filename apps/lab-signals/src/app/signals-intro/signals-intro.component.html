@@ -1,3 +1,15 @@
 <div>
-  <h1>Introdução</h1>
+  <h2>Elementos Químicos</h2>
+  <ul>
+    @for (elemento of elementos; track elemento.numeroMassa) {
+      <li (click)="selecionarElemento(elemento)">
+        {{ elemento.nome }}
+      </li>
+    }
+  </ul>
+
+  @if (elementoSelecionado()) {
+    <p>Elemento Selecionado: {{ elementoSelecionado()?.nome }}</p>
+  }
+  <p>Informações Detalhadas: {{ elementoInfo() }}</p>
 </div>
