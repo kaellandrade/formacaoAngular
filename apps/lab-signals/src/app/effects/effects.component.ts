@@ -9,9 +9,8 @@ import { Elemento, EstadoFisico, LISTA_INICIAL } from '../../shared/models';
 })
 export class EffectsComponent {
   elementos: Elemento[] = LISTA_INICIAL;
-  elmentoSelecionado: WritableSignal<Elemento | null> = signal<Elemento | null>(
-    null,
-  );
+  elementoSelecionado: WritableSignal<Elemento | null> =
+    signal<Elemento | null>(null);
   temperatura: WritableSignal<number> = signal<number>(25);
   estadoFisico: WritableSignal<EstadoFisico> = signal<EstadoFisico>('');
 
@@ -19,11 +18,21 @@ export class EffectsComponent {
     this.initEffect();
   }
 
+  selecionarElemento(elemento: Elemento): void {
+    this.elementoSelecionado.set(elemento);
+  }
+
+  ajustarTemperatura(novaTemperatura: number): void {
+    this.temperatura.set(novaTemperatura);
+  }
+
   private initEffect(): void {
     effect(
       (): void => {
-        const elemento: Elemento | null = this.elmentoSelecionado();
+        // Está observando dois signals....
+        const elemento: Elemento | null = this.elementoSelecionado();
         const temp: number = this.temperatura();
+
         if (!elemento) return;
         const { pontoEbulicao, pontoFusao } = elemento;
         let estadoFisico: EstadoFisico = '';

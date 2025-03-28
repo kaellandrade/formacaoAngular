@@ -1,1 +1,40 @@
-<p>effects works!</p>
+<h2>Simulação de Estado Físico</h2>
+<ul>
+  @for (elemento of elementos; track elemento.simbolo) {
+    <li (click)="selecionarElemento(elemento)">
+      {{ elemento.nome }} ({{ elemento.simbolo }})
+    </li>
+  }
+</ul>
+
+@if (elementoSelecionado()) {
+  <div class="selection">
+    <div class="elements">
+      <p>Elemento Selecionado: {{ elementoSelecionado()?.nome }}</p>
+    </div>
+    <div class="temperature">
+      <p>Temperatura Atual: {{ temperatura() }}°C</p>
+      <div class="flex flex-row gap-1">
+        <button
+          pButton
+          class="p-button-warning"
+          size="large"
+          [outlined]="true"
+          (click)="ajustarTemperatura(temperatura() - 10)"
+        >
+          -10
+        </button>
+        <button
+          pButton
+          class="p-button-success"
+          size="large"
+          [outlined]="true"
+          (click)="ajustarTemperatura(temperatura() + 10)"
+        >
+          + 10
+        </button>
+      </div>
+    </div>
+    <p>Estado Físico: {{ estadoFisico() }}</p>
+  </div>
+}

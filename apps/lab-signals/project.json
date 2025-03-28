@@ -19,7 +19,13 @@
           "apps/lab-signals/src/favicon.ico",
           "apps/lab-signals/src/assets"
         ],
-        "styles": ["apps/lab-signals/src/styles.css"],
+        "styles": [
+          "node_modules/primeflex/primeflex.css",
+          "node_modules/primeicons/primeicons.css",
+          "node_modules/primeng/resources/themes/md-light-deeppurple/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "apps/lab-signals/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
