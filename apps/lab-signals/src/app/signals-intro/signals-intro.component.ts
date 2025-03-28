@@ -1,12 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component, computed, signal, WritableSignal } from '@angular/core';
 
 import { Elemento, LISTA_INICIAL } from '../../shared/models';
 
 @Component({
   selector: 'app-signals-intro',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './signals-intro.component.html',
   styleUrl: './signals-intro.component.css',
 })
