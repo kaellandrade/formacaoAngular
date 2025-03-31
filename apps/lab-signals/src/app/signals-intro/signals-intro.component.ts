@@ -1,6 +1,7 @@
-import { Component, computed, signal, WritableSignal } from '@angular/core';
+import { Component } from '@angular/core';
 
-import { Elemento, LISTA_INICIAL } from '../../shared/models';
+import { Elemento } from '../../shared/models';
+import { ElementoService } from '../../shared/service/elemento.service';
 
 @Component({
   selector: 'app-signals-intro',
@@ -8,21 +9,9 @@ import { Elemento, LISTA_INICIAL } from '../../shared/models';
   styleUrl: './signals-intro.component.css',
 })
 export class SignalsIntroComponent {
-  elementos: Elemento[] = LISTA_INICIAL;
-
-  // signal gravável (writable signal)
-  elementoSelecionado: WritableSignal<Elemento | null> =
-    signal<Elemento | null>(null);
-
-  elementoInfo = computed(() => {
-    const elemento = this.elementoSelecionado();
-    if (!elemento) return 'Nenhum elemento selecionado';
-
-    const { simbolo, nome, numeroMassa } = elemento;
-    return `Nome: ${nome}, Símbolo: ${simbolo}, Número de massa: ${numeroMassa}`;
-  });
+  constructor(public elementoService: ElementoService) {}
 
   public selecionarElemento(elemento: Elemento): void {
-    this.elementoSelecionado.set(elemento);
+    this.elementoService.selecionarElemento(elemento);
   }
 }

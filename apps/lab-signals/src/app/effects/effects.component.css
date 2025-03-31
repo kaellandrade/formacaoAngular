@@ -51,12 +51,6 @@ p {
   gap: 30px;
 }
 
-.temperature {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
 .detalhe_elemento p {
   border: 1px solid #e8e8e4;
   padding: 10px;
@@ -74,4 +68,8 @@ button:hover {
 
 button:active {
   transform: scale(0.95);
+}
+
+.selecionado {
+  border-color: var(--primary-color);
 }

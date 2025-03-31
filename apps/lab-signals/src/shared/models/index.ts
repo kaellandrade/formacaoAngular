@@ -52,3 +52,5 @@ export const LISTA_INICIAL: Elemento[] = [
 ];
 
 export type EstadoFisico = 'Sólido' | 'Líquido' | 'Gasoso' | '';
+
+export const VALOR_INICIAL_CELSIUS = 25;

@@ -1,40 +1,44 @@
 <h2>Simulação de Estado Físico</h2>
 <ul>
-  @for (elemento of elementos; track elemento.simbolo) {
-    <li (click)="selecionarElemento(elemento)">
+  @for (elemento of elementoService.elementos; track elemento.simbolo) {
+    <li
+      [ngClass]="
+        elementoService.elementoSelecionado()?.simbolo === elemento.simbolo
+          ? 'selecionado'
+          : ''
+      "
+      (click)="selecionarElemento(elemento)"
+    >
       {{ elemento.nome }} ({{ elemento.simbolo }})
     </li>
   }
 </ul>
 
-@if (elementoSelecionado()) {
+@if (elementoService.elementoSelecionado()) {
   <div class="selection">
     <div class="elements">
-      <p>Elemento Selecionado: {{ elementoSelecionado()?.nome }}</p>
+      <p>
+        Elemento Selecionado: {{ elementoService.elementoSelecionado()?.nome }}
+      </p>
     </div>
-    <div class="temperature">
-      <p>Temperatura Atual: {{ temperatura() }}°C</p>
-      <div class="flex flex-row gap-1">
-        <button
-          pButton
-          class="p-button-warning"
-          size="large"
-          [outlined]="true"
-          (click)="ajustarTemperatura(temperatura() - 10)"
-        >
-          -10
-        </button>
-        <button
-          pButton
-          class="p-button-success"
-          size="large"
-          [outlined]="true"
-          (click)="ajustarTemperatura(temperatura() + 10)"
-        >
-          + 10
-        </button>
+    <div class="flex w-full justify-content-center align-content-center">
+      <div class="flex-column">
+        <input
+          type="text"
+          pInputText
+          [(ngModel)]="elementoService.sharedTemp"
+          #valuetemp
+          class="w-full mb-4"
+        />
+        <p-slider
+          [(ngModel)]="elementoService.sharedTemp"
+          (onChange)="elementoService.ajustarTemperatura(+valuetemp.value)"
+          max="600"
+          min="-600"
+          class="w-full"
+        />
       </div>
     </div>
-    <p>Estado Físico: {{ estadoFisico() }}</p>
+    <p>Estado Físico: {{ elementoService.estadoFisico() }}</p>
   </div>
 }
