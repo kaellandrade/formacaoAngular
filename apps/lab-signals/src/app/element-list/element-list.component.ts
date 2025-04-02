@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { Elemento } from '../../shared/models';
 import { ElementoService } from '../../shared/service/elemento.service';
@@ -7,6 +7,7 @@ import { ElementoService } from '../../shared/service/elemento.service';
   selector: 'app-element-list-component',
   templateUrl: './element-list.component.html',
   styleUrl: './element-list.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ElementListComponent {
   constructor(public elementoService: ElementoService) {}
