@@ -10,10 +10,18 @@ import { SliderModule } from 'primeng/slider';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { EffectsComponent } from './effects/effects.component';
+import { ElementDetailsComponent } from './element-details/element-details.component';
+import { ElementListComponent } from './element-list/element-list.component';
 import { SignalsIntroComponent } from './signals-intro/signals-intro.component';
 
 @NgModule({
-  declarations: [AppComponent, SignalsIntroComponent, EffectsComponent],
+  declarations: [
+    AppComponent,
+    SignalsIntroComponent,
+    EffectsComponent,
+    ElementListComponent,
+    ElementDetailsComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,

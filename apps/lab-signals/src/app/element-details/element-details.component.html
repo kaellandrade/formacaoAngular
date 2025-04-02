@@ -1,0 +1,6 @@
+<h2>Elementos Favoritos</h2>
+<ul>
+  @for (elemento of elementoService.obterFavoritos(); track elemento.simbolo) {
+    <li>{{ elemento.nome }} ({{ elemento.simbolo }})</li>
+  }
+</ul>

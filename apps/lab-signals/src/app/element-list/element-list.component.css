@@ -1,0 +1,40 @@
+:host {
+  text-align: center;
+  color: #e8e8e4;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  border-radius: 10px;
+}
+
+li:hover {
+  border: 1px solid var(--primary-color);
+}
+
+li:active {
+  transform: scale(0.95);
+}
+
+button {
+  border: none;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background: transparent;
+  font-size: 16px;
+}

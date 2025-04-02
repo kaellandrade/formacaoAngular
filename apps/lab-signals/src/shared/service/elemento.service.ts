@@ -2,6 +2,7 @@ import {
   computed,
   effect,
   Injectable,
+  Signal,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -22,14 +23,15 @@ export class ElementoService {
     signal<Elemento | null>(null);
   temperatura: WritableSignal<number> = signal<number>(VALOR_INICIAL_CELSIUS);
   estadoFisico: WritableSignal<EstadoFisico> = signal<EstadoFisico>('');
-  sharedTemp = VALOR_INICIAL_CELSIUS;
-  elementoInfo = computed(() => {
+  sharedTemp: number = VALOR_INICIAL_CELSIUS;
+  elementoInfo: Signal<string> = computed(() => {
     const elemento = this.elementoSelecionado();
     if (!elemento) return 'Nenhum elemento selecionado';
 
     const { simbolo, nome, numeroMassa } = elemento;
     return `Nome: ${nome}, Símbolo: ${simbolo}, Número de massa: ${numeroMassa}`;
   });
+  favoritos = signal<Elemento[]>([]);
 
   constructor() {
     this.initEffect();
@@ -42,6 +44,30 @@ export class ElementoService {
 
   public ajustarTemperatura(novaTemperatura: number): void {
     this.temperatura.set(novaTemperatura);
+  }
+
+  public obterFavoritos(): Elemento[] {
+    return this.favoritos();
+  }
+
+  public obterObjetoSelecionado(): Elemento | null {
+    return this.elementoSelecionado();
+  }
+
+  adicionarFavoritos(elemento: Elemento): void {
+    this.favoritos.update((fav) => [...fav, elemento]);
+  }
+
+  removerFavoritos(elemento: Elemento): void {
+    this.favoritos.update((fav) =>
+      fav.filter((fav) => fav.simbolo !== elemento.simbolo),
+    );
+  }
+
+  jaEstaNaLista(elemento: Elemento): boolean {
+    const { simbolo } = elemento;
+    const favoritosNaLista = this.obterFavoritos();
+    return favoritosNaLista.some((fav) => fav.simbolo === simbolo);
   }
 
   private initEffect(): void {

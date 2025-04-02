@@ -1,0 +1,36 @@
+:host {
+  text-align: center;
+  color: #e8e8e4;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--primary-color);
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+li {
+  padding: 10px 15px;
+  border: 1px solid #e8e8e4;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
