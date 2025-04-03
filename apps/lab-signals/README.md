@@ -38,3 +38,39 @@ desse contexto, recebemos a seguinte mensagem:
 
 Isso acontece porque por padrão o Angular deseja evitar que efeitos colaterais indesejados. Porém, como o próprio erro
 sugere, basta ativar a flag `allowSignalWrites`
+
+---
+
+#### Untracked
+
+Utilizado para evitarmos dependências desnecessárias. Por exemplo, suponha que temos dois signals
+`A` e `B` podemos dizer que não queremos rastrear o valor do signal `B` mas apenas do `A`
+
+```typescript
+import { untracked } from '@angular/core';
+
+const a = signal(0);
+const b = signal(1);
+
+effect(() => {
+  console.log(
+    a(),
+    untracked(() => b()),
+  ); // evita re-evaluated B
+});
+```
+
+Podemos ter algo mais complexo, por exemplo:
+
+```typescript
+effect(() => {
+  // ...read signals...
+  const a = a();
+
+  untracked(() => {
+    this.someMethodThatReadsSignals(a); // quaalquer signal lido aqui não será dependencia do effect, melhorando a performance do código
+  });
+});
+```
+
+[Para saber mais](https://medium.com/netanelbasal/angular-signals-preventing-unnecessary-dependencies-using-the-untrack-function-15a4c03b03fe)
