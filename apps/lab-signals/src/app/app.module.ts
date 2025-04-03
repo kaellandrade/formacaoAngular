@@ -9,6 +9,7 @@ import { SliderModule } from 'primeng/slider';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ComputedSignalComponent } from './computed-signal/computed-signal.component';
 import { EffectsComponent } from './effects/effects.component';
 import { ElementDetailsComponent } from './element-details/element-details.component';
 import { ElementListComponent } from './element-list/element-list.component';
@@ -21,6 +22,8 @@ import { SignalsIntroComponent } from './signals-intro/signals-intro.component';
     EffectsComponent,
     ElementListComponent,
     ElementDetailsComponent,
+    ComputedSignalComponent,
+    ComputedSignalComponent,
   ],
   imports: [
     CommonModule,

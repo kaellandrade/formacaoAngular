@@ -4,6 +4,7 @@ import {
   Injectable,
   Signal,
   signal,
+  untracked,
   WritableSignal,
 } from '@angular/core';
 
@@ -21,6 +22,13 @@ export class ElementoService {
   elementos: Elemento[] = LISTA_INICIAL;
   elementoSelecionado: WritableSignal<Elemento | null> =
     signal<Elemento | null>(null);
+
+  elementoSelecionadoA: WritableSignal<Elemento | null> =
+    signal<Elemento | null>(null);
+
+  elementoSelecionadoB: WritableSignal<Elemento | null> =
+    signal<Elemento | null>(null);
+
   temperatura: WritableSignal<number> = signal<number>(VALOR_INICIAL_CELSIUS);
   estadoFisico: WritableSignal<EstadoFisico> = signal<EstadoFisico>('');
   sharedTemp: number = VALOR_INICIAL_CELSIUS;
@@ -33,6 +41,20 @@ export class ElementoService {
   });
   favoritos = signal<Elemento[]>([]);
 
+  massaAtomicaTotal = computed(() => {
+    const elementoA = this.elementoSelecionadoA();
+    const elementoB = this.elementoSelecionadoB();
+
+    const massaA = untracked(() =>
+      elementoA ? elementoA.numeroAtomico + elementoA.numeroNeutrons : 0,
+    );
+    const massaB = untracked(() =>
+      elementoB ? elementoB.numeroAtomico + elementoB.numeroNeutrons : 0,
+    );
+
+    return massaA + massaB;
+  });
+
   constructor() {
     this.initEffect();
   }
@@ -40,6 +62,14 @@ export class ElementoService {
   public selecionarElemento(elemento: Elemento): void {
     this.elementoSelecionado.set(elemento);
     this.ajustarTemperatura(VALOR_INICIAL_CELSIUS);
+  }
+
+  public selecionarElementoA(elemento: Elemento): void {
+    this.elementoSelecionadoA.set(elemento);
+  }
+
+  public selecionarElementoB(elemento: Elemento): void {
+    this.elementoSelecionadoB.set(elemento);
   }
 
   public ajustarTemperatura(novaTemperatura: number): void {
