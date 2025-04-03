@@ -32,6 +32,7 @@ import { BotaoCarregarMaisComponent } from './componentes/pensamentos/listar-pen
 import { ListarPensamentoComponent } from './componentes/pensamentos/listar-pensamento/listar-pensamento.component';
 import { PensamentoComponent } from './componentes/pensamentos/pensamento/pensamento.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
+
 @NgModule({
   declarations: [
     AppComponent,

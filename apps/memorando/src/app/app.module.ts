@@ -32,6 +32,7 @@ import { appRoutes } from './app.routes';
     RouterModule.forRoot(appRoutes),
     // NoopAnimationsModule,
   ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

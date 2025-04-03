@@ -1,0 +1,19 @@
+<h2>Lista de Elementos Químicos</h2>
+<ul class="gap-1">
+  @for (elemento of elementoService.elementos; track elemento.simbolo) {
+    <li class="border-1 border-white-alpha-50">
+      <button class="w-full p-3" (click)="toggleFavorito(elemento)">
+        {{ elemento.nome }} ({{ elemento.simbolo }})
+        @if (elementoService.jaEstaNaLista(elemento)) {
+          <span>
+            <i class="pi pi-star-fill"></i>
+          </span>
+        } @else {
+          <span>
+            <i class="pi pi-star"></i>
+          </span>
+        }
+      </button>
+    </li>
+  }
+</ul>

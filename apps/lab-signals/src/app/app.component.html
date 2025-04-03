@@ -1,0 +1,31 @@
+<nav>
+  <div>
+    <img src="./../assets/Logo - LabSignals.png" alt="" />
+  </div>
+
+  <div>
+    <ul>
+      <li><a routerLink="/intro">Lista de elementos Químicos</a></li>
+      <li><a routerLink="/effects">Estados físicos dos elementos</a></li>
+      <li><a routerLink="/elements">Elementos favoritos</a></li>
+      <li>
+        <a routerLink="/computed-signal">Calculando a massa dos elementos</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <img
+      src="./../../assets/Banner.png"
+      alt="Descrição da Imagem"
+      class="image-container"
+    />
+  </div>
+
+  <div class="element-container">
+    <router-outlet name="list" />
+    <router-outlet name="details" />
+  </div>
+</nav>
+
+<router-outlet />
