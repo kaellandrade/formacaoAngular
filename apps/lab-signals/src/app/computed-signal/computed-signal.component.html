@@ -1,0 +1,23 @@
+<h2>Cálculo da Massa Atômica Total</h2>
+
+<h3>Selecione o primeiro elemento:</h3>
+<ul>
+  @for (elemento of elementos; track elemento.simbolo) {
+    <li (click)="selecionarElementoA(elemento)">
+      {{ elemento.nome }} ({{ elemento.simbolo }})
+    </li>
+  }
+</ul>
+<p>Elemento 1 Selecionado: {{ elementoCalculadoA()?.nome || 'Nenhum' }}</p>
+
+<h3>Selecione o segundo elemento:</h3>
+<ul>
+  @for (elemento of elementos; track elemento.simbolo) {
+    <li (click)="selecionarElementoB(elemento)">
+      {{ elemento.nome }} ({{ elemento.simbolo }})
+    </li>
+  }
+</ul>
+<p>Elemento 2 Selecionado: {{ elementoCalculadoB()?.nome || 'Nenhum' }}</p>
+
+<p>Massa Atômica Total: {{ massaAtomicaTotal() }}</p>
