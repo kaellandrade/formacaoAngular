@@ -19,7 +19,7 @@
           "apps/fokus-pwa/src/favicon.ico",
           "apps/fokus-pwa/src/assets"
         ],
-        "styles": ["apps/fokus-pwa/src/styles.css"],
+        "styles": ["apps/fokus-pwa/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
