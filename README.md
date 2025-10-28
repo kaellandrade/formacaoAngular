@@ -65,6 +65,10 @@ Página simples apenas para praticar os conceitos de testes unitários com Angul
 
 ---
 
+## Aplicação PWA
+
+// TODO...
+
 ## Rodando os Apps :hammer_and_wrench:
 
 - [Buscador de Livos](#buscador-de-livos) :book: - `npm run buscante-app`;

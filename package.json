@@ -18,6 +18,7 @@
     "zoop-store": "npx nx@19.0.4 run trabalhando-com-tests-unit:serve",
     "zoop-store-test": "npx nx@19.0.4 run trabalhando-com-tests-unit:test --coverage",
     "lab-signals": "npx nx@19.0.4 run lab-signals:serve",
+    "fokus-pwa": "npx nx@19.0.4 run fokus-pwa:serve",
     "prepare": "husky",
     "lint": "npx nx@19.0.4  run-many --target=lint --all"
   },
