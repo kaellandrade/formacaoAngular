@@ -35,7 +35,7 @@
       <ng-container *ngFor="let taskItem of tasks">
         <app-task-list
           [taskItem]="taskItem"
-          (onTaskClick)="onTaskListClick($event)"
+          (onTaskClick)="onTaskListClick(taskItem)"
         >
         </app-task-list>
       </ng-container>
