@@ -18,10 +18,7 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
+              { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
             ]
           }
         ],
@@ -32,18 +29,13 @@
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/no-floating-promises": "off",
         "class-methods-use-this": "off",
-        "prettier/prettier": [
-          "error",
-          {
-            "tabWidth": 2
-          }
-        ]
+        "prettier/prettier": ["error", { "tabWidth": 2 }]
       }
     },
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "rules": { "@angular-eslint/prefer-standalone": "warn" }
     },
     {
       "files": ["*.js", "*.jsx"],
@@ -58,9 +50,7 @@
         "*.spec.jsx",
         "*.config.ts"
       ],
-      "env": {
-        "jest": true
-      },
+      "env": { "jest": true },
       "rules": {}
     }
   ]

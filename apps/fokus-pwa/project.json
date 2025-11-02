@@ -17,7 +17,9 @@
         "tsConfig": "apps/fokus-pwa/tsconfig.app.json",
         "assets": [
           "apps/fokus-pwa/src/favicon.ico",
-          "apps/fokus-pwa/src/assets"
+          "apps/fokus-pwa/src/assets",
+          "apps/fokus-pwa/src/manifest.webmanifest",
+          "apps/fokus-pwa/src/icons"
         ],
         "styles": ["apps/fokus-pwa/src/styles.scss"],
         "scripts": []
