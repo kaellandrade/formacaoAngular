@@ -2,6 +2,7 @@
   "name": "fokus-pwa",
   "short_name": "fokus-pwa",
   "display": "standalone",
+  "version": "1.0.0",
   "background_color": "#F5EAEA",
   "theme_color": "#A459D1",
   "scope": ".",

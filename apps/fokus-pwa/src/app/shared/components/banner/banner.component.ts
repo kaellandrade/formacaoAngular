@@ -26,7 +26,7 @@ export class BannerComponent {
 
       switch (context) {
         case 'foco':
-          this.title = 'Otimize sua produtividade,';
+          this.title = 'Otimize sua produtividadeeeeee,';
           this.titleStrong = 'mergulhe no que importa.';
           this.src = './assets/images/foco.png';
 
