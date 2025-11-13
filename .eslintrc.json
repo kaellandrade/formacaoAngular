@@ -23,7 +23,7 @@
             ]
           }
         ],
-        "no-console": ["error", { "allow": ["warn"] }],
+        "no-console": ["error", { "allow": ["warn", "error"] }],
         "simple-import-sort/imports": "error",
         "import/prefer-default-export": "off",
         "@typescript-eslint/lines-between-class-members": "off",
