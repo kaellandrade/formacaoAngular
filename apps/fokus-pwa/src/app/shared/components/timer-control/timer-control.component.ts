@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AudioService } from '../../services/audio.service';
 import { ContextService, ContextType } from '../../services/context.service';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-timer-control',
@@ -27,7 +28,7 @@ export class TimerControlComponent {
   private contextService = inject(ContextService);
   private audioService = inject(AudioService);
 
-  constructor() {
+  constructor(private notificationService: NotificationService) {
     this.context = this.contextService.contextSignal$;
     effect(() => {
       this.setTimerSecond();
@@ -72,11 +73,35 @@ export class TimerControlComponent {
       this.setTimerSecond();
       this.configTimer();
 
+      this.sendNotification();
       return;
     }
 
     this.timerInSeconds -= 1;
     this.configTimer();
+  }
+
+  private async sendNotification(): Promise<void> {
+    try {
+      await this.notificationService.requestPermission();
+      const context = this.context();
+
+      if (context.includes('descanso')) {
+        const title = 'Notificação';
+        const options: NotificationOptions = {
+          body: 'Tempo de descanso finalizado!',
+        };
+        this.notificationService.showNotification(title, options);
+        return;
+      }
+      const title = 'Notificação';
+      const options: NotificationOptions = {
+        body: 'Tempo de foco finalizado!',
+      };
+      this.notificationService.showNotification(title, options);
+    } catch (error) {
+      console.error('error ao enviar notificação:', error);
+    }
   }
 
   private resetTimer(): void {
