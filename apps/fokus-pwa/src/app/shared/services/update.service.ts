@@ -7,8 +7,6 @@ import { filter, interval, tap } from 'rxjs';
 })
 export class UpdateService {
   private readonly UM_MINUTO = 60 * 1000;
-  // TODO: verificar lint para desabilitar isso
-  // eslint-disable-next-line @angular-eslint/prefer-inject
   constructor(private swUpdate: SwUpdate) {
     this.inicializeUpdateChecks();
   }
@@ -48,7 +46,6 @@ export class UpdateService {
     try {
       return await this.swUpdate.checkForUpdate();
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error('Error ao verificar a atualização', error);
       return false;
     }
